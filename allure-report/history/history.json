@@ -1,0 +1,59 @@
+{
+  "Safari regression/login-logout/loginAccountAdmin.spec.js test" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c18ec26615200bbb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222271318,
+        "stop" : 1638222283720,
+        "duration" : 12402
+      }
+    } ]
+  },
+  "FireFox regression/login-logout/loginAccountAdmin.spec.js test" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "778fe69c85bacb6f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222284340,
+        "stop" : 1638222297310,
+        "duration" : 12970
+      }
+    } ]
+  },
+  "Chrome regression/login-logout/loginAccountAdmin.spec.js test" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "71e7941fcb8d9538",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222271053,
+        "stop" : 1638222283611,
+        "duration" : 12558
+      }
+    } ]
+  }
+}

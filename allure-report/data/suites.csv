@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Nov 29 23:44:31 EET 2021","Mon Nov 29 23:44:43 EET 2021","12402","Safari","regression/login-logout/loginAccountAdmin.spec.js","","","","test",""
+"passed","Mon Nov 29 23:44:31 EET 2021","Mon Nov 29 23:44:43 EET 2021","12558","Chrome","regression/login-logout/loginAccountAdmin.spec.js","","","","test",""
+"passed","Mon Nov 29 23:44:44 EET 2021","Mon Nov 29 23:44:57 EET 2021","12970","FireFox","regression/login-logout/loginAccountAdmin.spec.js","","","","test",""

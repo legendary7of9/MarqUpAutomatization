@@ -1,0 +1,58 @@
+{
+  "uid" : "2c3d8859a02d48e4",
+  "name" : "test",
+  "fullName" : "test",
+  "historyId" : "Safari regression/login-logout/loginAccountAdmin.spec.js test",
+  "time" : {
+    "start" : 1638219997845,
+    "stop" : 1638220009859,
+    "duration" : 12014
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "4dcb8e6def8163cd",
+      "name" : "stdout",
+      "source" : "4dcb8e6def8163cd.txt",
+      "type" : "text/plain",
+      "size" : 13
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Safari"
+  }, {
+    "name" : "suite",
+    "value" : "regression/login-logout/loginAccountAdmin.spec.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2c3d8859a02d48e4.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,197 @@
+{
+  "uid" : "c18ec26615200bbb",
+  "name" : "test",
+  "fullName" : "test",
+  "historyId" : "Safari regression/login-logout/loginAccountAdmin.spec.js test",
+  "time" : {
+    "start" : 1638222271318,
+    "stop" : 1638222283720,
+    "duration" : 12402
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "154f358cb2677bb7",
+      "name" : "stdout",
+      "source" : "154f358cb2677bb7.txt",
+      "type" : "text/plain",
+      "size" : 13
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Safari"
+  }, {
+    "name" : "suite",
+    "value" : "regression/login-logout/loginAccountAdmin.spec.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "af6be0d49f026a32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222148590,
+        "stop" : 1638222161220,
+        "duration" : 12630
+      }
+    }, {
+      "uid" : "3ce4df693e2ab77b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222093349,
+        "stop" : 1638222106135,
+        "duration" : 12786
+      }
+    }, {
+      "uid" : "70ce54870083085c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638222014310,
+        "stop" : 1638222028324,
+        "duration" : 14014
+      }
+    }, {
+      "uid" : "a92c6f75b75cdb93",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638221861515,
+        "stop" : 1638221875608,
+        "duration" : 14093
+      }
+    }, {
+      "uid" : "b11e62508f2dc753",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638221704064,
+        "stop" : 1638221716290,
+        "duration" : 12226
+      }
+    }, {
+      "uid" : "fc5ac5cb1a816b99",
+      "status" : "skipped",
+      "statusDetails" : "page.goto: Navigation failed because page was closed!\n=========================== logs ===========================\nnavigating to \"https://marqup.test.noredlines.com/sign-in\", waiting until \"load\"\n============================================================",
+      "time" : {
+        "start" : 1638221686168,
+        "stop" : 1638221692152,
+        "duration" : 5984
+      }
+    }, {
+      "uid" : "e9bcbf5ec9cc8629",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638221610213,
+        "stop" : 1638221622258,
+        "duration" : 12045
+      }
+    }, {
+      "uid" : "3f5b77468855bb8d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638221529646,
+        "stop" : 1638221542178,
+        "duration" : 12532
+      }
+    }, {
+      "uid" : "cf592e98344578b0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638221395029,
+        "stop" : 1638221413696,
+        "duration" : 18667
+      }
+    }, {
+      "uid" : "c70440100cda0433",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220816813,
+        "stop" : 1638220828883,
+        "duration" : 12070
+      }
+    }, {
+      "uid" : "455fedac301366dc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220720407,
+        "stop" : 1638220732524,
+        "duration" : 12117
+      }
+    }, {
+      "uid" : "26eb2ebe7d4a6ba5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220570968,
+        "stop" : 1638220583939,
+        "duration" : 12971
+      }
+    }, {
+      "uid" : "b319e760ad668179",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220498082,
+        "stop" : 1638220511339,
+        "duration" : 13257
+      }
+    }, {
+      "uid" : "ac92285488b501d5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220310986,
+        "stop" : 1638220326272,
+        "duration" : 15286
+      }
+    }, {
+      "uid" : "61a42362e70a8d36",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638220114393,
+        "stop" : 1638220127348,
+        "duration" : 12955
+      }
+    }, {
+      "uid" : "2c3d8859a02d48e4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638219997845,
+        "stop" : 1638220009859,
+        "duration" : 12014
+      }
+    }, {
+      "uid" : "c1fb36903beb23cf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638219657123,
+        "stop" : 1638219671343,
+        "duration" : 14220
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c18ec26615200bbb.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,68 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Chrome",
+    "children" : [ {
+      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "children" : [ {
+        "name" : "test",
+        "uid" : "71e7941fcb8d9538",
+        "parentUid" : "dc3d2fe206cf229e0c90b54ec124bc6d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638222271053,
+          "stop" : 1638222283611,
+          "duration" : 12558
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "dc3d2fe206cf229e0c90b54ec124bc6d"
+    } ],
+    "uid" : "be3b43cb059a307900f233563156e40a"
+  }, {
+    "name" : "Safari",
+    "children" : [ {
+      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "children" : [ {
+        "name" : "test",
+        "uid" : "c18ec26615200bbb",
+        "parentUid" : "818e19cf811fac893377bb2a59b03c04",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638222271318,
+          "stop" : 1638222283720,
+          "duration" : 12402
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "818e19cf811fac893377bb2a59b03c04"
+    } ],
+    "uid" : "c111ad95a0d3db3b10e0fd2c6d49c6a9"
+  }, {
+    "name" : "FireFox",
+    "children" : [ {
+      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "children" : [ {
+        "name" : "test",
+        "uid" : "778fe69c85bacb6f",
+        "parentUid" : "a0d40c201c1d7ed7a0b0190c2aa1d843",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638222284340,
+          "stop" : 1638222297310,
+          "duration" : 12970
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a0d40c201c1d7ed7a0b0190c2aa1d843"
+    } ],
+    "uid" : "f028fdbd1e4c120a256ca924f82ecf37"
+  } ]
+}
