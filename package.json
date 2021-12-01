@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure:generate": "npx allure generate ./allure-results --clean",
-    "allure:open": "npx allure open ./allure-report",
-    "allure:serve": "npx allure serve",
-    "test": "npx playwright test",
+    "test": "playwright test",
     "posttest": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
   },
   "repository": {

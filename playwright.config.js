@@ -3,27 +3,27 @@ const { devices } = require('@playwright/test');
 const config = {
   projects: [
     {
-        name: 'Chrome',
+        name: 'chrome',
         use: {
             browserName: 'chromium',
         },
     },
     {
-        name: 'Safari',
+        name: 'webkit',
         use: {
             browserName: 'webkit',
         }
     },
     {
-        name: 'FireFox',
+        name: 'firefox',
         use: {
             browserName: 'firefox',
         }
     },
-  ],
+  ], 
   reporter: [
     ['line'], 
-    ['experimental-allure-playwright']
+    ['experimental-allure-playwright'],
   ],
 };
 

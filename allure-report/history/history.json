@@ -1,5 +1,5 @@
 {
-  "Safari regression/login-logout/loginAccountAdmin.spec.js test" : {
+  "chrome tests/regression/login-logout/loginAccountAdmin.spec.js test" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -9,16 +9,16 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "c18ec26615200bbb",
+      "uid" : "cd891dc60385089c",
       "status" : "passed",
       "time" : {
-        "start" : 1638222271318,
-        "stop" : 1638222283720,
-        "duration" : 12402
+        "start" : 1638262928200,
+        "stop" : 1638262934817,
+        "duration" : 6617
       }
     } ]
   },
-  "FireFox regression/login-logout/loginAccountAdmin.spec.js test" : {
+  "firefox tests/regression/login-logout/loginAccountAdmin.spec.js test" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -28,16 +28,16 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "778fe69c85bacb6f",
+      "uid" : "fa4b1aecf6cf1483",
       "status" : "passed",
       "time" : {
-        "start" : 1638222284340,
-        "stop" : 1638222297310,
-        "duration" : 12970
+        "start" : 1638262935185,
+        "stop" : 1638262950789,
+        "duration" : 15604
       }
     } ]
   },
-  "Chrome regression/login-logout/loginAccountAdmin.spec.js test" : {
+  "webkit tests/regression/login-logout/loginAccountAdmin.spec.js test" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -47,12 +47,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "71e7941fcb8d9538",
+      "uid" : "383858262fb05905",
       "status" : "passed",
       "time" : {
-        "start" : 1638222271053,
-        "stop" : 1638222283611,
-        "duration" : 12558
+        "start" : 1638262928427,
+        "stop" : 1638262937154,
+        "duration" : 8727
       }
     } ]
   }

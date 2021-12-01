@@ -2,67 +2,67 @@
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
   "name" : "suites",
   "children" : [ {
-    "name" : "Chrome",
+    "name" : "chrome",
     "children" : [ {
-      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "name" : "tests/regression/login-logout/loginAccountAdmin.spec.js",
       "children" : [ {
         "name" : "test",
-        "uid" : "71e7941fcb8d9538",
-        "parentUid" : "dc3d2fe206cf229e0c90b54ec124bc6d",
+        "uid" : "cd891dc60385089c",
+        "parentUid" : "62c750fee3978eadbd2600e8ca1db694",
         "status" : "passed",
         "time" : {
-          "start" : 1638222271053,
-          "stop" : 1638222283611,
-          "duration" : 12558
+          "start" : 1638262928200,
+          "stop" : 1638262934817,
+          "duration" : 6617
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "dc3d2fe206cf229e0c90b54ec124bc6d"
+      "uid" : "62c750fee3978eadbd2600e8ca1db694"
     } ],
-    "uid" : "be3b43cb059a307900f233563156e40a"
+    "uid" : "6670429afb6336ebd74364ce08414023"
   }, {
-    "name" : "Safari",
+    "name" : "webkit",
     "children" : [ {
-      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "name" : "tests/regression/login-logout/loginAccountAdmin.spec.js",
       "children" : [ {
         "name" : "test",
-        "uid" : "c18ec26615200bbb",
-        "parentUid" : "818e19cf811fac893377bb2a59b03c04",
+        "uid" : "383858262fb05905",
+        "parentUid" : "dcf74303fb8f265a4f82e3446872f367",
         "status" : "passed",
         "time" : {
-          "start" : 1638222271318,
-          "stop" : 1638222283720,
-          "duration" : 12402
+          "start" : 1638262928427,
+          "stop" : 1638262937154,
+          "duration" : 8727
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "818e19cf811fac893377bb2a59b03c04"
+      "uid" : "dcf74303fb8f265a4f82e3446872f367"
     } ],
-    "uid" : "c111ad95a0d3db3b10e0fd2c6d49c6a9"
+    "uid" : "44063b3706d66b0d346705a4a77c6704"
   }, {
-    "name" : "FireFox",
+    "name" : "firefox",
     "children" : [ {
-      "name" : "regression/login-logout/loginAccountAdmin.spec.js",
+      "name" : "tests/regression/login-logout/loginAccountAdmin.spec.js",
       "children" : [ {
         "name" : "test",
-        "uid" : "778fe69c85bacb6f",
-        "parentUid" : "a0d40c201c1d7ed7a0b0190c2aa1d843",
+        "uid" : "fa4b1aecf6cf1483",
+        "parentUid" : "74e5a181ba1bc7577a92b62c2f0a8f88",
         "status" : "passed",
         "time" : {
-          "start" : 1638222284340,
-          "stop" : 1638222297310,
-          "duration" : 12970
+          "start" : 1638262935185,
+          "stop" : 1638262950789,
+          "duration" : 15604
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "a0d40c201c1d7ed7a0b0190c2aa1d843"
+      "uid" : "74e5a181ba1bc7577a92b62c2f0a8f88"
     } ],
-    "uid" : "f028fdbd1e4c120a256ca924f82ecf37"
+    "uid" : "ed39c131db56604842b18253a0c76267"
   } ]
 }

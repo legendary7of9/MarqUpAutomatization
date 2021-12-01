@@ -1,0 +1,62 @@
+{
+  "uid" : "4cdcbe65ffc87490",
+  "name" : "test",
+  "fullName" : "test",
+  "historyId" : "firefox tests/regression/login-logout/loginAccountAdmin.spec.js test",
+  "time" : {
+    "start" : 1638262874232,
+    "stop" : 1638262885484,
+    "duration" : 11252
+  },
+  "status" : "failed",
+  "statusMessage" : "expect(received).toHaveURL(expected)\n\nExpected string: \"https://marqup.test.noredlines.com/dashboard\"\nReceived string: \"https://marqup.test.noredlines.com/sign-in\"\n\nCall log:\n  - waiting for selector \":root\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n",
+  "statusTrace" : "\n    at /Users/mobindustryqa/Desktop/MarqUpAutomatization/tests/regression/login-logout/loginAccountAdmin.spec.js:15:24\n    at WorkerRunner._runTestWithBeforeHooks (/Users/mobindustryqa/Desktop/MarqUpAutomatization/node_modules/@playwright/test/lib/workerRunner.js:478:7)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expect(received).toHaveURL(expected)\n\nExpected string: \"https://marqup.test.noredlines.com/dashboard\"\nReceived string: \"https://marqup.test.noredlines.com/sign-in\"\n\nCall log:\n  - waiting for selector \":root\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n  -   selector resolved to <html lang=\"en\">…</html>\n  -   unexpected value \"https://marqup.test.noredlines.com/sign-in\"\n",
+    "statusTrace" : "\n    at /Users/mobindustryqa/Desktop/MarqUpAutomatization/tests/regression/login-logout/loginAccountAdmin.spec.js:15:24\n    at WorkerRunner._runTestWithBeforeHooks (/Users/mobindustryqa/Desktop/MarqUpAutomatization/node_modules/@playwright/test/lib/workerRunner.js:478:7)",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "29876110b8ccb3b6",
+      "name" : "stdout",
+      "source" : "29876110b8ccb3b6.txt",
+      "type" : "text/plain",
+      "size" : 13
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "firefox"
+  }, {
+    "name" : "suite",
+    "value" : "tests/regression/login-logout/loginAccountAdmin.spec.js"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4cdcbe65ffc87490.json",
+  "parameterValues" : [ ]
+}
