@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "posttest": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
+    "ts-migrate": "ts-migrate",
+    "pretest": "rm -R -f macmaniac ./allure-results",
+    "test": "npx playwright test"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,10 @@
   "homepage": "https://github.com/legendary7of9/MarqUpAutomatization#readme",
   "devDependencies": {
     "@playwright/test": "^1.16.3",
+    "@types/node": "^16.11.11",
     "allure-commandline": "^2.13.8",
     "allure-playwright": "^2.0.0-beta.14",
     "experimental-allure-playwright": "^0.0.3",
-    "jest": "^27.3.1"
+    "ts-migrate": "^0.1.26"
   }
 }
