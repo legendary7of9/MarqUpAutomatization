@@ -25,9 +25,9 @@ class LoginPage {
     async loginAU() {
         //Should be refactored
         await this.page.fill('[placeholder="Email"]', 'iryna.nema+485220@mobindustry.net')
-        await this.page.fill('[placeholder="Password"]', 'Zaq1234567!')
+        await this.page.fill('[placeholder="Password"]', 'Zaq123456!')
         await this.page.click('button:has-text("sign in")')
-        await expect(this.page).toHaveURL('https://marqup.test.noredlines.com/clients/360');
+        await expect(this.page).toHaveURL('https://marqup.test.noredlines.com/clients/268');
     }
     async logout() {
         //Shold be refactored

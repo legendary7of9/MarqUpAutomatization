@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
   
   use: {
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    video: 'on-first-retry'
   },
   retries: 0,
   reporter: [
