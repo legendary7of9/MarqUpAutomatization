@@ -33,7 +33,7 @@ async homeButton() {
 
 async emailField() {
     await this.email.click();
-    await this.email.fill('');
+    await this.email.fill('qwerty');
 }
 
 async passwordField() {
