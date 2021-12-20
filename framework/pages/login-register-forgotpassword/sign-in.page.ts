@@ -58,7 +58,7 @@ async eyeHide() {
 }
 
 async signUpLink() {
-    await this.forgotPassword.click();
+    await this.signup.click();
 }
 
 }

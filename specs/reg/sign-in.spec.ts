@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
             await expect(locator).toHaveText(['sAdmin1 sAdmin']);
     }),
 
-    test.skip('sign-inAA @regChecklistnewHigh @login', async ({ page }) => {
+    test('sign-inAA @regChecklistnewHigh @login', async ({ page }) => {
             const signIn = new signInPage(page);
             const users = new USERS(page);
             console.log('login Account Admin');
@@ -30,7 +30,7 @@ test.beforeEach(async ({ page }) => {
             await expect(locator).toHaveText(['Owner AA W Client test test test testW Client 2 test test test test test test']);
     }),
 
-    test.skip('sign-inAU @regChecklistnewHigh @login', async ({ page }) => {
+    test('sign-inAU @regChecklistnewHigh @login', async ({ page }) => {
             const signIn = new signInPage(page);
             const users = new USERS(page);
             console.log('login Account User');
@@ -41,11 +41,29 @@ test.beforeEach(async ({ page }) => {
             await expect(locator).toHaveText(['Account user W client 2W Client 2 test test test test test test']);
     }),
 
-    test.skip('homeButton @regChecklistnewLow @login', async ({ page }) => {
+    test('homeButton @regChecklistnewLow @login', async ({ page }) => {
         console.log('homeButtonValidation');
         const signIn = new signInPage(page);
         await signIn.homeButton();
         await expect(page).toHaveURL('/sign-in');
         const locator = page.locator('#login-sign-in');
-        await expect(locator).toHaveClass('btn btn-submit-authorize');
+        await expect(locator).toHaveId('login-sign-in');
+    }),
+
+    test('forgotPasswordLink @regChecklistnewMedium @login', async ({ page }) => {
+        console.log('forgotPasswordValidation');
+        const signIn = new signInPage(page);
+        await signIn.forgotPasswordLink();
+        await expect(page).toHaveURL('/forgot-password');
+        const locator = page.locator('#forgot-password-send');
+        await expect(locator).toHaveId('forgot-password-send');
+    }),
+
+    test('signUpHere @regChecklistnewMedium @login', async ({ page }) => {
+        console.log('signUpHereValidation');
+        const signIn = new signInPage(page);
+        await signIn.signUpLink();
+        await expect(page).toHaveURL('/sign-up');
+        const locator = page.locator('#registration-signup');
+        await expect(locator).toHaveId('registration-signup');
     })
