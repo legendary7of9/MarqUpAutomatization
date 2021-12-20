@@ -1,4 +1,4 @@
-node_modules
-allure-results
-test-results
-playwright-results
+node_modules/
+allure-results/
+test-results/
+playwright-results/
