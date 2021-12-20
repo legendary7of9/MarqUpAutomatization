@@ -7,11 +7,13 @@ test.beforeEach(async ({ page }) => {
     await page.goto('');
 });   
 
-test('signUpHere @regChecklistnewMedium @login', async ({ page }) => {
+test('eyeToggle @regChecklistnewLow @login', async ({ page }) => {
     console.log('signUpHereValidation');
     const signIn = new signInPage(page);
-    await signIn.signUpLink();
-    await expect(page).toHaveURL('/sign-up');
-    const locator = page.locator('#registration-signup');
-    await expect(locator).toHaveId('registration-signup');
+    await signIn.passwordField();
+    await signIn.eyeVisible();
+    const locator = page.locator('text=EmailPasswordsign in >> a');
+    await expect(locator).toHaveClass('toggle-ps hide');
+    await signIn.eyeHide();
+    await expect(locator).toHaveClass('toggle-ps');
 })

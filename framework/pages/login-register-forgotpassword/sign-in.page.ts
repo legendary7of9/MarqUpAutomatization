@@ -20,8 +20,8 @@ constructor(page: Page) {
     this.home = page.locator('#sign-in-home');
     this.email = page.locator('[formcontrolname="email"]');
     this.password = page.locator('[formcontrolname="password"]');
-    this.eyeToggle = page.locator('toggle-ps');
-    this.eyeToggleHide = page.locator('toggle-ps hide');
+    this.eyeToggle = page.locator('text=EmailPasswordsign in >> a');
+    this.eyeToggleHide = page.locator('text=EmailPasswordsign in >> a');
     this.signinButton = page.locator('#login-sign-in');
     this.forgotPassword = page.locator('#login-forgon-password');
     this.signup = page.locator('#login-sign-up');
@@ -38,7 +38,7 @@ async emailField() {
 
 async passwordField() {
     await this.password.click();
-    await this.password.fill('');
+    await this.password.fill('qwerty');
 }
 
 async eyeVisible() {

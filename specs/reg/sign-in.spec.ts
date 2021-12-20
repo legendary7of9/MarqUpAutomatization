@@ -59,11 +59,22 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('forgot-password-send');
     }),
 
-    test('signUpHere @regChecklistnewMedium @login', async ({ page }) => {
+    test('signUpHere @regChecklistnewHigh @login', async ({ page }) => {
         console.log('signUpHereValidation');
         const signIn = new signInPage(page);
         await signIn.signUpLink();
         await expect(page).toHaveURL('/sign-up');
         const locator = page.locator('#registration-signup');
         await expect(locator).toHaveId('registration-signup');
+    })
+
+    test('eyeToggle @regChecklistnewLow @login', async ({ page }) => {
+        console.log('signUpHereValidation');
+        const signIn = new signInPage(page);
+        await signIn.passwordField();
+        await signIn.eyeVisible();
+        const locator = page.locator('text=EmailPasswordsign in >> a');
+        await expect(locator).toHaveClass('toggle-ps');
+        await signIn.eyeHide();
+        await expect(locator).toHaveClass('toggle-ps hide');
     })
