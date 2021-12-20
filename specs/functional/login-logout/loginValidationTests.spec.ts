@@ -4,16 +4,16 @@ import { LoginPage } from '../../../framework'
 import { URL } from '../../../framework'
 
 
-test('homeButtonValidation', async ({ page }) => {
+test('homeButtonValidation @login @high', async ({ page }) => {
   
-  console.log("Forgot your password validation")
+  console.log("Home button validation")
   const mainPage = new LoginPage(page);
   const mainUrl = new URL(page);
   await mainUrl.goToUrl();
   await mainPage.homeButtonValidation();
 });
 
-test('forgotYourPassword', async ({ page }) => {
+test('forgotYourPassword @login', async ({ page }) => {
   
   console.log("Forgot your password validation")
   const mainPage = new LoginPage(page);
@@ -22,7 +22,7 @@ test('forgotYourPassword', async ({ page }) => {
   await mainPage.forgotYourPassword();
 });
 
-test('signUpHere', async ({ page }) => {
+test('signUpHere @login', async ({ page }) => {
   
   console.log("Sign Up here")
   const mainPage = new LoginPage(page);
@@ -31,30 +31,39 @@ test('signUpHere', async ({ page }) => {
   await mainPage.signUpHere();
 });
 
-test('emptyFields', async ({ page }) => {
+test('emptyFields @login', async ({ page }) => {
   
-  console.log("emptyFields")
+  console.log("Empty fields")
   const mainPage = new LoginPage(page);
   const mainUrl = new URL(page);
   await mainUrl.goToUrl();
   await mainPage.emptyFields();
 });
 
-test('shortPasswordValidation', async ({ page }) => {
+test('shortPasswordValidation @login', async ({ page }) => {
   
-  console.log("shortPasswordValidation")
+  console.log("Short password validation")
   const mainPage = new LoginPage(page);
   const mainUrl = new URL(page);
   await mainUrl.goToUrl();
   await mainPage.shortPasswordValidation();
 });
 
-test('incorrectEmailFormat', async ({ page }) => {
+test('incorrectEmailFormat @login', async ({ page }) => {
   
-  console.log("incorrectEmailFormat")
+  console.log("Incorrect email format")
   const mainPage = new LoginPage(page);
   const mainUrl = new URL(page);
   await mainUrl.goToUrl();
   await mainPage.incorrectEmailFormat();
+});
+
+test('eyeButtonValidation @login', async ({ page }) => {
+  
+  console.log("Eye button validation")
+  const mainPage = new LoginPage(page);
+  const mainUrl = new URL(page);
+  await mainUrl.goToUrl();
+  await mainPage.eyeButtonValidation();
 });
 

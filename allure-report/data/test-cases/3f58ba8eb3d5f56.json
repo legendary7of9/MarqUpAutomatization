@@ -1,0 +1,42 @@
+{
+  "uid" : "3f58ba8eb3d5f56",
+  "name" : "loginAA - invalidemail_2",
+  "fullName" : "loginAA - invalidemail_2",
+  "historyId" : "webkit specs/functional/login-logout/loginAA.spec.ts loginAA - invalidemail_2",
+  "time" : {
+    "start" : 1639645783952,
+    "stop" : 1639645783952,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "webkit"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginAA.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3f58ba8eb3d5f56.json",
+  "parameterValues" : [ ]
+}

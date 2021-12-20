@@ -1,17 +1,26 @@
+import { USERS } from './users';
+import { signInPage } from './pages';
 import { LoginPage } from './pages';
-import { URL } from './url';
+import { ForgotPasswordPage } from './pages';
+import { UserMenuBox } from './pages';
 
 const pageProvider = (page:any) => {
     return {
-        LoginPage
+        LoginPage,
+        ForgotPasswordPage,
+        UserMenuBox,
+        signInPage
     }
 }
 
-const url = {
-        URL
+const users = {
+    USERS
 }
 
-export {
+export {    
+    USERS,
+    signInPage,
     LoginPage,
-    URL
+    ForgotPasswordPage,
+    UserMenuBox
 }

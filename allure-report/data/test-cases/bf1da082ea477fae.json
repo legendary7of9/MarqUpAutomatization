@@ -1,0 +1,42 @@
+{
+  "uid" : "bf1da082ea477fae",
+  "name" : "homeButtonValidation @login @high",
+  "fullName" : "homeButtonValidation @login @high",
+  "historyId" : "test specs/functional/login-logout/loginValidationTests.spec.ts homeButtonValidation @login @high",
+  "time" : {
+    "start" : 1639654985797,
+    "stop" : 1639654987696,
+    "duration" : 1899
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "bf1da082ea477fae.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,180 @@
+{
+  "uid" : "58712ee3402f8fe8",
+  "name" : "shortPasswordValidation @login",
+  "fullName" : "shortPasswordValidation @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts shortPasswordValidation @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a1ac6f22f879cfb7",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455301,
+        "stop" : 1639652455301,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "f0df25a6a9ffe72a",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4648066e8257b81e",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "cdfaea553b921144",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "9488c01cc474e2d3",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "ee883b1f26d96a97",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "15eaca91a92ed26a",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "c35dcedea58cf8d8",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "19bcfda4d6e01897",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "c6f44d9dc9ffca12",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4ebd1cd355c8a4db",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "844c6ff6328cda87",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "123484225bf9308b",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "2d7b0c78ddc05b38",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "761151682a9e3906",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "fb866375ef2ddd28",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "eec1a8a87e53d7de",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "58712ee3402f8fe8.json",
+  "parameterValues" : [ ]
+}

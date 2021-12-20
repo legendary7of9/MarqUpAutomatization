@@ -1,0 +1,180 @@
+{
+  "uid" : "fe5a1afeca51cb73",
+  "name" : "signUpHere @login",
+  "fullName" : "signUpHere @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts signUpHere @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "942a52a509890be9",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455301,
+        "stop" : 1639652455301,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "e1a4558ab24f8f83",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "5d6ade8334800522",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "14991770be463551",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "85c888c61c9b08b1",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "2a647a5dda710c62",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "456d444d697196d8",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4b53f4f5fe9398c3",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "d389797409ffe09d",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "4e45293561dccd46",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "7a55da249a721300",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "f9643fd90e69b4c0",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "9d9a598b7d86deee",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "75b874f6cea3d7af",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "95d31c04e4c1e631",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "de4dab1df0b93d23",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "11d2305f01eb5e08",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fe5a1afeca51cb73.json",
+  "parameterValues" : [ ]
+}

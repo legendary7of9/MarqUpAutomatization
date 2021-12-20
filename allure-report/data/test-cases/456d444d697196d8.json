@@ -1,0 +1,42 @@
+{
+  "uid" : "456d444d697196d8",
+  "name" : "signUpHere @login",
+  "fullName" : "signUpHere @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts signUpHere @login",
+  "time" : {
+    "start" : 1639650480509,
+    "stop" : 1639650480509,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "456d444d697196d8.json",
+  "parameterValues" : [ ]
+}

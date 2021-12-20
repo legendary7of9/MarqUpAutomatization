@@ -1,0 +1,52 @@
+{
+  "uid" : "e9516d4d5c410b3",
+  "name" : "logout",
+  "fullName" : "logout",
+  "historyId" : "test specs/functional/login-logout/logout.spec.ts logout",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/logout.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "d943bdef309993b7",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639654776540,
+        "stop" : 1639654776540,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e9516d4d5c410b3.json",
+  "parameterValues" : [ ]
+}

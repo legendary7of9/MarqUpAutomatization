@@ -1,0 +1,42 @@
+{
+  "uid" : "2c8fd070fdfb19bf",
+  "name" : "logout",
+  "fullName" : "logout",
+  "historyId" : "reg specs/functional/login-logout/logout.spec.ts logout",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/logout.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2c8fd070fdfb19bf.json",
+  "parameterValues" : [ ]
+}

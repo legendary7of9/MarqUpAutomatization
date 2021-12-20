@@ -1,0 +1,180 @@
+{
+  "uid" : "9cd6ea248d4099fe",
+  "name" : "eyeButtonValidation @login",
+  "fullName" : "eyeButtonValidation @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts eyeButtonValidation @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e8b7a65b823f4bd7",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455301,
+        "stop" : 1639652455301,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "62950958990979b1",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "67795b9e3655b2e",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "cbd7a8831bf63bdf",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "c71730721c50e4ff",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "c683e9982d174e7f",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "a975303bcccebfc2",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "644e8b8e89e216b1",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "23eae15d2ff0ce13",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "b0c64d55901971ad",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6c169101632d1309",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "535598efc4934e48",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "7078cc35df0eac5",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "3bbcc572a255e29a",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "454fc11e2c0e99de",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "52f96bb327fcee42",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "30b683de320e2175",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9cd6ea248d4099fe.json",
+  "parameterValues" : [ ]
+}

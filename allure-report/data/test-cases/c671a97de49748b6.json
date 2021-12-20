@@ -1,0 +1,180 @@
+{
+  "uid" : "c671a97de49748b6",
+  "name" : "forgotYourPassword @login",
+  "fullName" : "forgotYourPassword @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts forgotYourPassword @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "4d442bee7eb6c05",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455301,
+        "stop" : 1639652455301,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "d485f5598c5e1483",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "20dfe6ed43f34a4d",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "2fb06197d64d987",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6e008e96dabad8d7",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639652455300,
+        "stop" : 1639652455300,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "dd97f4e39d7ce3ba",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "5498dbd2f46a5b27",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "95b48b59d2ae57f0",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8b96b4a4cdd5e16b",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "b7fba8c109f4f5f7",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "cb18c6b3e5286919",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650480509,
+        "stop" : 1639650480509,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8e420a0ca1ebc298",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "68aa5bf4cc407493",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "f4ea19febbb4668a",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8bc1c041588c7e3",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8ba83a864a195887",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "d211952788a6614b",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639650416069,
+        "stop" : 1639650416069,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c671a97de49748b6.json",
+  "parameterValues" : [ ]
+}

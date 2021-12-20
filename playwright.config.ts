@@ -1,25 +1,28 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig } from '@playwright/test';
+
 
 const config: PlaywrightTestConfig = {
   workers: 3,
   projects: [
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'], }
+      use: { browserName: 'webkit', }
     },
     {
-        name: 'chromium',
-        use: { ...devices['Desktop Chrome'], },
+      name: 'chrome',
+      use: { browserName: 'chromium', }
     },
     {
-        name: 'firefox',
-        use: { ...devices['Desktop Firefox'], }
-    },
+      name: 'firefox',
+      use: { browserName: 'firefox', }
+    }
   ],
   
   use: {
+    trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    video: 'on-first-retry'
+    video: 'on-first-retry',
+    baseURL: 'https://marqup.test.noredlines.com'
   },
   retries: 0,
   reporter: [

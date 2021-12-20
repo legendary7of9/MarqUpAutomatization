@@ -1,0 +1,52 @@
+{
+  "uid" : "e96bf1608cedbe05",
+  "name" : "eyeButtonValidation @login",
+  "fullName" : "eyeButtonValidation @login",
+  "historyId" : "test specs/functional/login-logout/loginValidationTests.spec.ts eyeButtonValidation @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "3636b54f8036f4bc",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1639654776540,
+        "stop" : 1639654776540,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e96bf1608cedbe05.json",
+  "parameterValues" : [ ]
+}

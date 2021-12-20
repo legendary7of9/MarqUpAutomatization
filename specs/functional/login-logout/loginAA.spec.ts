@@ -4,12 +4,14 @@ import { LoginPage } from '../../../framework'
 import { URL } from '../../../framework'
 
 
-
-test('loginAA', async ({ page }) => {
+const email = ['wehwjhdhwj@xzxsax', 'invalidemail_2']
+for (const el of email) {
+  test(`loginAA - ${el}`, async ({ page }) => {
   
-  console.log("Successful login")
-  const mainPage = new LoginPage(page);
-  const mainUrl = new URL(page);
-  await mainUrl.goToUrl();
-  await mainPage.loginAA();
-});
+    console.log("Successful login")
+    await page.click('button:has-text("sign in")');
+    await page.fill('[placeholder="Email"]', el);
+    const locator = page.locator('text=Please enter a valid email address');
+    await expect(locator).toHaveText(['Please enter a valid email address']);
+  });
+}

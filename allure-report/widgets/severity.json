@@ -1,1 +1,361 @@
-[ ]
+[ {
+  "uid" : "fe0d84051392b18c",
+  "name" : "loginAU",
+  "time" : {
+    "start" : 1639652456177,
+    "stop" : 1639652465237,
+    "duration" : 9060
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "8dda54f46e241376",
+  "name" : "incorrectEmailFormat @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "472ec03e0b20b578",
+  "name" : "homeButtonValidation @login",
+  "time" : {
+    "start" : 1639647310332,
+    "stop" : 1639647316656,
+    "duration" : 6324
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fe5a1afeca51cb73",
+  "name" : "signUpHere @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "8ea5fd58fda724b",
+  "name" : "shortPasswordValidation @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "192fd5b1c7f95b04",
+  "name" : "loginAU",
+  "time" : {
+    "start" : 1639645886402,
+    "stop" : 1639645889377,
+    "duration" : 2975
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "67fb8f690f0a03a8",
+  "name" : "logout",
+  "time" : {
+    "start" : 1639645885135,
+    "stop" : 1639645885135,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "de9386cfcfd008cc",
+  "name" : "eyeButtonValidation @login",
+  "time" : {
+    "start" : 1639647309947,
+    "stop" : 1639647309947,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "f21db942f922dd05",
+  "name" : "loginAA - invalidemail_2",
+  "time" : {
+    "start" : 1639645885134,
+    "stop" : 1639645885134,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "5d2f06cc8303b6d3",
+  "name" : "loginSA",
+  "time" : {
+    "start" : 1639652457150,
+    "stop" : 1639652465189,
+    "duration" : 8039
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "de919e7afc0b05ba",
+  "name" : "loginAU",
+  "time" : {
+    "start" : 1639654777556,
+    "stop" : 1639654779112,
+    "duration" : 1556
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "d48a947287d45f27",
+  "name" : "loginAA - wehwjhdhwj@xzxsax",
+  "time" : {
+    "start" : 1639652455751,
+    "stop" : 1639652465155,
+    "duration" : 9404
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "77af3b0cb539a910",
+  "name" : "emptyFields @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "5fbe8bc95c20e93",
+  "name" : "signUpHere @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "e9516d4d5c410b3",
+  "name" : "logout",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "5f3cb12cbc36f742",
+  "name" : "signUpHere @login",
+  "time" : {
+    "start" : 1639647322979,
+    "stop" : 1639647330562,
+    "duration" : 7583
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5cb0ad8a7c25338",
+  "name" : "forgotYourPassword @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "cb0d15c237b20ab7",
+  "name" : "logout",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "e96bf1608cedbe05",
+  "name" : "eyeButtonValidation @login",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "d4e739837dc268c7",
+  "name" : "shortPasswordValidation @login",
+  "time" : {
+    "start" : 1639647309947,
+    "stop" : 1639647309947,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "cc9920dfe82e14b9",
+  "name" : "homeButtonValidation @login @high",
+  "time" : {
+    "start" : 1639655340876,
+    "stop" : 1639655351064,
+    "duration" : 10188
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6c19dd9649a2fd31",
+  "name" : "incorrectEmailFormat @login",
+  "time" : {
+    "start" : 1639647309947,
+    "stop" : 1639647309947,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "b5cd1bf2145b3a5f",
+  "name" : "emptyFields @login",
+  "time" : {
+    "start" : 1639647330562,
+    "stop" : 1639647336423,
+    "duration" : 5861
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "28614ed699c78bdc",
+  "name" : "loginAA - invalidemail_2",
+  "time" : {
+    "start" : 1639654776540,
+    "stop" : 1639654776540,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "337f30108b0cdf55",
+  "name" : "loginAA - wehwjhdhwj@xzxsax",
+  "time" : {
+    "start" : 1639645885523,
+    "stop" : 1639645889396,
+    "duration" : 3873
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "676eced98dcba1a9",
+  "name" : "loginSA",
+  "time" : {
+    "start" : 1639645886532,
+    "stop" : 1639645889403,
+    "duration" : 2871
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "5e57b70154ffb0fb",
+  "name" : "loginSA",
+  "time" : {
+    "start" : 1639654778286,
+    "stop" : 1639654779110,
+    "duration" : 824
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "e07eee3855714a5e",
+  "name" : "emptyFields @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "3ffa23f51efec045",
+  "name" : "incorrectEmailFormat @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "834277f6df0c347d",
+  "name" : "homeButtonValidation @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "9cd6ea248d4099fe",
+  "name" : "eyeButtonValidation @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "81f7648d930d54d9",
+  "name" : "forgotYourPassword @login",
+  "time" : {
+    "start" : 1639647316657,
+    "stop" : 1639647322979,
+    "duration" : 6322
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c671a97de49748b6",
+  "name" : "forgotYourPassword @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "58712ee3402f8fe8",
+  "name" : "shortPasswordValidation @login",
+  "time" : {
+    "start" : 1639652455301,
+    "stop" : 1639652455301,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "59010ce30949d341",
+  "name" : "loginAA - invalidemail_2",
+  "time" : {
+    "start" : 1639652455300,
+    "stop" : 1639652455300,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "cb1f47d3dfa7ce7e",
+  "name" : "loginAA - wehwjhdhwj@xzxsax",
+  "time" : {
+    "start" : 1639654776935,
+    "stop" : 1639654779139,
+    "duration" : 2204
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+} ]

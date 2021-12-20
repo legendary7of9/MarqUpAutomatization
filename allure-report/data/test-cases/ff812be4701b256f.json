@@ -1,0 +1,42 @@
+{
+  "uid" : "ff812be4701b256f",
+  "name" : "emptyFields @login",
+  "fullName" : "emptyFields @login",
+  "historyId" : "reg specs/functional/login-logout/loginValidationTests.spec.ts emptyFields @login",
+  "time" : {
+    "start" : 1639650416069,
+    "stop" : 1639650416069,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "reg"
+  }, {
+    "name" : "suite",
+    "value" : "specs/functional/login-logout/loginValidationTests.spec.ts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ff812be4701b256f.json",
+  "parameterValues" : [ ]
+}
