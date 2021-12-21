@@ -27,18 +27,18 @@ class USERS {
     }
     async inactiveUser() {
         //Should be refactored
-        await this.page.fill('[formcontrolname="email"]', '')
-        await this.page.fill('[formcontrolname="password"]', '')
+        await this.page.fill('[formcontrolname="email"]', 'BanBanBanBan@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'qwerty')
     } 
     async pendingUser() {
         //Should be refactored
-        await this.page.fill('[formcontrolname="email"]', '')
-        await this.page.fill('[formcontrolname="password"]', '')
+        await this.page.fill('[formcontrolname="email"]', 'lokitor@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'qwerty')
     }
     async notexistingUser() {
         //Should be refactored
-        await this.page.fill('[formcontrolname="email"]', '')
-        await this.page.fill('[formcontrolname="password"]', '')
+        await this.page.fill('[formcontrolname="email"]', 'ososos@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'qwerty')
     }
 }
 

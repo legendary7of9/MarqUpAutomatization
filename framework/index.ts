@@ -1,15 +1,18 @@
 import { USERS } from './users';
 import { signInPage } from './pages';
-import { LoginPage } from './pages';
-import { ForgotPasswordPage } from './pages';
 import { UserMenuBox } from './pages';
+import { modelPage } from './pages';
+import { newModelPageSA } from './pages';
+import { newModelPageAAAU } from './pages';
 
 const pageProvider = (page:any) => {
     return {
-        LoginPage,
-        ForgotPasswordPage,
         UserMenuBox,
-        signInPage
+        signInPage,
+        modelPage,
+        newModelPageSA,
+        newModelPageAAAU
+
     }
 }
 
@@ -20,7 +23,8 @@ const users = {
 export {    
     USERS,
     signInPage,
-    LoginPage,
-    ForgotPasswordPage,
-    UserMenuBox
+    UserMenuBox,
+    modelPage,
+    newModelPageSA,
+    newModelPageAAAU
 }

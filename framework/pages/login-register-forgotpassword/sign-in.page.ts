@@ -4,11 +4,11 @@ import { expect, Locator, Page } from '@playwright/test';
 class signInPage {
     test: any;
     page: Page;
-    expect:any;
+    expect: any;
     home: Locator;
     email: Locator;
     password: Locator;
-    eyeToggle: Locator;
+    eye: Locator;
     eyeToggleHide: Locator;
     signinButton: Locator;
     forgotPassword: Locator;
@@ -20,8 +20,7 @@ constructor(page: Page) {
     this.home = page.locator('#sign-in-home');
     this.email = page.locator('[formcontrolname="email"]');
     this.password = page.locator('[formcontrolname="password"]');
-    this.eyeToggle = page.locator('text=EmailPasswordsign in >> a');
-    this.eyeToggleHide = page.locator('text=EmailPasswordsign in >> a');
+    this.eye = page.locator('#toggle-show-pass');
     this.signinButton = page.locator('#login-sign-in');
     this.forgotPassword = page.locator('#login-forgon-password');
     this.signup = page.locator('#login-sign-up');
@@ -38,11 +37,11 @@ async emailField() {
 
 async passwordField() {
     await this.password.click();
-    await this.password.fill('qwerty');
+    await this.password.fill('qwe');
 }
 
-async eyeVisible() {
-    await this.eyeToggle.click();
+async eyeToggle() {
+    await this.eye.click();
 }
 
 async eyeHide() {

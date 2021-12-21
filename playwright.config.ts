@@ -27,6 +27,7 @@ const config: PlaywrightTestConfig = {
   retries: 0,
   reporter: [
     ['list'],
+    //reporter: [ ['html', { open: 'on-failure' }] ],
     ['allure-playwright'],
     ['experimental-allure-playwright']
    ]
