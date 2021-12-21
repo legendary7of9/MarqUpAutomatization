@@ -8,7 +8,7 @@ npx playwright test --grep @Checklistnew
 //запуск всех тестов ClickTracts
 npx playwright test --grep @Clicktrackts
 
-//запуск всех тестов ChecklistnewHigh/Medium/Low
+//запуск тестов по рисковости ChecklistnewHigh/Medium/Low
 npx playwright test --grep @ChecklistnewHigh(or Medium or Low)
 
 //запуск тестов по рисковости ClicktractsHigh/Medium/Low
