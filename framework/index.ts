@@ -2,7 +2,6 @@ import { USERS } from './users';
 import { signInPage } from './pages';
 import { UserMenuBox } from './pages';
 import { modelPage } from './pages';
-import { newModelPageSA } from './pages';
 import { newModelPageAAAU } from './pages';
 
 const pageProvider = (page:any) => {
@@ -10,7 +9,6 @@ const pageProvider = (page:any) => {
         UserMenuBox,
         signInPage,
         modelPage,
-        newModelPageSA,
         newModelPageAAAU
 
     }
@@ -25,6 +23,5 @@ export {
     signInPage,
     UserMenuBox,
     modelPage,
-    newModelPageSA,
     newModelPageAAAU
 }

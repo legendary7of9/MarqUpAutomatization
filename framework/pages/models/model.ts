@@ -23,13 +23,26 @@ class modelPage {
         this.modalWindowNewModalButton = page.locator('#new-model');
         this.modalWindowCancelButton = page.locator('#cancel');
 
-
-
-
     }
 
     async addModelButton() {
         await this.addModel.click();
+    }
+
+    async addModelPopup() {
+        await this.addModelModalWindow.click();
+    }
+
+    async addModelChooseButton() {
+        await this.modalWindowChooseAModelButton.click();
+    }
+
+    async addModalNewModalButton() {
+        await this.modalWindowNewModalButton.click();
+    }
+
+    async addModalCancelButton() {
+        await this.modalWindowCancelButton.click();
     }
 
 

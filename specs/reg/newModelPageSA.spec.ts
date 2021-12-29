@@ -2,7 +2,6 @@ import { test , expect } from '@playwright/test'
 import { USERS } from '../../framework'
 import { signInPage } from '../../framework'
 import { modelPage } from '../../framework'
-import { newModelPageSA } from '../../framework'
 
 
 test.beforeEach(async ({ page }) => {
