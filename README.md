@@ -3,18 +3,18 @@
 npx playwright test --grep @reg
 
 //запуск всех тестов CheclistNew
-npx playwright test --grep @Checklistnew
+npx playwright test --grep @ChecklistNew
 
 //запуск всех тестов ClickTracts
 npx playwright test --grep @Clicktrackts
 
-//запуск тестов по рисковости ChecklistnewHigh/Medium/Low
-npx playwright test --grep @ChecklistnewHigh(or Medium or Low)
+//запуск тестов по рисковости ChecklistNewHigh/Medium/Low
+npx playwright test --grep @ChecklistNewHigh(or Medium or Low)
 
 //запуск тестов по рисковости ClicktractsHigh/Medium/Low
 npx playwright test --grep @ClicktractsHigh(or Medium or Low)
 
-//запуск тестов по рисковости Checklistnew or Clicktracts
+//запуск тестов по рисковости ChecklistNew or Clicktracts
 //можно запускать сколько угодно рсковостей одновременно используя символ “|” между каждым
 npx playwright test --g=“@ClicktractsHigh|ClicktractsLow”
 
