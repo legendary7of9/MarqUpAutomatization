@@ -2,9 +2,7 @@ import { Locator, Page } from '@playwright/test';
 
 
 class NewModelPage {
-    test: any;
     page: Page;
-    expect: any;
     nameField: Locator;
     descriptionField: Locator;
     typeDropDown: Locator;
@@ -43,9 +41,9 @@ class NewModelPage {
         await this.nameField.fill(text);
     }
 
-    async descriptionFieldFill() {
+    async descriptionFieldFill(text:string) {
         await this.descriptionField.click();
-        await this.descriptionField.fill('Autotest');
+        await this.descriptionField.fill('text');
     }
 
     async typeDropDownClick() {
@@ -69,7 +67,7 @@ class NewModelPage {
     async iIconClick() {
         await this.iIcon.click();
     }
-    //to be refactored
+
     async fromFieldFill(number: string) {
         await this.fromField.click();
         await this.fromField.fill(number);

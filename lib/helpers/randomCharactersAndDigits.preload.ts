@@ -9,38 +9,59 @@ export abstract class Helpers {
   
     return text;
   }
+  
+  public static generateRandomNumberNewDealFrom(min: 1, max: 31) {
+    var number = "";
 
-  public static generateRandomNumberFrom() {
-  var number = "";
-  var possible = "012345";
-  
-   for (var i = 0; i < 2; i++)
-  number += possible.charAt(Math.floor(Math.random() * possible.length));
-  
-  return number;
+    number += Math.floor(Math.random() * (max - min + 1) + min);
+
+    return number;
   }
 
-  public static generateRandomNumberTo() {
+  public static generateRandomNumberNewDealTo(min: 60, max: 100) {
     var number = "";
-    var possible = "06789";
-    
-     for (var i = 0; i < 2; i++)
-    number += possible.charAt(Math.floor(Math.random() * possible.length));
-    
+
+    number += Math.floor(Math.random() * (max - min + 1) + min);
+
     return number;
-    }
+  }
 
-  //public static generateRandomNumber() {
-    //var number = "";
-    //var possible = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20";
+  public static generateRandomNumberNewTermWeight(min: 31, max: 60) {
+    var number = "";
 
-    //for (var i = 0; i < 3; i++)
-    //number += possible.charAt(Math.ceil(Math.random() * 100));
+    number += Math.floor(Math.random() * (max - min + 1) + min);
 
-    //return number;
-  //}
-  
+    return number;
+  }
+
+  public static generateRandomNumberNewTermPoints(min: -5, max: 5) {
+    var number = "";
+
+    number += Math.floor(Math.random() * (max - min + 1) + min);
+
+    return number;
+  }
+
   }
 
 //Math.floor(Math.random() * (max - min + 1)) + min;
 
+  //public static generateRandomNumberFrom() {
+  //var number = "";
+  //var possible = "012345";
+  
+   //for (var i = 0; i < 2; i++)
+  //number += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+  //return number;
+  //}
+
+  //public static generateRandomNumberTo() {
+    //var number = "";
+    //var possible = "06789";
+    
+     //for (var i = 0; i < 2; i++)
+    //number += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+    //return number;
+    //}

@@ -19,13 +19,13 @@ test.beforeEach(async ({ page }) => {
     await model.addModalNewModalButtonClick();
 }); 
 
-test('clientFieldSA @regChecklistnewHigh @newModelPage', async ({ page }) => {
+test('clientFieldSA @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="account_id"]');
     await expect(locator).toHaveAttribute('placeholder', 'Client');
     await expect(locator).toHaveAttribute('role', 'listbox');
     })
 
-test('clientFieldValidationSA @regChecklistnewHigh @newModelPage', async ({ page }) => {
+test('clientFieldValidationSA @regChecklistNewLow @newModelPage', async ({ page }) => {
     const newModel = new NewModelPage(page);
     const locator = page.locator('#form-control-account_id');
     await newModel.nextButtonClick();

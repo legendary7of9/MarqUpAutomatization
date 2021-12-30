@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['sAdmin1 sAdmin']);
         }),
 
-    test('sign-inAA @regChecklistnewHigh @login', async ({ page }) => {
+    test('sign-inAA @regChecklistNewHigh @login', async ({ page }) => {
         const signIn = new SignInPage(page);
         const users = new Users(page);
         const locator = page.locator('#user-info');
@@ -30,7 +30,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['Owner AA W Client test test test testW Client 2 test test test test test test']);
         }),
 
-    test('sign-inAU @regChecklistnewHigh @login', async ({ page }) => {
+    test('sign-inAU @regChecklistNewHigh @login', async ({ page }) => {
         const signIn = new SignInPage(page);
         const users = new Users(page);
         const locator = page.locator('#user-info');
@@ -41,7 +41,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['Account user W client 2W Client 2 test test test test test test']);
         }),
 
-    test('homeButton @regChecklistnewLow @login', async ({ page }) => {
+    test('homeButton @regChecklistNewLow @login', async ({ page }) => {
         console.log('homeButtonValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#login-sign-in');
@@ -50,7 +50,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('login-sign-in');
         }),
 
-    test('forgotPasswordLink @regChecklistnewMedium @login', async ({ page }) => {
+    test('forgotPasswordLink @regChecklistNewMedium @login', async ({ page }) => {
         console.log('forgotPasswordValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#forgot-password-send');
@@ -59,7 +59,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('forgot-password-send');
         }),
 
-    test('signUpHere @regChecklistnewHigh @login', async ({ page }) => {
+    test('signUpHere @regChecklistNewHigh @login', async ({ page }) => {
         console.log('signUpHereValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#registration-signup');
@@ -68,7 +68,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('registration-signup');
         }),
 
-     test('eyeToggle @regChecklistnewLow @login', async ({ page }) => {
+     test('eyeToggle @regChecklistNewLow @login', async ({ page }) => {
         console.log('eyeToggleValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#toggle-show-pass');
@@ -79,7 +79,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveClass('toggle-ps');
         }),
         
-     test('placeholdersValidation @regChecklistnewLow @login', async ({ page }) => {
+     test('placeholdersValidation @regChecklistNewLow @login', async ({ page }) => {
         console.log('placeholdersValidation');
         const email = page.locator('[placeholder="Email"]');
         const pass = page.locator('[placeholder="Password"]');
@@ -88,7 +88,7 @@ test.beforeEach(async ({ page }) => {
             
         }),
 
-     test('emptyFieldsValidation @regChecklistnewMedium @login', async ({ page }) => {
+     test('emptyFieldsValidation @regChecklistNewMedium @login', async ({ page }) => {
         console.log('emptyFieldsValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('text=Please fill in this field');
@@ -96,7 +96,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['Please fill in this field', 'Please fill in this field']);
     }),
 
-    test('incorrectEmailValidation @regChecklistnewHigh @login', async ({ page }) => {
+    test('incorrectEmailValidation @regChecklistNewHigh @login', async ({ page }) => {
         console.log('incorrectEmailValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('text=Please enter a valid email address');
@@ -105,7 +105,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['Please enter a valid email address']);
     }),
 
-    test('passwordLessThen6 @regChecklistnewHigh @login', async ({ page }) => {
+    test('passwordLessThen6 @regChecklistNewHigh @login', async ({ page }) => {
         console.log('passwordLessThen6');
         const signIn = new SignInPage(page);
         const locator = page.locator('text=Password must be at least 6 characters long');
@@ -114,7 +114,7 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveText(['Password must be at least 6 characters long']);
     }),
 
-    test('inactivePendingNotexistUsers @regChecklistnewHigh @login', async ({ page }) => {
+    test('inactivePendingNotexistUsers @regChecklistNewHigh @login', async ({ page }) => {
         const signIn = new SignInPage(page);
         const users = new Users(page);
         const locator = page.locator('text=The user name or password is incorrect');
