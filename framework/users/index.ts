@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 
 
-class USERS {
+class Users {
     page: Page
 
     constructor(page: any) {
@@ -43,5 +43,5 @@ class USERS {
 }
 
 export {
-    USERS
+    Users
 }

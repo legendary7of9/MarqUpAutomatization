@@ -1,27 +1,27 @@
 import { test , expect } from '@playwright/test'
-import { USERS } from '../framework'
-import { signInPage } from '../framework'
-import { modelPage } from '../framework'
-import { newModelPageAAAU } from '../framework'
+import { Users } from '../framework'
+import { SignInPage } from '../framework'
+import { SideBar } from '../framework'
+import { ModelPage } from '../framework'
+import { NewModelPage } from '../framework'
 import { Helpers } from '../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
-    const users = new USERS(page);
-    const signIn = new signInPage(page);
-
-    const addModel = new modelPage(page);
-    test.setTimeout(120000);
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const sideBarMenu = new SideBar(page);
+    const model = new ModelPage(page);
     await page.goto('');
-    await users.AA();
+    await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
-    await page.goto('/models?&sort=name');
-    await addModel.addModelButton();
-    await addModel.addModalNewModalButton();
+    await sideBarMenu.sideBarModelClick();
+    await model.addModelButtonClick();
+    await model.addModalNewModalButtonClick();
 });   
 
     test.skip('qwerty @regChecklistnewHigh @login', async ({ page }) => {
-        const name = new newModelPageAAAU(page);
+        const name = new NewModelPage(page);
         //const randomString = Helpers.generateRandomString();
         await name.nameFieldFill(Helpers.generateRandomString());
         })
@@ -33,10 +33,8 @@ test.beforeEach(async ({ page }) => {
             //await name.fromFieldFill(Helpers.generateRandomNumber());
             //})
 
-            test('typeDropDownValidation @regChecklistnewLow @newModelPage', async ({ page }) => {
-                const typeDropDown = new newModelPageAAAU(page);
-                await typeDropDown.typeDropDownClick();
-                await page.click('body:nth-child(2) div.cdk-overlay-container:nth-child(8) > div.cdk-overlay-backdrop.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing');
-                const locator = page.locator('text=Please fill in this field');
-                await expect(locator).toHaveText(['Please fill in this field']);
-                })    
+            test('clientFieldSA @regChecklistnewHigh @newModelPage', async ({ page }) => {
+                const locator = page.locator('[formcontrolname="account_id"]');
+                await expect(locator).toHaveAttribute('placeholder', 'Client');
+                await expect(locator).toHaveAttribute('role', 'listbox');
+                })

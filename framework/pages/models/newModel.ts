@@ -1,7 +1,7 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 
-class newModelPageAAAU {
+class NewModelPage {
     test: any;
     page: Page;
     expect: any;
@@ -9,6 +9,7 @@ class newModelPageAAAU {
     descriptionField: Locator;
     typeDropDown: Locator;
     typeDropDownValue: Locator;
+    typeDropDownOtherValue: Locator;
     typeName: Locator;
     clientDropDown: Locator;
     clientDropDownValue: Locator;
@@ -25,10 +26,11 @@ class newModelPageAAAU {
         this.descriptionField = page.locator('[formcontrolname="description"]');
         this.typeDropDown = page.locator('[formcontrolname="type_id"]');
         this.typeDropDownValue = page.locator('#mat-option-19');
+        this.typeDropDownOtherValue = page.locator('#mat-option-21');
         this.typeName = page.locator('[formcontrolname="type_name"]');
         this.clientDropDown = page.locator('[formcontrolname="account_id"]');
-        this.clientDropDownValue = page.locator('#mat-option-104');
-        this.iIcon = page.locator('app-site-layout.ng-star-inserted:nth-child(2) div.container:nth-child(3) div.content app-model.ng-star-inserted:nth-child(3) section.section mat-card.card.mat-card form.ng-invalid.ng-touched.ng-dirty div.form-subtitle.popup-informer:nth-child(4) > mat-icon.popup-informer__ic.mat-icon.material-icons');
+        this.clientDropDownValue = page.locator('#mat-option-126');
+        this.iIcon = page.locator('#weight-scale-info');
         this.fromField = page.locator('[formcontrolname="weight_scale_from"]');
         this.toField = page.locator('[formcontrolname="weight_scale_to"]');
         this.nextButton = page.locator('#model-details-next');
@@ -55,6 +57,10 @@ class newModelPageAAAU {
         await this.typeDropDownValue.click();
     }
 
+    async typeDropDownOtherChoose() {
+        await this.typeDropDownOtherValue.click();
+    }
+
     async clientDropDownChoose() {
         await this.clientDropDown.click();
         await this.clientDropDownValue.click();
@@ -63,15 +69,31 @@ class newModelPageAAAU {
     async iIconClick() {
         await this.iIcon.click();
     }
-
+    //to be refactored
     async fromFieldFill(number: string) {
         await this.fromField.click();
-        await this.fromField.type(number);
+        await this.fromField.fill(number);
+    }
+
+    async fromFieldFillSmaller() {
+        await this.fromField.click();
+        await this.fromField.fill('8');
+    }
+
+    async fromFieldValidation() {
+        await this.fromField.click();
+        await this.fromField.fill('8');
+        await this.page.keyboard.press('Backspace');
     }
 
     async toFieldFill(number: string) {
         await this.toField.click();
         await this.toField.fill(number);
+    }
+
+    async toFieldFillSmaller() {
+        await this.toField.click();
+        await this.toField.fill('5');
     }
 
     async nextButtonClick() {
@@ -92,5 +114,5 @@ class newModelPageAAAU {
 
 
 export {
-    newModelPageAAAU
+    NewModelPage
 }

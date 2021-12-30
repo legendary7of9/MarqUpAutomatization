@@ -1,7 +1,7 @@
-import { expect, Locator, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 
-class signInPage {
+class SignInPage {
     test: any;
     page: Page;
     expect: any;
@@ -65,5 +65,5 @@ async signUpLink() {
 
 
 export {
-    signInPage
+    SignInPage
 }

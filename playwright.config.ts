@@ -2,7 +2,7 @@ import { PlaywrightTestConfig } from '@playwright/test';
 
 
 const config: PlaywrightTestConfig = {
-  workers: 3,
+  timeout: 60000,
   projects: [
     {
       name: 'webkit',

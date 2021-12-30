@@ -1,7 +1,7 @@
 import { expect, Locator, Page } from '@playwright/test';
 
 
-class modelPage {
+class ModelPage {
     test: any;
     page: Page;
     expect: any;
@@ -10,6 +10,8 @@ class modelPage {
     modalWindowChooseAModelButton: Locator;
     modalWindowNewModalButton: Locator;
     modalWindowCancelButton: Locator;
+
+    createFilter: Locator;
 
 
 
@@ -23,26 +25,32 @@ class modelPage {
         this.modalWindowNewModalButton = page.locator('#new-model');
         this.modalWindowCancelButton = page.locator('#cancel');
 
+        this.createFilter = page.locator('#created-column-sort');
+
     }
 
-    async addModelButton() {
+    async addModelButtonClick() {
         await this.addModel.click();
     }
 
-    async addModelPopup() {
+    async addModelPopupClick() {
         await this.addModelModalWindow.click();
     }
 
-    async addModelChooseButton() {
+    async addModelChooseButtonClick() {
         await this.modalWindowChooseAModelButton.click();
     }
 
-    async addModalNewModalButton() {
+    async addModalNewModalButtonClick() {
         await this.modalWindowNewModalButton.click();
     }
 
-    async addModalCancelButton() {
+    async addModalCancelButtonClick() {
         await this.modalWindowCancelButton.click();
+    }
+
+    async createFilterClick() {
+        await this.createFilter.click();
     }
 
 
@@ -51,5 +59,5 @@ class modelPage {
 
 
 export {
-    modelPage
+    ModelPage
 }

@@ -1,27 +1,34 @@
-import { USERS } from './users';
-import { signInPage } from './pages';
+import { Users } from './users';
+import { SideBar } from './pages';
+import { SignInPage } from './pages';
 import { UserMenuBox } from './pages';
-import { modelPage } from './pages';
-import { newModelPageAAAU } from './pages';
+import { ModelPage } from './pages';
+import { NewModelPage } from './pages';
+import { NewTermPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
+        SideBar,
         UserMenuBox,
-        signInPage,
-        modelPage,
-        newModelPageAAAU
+        SignInPage,
+        ModelPage,
+        NewModelPage,
+        NewTermPage
 
     }
 }
 
 const users = {
-    USERS
+    Users
 }
 
+
 export {    
-    USERS,
-    signInPage,
+    Users,
+    SideBar,
+    SignInPage,
     UserMenuBox,
-    modelPage,
-    newModelPageAAAU
+    ModelPage,
+    NewModelPage,
+    NewTermPage
 }
