@@ -1,19 +1,22 @@
 import { Users } from './users';
-import { SideBar } from './pages';
+import { SideBar, UserBar } from './pages';
 import { SignInPage } from './pages';
 import { UserMenuBox } from './pages';
 import { ModelPage } from './pages';
-import { NewModelPage } from './pages';
-import { NewTermPage } from './pages';
+import { NewEditModelPage } from './pages';
+import { ViewingModelPage } from './pages';
+import { NewEditTermPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
         SideBar,
+        UserBar,
         UserMenuBox,
         SignInPage,
         ModelPage,
-        NewModelPage,
-        NewTermPage
+        NewEditModelPage,
+        ViewingModelPage,
+        NewEditTermPage
 
     }
 }
@@ -26,9 +29,11 @@ const users = {
 export {    
     Users,
     SideBar,
+    UserBar,
     SignInPage,
     UserMenuBox,
     ModelPage,
-    NewModelPage,
-    NewTermPage
+    NewEditModelPage,
+    ViewingModelPage,
+    NewEditTermPage
 }

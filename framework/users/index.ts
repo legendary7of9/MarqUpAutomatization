@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import test, { Page } from '@playwright/test';
 
 
 class Users {
@@ -9,37 +9,42 @@ class Users {
     }
   
     async SA() {
-        //Should be refactored
         await this.page.fill('[formcontrolname="email"]', 'sadmin1@marqup.com')
         await this.page.fill('[formcontrolname="password"]', '123qwe')
     }
 
     async AA() {
-        //Should be refactored
-        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+3333@mobindustry.net')
-        await this.page.fill('[formcontrolname="password"]', 'Zaq1234567!')
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+1111@mobindustry.net')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
     }
 
     async AU() {
-        //Should be refactored
-        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+485220@mobindustry.net')
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+8423@mobindustry.net')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
     }
     async inactiveUser() {
-        //Should be refactored
         await this.page.fill('[formcontrolname="email"]', 'BanBanBanBan@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'qwerty')
     } 
     async pendingUser() {
-        //Should be refactored
         await this.page.fill('[formcontrolname="email"]', 'lokitor@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'qwerty')
     }
     async notexistingUser() {
-        //Should be refactored
         await this.page.fill('[formcontrolname="email"]', 'ososos@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'qwerty')
     }
+
+    async AASubscriptionLimits() {
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+6362@mobindustry.net')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
+    async AUSubscriptionLimits() {
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+63628@mobindustry.net')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
 }
 
 export {

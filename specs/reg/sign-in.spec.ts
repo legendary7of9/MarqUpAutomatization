@@ -4,7 +4,6 @@ import { SignInPage } from '../../framework'
 
 
 test.beforeEach(async ({ page }) => {
-    test.setTimeout(120000);
     await page.goto('');
 
 }); 
@@ -27,7 +26,7 @@ test.beforeEach(async ({ page }) => {
         await users.AA();
         await signIn.signInButton();
         await expect(page).toHaveURL('/dashboard');
-        await expect(locator).toHaveText(['Owner AA W Client test test test testW Client 2 test test test test test test']);
+        await expect(locator).toHaveText(['AA Client HTClient 1HT(test)']);
         }),
 
     test('sign-inAU @regChecklistNewHigh @login', async ({ page }) => {
@@ -37,11 +36,13 @@ test.beforeEach(async ({ page }) => {
         console.log('login Account User');
         await users.AU();
         await signIn.signInButton();
-        await expect(page).toHaveURL('/clients/268');
-        await expect(locator).toHaveText(['Account user W client 2W Client 2 test test test test test test']);
+        await expect(page).toHaveURL('/clients/265');
+        await expect(locator).toHaveText(['account User TestClient 1HT(test)']);
         }),
 
-    test('homeButton @regChecklistNewLow @login', async ({ page }) => {
+    test('homeButton @regChecklistNewLow @login', async ({ page, browserName }) => {
+        test.skip(browserName === 'chromium');
+        test.skip(browserName === 'firefox');
         console.log('homeButtonValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#login-sign-in');
@@ -50,7 +51,9 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('login-sign-in');
         }),
 
-    test('forgotPasswordLink @regChecklistNewMedium @login', async ({ page }) => {
+    test('forgotPasswordLink @regChecklistNewMedium @login', async ({ page, browserName }) => {
+        test.skip(browserName === 'webkit');
+        test.skip(browserName === 'firefox');
         console.log('forgotPasswordValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#forgot-password-send');
@@ -68,7 +71,9 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveId('registration-signup');
         }),
 
-     test('eyeToggle @regChecklistNewLow @login', async ({ page }) => {
+     test('eyeToggle @regChecklistNewLow @login', async ({ page, browserName }) => {
+        test.skip(browserName === 'webkit');
+        test.skip(browserName === 'chromium');
         console.log('eyeToggleValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#toggle-show-pass');
@@ -79,7 +84,9 @@ test.beforeEach(async ({ page }) => {
         await expect(locator).toHaveClass('toggle-ps');
         }),
         
-     test('placeholdersValidation @regChecklistNewLow @login', async ({ page }) => {
+     test('placeholdersValidation @regChecklistNewLow @login', async ({ page, browserName }) => {
+        test.skip(browserName === 'chromium');
+        test.skip(browserName === 'firefox');
         console.log('placeholdersValidation');
         const email = page.locator('[placeholder="Email"]');
         const pass = page.locator('[placeholder="Password"]');
@@ -88,7 +95,9 @@ test.beforeEach(async ({ page }) => {
             
         }),
 
-     test('emptyFieldsValidation @regChecklistNewMedium @login', async ({ page }) => {
+     test('emptyFieldsValidation @regChecklistNewMedium @login', async ({ page, browserName }) => {
+        test.skip(browserName === 'webkit');
+        test.skip(browserName === 'firefox');
         console.log('emptyFieldsValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('text=Please fill in this field');

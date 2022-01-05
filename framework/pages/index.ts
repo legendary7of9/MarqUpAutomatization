@@ -1,9 +1,11 @@
-export * from './sidebarmenu/sidebar'
+export * from './navigation/sidebar'
+export * from './navigation/userbar'
 export * from './login-register-forgotpassword/sign-in'
 
 export * from './models/model'
-export * from './models/newModel'
-export * from './models/newTerm'
+export * from './models/new-editModel'
+export * from './models/viewingModelPage'
+export * from './models/new-editTerm'
 
 
 

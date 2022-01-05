@@ -1,6 +1,5 @@
 import { PlaywrightTestConfig } from '@playwright/test';
 
-
 const config: PlaywrightTestConfig = {
   timeout: 60000,
   workers: 3,
@@ -25,7 +24,7 @@ const config: PlaywrightTestConfig = {
     video: 'on-first-retry',
     baseURL: 'https://marqup.test.noredlines.com'
   },
-  retries: 0,
+  retries: 3,
   reporter: [
     ['list'],
     //reporter: [ ['html', { open: 'on-failure' }] ],

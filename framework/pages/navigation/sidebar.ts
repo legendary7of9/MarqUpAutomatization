@@ -31,7 +31,7 @@ class SideBar {
     }
 
     async sideBarModelClick() {
-        await this.models.click();
+        await this.models.dblclick();
     }
 
     async sideBarDealsClick() {

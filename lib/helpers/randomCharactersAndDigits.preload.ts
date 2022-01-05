@@ -10,7 +10,7 @@ export abstract class Helpers {
     return text;
   }
   
-  public static generateRandomNumberNewDealFrom(min: 1, max: 31) {
+  public static generateRandomNumberNewModelFrom(min: 1, max: 31) {
     var number = "";
 
     number += Math.floor(Math.random() * (max - min + 1) + min);
@@ -18,7 +18,7 @@ export abstract class Helpers {
     return number;
   }
 
-  public static generateRandomNumberNewDealTo(min: 60, max: 100) {
+  public static generateRandomNumberNewModelTo(min: 60, max: 100) {
     var number = "";
 
     number += Math.floor(Math.random() * (max - min + 1) + min);
@@ -34,11 +34,12 @@ export abstract class Helpers {
     return number;
   }
 
-  public static generateRandomNumberNewTermPoints(min: -5, max: 5) {
+  public static generateRandomNumberNewTermPoints() {
     var number = "";
-
-    number += Math.floor(Math.random() * (max - min + 1) + min);
-
+    var possible = [ -0.5, -1, -1.5, -2, -2.5, -3, -3.5, -4, -4.5, -5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ];
+  
+   number += possible[Math.floor(Math.random() * possible.length)];
+  
     return number;
   }
 

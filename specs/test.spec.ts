@@ -1,47 +1,49 @@
 import { test , expect } from '@playwright/test'
-import { Users } from '../framework'
+import { ModelPage, NewEditModelPage, Users, SideBar, ViewingModelPage } from '../framework'
+import { NewEditTermPage } from '../framework'
 import { SignInPage } from '../framework'
-import { SideBar } from '../framework'
-import { ModelPage } from '../framework'
-import { NewModelPage } from '../framework'
 import { Helpers } from '../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const sideBarMenu = new SideBar(page);
-    const model = new ModelPage(page);
-    const newModel = new NewModelPage(page);
     await page.goto('');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
-    await sideBarMenu.sideBarModelClick();
-    await model.addModelButtonClick();
-    await model.addModalNewModalButtonClick();
+});   
+
+
+test('saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
+    const newModel = new NewEditModelPage(page);
+    const newTerm = new NewEditTermPage(page);
+    const sideBarMenu = new SideBar(page);
+    const model = new ModelPage(page);
+    const viewModel = new ViewingModelPage(page);
+    const descriptionViewTermField = page.locator('td.mat-cell.cdk-column-description.mat-column-description.ng-star-inserted >> nth=0');
+    const termPage = page.locator('#form-control-term');
+    console.log('newTerm Add Another Term Button');
+    await page.goto('/models/add-model');
     await newModel.nameFieldFill(Helpers.generateRandomString());
     await newModel.descriptionFieldFill(Helpers.generateRandomString());
     await newModel.typeDropDownChoose();
-    await newModel.fromFieldFill(Helpers.generateRandomNumberNewDealFrom(1, 31));
-    await newModel.toFieldFill(Helpers.generateRandomNumberNewDealTo(60, 100));
+    await newModel.fromFieldFill(Helpers.generateRandomNumberNewModelFrom(1, 31));
+    await newModel.toFieldFill(Helpers.generateRandomNumberNewModelTo(60, 100));
     await newModel.nextButtonClick();
-});  
-
-    test.skip('qwerty @regChecklistNewHigh @login', async ({ page }) => {
-        const name = new NewModelPage(page);
-        //const randomString = Helpers.generateRandomString();
-        await name.nameFieldFill(Helpers.generateRandomString());
-        })
-
-        //test('qwerty2 @regChecklistNewHigh @login', async ({ page }) => {
-            //const name = new newModelPageAAAU(page);
-            //const randomString = Helpers.generateRandomString();
-            //await name.toFieldFill(Helpers.generateRandomNumber());
-            //await name.fromFieldFill(Helpers.generateRandomNumber());
-            //})
-
-            test('descriptionField @regChecklistNewLow @newTermPage', async ({ page }) => {
-                const locator = page.locator('[formcontrolname="description"]');
-                await expect(locator).toHaveAttribute('placeholder', 'Description');
-                await expect(locator).toHaveAttribute('maxlength', '255');
-                })
+    await newTerm.termFieldFill(Helpers.generateRandomString());
+    await newTerm.manualInputWeightFieldRandomFill(Helpers.generateRandomNumberNewTermWeight(31, 60));
+    await newTerm.descriptionFieldFill();
+    await newTerm.questionFieldFill(Helpers.generateRandomString());
+    await newTerm.answerFieldFill(Helpers.generateRandomString());
+    await newTerm.manualInputPointsFieldFill(Helpers.generateRandomNumberNewTermPoints());
+    await newTerm.addSampleButtonClick();
+    await newTerm.sampleFieldFill(Helpers.generateRandomString());
+    await newTerm.addAnotherTermButtonClick();
+    await expect(termPage).toHaveText('Term');
+    await sideBarMenu.sideBarModelClick();
+    await model.createFilterClick();
+    await model.listFirstItemFocus();
+    await model.linkFirstItemClick();
+    await viewModel.listFirstItemTermClick(); 
+    await expect(descriptionViewTermField).toHaveText('autotest');
+    })

@@ -14,6 +14,14 @@ class ModelPage {
     createFilter: Locator;
 
 
+    threeDotsMenuButton: Locator;
+    threeDotsMenuEditButton: Locator;
+    threeDotsMenuActivateButton: Locator;
+    threeDotsMenuArchivateButton: Locator;
+    threeDotsMenuSaveAsNewButton: Locator;
+    listFirstItem: Locator;
+    linkFirstItem: Locator;
+
 
 
 
@@ -26,6 +34,16 @@ class ModelPage {
         this.modalWindowCancelButton = page.locator('#cancel');
 
         this.createFilter = page.locator('#created-column-sort');
+
+        this.threeDotsMenuButton = page.locator('.mat-icon-button >> nth=0');
+        this.threeDotsMenuEditButton = page.locator('.context-menu-edit');
+        this.threeDotsMenuActivateButton = page.locator('.context-menu-archive.action-active');
+        this.threeDotsMenuArchivateButton = page.locator('.context-menu-archive.action-archive');
+        this.threeDotsMenuSaveAsNewButton = page.locator('.context-menu-save-as-new');
+
+        this.listFirstItem = page.locator('tr.mat-row.ng-star-inserted >> nth=0');
+        this.linkFirstItem = page.locator('a.td__link.model-name-column-link >> nth=0');
+
 
     }
 
@@ -53,7 +71,35 @@ class ModelPage {
         await this.createFilter.click();
     }
 
+    async threeDotsMenuButtonClick() {
+        await this.threeDotsMenuButton.click();
+    }
 
+    async threeDotsMenuEditButtonClick() {
+        await this.threeDotsMenuEditButton.click();
+    }
+
+    async threeDotsMenuActivateButtonClick() {
+        await this.threeDotsMenuActivateButton.click();
+    }
+
+    async threeDotsMenuArchiveButtonClick() {
+        await this.threeDotsMenuArchivateButton.click();
+    }
+
+    async threeDotsMenuSaveAsNewButtonClick() {
+        await this.threeDotsMenuSaveAsNewButton.click();
+    }
+
+
+
+    async listFirstItemFocus() {
+        await this.listFirstItem.focus();
+    }
+
+    async linkFirstItemClick() {
+        await this.linkFirstItem.click();
+    }
 
 }
 
