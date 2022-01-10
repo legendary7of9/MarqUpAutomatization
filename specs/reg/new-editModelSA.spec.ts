@@ -27,7 +27,8 @@ test('clientFieldSA @regChecklistNewHigh @newModelPage', async ({ page }) => {
     await expect(locator).toHaveAttribute('role', 'listbox');
     })
 
-test('clientFieldValidationSA @regChecklistNewLow @newModelPage', async ({ page }) => {
+test('clientFieldValidationSA @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('#form-control-account_id mat-error');
     console.log('newModel Client Field SA valiadtion');

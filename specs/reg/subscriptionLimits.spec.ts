@@ -12,7 +12,6 @@ test.beforeEach(async ({ page }) => {
 
 test('subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const editModel = new NewEditModelPage(page);
@@ -59,7 +58,6 @@ test('subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage', asy
 
 test('subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const editModel = new NewEditModelPage(page);

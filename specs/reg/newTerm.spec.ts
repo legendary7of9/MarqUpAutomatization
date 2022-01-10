@@ -19,7 +19,6 @@ test.beforeEach(async ({ page }) => {
 
 test('termField @regChecklistNewMedium @newTermPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const termField = page.locator('[formcontrolname="term"]');
     console.log('newTerm Term Field');
     await page.goto('/models/1048/terms/add-term');
@@ -29,7 +28,6 @@ test('termField @regChecklistNewMedium @newTermPage', async ({ page, browserName
 
 test('termFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
     const newTerm = new NewEditTermPage(page);
     const termField = page.locator('#form-control-term mat-error');
     console.log('newTerm Term Field validation');
@@ -56,7 +54,6 @@ test('weightFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => 
     })
     
 test('weightFieldManual @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
     test.skip(browserName === 'chromium');
     const newTerm = new NewEditTermPage(page);
     const valueSlider = page.locator('#form-control-weight');
@@ -69,8 +66,7 @@ test('weightFieldManual @regChecklistNewMedium @newTermPage', async ({ page, bro
     })
     
 test('weightFieldManualValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'webkit');
     const newTerm = new NewEditTermPage(page);
     const valueManual = page.locator('#form-control-weight-manual mat-error');
     console.log('newTerm Weight Field Manual validation');
@@ -80,8 +76,7 @@ test('weightFieldManualValidation @regChecklistNewLow @newTermPage', async ({ pa
     })
 
 test('descriptionField @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'chromium');
     const descriptionField = page.locator('[formcontrolname="description"]');
     console.log('newTerm Description Field');
     await page.goto('/models/1048/terms/add-term');
@@ -99,7 +94,6 @@ test('questionField @regChecklistNewHigh @newTermPage', async ({ page }) => {
 
 test('questionFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'chromium');
     const newTerm = new NewEditTermPage(page);
     const questionField = page.locator('#form-control-question mat-error');
     console.log('newTerm Question Field validation');
@@ -118,7 +112,6 @@ test('answerField @regChecklistNewHigh @newTermPage', async ({ page }) => {
 
 test('answerFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const newTerm = new NewEditTermPage(page);
     const answerField = page.locator('#form-control-answer-0 mat-error');
     console.log('newTerm Answer Field validation');
@@ -146,7 +139,6 @@ test('pointsFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => 
 
 test('pointsFieldManual @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
     const newTerm = new NewEditTermPage(page);
     const valueSlider = page.locator('#form-control-answer-weight-0');
     const valueManual = page.locator('#form-control-answer-weight-manual-0 input');
@@ -164,7 +156,6 @@ test('pointsFieldManual @regChecklistNewMedium @newTermPage', async ({ page, bro
     })
 
 test('answerRadioButton @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
     test.skip(browserName === 'chromium');
     const newTerm = new NewEditTermPage(page);
     const radioButton0 = page.locator('#form-control-is_model-0 mat-radio-button');
@@ -344,8 +335,7 @@ test('deleteAnswerIcon @regChecklistNewHigh @newTermPage', async ({ page }) => {
     })
 
 test('addAnswerButtonValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'webkit');
     const newTerm = new NewEditTermPage(page);
     const answerField = page.locator('#form-control-answer-0 mat-error');
     console.log('newTerm Add Answer Button validation');
@@ -378,8 +368,7 @@ test('addSampleButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     })
 
 test('sampleFieldsValidation @regChecklistNewLow @newTermPage', async ({ page, browserName}) => {
-    test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'chromium');
     const newTerm = new NewEditTermPage(page);
     const sampeFieldProperties = page.locator('[formcontrolname="sample"]');
     const sampleFieldValidation = page.locator('#form-control-sample-0 mat-error');
@@ -394,7 +383,6 @@ test('sampleFieldsValidation @regChecklistNewLow @newTermPage', async ({ page, b
 
 test('cancelButton @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'chromium');
     const newTerm = new NewEditTermPage(page);
     console.log('newTerm Cancel Button');
     await page.goto('/models/1048/terms/add-term');
@@ -437,7 +425,6 @@ test('saveButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
 
 test('saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const newTerm = new NewEditTermPage(page);
     const oopsPopup = page.locator('.mat-dialog-container');
     const oopsPopupText = page.locator('.mat-dialog-container header');
@@ -475,37 +462,27 @@ test('addAnotherTermButtonPointsFieldDidNotChoose @regChecklistNewHigh @newTermP
     await expect(page).toHaveURL('/models/1048/terms/add-term');
     })
 
-test('addAnotherTermButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+test('addAnotherTermButton @regChecklistNewHigh @newTermPage', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
     const newTerm = new NewEditTermPage(page);
-    const sideBarMenu = new SideBar(page);
-    const model = new ModelPage(page);
     const viewModel = new ViewingModelPage(page);
     const descriptionViewTermField = page.locator('td.mat-cell.cdk-column-description.mat-column-description.ng-star-inserted >> nth=0');
     const termPage = page.locator('#form-control-term');
     console.log('newTerm Add Another Term Button');
-    await page.goto('/models/add-model');
-    await newModel.nameFieldFill(Helpers.generateRandomString());
-    await newModel.descriptionFieldFill(Helpers.generateRandomString());
-    await newModel.typeDropDownChoose();
-    await newModel.fromFieldFill(Helpers.generateRandomNumberNewModelFrom(1, 31));
-    await newModel.toFieldFill(Helpers.generateRandomNumberNewModelTo(60, 100));
-    await newModel.nextButtonClick();
+    await page.goto('/models/1460/terms?&sort=term');
+    await viewModel.addTermButtonClick();
     await newTerm.termFieldFill(Helpers.generateRandomString());
     await newTerm.manualInputWeightFieldRandomFill(Helpers.generateRandomNumberNewTermWeight(31, 60));
     await newTerm.descriptionFieldFill();
     await newTerm.questionFieldFill(Helpers.generateRandomString());
     await newTerm.answerFieldFill(Helpers.generateRandomString());
     await newTerm.manualInputPointsFieldFill(Helpers.generateRandomNumberNewTermPoints());
-    await newTerm.addSampleButtonClick();
-    await newTerm.sampleFieldFill(Helpers.generateRandomString());
     await newTerm.addAnotherTermButtonClick();
     await expect(termPage).toHaveText('Term');
-    await sideBarMenu.sideBarModelClick();
-    await model.createFilterClick();
-    await model.listFirstItemFocus();
-    await model.linkFirstItemClick();
+    await page.goBack();
     await viewModel.listFirstItemTermClick(); 
     await expect(descriptionViewTermField).toHaveText('autotest');
+    await viewModel.listFirstItemLinkTermClick();
+    await newTerm.pushToArchiveButtonClick();
+    await newTerm.pushToArchivePopupArchiveButtonClick();
     })
-

@@ -1,0 +1,3433 @@
+{
+  "files": [
+    {
+      "fileId": "09b889f2c066331bac41b6773aba71890dea49c8",
+      "fileName": "specs/reg/new-editModelSA.spec.ts",
+      "tests": [
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-10eb750fe1335b417b5b936e807b14aaac9e2430",
+          "title": "editClientFieldSA @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 242942,
+          "outcome": "unexpected",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:39"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-368646627323deafe7f0704a08c991b7e17fa1b3",
+          "title": "editClientFieldSA @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 244905,
+          "outcome": "unexpected",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:39"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-9a424c4b9c9a037f83cbf566e014124f52f0cb0c",
+          "title": "clientFieldSA @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 23,
+            "column": 1
+          },
+          "duration": 8795,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:23"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-5dd09b416009661c275f2a440bc5ed523e63009a",
+          "title": "clientFieldSA @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 23,
+            "column": 1
+          },
+          "duration": 7899,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:23"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-2cfb47f27dd74ab855cc60eedbe21ede81e075d6",
+          "title": "clientFieldValidationSA @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 30,
+            "column": 1
+          },
+          "duration": 9043,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:30"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "09b889f2c066331bac41b6773aba71890dea49c8-989ab97a0740afa60c35cd87fcc9fa59bca038dc",
+          "title": "clientFieldValidationSA @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editModelSA.spec.ts",
+            "line": 30,
+            "column": 1
+          },
+          "duration": 7137,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editModelSA.spec.ts:30"
+          ],
+          "ok": false
+        }
+      ],
+      "stats": {
+        "total": 6,
+        "expected": 3,
+        "unexpected": 2,
+        "flaky": 0,
+        "skipped": 1,
+        "ok": false,
+        "duration": 520721
+      }
+    },
+    {
+      "fileId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a",
+      "fileName": "specs/reg/newTerm.spec.ts",
+      "tests": [
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-04369e8388fd8e11fb852726b36a6850a5b96d2a",
+          "title": "weightFieldSlider @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 73107,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newTerm.spec.ts:39"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-662f7e49c010da952e17c9c893f23eef3007430a",
+          "title": "weightFieldManual @regChecklistNewMedium @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 131501,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newTerm.spec.ts:56"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-93143425a5ddc2d2c55cce9e13b15bc5af7bb68e",
+          "title": "answerFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 72877,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newTerm.spec.ts:113"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-e203f443fb88df7cc5d9d04e25590414b1d1c548",
+          "title": "saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 426,
+            "column": 1
+          },
+          "duration": 74837,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newTerm.spec.ts:426"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-db6a6e39e0c08e2828a1b5b70ffb84026b1c4513",
+          "title": "termField @regChecklistNewMedium @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 20,
+            "column": 1
+          },
+          "duration": 24206,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:20"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-bed9e270bf45813e6f59d2695c4a92fb5b58bc27",
+          "title": "termField @regChecklistNewMedium @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 20,
+            "column": 1
+          },
+          "duration": 6940,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:20"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-ad9191a2843ca60c0ec5044e388853a38eb32e31",
+          "title": "termFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 29,
+            "column": 1
+          },
+          "duration": 9785,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:29"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-b12bd114c2bc3d3198e8b9fdc6e6467134559dfb",
+          "title": "termFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 29,
+            "column": 1
+          },
+          "duration": 10296,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:29"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-a5e21b1d9c30e84a8731a5e385ba7fe8e601775f",
+          "title": "weightFieldSlider @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 9485,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:39"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-1988c65eea8463c043fd104b141d43d1082a7b0d",
+          "title": "weightFieldManual @regChecklistNewMedium @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 56,
+            "column": 1
+          },
+          "duration": 7899,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:56"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-f0d6034e4e89ba4d446e3ecbf7b723535b664ea3",
+          "title": "weightFieldManualValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 68,
+            "column": 1
+          },
+          "duration": 8852,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:68"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-28f97f7eff43215d3825f0c04911a495643ecc27",
+          "title": "weightFieldManualValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 68,
+            "column": 1
+          },
+          "duration": 8839,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:68"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-62ed24ca7124b6a6b28f6e9380b28e74464188a2",
+          "title": "descriptionField @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 78,
+            "column": 1
+          },
+          "duration": 12778,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:78"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-959f390aa37869955a36c80156098be55be8a576",
+          "title": "descriptionField @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 78,
+            "column": 1
+          },
+          "duration": 6278,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:78"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-9e9ad1f1347e44c191607154cc742725a66aa95f",
+          "title": "questionField @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 24851,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:87"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-ca1c874510bccbcd8fca7cb3b6467c97f7dd7902",
+          "title": "questionField @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 8367,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:87"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-5768b43bafe597c8a5239dd58e8413fc78e1d4f9",
+          "title": "questionFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 95,
+            "column": 1
+          },
+          "duration": 9047,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:95"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-05e195fa65014d95cd962ce089b8390c6da80830",
+          "title": "questionFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 95,
+            "column": 1
+          },
+          "duration": 8014,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:95"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-fbe9dce655f3177a86cf4510dea5a956edac5b3b",
+          "title": "answerField @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 105,
+            "column": 1
+          },
+          "duration": 20512,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:105"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-d53247e899cc7ff9396f0c9ab1c14b737bc5d0b0",
+          "title": "answerField @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 105,
+            "column": 1
+          },
+          "duration": 8212,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:105"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-e92373935774d83148295c05e7e45400aa616b7b",
+          "title": "answerFieldValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 113,
+            "column": 1
+          },
+          "duration": 6315,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:113"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-12679f5249c1280bba586634c2bcca7eba79e6d1",
+          "title": "pointsFieldSlider @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 11189,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:123"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-d3975d6e1b439469bcd6673151703dc34991a8a8",
+          "title": "pointsFieldSlider @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 8074,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:123"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-5057b7f87a94f47d11953187408f967cc68f7663",
+          "title": "pointsFieldManual @regChecklistNewMedium @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 140,
+            "column": 1
+          },
+          "duration": 33811,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:140"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-51b2f480cae3b977550fd1df9943a08bc7de1966",
+          "title": "pointsFieldManual @regChecklistNewMedium @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 140,
+            "column": 1
+          },
+          "duration": 9334,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:140"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-9ff429c29c6613bd66438dbb6e3ae53239979177",
+          "title": "answerRadioButton @regChecklistNewMedium @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 158,
+            "column": 1
+          },
+          "duration": 12127,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:158"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-359fbb07859d643932fe05f8b567496a3abd137d",
+          "title": "answerRadioButton @regChecklistNewMedium @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 158,
+            "column": 1
+          },
+          "duration": 6828,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:158"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-aff9954c3e83de9d844b842917d9555364aa1c22",
+          "title": "addAnswerButton @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 210,
+            "column": 1
+          },
+          "duration": 12125,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:210"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-e846757102630747e04916b235a98601eb4810d1",
+          "title": "addAnswerButton @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 210,
+            "column": 1
+          },
+          "duration": 10195,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:210"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-608592a15af96bc800c36c58ae8e123507646bb8",
+          "title": "deleteAnswerIcon @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 307,
+            "column": 1
+          },
+          "duration": 12163,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:307"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-658ddb98b5d49a754ba9c5ab2f31221777e022c0",
+          "title": "deleteAnswerIcon @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 307,
+            "column": 1
+          },
+          "duration": 9147,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:307"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-27c2fda54280335acfbcb9e3857217f5ab65f0c3",
+          "title": "addAnswerButtonValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 337,
+            "column": 1
+          },
+          "duration": 7926,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:337"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-5d00eee4583fd194926066303afff0e524ca0075",
+          "title": "addAnswerButtonValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 337,
+            "column": 1
+          },
+          "duration": 8201,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:337"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-32ebfedc9d0d4deb481dc9dc745c2414c4e150dc",
+          "title": "addSampleButton @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 347,
+            "column": 1
+          },
+          "duration": 36370,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:347"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-3f004cbf957fb971c58f589dab1b17f5301c3db3",
+          "title": "addSampleButton @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 347,
+            "column": 1
+          },
+          "duration": 17577,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:347"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-23167e24994637a5152032716d4469c12199fa02",
+          "title": "sampleFieldsValidation @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 370,
+            "column": 1
+          },
+          "duration": 11538,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:370"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-94f2cfd2dcb8b7f000df6a4c362c982dc98e4e76",
+          "title": "sampleFieldsValidation @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 370,
+            "column": 1
+          },
+          "duration": 14629,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:370"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-c72ecd2d8c0eb00db05392840e2ad934b07cd4c5",
+          "title": "cancelButton @regChecklistNewLow @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 384,
+            "column": 1
+          },
+          "duration": 36913,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:384"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-27587827a2f934332e87af1a9026d0085a47bbd2",
+          "title": "cancelButton @regChecklistNewLow @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 384,
+            "column": 1
+          },
+          "duration": 13228,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:384"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-cde6fa4428c4fe5bc952ef162391ac48afb14b81",
+          "title": "saveButton @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 393,
+            "column": 1
+          },
+          "duration": 28876,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:393"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-1ac829a374cd1f58073cf346adef6bc8c0872849",
+          "title": "saveButton @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 393,
+            "column": 1
+          },
+          "duration": 16990,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:393"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-a3c16a4d05930b9e561fb39fdcd096d5a41d4a6f",
+          "title": "saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 426,
+            "column": 1
+          },
+          "duration": 10992,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:426"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-898ce3c54272310afdef21537717eb80747205f9",
+          "title": "addAnotherTermButtonPointsFieldDidNotChoose @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 446,
+            "column": 1
+          },
+          "duration": 13474,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:446"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-35dccd969a764b9d891d971dc6901c477d43133e",
+          "title": "addAnotherTermButtonPointsFieldDidNotChoose @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 446,
+            "column": 1
+          },
+          "duration": 14969,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:446"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-e044e8f5eaacb52f0f87adae7006850246448dac",
+          "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 465,
+            "column": 1
+          },
+          "duration": 8787,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newTerm.spec.ts:465"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7705b66fa65cdf61a48fafbd3f294970119fbf2a-c00217a581f9b8a7e3a8679b149083538822681d",
+          "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newTerm.spec.ts",
+            "line": 465,
+            "column": 1
+          },
+          "duration": 15170,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newTerm.spec.ts:465"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 46,
+        "expected": 28,
+        "unexpected": 0,
+        "flaky": 4,
+        "skipped": 14,
+        "ok": false,
+        "duration": 923631
+      }
+    },
+    {
+      "fileId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305",
+      "fileName": "specs/reg/editModelAA-AU.spec.ts",
+      "tests": [
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-99d1ff49c25863a81cf61e099d13fedd61424f4c",
+          "title": "typeNameFieldValidation @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 65,
+            "column": 1
+          },
+          "duration": 75023,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:65"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-96423a09991f9dd68753a9ea220f6cc7d8196e08",
+          "title": "pushToArchiveCancelButton @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 175,
+            "column": 1
+          },
+          "duration": 114880,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:175"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-8420f75ac089a4de73003b156be905f7274d9784",
+          "title": "nameField @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 9471,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:16"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-3e9103012d0d231b1f102b3d7e36fd74b2e7c5d2",
+          "title": "nameField @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 16,
+            "column": 1
+          },
+          "duration": 8454,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:16"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-842218dded8110ebbca00e908e786ce746d193dd",
+          "title": "nameFieldValidation @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 24,
+            "column": 1
+          },
+          "duration": 11360,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:24"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-d8e9f8b1e3f29cf19559624b5022f382c34a995f",
+          "title": "nameFieldValidation @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 24,
+            "column": 1
+          },
+          "duration": 6325,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:24"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-47e4c887b1c5656ece2b14c1eb24b8175c411b50",
+          "title": "descriptionField @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 35,
+            "column": 1
+          },
+          "duration": 8057,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:35"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-e3d67176ffe9080875b79b9c26c73eb100bcebf2",
+          "title": "descriptionField @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 35,
+            "column": 1
+          },
+          "duration": 7302,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:35"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-2b53616390c8771b119be0f3dac0319574d0df9c",
+          "title": "typeField @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 11167,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:44"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-7b738dd53c467c158522aa524117f5722d54a6ca",
+          "title": "typeField @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 44,
+            "column": 1
+          },
+          "duration": 8280,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:44"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-56023a61a9251a7099ef238cd37315e59a9546a1",
+          "title": "typeNameField @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 52,
+            "column": 1
+          },
+          "duration": 10177,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:52"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-006776551993e128b250ad9d0069597459a9d88d",
+          "title": "typeNameField @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 52,
+            "column": 1
+          },
+          "duration": 8043,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:52"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-6692da3aaac71e6b76905eb7ab9c7b7d48acb106",
+          "title": "typeNameFieldValidation @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 65,
+            "column": 1
+          },
+          "duration": 7687,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:65"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-c9d0057e4d9fbd72032409881fcddb77e828f0c0",
+          "title": "infoIconWeightScale @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 8371,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:77"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-4276836a24919c38c7be53cebb8e712981b83a6c",
+          "title": "infoIconWeightScale @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 77,
+            "column": 1
+          },
+          "duration": 10241,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:77"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-fae8fedaa096de3983c4a45e190295f8fd014464",
+          "title": "weightScaleFrom @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 12448,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:87"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-db505fcf6edb5df234f4730264c5225da55dfd72",
+          "title": "weightScaleFrom @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 87,
+            "column": 1
+          },
+          "duration": 8835,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:87"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-3a7d2e3a7f8728ea300803de3efc4081d2305853",
+          "title": "weightScaleFromValidation @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 94,
+            "column": 1
+          },
+          "duration": 49353,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:94"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-4d02091698eff523cb2381684b11d547015b3d6d",
+          "title": "weightScaleFromValidation @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 94,
+            "column": 1
+          },
+          "duration": 7028,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:94"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-80bb7dcb106d52482733d0c8650b1414b85ca2e9",
+          "title": "weightScaleTo @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 105,
+            "column": 1
+          },
+          "duration": 10637,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:105"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-c603df2d1492d77c6212644e4ddca8aa62859c68",
+          "title": "weightScaleTo @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 105,
+            "column": 1
+          },
+          "duration": 7840,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:105"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-a545f9d1dab28cfc63bf76b81b5d244f4931ee0a",
+          "title": "weightScaleToValidation @regChecklistNewLow @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 112,
+            "column": 1
+          },
+          "duration": 9751,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:112"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-a8cf3ef625602b0b3c0317a2b85344d0addf7727",
+          "title": "weightScaleToValidation @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 112,
+            "column": 1
+          },
+          "duration": 9303,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:112"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-bd9f50f4d282f57a6b0531b41f37bcb2288fc318",
+          "title": "cancelButton @regChecklistNewMedium @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 10464,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:123"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-ca7dd1f6c547fed4aed9eeeba440cc254f9a0090",
+          "title": "cancelButton @regChecklistNewMedium @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 6439,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:123"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-73489fde07e005dc4bf87a451dfdb5577c54143b",
+          "title": "saveChangesButton @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 132,
+            "column": 1
+          },
+          "duration": 11763,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:132"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-5656a2ddfe3aad83d1cbba681a7d48e7eaafeb57",
+          "title": "saveChangesButton @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 132,
+            "column": 1
+          },
+          "duration": 11420,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:132"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-4f8f1a1c493dc44902561cc7454ab2ef62f085f6",
+          "title": "activateButton @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 7242,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:147"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-03b30b09cada82650c1a23f44c8b463c3387b941",
+          "title": "activateButton @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 147,
+            "column": 1
+          },
+          "duration": 10607,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:147"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-1b2484c3d75071f63c91d6c512b0b406f8e4767c",
+          "title": "pushToArchiveButton @regChecklistNewHigh @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 162,
+            "column": 1
+          },
+          "duration": 9782,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:162"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-4e88e75c6969b40904d6cda7e4122edf6ac86af0",
+          "title": "pushToArchiveButton @regChecklistNewHigh @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 162,
+            "column": 1
+          },
+          "duration": 9003,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:162"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-c89ede2ce7ba137dc079eea7663a70284c85b40b",
+          "title": "pushToArchiveCancelButton @regChecklistNewLow @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 175,
+            "column": 1
+          },
+          "duration": 5988,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:175"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-b5d5fe20c00b429f4c9427f60f55c162193df8db",
+          "title": "pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 186,
+            "column": 1
+          },
+          "duration": 36420,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:186"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "96df0daebd26ee3bed40bb656b41e2c0ac34d305-bdb9c915acc8f8f26061a101087dc003c7d4ed45",
+          "title": "pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editModelAA-AU.spec.ts",
+            "line": 186,
+            "column": 1
+          },
+          "duration": 11615,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editModelAA-AU.spec.ts:186"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 34,
+        "expected": 22,
+        "unexpected": 0,
+        "flaky": 2,
+        "skipped": 10,
+        "ok": false,
+        "duration": 550776
+      }
+    },
+    {
+      "fileId": "7d82949ee7aa9f2365d0b211c8ac398796078bae",
+      "fileName": "specs/reg/editTerm.spec.ts",
+      "tests": [
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-42ee0febef31375112e8851471dee953d1ae588e",
+          "title": "questionField @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 84,
+            "column": 1
+          },
+          "duration": 73555,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/editTerm.spec.ts:84"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-e11de35766a91c08feb69b1d96ccbf7af812b5da",
+          "title": "answerFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 112,
+            "column": 1
+          },
+          "duration": 64291,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/editTerm.spec.ts:112"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-74bf77fabe11c5e56ad1d6bd2ef17b749b0d7b96",
+          "title": "termField @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 46030,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:18"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-9a614ec5fb0114ff2f7d2f71992a51760ec0244b",
+          "title": "termField @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 8835,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:18"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-544eec64a346f62ef05e90891610284b396912da",
+          "title": "termFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 26,
+            "column": 1
+          },
+          "duration": 11632,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:26"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-1199c3e264b22669ed9e9ba5f3179411b1976043",
+          "title": "termFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 26,
+            "column": 1
+          },
+          "duration": 6865,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:26"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-ab2fea2a9aa9ebbb08469523a32fd52114c3e506",
+          "title": "weightFieldSlider @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 37,
+            "column": 1
+          },
+          "duration": 10979,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:37"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-be9e02027856526d932817964ce43ade713248a7",
+          "title": "weightFieldSlider @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 37,
+            "column": 1
+          },
+          "duration": 8280,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:37"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-91b29eacfc356b1c54c383d4c34358cc0d38abc1",
+          "title": "weightFieldManual @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 54,
+            "column": 1
+          },
+          "duration": 10764,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:54"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-5d7b9b1004a5c04cb8fd14f36ef1c55db6b1ac7a",
+          "title": "weightFieldManual @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 54,
+            "column": 1
+          },
+          "duration": 8794,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:54"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-5293f0e7b89b249f6dd6bab98d7c0b5844b3b68c",
+          "title": "weightFieldManualValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 65,
+            "column": 1
+          },
+          "duration": 13735,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:65"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-6d2f6ea67d692c5d45b296aaaf015aac4705fc6c",
+          "title": "weightFieldManualValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 65,
+            "column": 1
+          },
+          "duration": 9335,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:65"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-ea9a870ef4130c75d7203cb47900fbb5f49b1f3a",
+          "title": "descriptionField @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 75,
+            "column": 1
+          },
+          "duration": 11132,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:75"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-84a647ac3b3ac066017b5fbebcc7a1290440935b",
+          "title": "descriptionField @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 75,
+            "column": 1
+          },
+          "duration": 6528,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:75"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-db077884c38ba94f63599a088c7da7ebab0a3b61",
+          "title": "questionField @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 84,
+            "column": 1
+          },
+          "duration": 9544,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:84"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-2c9b93ea987692f41ef1ffdec7f188748785806a",
+          "title": "questionFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 92,
+            "column": 1
+          },
+          "duration": 7743,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:92"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-235d48f5fc41bc531a940c517cd1a23bd1c13236",
+          "title": "questionFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 92,
+            "column": 1
+          },
+          "duration": 8382,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:92"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-caec448efa865f85f4e575cef2fd8a9668c3f3fa",
+          "title": "answerField @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 104,
+            "column": 1
+          },
+          "duration": 10610,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:104"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-4015f50ee63727d9e08527331f1de0232e42b6dd",
+          "title": "answerField @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 104,
+            "column": 1
+          },
+          "duration": 8989,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:104"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-d3df6a384a8a28c745c18f2875fc7c1d73c88d1c",
+          "title": "answerFieldValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 112,
+            "column": 1
+          },
+          "duration": 7110,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:112"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-08111444bfb59cdbec8ead99e1caa5eb057c0d06",
+          "title": "pointsFieldSlider @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 15559,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:123"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-4d669b16ee4ae66ceff639ded4b2ddc2784a9ec8",
+          "title": "pointsFieldSlider @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 123,
+            "column": 1
+          },
+          "duration": 8512,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:123"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-2c448666ced0cc85855633969dcc0fba2fac4e30",
+          "title": "answerRadioButton @regChecklistNewMedium @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 140,
+            "column": 1
+          },
+          "duration": 11868,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:140"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-f8c73b6089f7afa00527d962f71ef6f807a13930",
+          "title": "answerRadioButton @regChecklistNewMedium @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 140,
+            "column": 1
+          },
+          "duration": 9561,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:140"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-d7d660bd9b382c2e899612193766efa45cf2e9cd",
+          "title": "addAnswerButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 191,
+            "column": 1
+          },
+          "duration": 14589,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:191"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-ef62e43124fd5fa9eb3b29983573c6befe91122e",
+          "title": "addAnswerButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 191,
+            "column": 1
+          },
+          "duration": 10798,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:191"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-fa93d6d8dedcbf9be36dedf455c6643eb0d1c26b",
+          "title": "deleteAnswerIcon @regChecklistNewMedium @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 287,
+            "column": 1
+          },
+          "duration": 6945,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:287"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-bb24909b9a6fbe6660261582efdba9e8cb6c99bb",
+          "title": "deleteAnswerIcon @regChecklistNewMedium @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 287,
+            "column": 1
+          },
+          "duration": 9348,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:287"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-26f8eef6619eef1914ca510700b9b36832faf41f",
+          "title": "answerFieldsValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 318,
+            "column": 1
+          },
+          "duration": 33727,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:318"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-33aa2ecd637bf5701afc5959f0e7b7c38cf1dd26",
+          "title": "answerFieldsValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 318,
+            "column": 1
+          },
+          "duration": 7529,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:318"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-ccbba04b6661fe1dc60a406e2290535e819501f7",
+          "title": "sortingAnswers @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 344,
+            "column": 6
+          },
+          "duration": 0,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:344"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-943ac920024d64f8f8cb900fd128d4a7428b1382",
+          "title": "sortingAnswers @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 344,
+            "column": 6
+          },
+          "duration": 0,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:344"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-8391bd63ea681d6efb345716f330dd801befb697",
+          "title": "addSampleButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 350,
+            "column": 1
+          },
+          "duration": 25302,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:350"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-4a5573a8fc214b667068fa3c3b2f21e6b0492a8d",
+          "title": "addSampleButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 350,
+            "column": 1
+          },
+          "duration": 8654,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:350"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-2ca8174458c9aa09d01487d689e9a6aa57974269",
+          "title": "sampleFieldsValidation @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 373,
+            "column": 1
+          },
+          "duration": 9360,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:373"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-62e27926f80fd304b9c97bed74714cfc9aec99a1",
+          "title": "sampleFieldsValidation @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 373,
+            "column": 1
+          },
+          "duration": 6575,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:373"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-3b45a411822f25a181336f418577a21ffe63784f",
+          "title": "activateButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 387,
+            "column": 1
+          },
+          "duration": 9072,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:387"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-aa2f967a558deb2185711de326d92060bce7e6f7",
+          "title": "activateButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 387,
+            "column": 1
+          },
+          "duration": 11710,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:387"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-3b93e79083db105dad180a11359b6ebc0e0feced",
+          "title": "cancelButton @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 404,
+            "column": 1
+          },
+          "duration": 11175,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:404"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-9be77fbcedf792b7a672cc36ab7a5c1e8bc56efb",
+          "title": "cancelButton @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 404,
+            "column": 1
+          },
+          "duration": 6116,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:404"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-2001e6ac9e566a57d3cb3bc9958debab1d4a2c30",
+          "title": "saveChangesButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 413,
+            "column": 1
+          },
+          "duration": 18204,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:413"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-613a6ce5da29e5d70cdbe16cd97e7d9f2c8a7f1f",
+          "title": "saveChangesButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 413,
+            "column": 1
+          },
+          "duration": 14369,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:413"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-0021436557eb6459d147956299012174fb874ac9",
+          "title": "saveChangesButtonPointsFieldDidNotChoose @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 450,
+            "column": 1
+          },
+          "duration": 28732,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:450"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-d76d5d7edcdbfaf2d94e6bbeb92f40bf248a78f4",
+          "title": "saveChangesButtonPointsFieldDidNotChoose @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 450,
+            "column": 1
+          },
+          "duration": 10714,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:450"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-9618ad444e214186178d69df4636d2707fb8599a",
+          "title": "pushToArchiveButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 467,
+            "column": 1
+          },
+          "duration": 10081,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:467"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-97e103d1dcb80733698c24a3a966d2816409ab08",
+          "title": "pushToArchiveButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 467,
+            "column": 1
+          },
+          "duration": 9036,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:467"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-69351927281ac6167e7344723f7aa6125b556c26",
+          "title": "pushToArchivePopupCancelButton @regChecklistNewLow @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 481,
+            "column": 1
+          },
+          "duration": 12766,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:481"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-7dfefcf0907a208c088a6aafe77bc89d8541ecce",
+          "title": "pushToArchivePopupCancelButton @regChecklistNewLow @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 481,
+            "column": 1
+          },
+          "duration": 10117,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:481"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-6291f94b4c531bf773f61a269bdf9690c6c20c80",
+          "title": "pushToArchivePopupArchiveButton @regChecklistNewHigh @editTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 493,
+            "column": 1
+          },
+          "duration": 21467,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/editTerm.spec.ts:493"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "7d82949ee7aa9f2365d0b211c8ac398796078bae-2f03c0b4b2c68b6f75314c8357d20b301f2596db",
+          "title": "pushToArchivePopupArchiveButton @regChecklistNewHigh @editTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/editTerm.spec.ts",
+            "line": 493,
+            "column": 1
+          },
+          "duration": 6748,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/editTerm.spec.ts:493"
+          ],
+          "ok": false
+        }
+      ],
+      "stats": {
+        "total": 50,
+        "expected": 34,
+        "unexpected": 0,
+        "flaky": 2,
+        "skipped": 14,
+        "ok": false,
+        "duration": 701767
+      }
+    },
+    {
+      "fileId": "eebe6129488a94f91adb85774ef9b67a411ade52",
+      "fileName": "specs/reg/newModelAA-AU.spec.ts",
+      "tests": [
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-e35586992e234b5613c440414ce89747630fa912",
+          "title": "weightScaleFrom @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 94,
+            "column": 1
+          },
+          "duration": 130634,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:94"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-90fbfc0e1417222e98338990332a9510dc177aec",
+          "title": "nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 148,
+            "column": 1
+          },
+          "duration": 73655,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:148"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-81bda808f1b384960f8cd764a01bab7e584ac2dd",
+          "title": "nameField @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 23,
+            "column": 1
+          },
+          "duration": 10176,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:23"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-f3edfe9d65597f5e2127289c04b0480575168209",
+          "title": "nameField @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 23,
+            "column": 1
+          },
+          "duration": 9134,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:23"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-64aba1e1fe95f2743693cfad3d1b9be3a373973b",
+          "title": "nameFieldValidation @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 30,
+            "column": 1
+          },
+          "duration": 22335,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:30"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-90f39377608f808e627ae5e8ca8336f8293aefbe",
+          "title": "nameFieldValidation @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 30,
+            "column": 1
+          },
+          "duration": 6785,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:30"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-5234c04195807100873850ac878e9550d6401dbc",
+          "title": "descriptionField @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 10837,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:39"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-5fe83a140577a8eb29e7395e53b9892f05cb8633",
+          "title": "descriptionField @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 39,
+            "column": 1
+          },
+          "duration": 7399,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:39"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-4d4277cf956bc5804b0bac65fa20c0924c239cde",
+          "title": "typeField @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 46,
+            "column": 1
+          },
+          "duration": 13868,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:46"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-09b1525ca26552d06b091e986d55eb9f6a236192",
+          "title": "typeField @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 46,
+            "column": 1
+          },
+          "duration": 8834,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:46"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-c9c3410fe0d85871b80a9d19dfbf0c2aa45f8d93",
+          "title": "typeDropDownValidation @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 53,
+            "column": 1
+          },
+          "duration": 12876,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:53"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-b55968acbf713b749f03f13462aa225f7478f75c",
+          "title": "typeDropDownValidation @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 53,
+            "column": 1
+          },
+          "duration": 8162,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:53"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-a05304f6c8c85783a8e7e7bf8d07933d4d0e877a",
+          "title": "typeNameField @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 14949,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:62"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-714ca59c0061886e4e370f926a73d97341f2fffb",
+          "title": "typeNameField @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 62,
+            "column": 1
+          },
+          "duration": 9620,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:62"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-401be712f7048f9ee6ee1500087ee896614f8e0e",
+          "title": "typeNameFieldValidation @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 74,
+            "column": 1
+          },
+          "duration": 13619,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:74"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-afb306266826d66daa34c5f44d2b03d454d6ed06",
+          "title": "typeNameFieldValidation @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 74,
+            "column": 1
+          },
+          "duration": 8015,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:74"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-ad9c6b73af7b5979b63bd7eb2b998ef15f53711f",
+          "title": "infoIconWeightScale @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 85,
+            "column": 1
+          },
+          "duration": 12224,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:85"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-5b16466c3d43ec153efcb6c58842428e0827d256",
+          "title": "infoIconWeightScale @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 85,
+            "column": 1
+          },
+          "duration": 9306,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:85"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-935e8a3a4e3cfddaaf072892fcefacd6029d91a9",
+          "title": "weightScaleFrom @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 94,
+            "column": 1
+          },
+          "duration": 9898,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:94"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-1121eda50764ae88ee803836a980fc0c7098d503",
+          "title": "weightScaleFromValidation @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 101,
+            "column": 1
+          },
+          "duration": 10687,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:101"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-5596e7c2c2071338a5ea131ba2d67ac6bb10c248",
+          "title": "weightScaleFromValidation @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 101,
+            "column": 1
+          },
+          "duration": 8942,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:101"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-73dde3538d0f686147fe756f8e7a29bfd01aa8a7",
+          "title": "weightScaleTo @regChecklistNewLow @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 111,
+            "column": 1
+          },
+          "duration": 10730,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:111"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-4835433c431608dc5351e22a7a5a4676643ed1a5",
+          "title": "weightScaleTo @regChecklistNewLow @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 111,
+            "column": 1
+          },
+          "duration": 7567,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:111"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-e7d8f4e031ea8adb83a701ad80b8bc6f5b7255fb",
+          "title": "weightScaleToValidation @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 118,
+            "column": 1
+          },
+          "duration": 10980,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:118"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-78ae690ed4d6cad30b6c92eee60cdc46780a1c2e",
+          "title": "weightScaleToValidation @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 118,
+            "column": 1
+          },
+          "duration": 7987,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:118"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-28c9ca95a1dc54b491b216784243fe3d5223e247",
+          "title": "nextButton @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 126,
+            "column": 1
+          },
+          "duration": 12797,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:126"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-9ab038bc864810b3883e301ba79f82e7c719907d",
+          "title": "nextButton @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 126,
+            "column": 1
+          },
+          "duration": 9478,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:126"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-cad3bbed953fce69ff5d7ee335213b4257262598",
+          "title": "nextButtonEmptyFields @regChecklistNewMedium @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 28221,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:139"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-4ec7a65fe6dd436e85e5bb03bd6450f14657cd13",
+          "title": "nextButtonEmptyFields @regChecklistNewMedium @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 139,
+            "column": 1
+          },
+          "duration": 9994,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:139"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-f41b9d872620f60c632bb14ae8914013f1a1391f",
+          "title": "nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 148,
+            "column": 1
+          },
+          "duration": 9072,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:148"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-17f31621acbbb2ce80d70dff2745a49c393ee2bd",
+          "title": "saveButton @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 161,
+            "column": 1
+          },
+          "duration": 12205,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:161"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-ea8fea771eeda3c9ee31f6b1bbc42e1703643d58",
+          "title": "saveButton @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 161,
+            "column": 1
+          },
+          "duration": 11430,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:161"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-d8a17ae325d102e2a4aca109ff799b4dd26d3411",
+          "title": "saveButtonEmptyFields @regChecklistNewMedium @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 175,
+            "column": 1
+          },
+          "duration": 10170,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:175"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-a7e0c8db5f1f9597c8c9ae72bf432aa90bfa7e80",
+          "title": "saveButtonEmptyFields @regChecklistNewMedium @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 175,
+            "column": 1
+          },
+          "duration": 9248,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:175"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-9d3a6f26895472e67f9700d85a6ce81686fba6e1",
+          "title": "saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 184,
+            "column": 1
+          },
+          "duration": 12107,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:184"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-c7bea5fe6aa0683f894128598a26e259a90e0d37",
+          "title": "saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 184,
+            "column": 1
+          },
+          "duration": 7873,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:184"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-6fde125de3c7a235666ac322bb96d6221f70180d",
+          "title": "cancelButton @regChecklistNewMedium @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 198,
+            "column": 1
+          },
+          "duration": 9885,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:198"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-8e6dcb8f149a93078b955688276156d290f74026",
+          "title": "cancelButton @regChecklistNewMedium @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 198,
+            "column": 1
+          },
+          "duration": 7243,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:198"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-66e9818e7f13d7a0c16d57e8183384bb403aeb5a",
+          "title": "createdModelsArchived @regChecklistNewHigh @newModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 206,
+            "column": 1
+          },
+          "duration": 11424,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:206"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "eebe6129488a94f91adb85774ef9b67a411ade52-0606586569307846fb5e450123f819319d7c64c1",
+          "title": "createdModelsArchived @regChecklistNewHigh @newModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/newModelAA-AU.spec.ts",
+            "line": 206,
+            "column": 1
+          },
+          "duration": 9451,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/newModelAA-AU.spec.ts:206"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 40,
+        "expected": 28,
+        "unexpected": 0,
+        "flaky": 2,
+        "skipped": 10,
+        "ok": false,
+        "duration": 619817
+      }
+    },
+    {
+      "fileId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7",
+      "fileName": "specs/reg/sign-in.spec.ts",
+      "tests": [
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-d590c5a9032ca078379dd05e57a7c2a4ddc05b2a",
+          "title": "eyeToggle @regChecklistNewLow @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 72,
+            "column": 6
+          },
+          "duration": 68391,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/sign-in.spec.ts:72"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-068fe07f19c4b197eea5706711647b7b26e5f559",
+          "title": "inactivePendingNotexistUsers @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 121,
+            "column": 5
+          },
+          "duration": 70627,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/sign-in.spec.ts:121"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-2d087b5a29fefb405b61eb9793e9bdcbcf6b50c6",
+          "title": "sign-inSA @regChecklistnewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 10,
+            "column": 6
+          },
+          "duration": 8379,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:10"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-8d8dfcc2994ea407f55dfccf2d78dc96dca878b5",
+          "title": "sign-inSA @regChecklistnewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 10,
+            "column": 6
+          },
+          "duration": 7494,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:10"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-40c22b6594970cf2c2f1d9fbe7fc8bedcbb93b11",
+          "title": "sign-inAA @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 21,
+            "column": 5
+          },
+          "duration": 9824,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:21"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-50c75dac083cbed0ccd80d30fd9d2a6f5d7af3d6",
+          "title": "sign-inAA @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 21,
+            "column": 5
+          },
+          "duration": 6752,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:21"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-b4dc3fd5fdf377eb2366111b1494d98ce5017bb9",
+          "title": "sign-inAU @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 32,
+            "column": 5
+          },
+          "duration": 8835,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:32"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-1295e1db3f179ea1e97a99b90686554b5ddd4403",
+          "title": "sign-inAU @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 32,
+            "column": 5
+          },
+          "duration": 6651,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:32"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-de64a5d2f9896a483d86e7f898bdecdd1e33c5d1",
+          "title": "homeButton @regChecklistNewLow @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 43,
+            "column": 5
+          },
+          "duration": 5696,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:43"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-ea592fa5f44904895b7e270c3eb61c13a98a6e7b",
+          "title": "homeButton @regChecklistNewLow @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 43,
+            "column": 5
+          },
+          "duration": 3993,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/sign-in.spec.ts:43"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-23c1ce1f15e864c9aee8f83f43f58cb25ca3ba55",
+          "title": "forgotPasswordLink @regChecklistNewMedium @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 53,
+            "column": 5
+          },
+          "duration": 5489,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/sign-in.spec.ts:53"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-5976cfeea93796b1ce6b1204513c37efb7381d77",
+          "title": "forgotPasswordLink @regChecklistNewMedium @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 53,
+            "column": 5
+          },
+          "duration": 5658,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:53"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-3adf1290ecb842c4af9fee4f19b5c8b868e3c0b7",
+          "title": "signUpHere @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 63,
+            "column": 5
+          },
+          "duration": 6619,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:63"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-867595e7610130788a721cb9b2a485df18d7b488",
+          "title": "signUpHere @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 63,
+            "column": 5
+          },
+          "duration": 4309,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:63"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-8735e8523494e15873707622bb970a499ac457ce",
+          "title": "eyeToggle @regChecklistNewLow @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 72,
+            "column": 6
+          },
+          "duration": 4162,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/sign-in.spec.ts:72"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-bdef96bc1865ca3b086e9bb9f801ee59c6e3d743",
+          "title": "placeholdersValidation @regChecklistNewLow @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 84,
+            "column": 6
+          },
+          "duration": 4829,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/sign-in.spec.ts:84"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-788ca3e037081d6c146850d52a24eb14acdd8ad3",
+          "title": "placeholdersValidation @regChecklistNewLow @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 84,
+            "column": 6
+          },
+          "duration": 4218,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:84"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-954bca333c1a143349e1d7568fe634ed2a99f4b3",
+          "title": "emptyFieldsValidation @regChecklistNewMedium @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 94,
+            "column": 6
+          },
+          "duration": 5919,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:94"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-d02c57ea4f7e9a2cf7fbecc39e0bbcf09c26a54f",
+          "title": "emptyFieldsValidation @regChecklistNewMedium @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 94,
+            "column": 6
+          },
+          "duration": 5148,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/sign-in.spec.ts:94"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-28b8268407f793a4cbe28fe285c3b43a310bcad6",
+          "title": "incorrectEmailValidation @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 103,
+            "column": 5
+          },
+          "duration": 16232,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:103"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-94c26a41398c35922db114ccf1ecc093ce615bf6",
+          "title": "incorrectEmailValidation @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 103,
+            "column": 5
+          },
+          "duration": 6050,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:103"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-da82d29bc670f743b3f017a6cf10f3de95d50e7b",
+          "title": "passwordLessThen6 @regChecklistNewHigh @login",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 112,
+            "column": 5
+          },
+          "duration": 5690,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:112"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-79e9314ac0c5c22e9aa629f092378fbe6b46dc77",
+          "title": "passwordLessThen6 @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 112,
+            "column": 5
+          },
+          "duration": 4618,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:112"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "65f609fcd0e03b6bf50fde601fdf33061bea5eb7-b834138683940b78d0e22444cfc236c6d0d1c2e6",
+          "title": "inactivePendingNotexistUsers @regChecklistNewHigh @login",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/sign-in.spec.ts",
+            "line": 121,
+            "column": 5
+          },
+          "duration": 8994,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/sign-in.spec.ts:121"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 24,
+        "expected": 17,
+        "unexpected": 0,
+        "flaky": 2,
+        "skipped": 5,
+        "ok": false,
+        "duration": 284577
+      }
+    },
+    {
+      "fileId": "23950e72e0e1cd1abb1c8f87a40853e3dc126770",
+      "fileName": "specs/reg/subscriptionLimits.spec.ts",
+      "tests": [
+        {
+          "testId": "23950e72e0e1cd1abb1c8f87a40853e3dc126770-0746d473bb2e0a5a5ff690aead733e2cb15a8a8d",
+          "title": "subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/subscriptionLimits.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 35390,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/subscriptionLimits.spec.ts:13"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "23950e72e0e1cd1abb1c8f87a40853e3dc126770-86b03396396e0fb09891492a4785fff23bd8d166",
+          "title": "subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/subscriptionLimits.spec.ts",
+            "line": 13,
+            "column": 1
+          },
+          "duration": 11423,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/subscriptionLimits.spec.ts:13"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "23950e72e0e1cd1abb1c8f87a40853e3dc126770-8b28c3edcd0005cfe2342d98ac3b73571b1dbd7d",
+          "title": "subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistNewMedium @editModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/subscriptionLimits.spec.ts",
+            "line": 59,
+            "column": 1
+          },
+          "duration": 4979,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/subscriptionLimits.spec.ts:59"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "23950e72e0e1cd1abb1c8f87a40853e3dc126770-37385a22bf509711ac15233bce28aa30598943aa",
+          "title": "subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistNewMedium @editModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/subscriptionLimits.spec.ts",
+            "line": 59,
+            "column": 1
+          },
+          "duration": 17582,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/subscriptionLimits.spec.ts:59"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 4,
+        "expected": 2,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 2,
+        "ok": true,
+        "duration": 69374
+      }
+    },
+    {
+      "fileId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da",
+      "fileName": "specs/test.spec.ts",
+      "tests": [
+        {
+          "testId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da-e044e8f5eaacb52f0f87adae7006850246448dac",
+          "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/test.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 7518,
+          "outcome": "skipped",
+          "path": [
+            "specs/test.spec.ts:18"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da-c00217a581f9b8a7e3a8679b149083538822681d",
+          "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/test.spec.ts",
+            "line": 18,
+            "column": 1
+          },
+          "duration": 16257,
+          "outcome": "expected",
+          "path": [
+            "specs/test.spec.ts:18"
+          ],
+          "ok": true
+        }
+      ],
+      "stats": {
+        "total": 2,
+        "expected": 1,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 1,
+        "ok": true,
+        "duration": 23775
+      }
+    }
+  ],
+  "projectNames": [
+    "webkit",
+    "chrome"
+  ],
+  "stats": {
+    "total": 206,
+    "expected": 135,
+    "unexpected": 2,
+    "flaky": 12,
+    "skipped": 57,
+    "ok": false,
+    "duration": 3694438
+  }
+}

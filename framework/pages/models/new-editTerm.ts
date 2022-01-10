@@ -26,7 +26,12 @@ class NewEditTermPage {
     addAnotherTermButton: Locator;
     cancelButton: Locator;
     saveButton: Locator;
+    saveChangesButton: Locator;
     saveButtonOopsPopupCloseButton: Locator;
+    pushToArchiveButton: Locator;
+    pushToArchivePopupCancelButton: Locator;
+    pushToArchivePopupArchiveButton: Locator;
+    activateButton: Locator;
 
 constructor(page: Page) {
     this.page = page;
@@ -53,12 +58,22 @@ constructor(page: Page) {
     this.addAnotherTermButton = page.locator('#term-detail-add-another-term');
     this.cancelButton = page.locator('#term-detail-cancel');
     this.saveButton = page.locator('#term-detail-save');
+    this.saveChangesButton = page.locator('#term-detail-save');
     this.saveButtonOopsPopupCloseButton = page.locator('.mat-dialog-container button');
+    this.pushToArchiveButton = page.locator('#term-detail-push-to-archive');
+    this.pushToArchivePopupCancelButton = page.locator('#confirm-active-cancel');
+    this.pushToArchivePopupArchiveButton = page.locator('#confirm-active-archive');
+    this.activateButton = page.locator('#term-detail-activate');
 }    
 
 async termFieldFill(text:string) {
     await this.termField.click();
     await this.termField.fill(text);
+}
+
+async termFieldClearFill() {
+    await this.termField.click();
+    await this.termField.fill('');
 }
 
 async weightSliderUseUp() {
@@ -97,9 +112,19 @@ async descriptionFieldFill() {
     await this.descriptionField.fill('autotest');
 }
 
+async descriptionFieldFillEdit() {
+    await this.descriptionField.click();
+    await this.descriptionField.fill('autotest33');
+}
+
 async questionFieldFill(text:string) {
     await this.questionField.click();
     await this.questionField.fill(text);
+}
+
+async questionFieldClearFill() {
+    await this.questionField.click();
+    await this.questionField.fill('');
 }
 
 async radioButtonClickZero() {
@@ -125,6 +150,11 @@ async radioButtonClickFour() {
 async answerFieldFill(text:string) {
     await this.answerField.click();
     await this.answerField.fill(text);
+}
+
+async answerFieldClearFill() {
+    await this.answerField.click();
+    await this.answerField.fill('');
 }
 
 async pointSliderUseUp() {
@@ -202,8 +232,28 @@ async saveButtonClick() {
     await this.saveButton.click();
 }
 
+async saveChangesButtonClick() {
+    await this.saveChangesButton.click();
+}
+
 async saveButtonOopsPopupCloseButtonClick() {
     await this.saveButtonOopsPopupCloseButton.click();
+}
+
+async pushToArchiveButtonClick() {
+    await this.pushToArchiveButton.click();
+}
+
+async pushToArchivePopupCloseButtonClick() {
+    await this.pushToArchivePopupCancelButton.click();
+}
+
+async pushToArchivePopupArchiveButtonClick() {
+    await this.pushToArchivePopupArchiveButton.click();
+}
+
+async activateButtonClick() {
+    await this.activateButton.click();
 }
 
 }

@@ -42,7 +42,6 @@ test.beforeEach(async ({ page }) => {
 
     test('homeButton @regChecklistNewLow @login', async ({ page, browserName }) => {
         test.skip(browserName === 'chromium');
-        test.skip(browserName === 'firefox');
         console.log('homeButtonValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#login-sign-in');
@@ -53,7 +52,6 @@ test.beforeEach(async ({ page }) => {
 
     test('forgotPasswordLink @regChecklistNewMedium @login', async ({ page, browserName }) => {
         test.skip(browserName === 'webkit');
-        test.skip(browserName === 'firefox');
         console.log('forgotPasswordValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('#forgot-password-send');
@@ -72,7 +70,6 @@ test.beforeEach(async ({ page }) => {
         }),
 
      test('eyeToggle @regChecklistNewLow @login', async ({ page, browserName }) => {
-        test.skip(browserName === 'webkit');
         test.skip(browserName === 'chromium');
         console.log('eyeToggleValidation');
         const signIn = new SignInPage(page);
@@ -85,8 +82,7 @@ test.beforeEach(async ({ page }) => {
         }),
         
      test('placeholdersValidation @regChecklistNewLow @login', async ({ page, browserName }) => {
-        test.skip(browserName === 'chromium');
-        test.skip(browserName === 'firefox');
+        test.skip(browserName === 'webkit');
         console.log('placeholdersValidation');
         const email = page.locator('[placeholder="Email"]');
         const pass = page.locator('[placeholder="Password"]');
@@ -96,8 +92,7 @@ test.beforeEach(async ({ page }) => {
         }),
 
      test('emptyFieldsValidation @regChecklistNewMedium @login', async ({ page, browserName }) => {
-        test.skip(browserName === 'webkit');
-        test.skip(browserName === 'firefox');
+        test.skip(browserName === 'chromium');
         console.log('emptyFieldsValidation');
         const signIn = new SignInPage(page);
         const locator = page.locator('text=Please fill in this field');

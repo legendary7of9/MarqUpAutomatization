@@ -1,0 +1,504 @@
+{
+  "fileId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da",
+  "fileName": "specs/test.spec.ts",
+  "tests": [
+    {
+      "testId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da-e044e8f5eaacb52f0f87adae7006850246448dac",
+      "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+      "projectName": "webkit",
+      "location": {
+        "file": "specs/test.spec.ts",
+        "line": 18,
+        "column": 1
+      },
+      "duration": 7518,
+      "outcome": "skipped",
+      "path": [
+        "specs/test.spec.ts:18"
+      ],
+      "results": [
+        {
+          "duration": 7518,
+          "startTime": "2022-01-10T18:33:47.575Z",
+          "retry": 0,
+          "steps": [
+            {
+              "title": "Before Hooks",
+              "startTime": "2022-01-10T18:33:47.575Z",
+              "duration": 7164,
+              "steps": [
+                {
+                  "title": "browserContext.newPage",
+                  "startTime": "2022-01-10T18:33:47.582Z",
+                  "duration": 237,
+                  "steps": []
+                },
+                {
+                  "title": "page.goto",
+                  "startTime": "2022-01-10T18:33:47.820Z",
+                  "duration": 4421,
+                  "snippet": "\u001b[0m \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m signIn \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mSignInPage\u001b[39m(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m users\u001b[33m.\u001b[39m\u001b[33mAA\u001b[39m()\u001b[33m;\u001b[39m\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "specs/test.spec.ts",
+                    "line": 10,
+                    "column": 16
+                  }
+                },
+                {
+                  "title": "page.fill([formcontrolname=\"email\"])",
+                  "startTime": "2022-01-10T18:33:52.241Z",
+                  "duration": 62,
+                  "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36masync\u001b[39m \u001b[33mAA\u001b[39m() {\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"email\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'iryna.nema+1111@mobindustry.net'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                        ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Zaq123456!'\u001b[39m)\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/users/index.ts",
+                    "line": 17,
+                    "column": 25
+                  }
+                },
+                {
+                  "title": "page.fill([formcontrolname=\"password\"])",
+                  "startTime": "2022-01-10T18:33:52.303Z",
+                  "duration": 52,
+                  "snippet": "\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"email\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'iryna.nema+1111@mobindustry.net'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Zaq123456!'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                        ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m     }\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/users/index.ts",
+                    "line": 18,
+                    "column": 25
+                  }
+                },
+                {
+                  "title": "locator.click(#login-sign-in)",
+                  "startTime": "2022-01-10T18:33:52.356Z",
+                  "duration": 117,
+                  "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[36masync\u001b[39m signInButton() {\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msigninButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                            ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 53 |\u001b[39m   }\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/pages/login-register-forgotpassword/sign-in.ts",
+                    "line": 52,
+                    "column": 29
+                  }
+                },
+                {
+                  "title": "page.waitForURL",
+                  "startTime": "2022-01-10T18:33:52.473Z",
+                  "duration": 2266,
+                  "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m signIn\u001b[33m.\u001b[39msignInButton()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m })\u001b[33m;\u001b[39m \u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "specs/test.spec.ts",
+                    "line": 13,
+                    "column": 16
+                  }
+                }
+              ]
+            },
+            {
+              "title": "After Hooks",
+              "startTime": "2022-01-10T18:33:54.739Z",
+              "duration": 354,
+              "steps": [
+                {
+                  "title": "browserContext.close",
+                  "startTime": "2022-01-10T18:33:55.087Z",
+                  "duration": 2,
+                  "steps": []
+                }
+              ]
+            }
+          ],
+          "error": "",
+          "status": "skipped",
+          "attachments": []
+        }
+      ],
+      "ok": false
+    },
+    {
+      "testId": "c7a5fd9833f968b92619c1128cd4cbdfb06a30da-c00217a581f9b8a7e3a8679b149083538822681d",
+      "title": "addAnotherTermButton @regChecklistNewHigh @newTermPage",
+      "projectName": "chrome",
+      "location": {
+        "file": "specs/test.spec.ts",
+        "line": 18,
+        "column": 1
+      },
+      "duration": 16257,
+      "outcome": "expected",
+      "path": [
+        "specs/test.spec.ts:18"
+      ],
+      "results": [
+        {
+          "duration": 16257,
+          "startTime": "2022-01-10T18:46:20.643Z",
+          "retry": 0,
+          "steps": [
+            {
+              "title": "Before Hooks",
+              "startTime": "2022-01-10T18:46:20.647Z",
+              "duration": 9755,
+              "steps": [
+                {
+                  "title": "browserContext.newPage",
+                  "startTime": "2022-01-10T18:46:20.674Z",
+                  "duration": 240,
+                  "steps": []
+                },
+                {
+                  "title": "page.goto",
+                  "startTime": "2022-01-10T18:46:20.915Z",
+                  "duration": 7535,
+                  "snippet": "\u001b[0m \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m signIn \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mSignInPage\u001b[39m(page)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m users\u001b[33m.\u001b[39m\u001b[33mAA\u001b[39m()\u001b[33m;\u001b[39m\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "specs/test.spec.ts",
+                    "line": 10,
+                    "column": 16
+                  }
+                },
+                {
+                  "title": "page.fill([formcontrolname=\"email\"])",
+                  "startTime": "2022-01-10T18:46:28.450Z",
+                  "duration": 74,
+                  "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36masync\u001b[39m \u001b[33mAA\u001b[39m() {\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"email\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'iryna.nema+1111@mobindustry.net'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                        ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Zaq123456!'\u001b[39m)\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/users/index.ts",
+                    "line": 17,
+                    "column": 25
+                  }
+                },
+                {
+                  "title": "page.fill([formcontrolname=\"password\"])",
+                  "startTime": "2022-01-10T18:46:28.525Z",
+                  "duration": 39,
+                  "snippet": "\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"email\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'iryna.nema+1111@mobindustry.net'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mfill(\u001b[32m'[formcontrolname=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Zaq123456!'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                        ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m     }\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/users/index.ts",
+                    "line": 18,
+                    "column": 25
+                  }
+                },
+                {
+                  "title": "locator.click(#login-sign-in)",
+                  "startTime": "2022-01-10T18:46:28.564Z",
+                  "duration": 104,
+                  "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[36masync\u001b[39m signInButton() {\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msigninButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                            ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 53 |\u001b[39m   }\u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "framework/pages/login-register-forgotpassword/sign-in.ts",
+                    "line": 52,
+                    "column": 29
+                  }
+                },
+                {
+                  "title": "page.waitForURL",
+                  "startTime": "2022-01-10T18:46:28.669Z",
+                  "duration": 1733,
+                  "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m signIn\u001b[33m.\u001b[39msignInButton()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForURL(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m })\u001b[33m;\u001b[39m \u001b[0m",
+                  "steps": [],
+                  "location": {
+                    "file": "specs/test.spec.ts",
+                    "line": 13,
+                    "column": 16
+                  }
+                }
+              ]
+            },
+            {
+              "title": "page.goto(/models/1460/terms?&sort=term)",
+              "startTime": "2022-01-10T18:46:30.403Z",
+              "duration": 2956,
+              "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'newTerm Add Another Term Button'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/models/1460/terms?&sort=term'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m viewModel\u001b[33m.\u001b[39maddTermButtonClick()\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "specs/test.spec.ts",
+                "line": 25,
+                "column": 16
+              }
+            },
+            {
+              "title": "locator.click(#terms-list-add-term)",
+              "startTime": "2022-01-10T18:46:33.360Z",
+              "duration": 330,
+              "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36masync\u001b[39m addTermButtonClick() {\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39maddTermButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                                 ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m     }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/viewingModelPage.ts",
+                "line": 23,
+                "column": 34
+              }
+            },
+            {
+              "title": "locator.click([formcontrolname=\"term\"])",
+              "startTime": "2022-01-10T18:46:33.693Z",
+              "duration": 273,
+              "snippet": "\u001b[0m \u001b[90m  69 |\u001b[39m \u001b[36masync\u001b[39m termFieldFill(text\u001b[33m:\u001b[39mstring) {\u001b[0m\n\u001b[0m \u001b[90m  70 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtermField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                         ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  71 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtermField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 70,
+                "column": 26
+              }
+            },
+            {
+              "title": "locator.fill([formcontrolname=\"term\"])",
+              "startTime": "2022-01-10T18:46:33.967Z",
+              "duration": 29,
+              "snippet": "\u001b[0m \u001b[90m  70 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtermField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  71 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mtermField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                         ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  72 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 71,
+                "column": 26
+              }
+            },
+            {
+              "title": "locator.click(#form-control-weight-manual input)",
+              "startTime": "2022-01-10T18:46:33.996Z",
+              "duration": 113,
+              "snippet": "\u001b[0m \u001b[90m  95 |\u001b[39m \u001b[36masync\u001b[39m manualInputWeightFieldRandomFill(number\u001b[33m:\u001b[39mstring) {\u001b[0m\n\u001b[0m \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputWeightField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                      ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputWeightField\u001b[33m.\u001b[39mfill(number)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 96,
+                "column": 39
+              }
+            },
+            {
+              "title": "locator.fill(#form-control-weight-manual input)",
+              "startTime": "2022-01-10T18:46:34.110Z",
+              "duration": 24,
+              "snippet": "\u001b[0m \u001b[90m  96 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputWeightField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputWeightField\u001b[33m.\u001b[39mfill(number)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                      ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  98 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 97,
+                "column": 39
+              }
+            },
+            {
+              "title": "locator.click([formcontrolname=\"description\"])",
+              "startTime": "2022-01-10T18:46:34.135Z",
+              "duration": 130,
+              "snippet": "\u001b[0m \u001b[90m 110 |\u001b[39m \u001b[36masync\u001b[39m descriptionFieldFill() {\u001b[0m\n\u001b[0m \u001b[90m 111 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescriptionField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 112 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescriptionField\u001b[33m.\u001b[39mfill(\u001b[32m'autotest'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 111,
+                "column": 33
+              }
+            },
+            {
+              "title": "locator.fill([formcontrolname=\"description\"])",
+              "startTime": "2022-01-10T18:46:34.266Z",
+              "duration": 30,
+              "snippet": "\u001b[0m \u001b[90m 111 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescriptionField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 112 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescriptionField\u001b[33m.\u001b[39mfill(\u001b[32m'autotest'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 113 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 112,
+                "column": 33
+              }
+            },
+            {
+              "title": "locator.click([formcontrolname=\"question\"])",
+              "startTime": "2022-01-10T18:46:34.296Z",
+              "duration": 103,
+              "snippet": "\u001b[0m \u001b[90m 120 |\u001b[39m \u001b[36masync\u001b[39m questionFieldFill(text\u001b[33m:\u001b[39mstring) {\u001b[0m\n\u001b[0m \u001b[90m 121 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mquestionField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                             ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 122 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mquestionField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 121,
+                "column": 30
+              }
+            },
+            {
+              "title": "locator.fill([formcontrolname=\"question\"])",
+              "startTime": "2022-01-10T18:46:34.399Z",
+              "duration": 23,
+              "snippet": "\u001b[0m \u001b[90m 121 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mquestionField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 122 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mquestionField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                             ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 123 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 122,
+                "column": 30
+              }
+            },
+            {
+              "title": "locator.click([formcontrolname=\"answer\"])",
+              "startTime": "2022-01-10T18:46:34.423Z",
+              "duration": 150,
+              "snippet": "\u001b[0m \u001b[90m 150 |\u001b[39m \u001b[36masync\u001b[39m answerFieldFill(text\u001b[33m:\u001b[39mstring) {\u001b[0m\n\u001b[0m \u001b[90m 151 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39manswerField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                           ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 152 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39manswerField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 151,
+                "column": 28
+              }
+            },
+            {
+              "title": "locator.fill([formcontrolname=\"answer\"])",
+              "startTime": "2022-01-10T18:46:34.573Z",
+              "duration": 45,
+              "snippet": "\u001b[0m \u001b[90m 151 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39manswerField\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 152 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39manswerField\u001b[33m.\u001b[39mfill(text)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                           ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 153 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 152,
+                "column": 28
+              }
+            },
+            {
+              "title": "locator.click(#form-control-answer-weight-manual-0 input)",
+              "startTime": "2022-01-10T18:46:34.622Z",
+              "duration": 59,
+              "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m \u001b[36masync\u001b[39m manualInputPointsFieldFill(number\u001b[33m:\u001b[39mstring) {\u001b[0m\n\u001b[0m \u001b[90m 175 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputPointsField0\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                       ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 176 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputPointsField0\u001b[33m.\u001b[39mfill(number)\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 175,
+                "column": 40
+              }
+            },
+            {
+              "title": "locator.fill(#form-control-answer-weight-manual-0 input)",
+              "startTime": "2022-01-10T18:46:34.681Z",
+              "duration": 22,
+              "snippet": "\u001b[0m \u001b[90m 175 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputPointsField0\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 176 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmanualInputPointsField0\u001b[33m.\u001b[39mfill(number)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                       ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 177 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 176,
+                "column": 40
+              }
+            },
+            {
+              "title": "locator.click(#term-detail-add-another-term)",
+              "startTime": "2022-01-10T18:46:34.703Z",
+              "duration": 144,
+              "snippet": "\u001b[0m \u001b[90m 223 |\u001b[39m \u001b[36masync\u001b[39m addAnotherTermButtonClick() {\u001b[0m\n\u001b[0m \u001b[90m 224 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39maddAnotherTermButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                    ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 225 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 224,
+                "column": 37
+              }
+            },
+            {
+              "title": "expect.toHaveText",
+              "startTime": "2022-01-10T18:46:34.848Z",
+              "duration": 20,
+              "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m newTerm\u001b[33m.\u001b[39maddAnotherTermButtonClick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m expect(termPage)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'Term'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                           ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoBack()\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "specs/test.spec.ts",
+                "line": 34,
+                "column": 28
+              }
+            },
+            {
+              "title": "page.goBack",
+              "startTime": "2022-01-10T18:46:34.869Z",
+              "duration": 35,
+              "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m expect(termPage)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'Term'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoBack()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m viewModel\u001b[33m.\u001b[39mlistFirstItemTermClick()\u001b[33m;\u001b[39m \u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "specs/test.spec.ts",
+                "line": 35,
+                "column": 16
+              }
+            },
+            {
+              "title": "locator.click(tr.mat-row.ng-star-inserted >> nth=0)",
+              "startTime": "2022-01-10T18:46:34.904Z",
+              "duration": 293,
+              "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m     \u001b[36masync\u001b[39m listFirstItemTermClick() {\u001b[0m\n\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlistFirstTermItem\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                                     ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m     }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/viewingModelPage.ts",
+                "line": 31,
+                "column": 38
+              }
+            },
+            {
+              "title": "expect.toHaveText",
+              "startTime": "2022-01-10T18:46:35.198Z",
+              "duration": 11,
+              "snippet": "\u001b[0m \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m viewModel\u001b[33m.\u001b[39mlistFirstItemTermClick()\u001b[33m;\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m     \u001b[36mawait\u001b[39m expect(descriptionViewTermField)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'autotest'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                                           ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m     \u001b[36mawait\u001b[39m viewModel\u001b[33m.\u001b[39mlistFirstItemLinkTermClick()\u001b[33m;\u001b[39m\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "specs/test.spec.ts",
+                "line": 37,
+                "column": 44
+              }
+            },
+            {
+              "title": "locator.click(a.td__link.ng-star-inserted >> nth=0)",
+              "startTime": "2022-01-10T18:46:35.210Z",
+              "duration": 91,
+              "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m     \u001b[36masync\u001b[39m listFirstItemLinkTermClick() {\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlinkFirstItemTerm\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m                                     ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m     }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/viewingModelPage.ts",
+                "line": 35,
+                "column": 38
+              }
+            },
+            {
+              "title": "locator.click(#term-detail-push-to-archive)",
+              "startTime": "2022-01-10T18:46:35.302Z",
+              "duration": 618,
+              "snippet": "\u001b[0m \u001b[90m 243 |\u001b[39m \u001b[36masync\u001b[39m pushToArchiveButtonClick() {\u001b[0m\n\u001b[0m \u001b[90m 244 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpushToArchiveButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                   ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 245 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 244,
+                "column": 36
+              }
+            },
+            {
+              "title": "locator.click(#confirm-active-archive)",
+              "startTime": "2022-01-10T18:46:35.920Z",
+              "duration": 122,
+              "snippet": "\u001b[0m \u001b[90m 251 |\u001b[39m \u001b[36masync\u001b[39m pushToArchivePopupArchiveButtonClick() {\u001b[0m\n\u001b[0m \u001b[90m 252 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpushToArchivePopupArchiveButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m                                               ^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 253 |\u001b[39m }\u001b[0m",
+              "steps": [],
+              "location": {
+                "file": "framework/pages/models/new-editTerm.ts",
+                "line": 252,
+                "column": 48
+              }
+            },
+            {
+              "title": "After Hooks",
+              "startTime": "2022-01-10T18:46:36.042Z",
+              "duration": 858,
+              "steps": [
+                {
+                  "title": "browserContext.close",
+                  "startTime": "2022-01-10T18:46:36.879Z",
+                  "duration": 15,
+                  "steps": []
+                }
+              ]
+            }
+          ],
+          "error": "",
+          "status": "passed",
+          "attachments": [
+            {
+              "name": "stdout",
+              "contentType": "text/plain",
+              "body": "newTerm Add Another Term Button\n"
+            }
+          ]
+        }
+      ],
+      "ok": true
+    }
+  ]
+}

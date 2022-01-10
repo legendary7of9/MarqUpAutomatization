@@ -2,7 +2,7 @@ import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   timeout: 60000,
-  workers: 3,
+  workers: 2,
   projects: [
     {
       name: 'webkit',
@@ -12,10 +12,10 @@ const config: PlaywrightTestConfig = {
       name: 'chrome',
       use: { browserName: 'chromium', }
     },
-    {
-      name: 'firefox',
-      use: { browserName: 'firefox', }
-    }
+    //{
+      //name: 'firefox',
+      //use: { browserName: 'firefox', }
+    //}
   ],
   
   use: {
@@ -27,7 +27,7 @@ const config: PlaywrightTestConfig = {
   retries: 3,
   reporter: [
     ['list'],
-    //reporter: [ ['html', { open: 'on-failure' }] ],
+    ['html', { open: 'on-failure' }],
     ['allure-playwright'],
     ['experimental-allure-playwright']
    ]

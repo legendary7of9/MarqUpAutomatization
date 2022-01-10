@@ -29,7 +29,6 @@ test('nameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('nameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('#form-control-name');
     console.log('newModel Name Field validation');
@@ -53,7 +52,6 @@ test('typeField @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('typeDropDownValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('#form-control-type_id');
     console.log('newModel Type DropDown validation');
@@ -74,7 +72,6 @@ test('typeNameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     })
 
 test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
     test.skip(browserName === 'chromium');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('#form-control-type_name');
@@ -86,8 +83,7 @@ test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page,
     })
 
 test('infoIconWeightScale @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'webkit');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('text=The weighting scale is used as a range to assign different weights for terms in the model - e.g. 1 to 100.  The weighting is used to calculate the scoring for each term during deal making.');
     console.log('newModel Info Icon Weight Scale');
@@ -96,8 +92,7 @@ test('infoIconWeightScale @regChecklistNewLow @newModelPage', async ({ page, bro
     })
 
 test('weightScaleFrom @regChecklistNewLow @newModelPage', async ({ page, browserName}) => {
-    test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
+    test.skip(browserName === 'chromium');
     const locator = page.locator('[formcontrolname="weight_scale_from"]');
     console.log('newModel Weight Scale From');
     await expect(locator).toHaveAttribute('placeholder', 'From');
@@ -115,7 +110,6 @@ test('weightScaleFromValidation @regChecklistNewHigh @newModelPage', async ({ pa
     
 test('weightScaleTo @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'chromium');
     const locator = page.locator('[formcontrolname="weight_scale_to"]');
     console.log('newModel Weight Scale To');
     await expect(locator).toHaveAttribute('placeholder', 'To');
@@ -144,7 +138,6 @@ test('nextButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('nextButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('text=Please fill in this field');
     console.log('newModel Next Button Empty Fields');
@@ -181,7 +174,6 @@ test('saveButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    test.skip(browserName === 'firefox');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('text=Please fill in this field');
     console.log('newModel Save Button Empty Fields');
@@ -190,7 +182,6 @@ test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page
     })
 
 test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
     test.skip(browserName === 'chromium');
     const newModel = new NewEditModelPage(page);
     const locator = page.locator('#form-control-weight_scale_from');
@@ -206,7 +197,6 @@ test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async 
  
 test('cancelButton @regChecklistNewMedium @newModelPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
-    test.skip(browserName === 'firefox');
     const newModel = new NewEditModelPage(page);
     console.log('newModel Cancel Button');
     await newModel.cancelButtonClick();

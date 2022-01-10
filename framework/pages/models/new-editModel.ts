@@ -38,7 +38,7 @@ class NewEditModelPage {
         this.typeDropDownOtherValue = page.locator('mat-option >> nth=21');
         this.typeName = page.locator('[formcontrolname="type_name"]');
         this.clientDropDown = page.locator('[formcontrolname="account_id"]');
-        this.clientDropDownValue = page.locator('#mat-option-126');
+        this.clientDropDownValue = page.locator('mat-option >> nth=82');
         this.clientDropDownEditValue = page.locator('#mat-option-480');
         this.iIcon = page.locator('#weight-scale-info');
         this.fromField = page.locator('[formcontrolname="weight_scale_from"]');
@@ -82,6 +82,7 @@ class NewEditModelPage {
 
     async typeDropDownChoose() {
         await this.typeDropDown.click();
+        await this.page.focus('mat-option >> nth=19');
         await this.typeDropDownValue.click();
     }
 
