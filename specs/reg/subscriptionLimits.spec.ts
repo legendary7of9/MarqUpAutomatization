@@ -3,7 +3,7 @@ import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { ModelPage } from '../../framework'
-import { NewEditModelPage } from '../../framework'
+import { NewEditCopyModelPage } from '../../framework'
 import { UserBar } from '../../framework'
 
 test.beforeEach(async ({ page }) => {
@@ -14,7 +14,7 @@ test('subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage', asy
     test.skip(browserName === 'chromium');
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const userbar = new UserBar(page);
     const popup = page.locator('.mat-dialog-container');
     const updateSubscription = page.locator('#not-available-popup-update-subscription');
@@ -60,7 +60,7 @@ test('subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistN
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const userbar = new UserBar(page);
     console.log('Subscription LimitPopup Update Subscription Button Edit Model Page');
     await users.AASubscriptionLimits();

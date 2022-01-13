@@ -14,8 +14,17 @@ class NewEditTermPage {
     radioButton3:Locator;
     radioButton4:Locator;
     answerField: Locator;
+    answerField0: Locator;
+    answerField1: Locator;
+    answerField2: Locator;
+    answerField3: Locator;
+    answerField4: Locator;
     pointsSlider0: Locator;
     manualInputPointsField0: Locator;
+    manualInputPointsField1: Locator;
+    manualInputPointsField2: Locator;
+    manualInputPointsField3: Locator;
+    manualInputPointsField4: Locator;
     addAnswerButton: Locator;
     answerDeleteIcon1: Locator;
     answerDeleteIcon2: Locator;
@@ -46,8 +55,17 @@ constructor(page: Page) {
     this.radioButton3 = page.locator('#form-control-is_model-3 mat-radio-button');
     this.radioButton4 = page.locator('#form-control-is_model-4 mat-radio-button');
     this.answerField = page.locator('[formcontrolname="answer"]');
+    this.answerField0 = page.locator('#form-control-answer-0 textarea');
+    this.answerField1 = page.locator('#form-control-answer-1 textarea');
+    this.answerField2 = page.locator('#form-control-answer-2 textarea');
+    this.answerField3 = page.locator('#form-control-answer-3 textarea');
+    this.answerField4 = page.locator('#form-control-answer-4 textarea');
     this.pointsSlider0 = page.locator('#form-control-answer-weight-0');
     this.manualInputPointsField0 = page.locator('#form-control-answer-weight-manual-0 input');
+    this.manualInputPointsField1 = page.locator('#form-control-answer-weight-manual-1 input');
+    this.manualInputPointsField2 = page.locator('#form-control-answer-weight-manual-2 input');
+    this.manualInputPointsField3 = page.locator('#form-control-answer-weight-manual-3 input');
+    this.manualInputPointsField4 = page.locator('#form-control-answer-weight-manual-4 input');
     this.addAnswerButton = page.locator('#term-detail-add-answer');
     this.answerDeleteIcon1 = page.locator('#form-control-delete-1');
     this.answerDeleteIcon2 = page.locator('#form-control-delete-2');
@@ -152,6 +170,31 @@ async answerFieldFill(text:string) {
     await this.answerField.fill(text);
 }
 
+async answerFieldFillZero() {
+    await this.answerField0.click();
+    await this.answerField0.fill('autotest0');
+}
+
+async answerFieldFillOne() {
+    await this.answerField1.click();
+    await this.answerField1.fill('autotest1');
+}
+
+async answerFieldFillTwo() {
+    await this.answerField2.click();
+    await this.answerField2.fill('autotest2');
+}
+
+async answerFieldFillThree() {
+    await this.answerField3.click();
+    await this.answerField3.fill('autotest3');
+}
+
+async answerFieldFillFour() {
+    await this.answerField4.click();
+    await this.answerField4.fill('autotest4');
+}
+
 async answerFieldClearFill() {
     await this.answerField.click();
     await this.answerField.fill('');
@@ -189,6 +232,31 @@ async manualInputPointsFieldFillNegativeValue() {
 async manualInputPointsFieldFillZeroValue() {
     await this.manualInputPointsField0.click();
     await this.manualInputPointsField0.fill('0');
+}
+
+async manualInputPointsFieldZeroFill() {
+    await this.manualInputPointsField0.click();
+    await this.manualInputPointsField0.fill('2');
+}
+
+async manualInputPointsFieldOneFill() {
+    await this.manualInputPointsField1.click();
+    await this.manualInputPointsField1.fill('3.5');
+}
+
+async manualInputPointsFieldTwoFill() {
+    await this.manualInputPointsField2.click();
+    await this.manualInputPointsField2.fill('1');
+}
+
+async manualInputPointsFieldThreeFill() {
+    await this.manualInputPointsField3.click();
+    await this.manualInputPointsField3.fill('-4');
+}
+
+async manualInputPointsFieldFourFill() {
+    await this.manualInputPointsField4.click();
+    await this.manualInputPointsField4.fill('-1.5');
 }
 
 async addAnswerButtonClick() {

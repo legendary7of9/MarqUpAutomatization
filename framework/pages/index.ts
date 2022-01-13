@@ -3,9 +3,10 @@ export * from './navigation/userbar'
 export * from './login-register-forgotpassword/sign-in'
 
 export * from './models/model'
-export * from './models/new-editModel'
+export * from './models/new-edit-copyModel'
 export * from './models/viewingModelPage'
 export * from './models/new-editTerm'
+export * from './models/existingModelPage'
 
 
 

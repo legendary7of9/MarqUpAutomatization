@@ -3,7 +3,7 @@ import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { ModelPage } from '../../framework'
-import { NewEditModelPage } from '../../framework'
+import { NewEditCopyModelPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
@@ -29,31 +29,26 @@ test('clientFieldSA @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('clientFieldValidationSA @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-account_id mat-error');
     console.log('newModel Client Field SA valiadtion');
     await newModel.nextButtonClick();
     await expect(locator).toHaveText('Please fill in this field');
     })
 
-test('editClientFieldSA @regChecklistNewHigh @editModelPage', async ({ page }) => {
-    const sideBarMenu = new SideBar(page);
-    const model = new ModelPage(page);
-    const editModel = new NewEditModelPage(page);
+test('editClientFieldSA @regChecklistNewHigh @editModelPage', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const editModel = new NewEditCopyModelPage(page);
+    const clientField = page.locator('[formcontrolname="account_id"]');
+    const clientFieldEditedValue = page.locator('.mat-select-value >> nth=1');
     console.log('editModel Client Field SA');
-    await editModel.nameFieldFill(Helpers.generateRandomString());
-    await editModel.descriptionFieldFill(Helpers.generateRandomString());
-    await editModel.typeDropDownChoose();
+    await page.goto('/models/edit-model/1495');
+    await expect(clientField).toHaveAttribute('placeholder', 'Client');
+    await expect(clientField).toHaveAttribute('role', 'listbox');
+    await editModel.clientDropDownEdit();
+    await editModel.saveChangesButtonClick();
+    await page.goto('/models/edit-model/1495');
+    await expect(clientFieldEditedValue).toHaveText('BanCompany');
     await editModel.clientDropDownChoose();
-    await editModel.fromFieldFill(Helpers.generateRandomNumberNewModelFrom(1, 31));
-    await editModel.toFieldFill(Helpers.generateRandomNumberNewModelTo(60, 100));
-    await editModel.nextButtonClick();
-    await sideBarMenu.sideBarModelClick();
-    await model.createFilterClick();
-    await page.focus('tr.mat-row.ng-star-inserted >> nth=0');
-    await model.threeDotsMenuButtonClick();
-    await model.threeDotsMenuEditButtonClick();
-    const locator = page.locator('[formcontrolname="account_id"]');
-    await expect(locator).toHaveAttribute('placeholder', 'Client');
-    await expect(locator).toHaveAttribute('role', 'listbox');
+    await editModel.saveChangesButtonClick();
     })

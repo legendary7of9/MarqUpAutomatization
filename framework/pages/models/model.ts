@@ -15,6 +15,7 @@ class ModelPage {
 
 
     threeDotsMenuButton: Locator;
+    threeDotsMenuButton2: Locator;
     threeDotsMenuEditButton: Locator;
     threeDotsMenuActivateButton: Locator;
     threeDotsMenuArchivateButton: Locator;
@@ -36,6 +37,7 @@ class ModelPage {
         this.createFilter = page.locator('#created-column-sort');
 
         this.threeDotsMenuButton = page.locator('.mat-icon-button >> nth=0');
+        this.threeDotsMenuButton2 = page.locator('.mat-icon-button >> nth=1');
         this.threeDotsMenuEditButton = page.locator('.context-menu-edit');
         this.threeDotsMenuActivateButton = page.locator('.context-menu-archive.action-active');
         this.threeDotsMenuArchivateButton = page.locator('.context-menu-archive.action-archive');
@@ -72,6 +74,10 @@ class ModelPage {
     }
 
     async threeDotsMenuButtonClick() {
+        await this.threeDotsMenuButton.click();
+    }
+
+    async threeDotsMenuButtonClick2() {
         await this.threeDotsMenuButton.click();
     }
 

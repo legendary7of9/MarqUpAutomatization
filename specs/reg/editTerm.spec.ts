@@ -1,6 +1,6 @@
 import { test , expect } from '@playwright/test'
 import { Users, ViewingModelPage } from '../../framework'
-import { NewEditTermPage, NewEditModelPage, UserBar } from '../../framework'
+import { NewEditTermPage, NewEditCopyModelPage, UserBar } from '../../framework'
 import { SignInPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
@@ -340,11 +340,42 @@ test('answerFieldsValidation @regChecklistNewLow @editTermPage', async ({ page, 
     await expect(answerField4).toHaveText('Please fill in this field');
     })
 
-    //to be refactored
 test.skip('sortingAnswers @regChecklistNewLow @editTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
+    const editTerm = new NewEditTermPage(page);
+    const manualInputPointsValue0 = page.locator('#form-control-answer-weight-manual-0 input');
+    const manualInputPointsValue1 = page.locator('#form-control-answer-weight-manual-1 input');
+    const manualInputPointsValue2 = page.locator('#form-control-answer-weight-manual-2 input');
+    const manualInputPointsValue3 = page.locator('#form-control-answer-weight-manual-3 input');
+    const manualInputPointsValue4 = page.locator('#form-control-answer-weight-manual-4 input');
     console.log('newTerm Sorting Answers');
-    await page.goto('/models/1112/terms/edit-term/1510');
+    await page.goto('/models/1496/terms/edit-term/1824');
+    await editTerm.answerFieldFillZero();
+    await editTerm.manualInputPointsFieldZeroFill();
+    await editTerm.addAnswerButtonClick();
+    await editTerm.answerFieldFillOne();
+    await editTerm.manualInputPointsFieldOneFill();
+    await editTerm.addAnswerButtonClick();
+    await editTerm.answerFieldFillTwo();
+    await editTerm.manualInputPointsFieldTwoFill();
+    await editTerm.addAnswerButtonClick();
+    await editTerm.answerFieldFillThree();
+    await editTerm.manualInputPointsFieldThreeFill();
+    await editTerm.addAnswerButtonClick();
+    await editTerm.answerFieldFillFour();
+    await editTerm.manualInputPointsFieldFourFill();
+    await editTerm.saveChangesButtonClick();
+    await page.goto('/models/1496/terms/edit-term/1824');
+    await expect(manualInputPointsValue0).toHaveValue('2');
+    await expect(manualInputPointsValue1).toHaveValue('-4');
+    await expect(manualInputPointsValue2).toHaveValue('-1.5');
+    await expect(manualInputPointsValue3).toHaveValue('1');
+    await expect(manualInputPointsValue4).toHaveValue('3.5');
+    await editTerm.answerDeleteIconClickFour();
+    await editTerm.answerDeleteIconClickThree();
+    await editTerm.answerDeleteIconClickTwo();
+    await editTerm.answerDeleteIconClickOne();
+    await editTerm.saveChangesButtonClick();
     })
 
 test('addSampleButton @regChecklistNewHigh @editTermPage', async ({ page }) => {
@@ -411,7 +442,7 @@ test('cancelButton @regChecklistNewLow @editTermPage', async ({ page, browserNam
     })
 
 test('saveChangesButton @regChecklistNewHigh @editTermPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const editTerm = new NewEditTermPage(page);
     const viewModel = new ViewingModelPage(page);
     const termFieldValidation = page.locator('#form-control-term mat-error');
@@ -497,7 +528,6 @@ test('pushToArchivePopupArchiveButton @regChecklistNewHigh @editTermPage', async
     const userBar = new UserBar(page);
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const newModel = new NewEditModelPage(page);
     const term = page.locator('tr.mat-row.ng-star-inserted >> nth=0');
     const termNameColor = page.locator('a.td__link.ng-star-inserted >> nth=0');
     console.log('editTerm Push To Archive Popup ArchiveButton For SA');

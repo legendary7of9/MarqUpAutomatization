@@ -3,7 +3,7 @@ import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { ModelPage } from '../../framework'
-import { NewEditModelPage } from '../../framework'
+import { NewEditCopyModelPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
@@ -29,7 +29,7 @@ test('nameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('nameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-name');
     console.log('newModel Name Field validation');
     await newModel.nextButtonClick();
@@ -52,7 +52,7 @@ test('typeField @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('typeDropDownValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-type_id');
     console.log('newModel Type DropDown validation');
     await newModel.nextButtonClick();
@@ -60,7 +60,7 @@ test('typeDropDownValidation @regChecklistNewLow @newModelPage', async ({ page, 
     })
 
 test('typeNameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('[formcontrolname="type_id"]');
     const locator2 = page.locator('[formcontrolname="type_name"]');
     console.log('newModel Type Name Field');
@@ -73,7 +73,7 @@ test('typeNameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-type_name');
     console.log('newModel Type Name Field validation');
     await newModel.typeDropDownClick();
@@ -84,7 +84,7 @@ test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page,
 
 test('infoIconWeightScale @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=The weighting scale is used as a range to assign different weights for terms in the model - e.g. 1 to 100.  The weighting is used to calculate the scoring for each term during deal making.');
     console.log('newModel Info Icon Weight Scale');
     await newModel.iIconClick();
@@ -99,7 +99,7 @@ test('weightScaleFrom @regChecklistNewLow @newModelPage', async ({ page, browser
     })
     
 test('weightScaleFromValidation @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_from');
     console.log('newModel Weight Scale From validation');
     await newModel.nextButtonClick();
@@ -116,7 +116,7 @@ test('weightScaleTo @regChecklistNewLow @newModelPage', async ({ page, browserNa
     })
     
 test('weightScaleToValidation @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_to');
     console.log('newModel Weight Scale To validation');
     await newModel.nextButtonClick();
@@ -124,7 +124,7 @@ test('weightScaleToValidation @regChecklistNewHigh @newModelPage', async ({ page
     })  
 
 test('nextButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=New Term');
     console.log('newModel Next Button');
     await newModel.nameFieldFill(Helpers.generateRandomString());
@@ -138,7 +138,7 @@ test('nextButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('nextButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=Please fill in this field');
     console.log('newModel Next Button Empty Fields');
     await newModel.nextButtonClick();
@@ -146,7 +146,7 @@ test('nextButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page
     })
 
 test('nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_from');
     console.log('newModel Next Button ToField Smaller Then FromField');
     await newModel.nameFieldFill(Helpers.generateRandomString());
@@ -159,7 +159,7 @@ test('nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage', async ({
     })
     
 test('saveButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=There are no terms yet. You can add new term here');
     console.log('newModel Save Button');
     await newModel.nameFieldFill(Helpers.generateRandomString());
@@ -174,7 +174,7 @@ test('saveButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
 
 test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=Please fill in this field');
     console.log('newModel Save Button Empty Fields');
     await newModel.saveButtonClick();
@@ -183,7 +183,7 @@ test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page
 
 test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_from');
     console.log('newModel Save Button ToField Smaller Then FromField');
     await newModel.nameFieldFill(Helpers.generateRandomString());
@@ -197,14 +197,14 @@ test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async 
  
 test('cancelButton @regChecklistNewMedium @newModelPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     console.log('newModel Cancel Button');
     await newModel.cancelButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
     })
     
 test('createdModelsArchived @regChecklistNewHigh @newModelPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const sideBarMenu = new SideBar(page);
     const model = new ModelPage(page);
     const locator = page.locator('td.mat-column-status >> nth=0');

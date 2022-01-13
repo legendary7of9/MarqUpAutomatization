@@ -2,7 +2,7 @@ import { test , expect } from '@playwright/test'
 import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { ModelPage } from '../../framework'
-import { NewEditModelPage } from '../../framework'
+import { NewEditCopyModelPage } from '../../framework'
 
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
@@ -23,7 +23,7 @@ test('nameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
 
 test('nameFieldValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-name mat-error');
     console.log('editModel Name Field validation');
     await page.goto('/models/edit-model/974');
@@ -50,7 +50,7 @@ test('typeField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     })
 
 test('typeNameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('[formcontrolname="type_id"]');
     const locator2 = page.locator('[formcontrolname="type_name"]');
     console.log('editModel Type Name Field');
@@ -64,7 +64,7 @@ test('typeNameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     
 test('typeNameFieldValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-type_name mat-error');
     console.log('editModel Type Name Field validation');
     await page.goto('/models/edit-model/974');
@@ -76,7 +76,7 @@ test('typeNameFieldValidation @regChecklistNewLow @editModelPage', async ({ page
 
 test('infoIconWeightScale @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('text=The weighting scale is used as a range to assign different weights for terms in the model - e.g. 1 to 100.  The weighting is used to calculate the scoring for each term during deal making.');
     console.log('editModel Info Icon Weight Scale');
     await page.goto('/models/edit-model/974');
@@ -93,7 +93,7 @@ test('weightScaleFrom @regChecklistNewHigh @editModelPage', async ({ page }) => 
         
 test('weightScaleFromValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_from mat-error');
     console.log('editModel Weight Scale From validation');
     await page.goto('/models/edit-model/974');
@@ -111,7 +111,7 @@ test('weightScaleTo @regChecklistNewHigh @editModelPage', async ({ page }) => {
         
 test('weightScaleToValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const locator = page.locator('#form-control-weight_scale_to mat-error');
     console.log('editModel Weight Scale To validation');
     await page.goto('/models/edit-model/974');
@@ -122,7 +122,7 @@ test('weightScaleToValidation @regChecklistNewLow @editModelPage', async ({ page
 
 test('cancelButton @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     console.log('editModel Cancel Button');
     await page.goto('/models/edit-model/974');
     await editModel.cancelButtonClick();
@@ -130,7 +130,7 @@ test('cancelButton @regChecklistNewMedium @editModelPage', async ({ page, browse
     })
 
 test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const model = new ModelPage(page);
     const locator = page.locator('#form-control-type_id');
     console.log('editModel Save Changes Button');
@@ -146,7 +146,7 @@ test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) =
 
 test('activateButton @regChecklistNewHigh @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const model = new ModelPage(page);
     const locator = page.locator('#model-details-push-to-archive');
     console.log('editModel Activate Button');
@@ -160,7 +160,7 @@ test('activateButton @regChecklistNewHigh @editModelPage', async ({ page, browse
     })
 
 test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const popup = page.locator('.mat-dialog-container');
     const cancel = page.locator('#confirm-active-cancel');
     const archive = page.locator('#confirm-active-archive');
@@ -174,7 +174,7 @@ test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page })
 
 test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const popup = page.locator('.mat-dialog-container');
     console.log('editModel Push To Archive Cancel Button');
     await page.goto('/models/edit-model/974');
@@ -185,7 +185,7 @@ test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ pa
 
 test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
-    const editModel = new NewEditModelPage(page);
+    const editModel = new NewEditCopyModelPage(page);
     const model = new ModelPage(page);
     const activate = page.locator('#model-details-activate');
     console.log('editModel Push To Archive Archive Button');

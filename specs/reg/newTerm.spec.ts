@@ -4,7 +4,7 @@ import { SideBar } from '../../framework'
 import { NewEditTermPage } from '../../framework'
 import { SignInPage } from '../../framework'
 import { ModelPage } from '../../framework'
-import { NewEditModelPage } from '../../framework'
+import { NewEditCopyModelPage } from '../../framework'
 import { ViewingModelPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
@@ -391,7 +391,7 @@ test('cancelButton @regChecklistNewLow @newTermPage', async ({ page, browserName
     })
 
 test('saveButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
-    const newModel = new NewEditModelPage(page);
+    const newModel = new NewEditCopyModelPage(page);
     const newTerm = new NewEditTermPage(page);
     const termFieldValidation = page.locator('#form-control-term mat-error');
     const questionFieldValidation = page.locator('#form-control-question mat-error');

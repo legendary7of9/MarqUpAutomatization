@@ -3,9 +3,10 @@ import { SideBar, UserBar } from './pages';
 import { SignInPage } from './pages';
 import { UserMenuBox } from './pages';
 import { ModelPage } from './pages';
-import { NewEditModelPage } from './pages';
+import { NewEditCopyModelPage } from './pages';
 import { ViewingModelPage } from './pages';
 import { NewEditTermPage } from './pages';
+import { ExistingModelPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -14,9 +15,10 @@ const pageProvider = (page:any) => {
         UserMenuBox,
         SignInPage,
         ModelPage,
-        NewEditModelPage,
+        NewEditCopyModelPage,
         ViewingModelPage,
-        NewEditTermPage
+        NewEditTermPage,
+        ExistingModelPage
 
     }
 }
@@ -33,7 +35,8 @@ export {
     SignInPage,
     UserMenuBox,
     ModelPage,
-    NewEditModelPage,
+    NewEditCopyModelPage,
     ViewingModelPage,
-    NewEditTermPage
+    NewEditTermPage,
+    ExistingModelPage
 }
