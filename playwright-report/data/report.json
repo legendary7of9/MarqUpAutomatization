@@ -1,274 +1,914 @@
 {
   "files": [
     {
-      "fileId": "82c857512c6f5562f482bc622c7355df9f7ad9ae",
-      "fileName": "specs/reg/existingModel.spec.ts",
+      "fileId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6",
+      "fileName": "specs/reg/new-editDeal.spec.ts",
       "tests": [
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-fcdad752fd54b80cf9cc988dc32da89dab55af2f",
-          "title": "nextButtonExistingPage @regChecklistNewHigh @existingModelPage",
-          "projectName": "chrome",
-          "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 113,
-            "column": 1
-          },
-          "duration": 81265,
-          "outcome": "unexpected",
-          "path": [
-            "specs/reg/existingModel.spec.ts:113"
-          ],
-          "ok": false
-        },
-        {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-7ef2860a20b11339be8d37d40065c287fa2687d0",
-          "title": "nextButtonExistingPage @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-1d19d580d8ff74d758b5c190faca1df4fa638bbb",
+          "title": "myCompanySubsidiaryField @regChecklistNewHigh @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 113,
-            "column": 1
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 134,
+            "column": 5
           },
-          "duration": 41237,
+          "duration": 59363,
           "outcome": "flaky",
           "path": [
-            "specs/reg/existingModel.spec.ts:113"
+            "specs/reg/new-editDeal.spec.ts:134"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-1d9f2bdad6e24a7402a502760909736383eabb19",
-          "title": "displayingAllExistingModels @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-cf076624c6582e732fbf37a79b9c95b4ec83c941",
+          "title": "notesField @regChecklistNewLow @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 24,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 387,
             "column": 1
           },
-          "duration": 16072,
-          "outcome": "expected",
+          "duration": 58308,
+          "outcome": "flaky",
           "path": [
-            "specs/reg/existingModel.spec.ts:24"
+            "specs/reg/new-editDeal.spec.ts:387"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-c09a745e0477655ef6d680f95b1e410a3e9f6ecc",
-          "title": "displayingAllExistingModels @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-8ede07b6415883cb405a00cd62ba6f5768fb41d8",
+          "title": "linkToExistingDealPopup @regChecklistNewLow @newEditModelPage",
           "projectName": "chrome",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 24,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 551,
             "column": 1
           },
-          "duration": 16214,
-          "outcome": "expected",
+          "duration": 84333,
+          "outcome": "flaky",
           "path": [
-            "specs/reg/existingModel.spec.ts:24"
+            "specs/reg/new-editDeal.spec.ts:551"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-15b2adb555ee04cc38fc7f9bca6971806d76efbe",
-          "title": "searchByModels @regChecklistNewMedium @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-06ed3a9e82c54d67d30b1399ac86d412091e85da",
+          "title": "linkToExistingDealPopupCancelButton @regChecklistNewLow @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 46,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 690,
             "column": 1
           },
-          "duration": 32327,
-          "outcome": "expected",
+          "duration": 49151,
+          "outcome": "flaky",
           "path": [
-            "specs/reg/existingModel.spec.ts:46"
+            "specs/reg/new-editDeal.spec.ts:690"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-62c2a56528661bf71371b8b631b106ac2ecb47e6",
-          "title": "searchByModels @regChecklistNewMedium @existingModelPage",
-          "projectName": "chrome",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-ecf4f99b404ddd4749aec028cdac8959c6fb2c6d",
+          "title": "createSaveChangesButton @regChecklistNewHigh @newEditModelPage",
+          "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 46,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 771,
             "column": 1
           },
-          "duration": 12808,
+          "duration": 84845,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:771"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-fe3f1635dbd360e1afce29ebe5f6c30119271b3e",
+          "title": "createSaveChangesButton @regChecklistNewHigh @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 771,
+            "column": 1
+          },
+          "duration": 43969,
+          "outcome": "flaky",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:771"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-1f353720182f3bf50049ab97a1a8cd23a63cda1f",
+          "title": "clientsField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 27166,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:15"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-c3985f3ddabb8f0ccef900612e55bafcd085d5b8",
+          "title": "clientsField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 15,
+            "column": 1
+          },
+          "duration": 5543,
           "outcome": "skipped",
           "path": [
-            "specs/reg/existingModel.spec.ts:46"
+            "specs/reg/new-editDeal.spec.ts:15"
           ],
           "ok": false
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-c8e23320f9c5a6fec4ef65c521891f598bb7e07b",
-          "title": "choosingExistingModel @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-f106be69cb937c108976e257c5f816ea8d394ac5",
+          "title": "clientsFieldNotEditableBySa @regChecklistNewMedium @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 88,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 59,
             "column": 1
           },
-          "duration": 15948,
-          "outcome": "expected",
-          "path": [
-            "specs/reg/existingModel.spec.ts:88"
-          ],
-          "ok": true
-        },
-        {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-1762b2b9632147522484d43a91611bb3d8f7665c",
-          "title": "choosingExistingModel @regChecklistNewHigh @existingModelPage",
-          "projectName": "chrome",
-          "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 88,
-            "column": 1
-          },
-          "duration": 18026,
-          "outcome": "expected",
-          "path": [
-            "specs/reg/existingModel.spec.ts:88"
-          ],
-          "ok": true
-        },
-        {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-58b81b5943e8fdeee742b73ab3fb788a2f5b5ced",
-          "title": "cancelButtonExistingPage @regChecklistNewLow @existingModelPage",
-          "projectName": "webkit",
-          "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 136,
-            "column": 1
-          },
-          "duration": 12953,
+          "duration": 4727,
           "outcome": "skipped",
           "path": [
-            "specs/reg/existingModel.spec.ts:136"
+            "specs/reg/new-editDeal.spec.ts:59"
           ],
           "ok": false
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-06ce8faacd9cd339d3a9ca69998404c15cc32339",
-          "title": "cancelButtonExistingPage @regChecklistNewLow @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-66b091e6ea0abb3e9096d45c0031c0ec981b0eae",
+          "title": "clientsFieldNotEditableBySa @regChecklistNewMedium @newEditModelPage",
           "projectName": "chrome",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 136,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 59,
             "column": 1
           },
-          "duration": 12480,
+          "duration": 8228,
           "outcome": "expected",
           "path": [
-            "specs/reg/existingModel.spec.ts:136"
+            "specs/reg/new-editDeal.spec.ts:59"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-0623b5949c934325d33a41e8381a0da3e328b950",
-          "title": "cancelButtonNewModelExistingPage @regChecklistNewLow @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-0d1862a7b1f1ebb432980f8d39b17a96dade6223",
+          "title": "modelField @regChecklistNewHigh @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 144,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 74,
             "column": 1
           },
-          "duration": 15040,
+          "duration": 12137,
           "outcome": "expected",
           "path": [
-            "specs/reg/existingModel.spec.ts:144"
+            "specs/reg/new-editDeal.spec.ts:74"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-2554ef74f0119b6793e8604cf1bcadb86ec26074",
-          "title": "cancelButtonNewModelExistingPage @regChecklistNewLow @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-1f2a04e661a833ca553d5f5fc7a377e7278f6984",
+          "title": "modelField @regChecklistNewHigh @newEditModelPage",
           "projectName": "chrome",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 144,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 74,
             "column": 1
           },
-          "duration": 11300,
+          "duration": 12282,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:74"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-f4b3aa92361a22f1927ddfcc6af188b8bf6e68a9",
+          "title": "modelFieldChanged @regChecklistNewMedium @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 14312,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:93"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-baf8f9353d12cec368ca9f6b3e43897abde587c1",
+          "title": "modelFieldChanged @regChecklistNewMedium @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 93,
+            "column": 1
+          },
+          "duration": 3901,
           "outcome": "skipped",
           "path": [
-            "specs/reg/existingModel.spec.ts:144"
+            "specs/reg/new-editDeal.spec.ts:93"
           ],
           "ok": false
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-12a561b806ae39a5cf8b0df1c2a315c37968a017",
-          "title": "saveButtonNewModelExistingPage @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-40906a996daa3bba661818eba5be2f03b93ac0b1",
+          "title": "contractNameField @regChecklistNewLow @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 157,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 112,
             "column": 1
           },
-          "duration": 12796,
+          "duration": 11942,
           "outcome": "skipped",
           "path": [
-            "specs/reg/existingModel.spec.ts:157"
+            "specs/reg/new-editDeal.spec.ts:112"
           ],
           "ok": false
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-a399367128f2b812149e44f919842dfa8adf5cbe",
-          "title": "saveButtonNewModelExistingPage @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-70d8df99eed0221f770cde8da6b0d96c684704d9",
+          "title": "contractNameField @regChecklistNewLow @newEditModelPage",
           "projectName": "chrome",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 157,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 112,
             "column": 1
           },
-          "duration": 28976,
+          "duration": 10251,
           "outcome": "expected",
           "path": [
-            "specs/reg/existingModel.spec.ts:157"
+            "specs/reg/new-editDeal.spec.ts:112"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-56e4415c26be6fa9ec53c6d1322f4d16c2b98385",
-          "title": "saveButtonValidationNewModelExistingPage @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-3ae159b84d36cfa0e3cc44b47fb18e238a90f5bf",
+          "title": "myCompanySubsidiaryField @regChecklistNewHigh @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 134,
+            "column": 5
+          },
+          "duration": 24826,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:134"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-5305a19ecbb8cee5c2eeb663dc8af7045c47394f",
+          "title": "myCompanySubsidiaryFieldValidation @regChecklistNewHigh @newEditModelPage",
           "projectName": "webkit",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 199,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 179,
             "column": 1
           },
-          "duration": 18645,
+          "duration": 15354,
           "outcome": "expected",
           "path": [
-            "specs/reg/existingModel.spec.ts:199"
+            "specs/reg/new-editDeal.spec.ts:179"
           ],
           "ok": true
         },
         {
-          "testId": "82c857512c6f5562f482bc622c7355df9f7ad9ae-91c9676a0e12a39f29224a6ac8f62daab8a92a9e",
-          "title": "saveButtonValidationNewModelExistingPage @regChecklistNewHigh @existingModelPage",
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-dc441ab532cb0ebc4821769e882683a743581519",
+          "title": "myCompanySubsidiaryFieldValidation @regChecklistNewHigh @newEditModelPage",
           "projectName": "chrome",
           "location": {
-            "file": "specs/reg/existingModel.spec.ts",
-            "line": 199,
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 179,
             "column": 1
           },
-          "duration": 15921,
+          "duration": 13429,
           "outcome": "expected",
           "path": [
-            "specs/reg/existingModel.spec.ts:199"
+            "specs/reg/new-editDeal.spec.ts:179"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-328338f7e433fb5b28ceaba55d6077ef93a9e928",
+          "title": "myCompanySubsidiaryFieldDropDown @regChecklistNewMedium @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 207,
+            "column": 1
+          },
+          "duration": 14020,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:207"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-c41529b80df905f6471b22c9932004a00206a7e1",
+          "title": "myCompanySubsidiaryFieldDropDown @regChecklistNewMedium @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 207,
+            "column": 1
+          },
+          "duration": 4013,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:207"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-73427a4e20eec24b401a84337e4fe63b7b6787bf",
+          "title": "myCompanySubsidiaryFieldSA @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 247,
+            "column": 1
+          },
+          "duration": 11610,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:247"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-cb7aeca589c34efade1d4130cd7ab4056d92b9b9",
+          "title": "myCompanySubsidiaryFieldSA @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 247,
+            "column": 1
+          },
+          "duration": 9733,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:247"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-ab9a884a2b46856485cfb5c0c856b530aaa3cde5",
+          "title": "nameOfTheOtherPartyField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 265,
+            "column": 1
+          },
+          "duration": 46893,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:265"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-52729c34902885b01a191c1195ca4d5ffcb7ce8b",
+          "title": "nameOfTheOtherPartyField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 265,
+            "column": 1
+          },
+          "duration": 4114,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:265"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-99b52efb913e8a28242dae36ccc03f4af92263e8",
+          "title": "estimatedValueField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 287,
+            "column": 1
+          },
+          "duration": 14271,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:287"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-361fa854dca61931c7e442ef5e62b878ca49af54",
+          "title": "estimatedValueField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 287,
+            "column": 1
+          },
+          "duration": 11866,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:287"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-30c055400b8c5f567e3dc2aac371bdc9d5ac19e1",
+          "title": "currencyField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 314,
+            "column": 1
+          },
+          "duration": 15139,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:314"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-cf59718ea5a1c9186f6fd1fe162e79eb812455f3",
+          "title": "currencyField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 314,
+            "column": 1
+          },
+          "duration": 4345,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:314"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-93e84948afcf63e17b6d73bfb1b228211ed5666d",
+          "title": "overviewField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 341,
+            "column": 1
+          },
+          "duration": 5330,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:341"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-a1e7d31f67f7f847e162b70d84d64c55a39bd6ff",
+          "title": "overviewField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 341,
+            "column": 1
+          },
+          "duration": 11917,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:341"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-3caa2f86cd56a237adc3c2f67c8c80e53df50620",
+          "title": "notesField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 387,
+            "column": 1
+          },
+          "duration": 5304,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:387"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-decd7d515611f7b26dd10fea8f9116befa774f0d",
+          "title": "agreementNoField @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 433,
+            "column": 1
+          },
+          "duration": 5205,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:433"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-2cf233e351011fd870d7f8097496e160cc9fc0bd",
+          "title": "agreementNoField @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 433,
+            "column": 1
+          },
+          "duration": 17282,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:433"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-1ff97a03ee5bf28a118fa3d48c48340ef1337850",
+          "title": "displayingLinkToExistingDealButton @regChecklistNewMedium @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 479,
+            "column": 1
+          },
+          "duration": 24729,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:479"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-50cab518089a67680653636968f5fc988438d166",
+          "title": "displayingLinkToExistingDealButton @regChecklistNewMedium @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 479,
+            "column": 1
+          },
+          "duration": 5496,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:479"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-dfbe0cc751189b3f914a1edd660950ceef201a8c",
+          "title": "linkToExistingDealButtonValidation @regChecklistNewHigh @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 534,
+            "column": 1
+          },
+          "duration": 12578,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:534"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-c63229152f28f526af270495365e2c7d5c2c0e4e",
+          "title": "linkToExistingDealButtonValidation @regChecklistNewHigh @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 534,
+            "column": 1
+          },
+          "duration": 12322,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:534"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-26b7074daa2d4667574292534695fdd8cd6abf67",
+          "title": "linkToExistingDealPopup @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 551,
+            "column": 1
+          },
+          "duration": 7331,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:551"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-eea72f1c07091992cbf0a61a5dd9b726ca0b895d",
+          "title": "linkToExistingDealPopupSearch @regChecklistNewMedium @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 607,
+            "column": 1
+          },
+          "duration": 13713,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:607"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-605fdf830c3c4b5c14817eed459d5b0cfe053ee0",
+          "title": "linkToExistingDealPopupSearch @regChecklistNewMedium @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 607,
+            "column": 1
+          },
+          "duration": 5540,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:607"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-92e62ae1b27328488225974daf31496cae62cde6",
+          "title": "linkToExistingDealPopupDealStatusColumns @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 631,
+            "column": 1
+          },
+          "duration": 4816,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:631"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-2a777ddde2ab8208e773772262f746a57e421a86",
+          "title": "linkToExistingDealPopupDealStatusColumns @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 631,
+            "column": 1
+          },
+          "duration": 10968,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:631"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-6645155257500219c2c72b2a0b4e2cc598297c46",
+          "title": "linkToExistingDealPopupSelectButton @regChecklistNewHigh @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 665,
+            "column": 1
+          },
+          "duration": 14822,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:665"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-dfde56cefc43711f6df71ac98a9787ff01073c39",
+          "title": "linkToExistingDealPopupSelectButton @regChecklistNewHigh @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 665,
+            "column": 1
+          },
+          "duration": 13751,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:665"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-d61859b6f7f4a8531a47fc5fa5d55ef215fc5fdb",
+          "title": "linkToExistingDealPopupCancelButton @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 690,
+            "column": 1
+          },
+          "duration": 4173,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:690"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-4ab12062972dbfc1ce1c976f231f8b325fb55733",
+          "title": "linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 714,
+            "column": 1
+          },
+          "duration": 4676,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:714"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-ac29e798ae08271de4e26cec33e0650d965edffc",
+          "title": "linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 714,
+            "column": 1
+          },
+          "duration": 13946,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:714"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-547d27f6264b9fb1a25e48dfe91712f0c1278eb7",
+          "title": "dealStatus @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 749,
+            "column": 1
+          },
+          "duration": 31663,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:749"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-96132133d45211de524086a674c430acd9644e18",
+          "title": "dealStatus @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 749,
+            "column": 1
+          },
+          "duration": 4154,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:749"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-5af4bf64fa9fe14ce24e7fd1a3b91f2c4ba335ac",
+          "title": "cancelButton @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 819,
+            "column": 1
+          },
+          "duration": 5461,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:819"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-e3d9b851e80a246a354df8d40c9367ce29733d17",
+          "title": "cancelButton @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 819,
+            "column": 1
+          },
+          "duration": 12669,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:819"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-dc72a7ef2a7a1a1ac9e0be13aa0c44fc135e906f",
+          "title": "modelId @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 840,
+            "column": 1
+          },
+          "duration": 11942,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:840"
+          ],
+          "ok": true
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-34db3c740055f9621f00315c4ded4e23432fd8ab",
+          "title": "modelId @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 840,
+            "column": 1
+          },
+          "duration": 5100,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:840"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-48281fbf25bfa3913a39a804c6abdf129c25b59f",
+          "title": "dealId @regChecklistNewLow @newEditModelPage",
+          "projectName": "webkit",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 859,
+            "column": 1
+          },
+          "duration": 5117,
+          "outcome": "skipped",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:859"
+          ],
+          "ok": false
+        },
+        {
+          "testId": "d77caf9f471ab9d9643995d9a3c0d4a92a57fab6-e70ac61bc916ce6ea310ff8666b4e43838bf1d17",
+          "title": "dealId @regChecklistNewLow @newEditModelPage",
+          "projectName": "chrome",
+          "location": {
+            "file": "specs/reg/new-editDeal.spec.ts",
+            "line": 859,
+            "column": 1
+          },
+          "duration": 9813,
+          "outcome": "expected",
+          "path": [
+            "specs/reg/new-editDeal.spec.ts:859"
           ],
           "ok": true
         }
       ],
       "stats": {
-        "total": 16,
-        "expected": 10,
-        "unexpected": 1,
-        "flaky": 1,
-        "skipped": 4,
+        "total": 56,
+        "expected": 28,
+        "unexpected": 0,
+        "flaky": 6,
+        "skipped": 22,
         "ok": false,
-        "duration": 362008
+        "duration": 959889
       }
     }
   ],
@@ -277,12 +917,12 @@
     "chrome"
   ],
   "stats": {
-    "total": 16,
-    "expected": 10,
-    "unexpected": 1,
-    "flaky": 1,
-    "skipped": 4,
+    "total": 56,
+    "expected": 28,
+    "unexpected": 0,
+    "flaky": 6,
+    "skipped": 22,
     "ok": false,
-    "duration": 362008
+    "duration": 959889
   }
 }

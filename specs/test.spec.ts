@@ -1,42 +1,57 @@
 import { test , expect } from '@playwright/test'
-import { existsSync } from 'fs'
-import { ModelPage, NewEditCopyModelPage, Users, SideBar, ViewingModelPage, UserBar, ExistingModelPage } from '../framework'
-import { NewEditTermPage } from '../framework'
+import { UserBar, Users } from '../framework'
 import { SignInPage } from '../framework'
+import { SideBar } from '../framework'
+import { ModelPage } from '../framework'
+import { DealsPage } from '../framework'
+import { NewEditDealPage } from '../framework'
 import { Helpers } from '../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
+    await page.goto('');
+}); 
+
+test('createSaveChangesButton @regChecklistNewHigh @newEditModelPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const sideBarMenu = new SideBar(page);
-    const model = new ModelPage(page);
-    await page.goto('');
+    const deal = new DealsPage(page);
+    const newEditDeal = new NewEditDealPage(page);
+    const modelField = page.locator('#form-control-model_id mat-error');
+    const contractName = page.locator('#form-control-contract_name mat-error');
+    const nameOfOtherParty = page.locator('#form-control-name_of_the_other_party mat-error');
+    const estimatedValue = page.locator('#form-control-estimated_value mat-error');
+    const analysisPage = page.locator('.deal-scores');
+    console.log('NewEditModel Create/Save Changes Button');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
-    await sideBarMenu.sideBarModelClick();
-    await model.addModelButtonClick();
-    await model.addModelChooseButtonClick();
-}); 
-
-test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ page }) => {
-    const existingModel = new ExistingModelPage(page);
-    const titleOfCopyModel = page.locator('.section__header h1');
-    const nameFieldOfCopyModel = page.locator('#form-control-name textarea');
-    const descriptionFieldOfCopyModel = page.locator('#form-control-description textarea');
-    const typeFieldOfCopyModel = page.locator('#form-control-type_id mat-select');
-    const weightFromFieldOfCopyModel = page.locator('#form-control-weight_scale_from input');
-    const weightToFieldOfCopyModel = page.locator('#form-control-weight_scale_to input');
-    console.log('existingModelPage Next Button Existing Page');
-    await existingModel.searchModelsUse();
-    await page.waitForSelector('.mat-column-name >> nth=1');
-    await existingModel.radioButtonChoose();
-    await existingModel.nextButtonClick();
-    await expect(page).toHaveURL('/models/clone-model/1505');
-    await expect(titleOfCopyModel).toHaveText('Copy Model');
-    await expect(nameFieldOfCopyModel).toHaveValue('Copy_1505_test100test100DoNotRemove15');
-    await expect(descriptionFieldOfCopyModel).toHaveValue('test');
-    await expect(typeFieldOfCopyModel).toHaveText('Test');
-    await expect(weightFromFieldOfCopyModel).toHaveValue('1');
-    await expect(weightToFieldOfCopyModel).toHaveValue('100');
-    })
+    await page.goto('/deals?&sort=contract_name');
+    await deal.addDealButtonClick();
+    await newEditDeal.createButtonClick();
+    await expect(modelField).toHaveText('Please fill in this field');
+    await expect(contractName).toHaveText('Please fill in this field');
+    await expect(nameOfOtherParty).toHaveText('Please fill in this field');
+    await expect(estimatedValue).toHaveText('Please fill in this field');
+    await newEditDeal.modelDropDownChoose();
+    await newEditDeal.contractNameFieldFill(Helpers.generateRandomString());
+    await newEditDeal.nameOfTheOtherPartyFieldFill(Helpers.generateRandomString());
+    await newEditDeal.esimatedValueFieldFill();
+    await newEditDeal.createButtonClick();
+    await expect(analysisPage).toBeVisible();
+    await page.goto('/deals?&sort=contract_name');
+    await deal.createFilterClick();
+    await page.waitForTimeout(500);
+    await deal.threeDotsMenuEditButtonClick();
+    await newEditDeal.contractNameFieldClear();
+    await newEditDeal.nameOfTheOtherPartyFieldClear();
+    await newEditDeal.esimatedValueFieldClear();
+    await newEditDeal.saveChangesButtonClick();
+    await expect(contractName).toHaveText('Please fill in this field');
+    await expect(nameOfOtherParty).toHaveText('Please fill in this field');
+    await expect(estimatedValue).toHaveText('Please fill in this field');
+    await newEditDeal.contractNameFieldFill(Helpers.generateRandomString());
+    await newEditDeal.nameOfTheOtherPartyFieldFill(Helpers.generateRandomString());
+    await newEditDeal.esimatedValueFieldFill();
+    await newEditDeal.saveChangesButtonClick();
+    await expect(analysisPage).toBeVisible();
+})
