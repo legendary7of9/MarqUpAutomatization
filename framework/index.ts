@@ -9,6 +9,7 @@ import { NewEditTermPage } from './pages';
 import { ExistingModelPage } from './pages';
 import { DealsPage } from './pages';
 import { NewEditDealPage } from './pages';
+import { DealAnalysisPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -22,8 +23,8 @@ const pageProvider = (page:any) => {
         NewEditTermPage,
         ExistingModelPage,
         DealsPage,
-        NewEditDealPage
-
+        NewEditDealPage,
+        DealAnalysisPage
     }
 }
 
@@ -44,5 +45,6 @@ export {
     NewEditTermPage,
     ExistingModelPage,
     DealsPage,
-    NewEditDealPage
+    NewEditDealPage,
+    DealAnalysisPage
 }

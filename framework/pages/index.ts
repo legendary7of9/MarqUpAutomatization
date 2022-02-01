@@ -7,8 +7,9 @@ export * from './models/new-edit-copyModel'
 export * from './models/viewingModelPage'
 export * from './models/new-editTerm'
 export * from './models/existingModel'
-export * from './models/deals'
-export * from './models/new-editDeal'
+export * from './deals/deals'
+export * from './deals/new-editDeal'
+export * from './deals/dealAnalysis'
 
 
 export * from './usermenu/userMenuBox.page'

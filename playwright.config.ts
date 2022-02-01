@@ -22,7 +22,8 @@ const config: PlaywrightTestConfig = {
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
-    baseURL: 'https://marqup.test.noredlines.com'
+    baseURL: 'https://marqup.test.noredlines.com',
+    acceptDownloads: true
   },
   retries: 3,
   reporter: [

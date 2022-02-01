@@ -25,8 +25,8 @@ test('displayingAllExistingModels @regChecklistNewHigh @existingModelPage', asyn
     const existingModel = new ExistingModelPage(page);
     const displayingModels0 = page.locator('.mat-column-name >> nth=1');
     const displayingModels1 = page.locator('.mat-column-name >> nth=3');
-    const displayingModels2 = page.locator('.mat-column-name >> nth=6');
-    const displayingModels3 = page.locator('.mat-column-name >> nth=8');
+    const displayingModels2 = page.locator('.mat-column-name >> nth=7');
+    const displayingModels3 = page.locator('.mat-column-name >> nth=9');
     const radioButtonsNoneSelected = page.locator('.btn-group button');
     const displayingNextButton = page.locator('.mat-raised-button');
     const displayingCancelButton = page.locator('.btn-cancel');
