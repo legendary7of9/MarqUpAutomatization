@@ -10,6 +10,7 @@ export * from './models/existingModel'
 export * from './deals/deals'
 export * from './deals/new-editDeal'
 export * from './deals/dealAnalysis'
+export * from './templates/templates'
 
 
 export * from './usermenu/userMenuBox.page'

@@ -10,6 +10,7 @@ import { ExistingModelPage } from './pages';
 import { DealsPage } from './pages';
 import { NewEditDealPage } from './pages';
 import { DealAnalysisPage } from './pages';
+import { TemplatesPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -24,7 +25,8 @@ const pageProvider = (page:any) => {
         ExistingModelPage,
         DealsPage,
         NewEditDealPage,
-        DealAnalysisPage
+        DealAnalysisPage,
+        TemplatesPage
     }
 }
 
@@ -46,5 +48,6 @@ export {
     ExistingModelPage,
     DealsPage,
     NewEditDealPage,
-    DealAnalysisPage
+    DealAnalysisPage,
+    TemplatesPage
 }

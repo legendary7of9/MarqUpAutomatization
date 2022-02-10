@@ -42,6 +42,7 @@ class SideBar {
 
     async sideBarClickTractsTemplatesClick() {
         await this.clicktractsTempates.click();
+        await this.page.waitForSelector('#templates-list-add-template');
     }
 
     async sideBarClickTractsContractsClick() {
