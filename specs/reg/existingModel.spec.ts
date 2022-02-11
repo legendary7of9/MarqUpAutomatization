@@ -106,7 +106,7 @@ test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ p
     await existingModel.radioButtonChooseTwo();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
-    await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked');  
+    await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked'); 
     })
 
 test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ page }) => {
