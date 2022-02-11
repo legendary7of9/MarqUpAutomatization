@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/legendary7of9/MarqUpAutomatization#readme",
   "devDependencies": {
-    "@playwright/test": "^1.18.1",
+    "@playwright/test": "^1.19.0",
     "@types/node": "^16.11.11",
     "allure-commandline": "^2.17.2",
     "allure-playwright": "^2.0.0-beta.14",
