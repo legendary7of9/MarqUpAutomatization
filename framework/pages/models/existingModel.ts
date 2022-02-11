@@ -21,10 +21,10 @@ class ExistingModelPage {
         this.searchModels = page.locator('#existing-model-search');
         this.firstMoedlField = page.locator('mat-radio-button >> nth=0');
         this.modelField = page.locator('tr.mat-row.ng-star-inserted >> nth=0');
-        this.radioButton = page.locator('mat-radio-button >> nth=4');
-        this.radioButton0 = page.locator('mat-radio-button >> nth=3');
-        this.radioButton1 = page.locator('mat-radio-button >> nth=6');
-        this.radioButton2 = page.locator('mat-radio-button >> nth=8');
+        this.radioButton = page.locator('.mat-column-name >> text=test100test100DoNotRemove15');
+        this.radioButton0 = page.locator('.mat-column-name >> text=test100test100DoNotRemove12');
+        this.radioButton1 = page.locator('.mat-column-name >> text=test100test100DoNotRemove2');
+        this.radioButton2 = page.locator('.mat-column-name >> text=test100test100DoNotRemove4');
         this.nextButton = page.locator('#existing-model-next');
         this.cancelButton = page.locator('#existing-model-cancel');
     }
@@ -32,6 +32,7 @@ class ExistingModelPage {
     async searchModelsUse() {
         await this.searchModels.click();
         await this.searchModels.type('test100test100DoNotRemove');
+        await this.page.waitForTimeout(1500);
     }
 
     async firstMoedlFieldChoose() {

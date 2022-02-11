@@ -116,9 +116,11 @@ test('summaryButtonValidation @regChecklistNewHigh @newDealAnalysis', async ({ p
     await dealAnalysis.firstDraftFinishButtonClick();
     await dealAnalysis.finalDraftFinishButtonClick();
     await page.goto('/deals/analysis-deal/8251');
+    await page.waitForSelector('#deal-analysis-summary');
     await dealAnalysis.summaryButtonClick();
     await expect(page).toHaveURL('/deals/summary-report/8251');
     await page.goto('/deals/analysis-deal/8251');
+    await page.waitForSelector('.mat-column-first_draft >> nth=1');
     await dealAnalysis.finalDraftReopenButtonClick();
     await dealAnalysis.firstDraftFinishButtonClick();
     await dealAnalysis.clearAllButtonFinalDraftClick();
@@ -707,10 +709,12 @@ test('sampleColumn @regChecklistNewLow @newDealAnalysis', async ({ page, browser
     const view2 = page.locator('.deal-analysis-sample-view >> nth=2')
     console.log('dealAnalysis Sample Column');
     await page.goto('/deals/analysis-deal/8250');
+    await page.waitForSelector('.mat-column-first_draft >> nth=1');
     await expect(view0).toHaveClass('link-name deal-analysis-sample-view disabled');
     await expect(view1).toHaveClass('link-name deal-analysis-sample-view disabled');
     await expect(view2).toHaveClass('link-name deal-analysis-sample-view disabled');
     await page.goto('/deals/analysis-deal/458');
+    await page.waitForSelector('.mat-column-first_draft >> nth=1');
     await expect(view0).toHaveClass('link-name deal-analysis-sample-view');
     await expect(view1).toHaveClass('link-name deal-analysis-sample-view');
     await expect(view2).toHaveClass('link-name deal-analysis-sample-view');
@@ -943,7 +947,7 @@ test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @newDe
     const effectiveDateValue = page.locator('#deal-analysis-effective-date input');
     const expirationDateValue = page.locator('#deal-analysis-expiration-date input');
     const today = new Date();
-    const date = ("0" + (today.getMonth() + 1)).slice(-2)+'/'+( "0" + today.getDate())+'/'+today.getFullYear();
+    const date = ("0" + (today.getMonth() + 1)).slice(-2)+'/'+("0" + today.getDate()).slice(-2)+'/'+today.getFullYear();
     console.log('dealAnalysis Appearing Signature&Effective&Expiration Date Boxes');
     await page.goto('/deals?&sort=contract_name');
     await deal.addDealButtonClick();
@@ -1271,7 +1275,7 @@ test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @newDealAnal
     await page.reload();
     await expect(preliminaryDateCheckedUnchecked).toHaveAttribute('aria-checked', 'true');
     await dealAnalysis.preliminaryCheckboxClick();
-    await page.goto('/deals/analysis-deal/8251');
+    await page.goto('/deals/analysis-deal/8430');
     await page.waitForSelector('.mat-column-first_draft .mat-select-arrow-wrapper >> nth=0');
     await dealAnalysis.firstDraftDropDownChoose();
     await dealAnalysis.firstDraftFinishButtonClick();
@@ -1286,7 +1290,7 @@ test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @newDealAnal
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    await page.goto('/deals/analysis-deal/8250');
+    await page.goto('/deals/analysis-deal/8431');
     await page.waitForSelector('.mat-column-first_draft .mat-select-arrow-wrapper >> nth=0');
     await dealAnalysis.firstDraftDropDownChoose();
     await dealAnalysis.firstDraftFinishButtonClick();

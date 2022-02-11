@@ -59,6 +59,7 @@ class ModelPage {
 
     async addModelChooseButtonClick() {
         await this.modalWindowChooseAModelButton.click();
+        await this.page.waitForTimeout(1500);
     }
 
     async addModalNewModalButtonClick() {

@@ -92,7 +92,6 @@ test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ p
     const checkedUnchecked2 = page.locator('mat-radio-button >> nth=8');
     console.log('existingModelPage Choosing Existing Model');
     await existingModel.searchModelsUse();
-    await page.waitForSelector('.mat-column-name >> nth=1');
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary');
@@ -107,7 +106,7 @@ test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ p
     await existingModel.radioButtonChooseTwo();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
-    await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked');   
+    await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked');  
     })
 
 test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ page }) => {
@@ -120,7 +119,7 @@ test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ 
     const weightToFieldOfCopyModel = page.locator('#form-control-weight_scale_to input');
     console.log('existingModelPage Next Button Existing Page');
     await existingModel.searchModelsUse();
-    await page.waitForSelector('mat-radio-button >> nth=4');
+    await page.waitForSelector('.mat-column-name >> text=test100test100DoNotRemove15');
     await existingModel.radioButtonChoose();
     await existingModel.nextButtonClick();
     await expect(page).toHaveURL('/models/clone-model/1505');

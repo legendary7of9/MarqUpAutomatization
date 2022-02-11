@@ -43,6 +43,13 @@ export abstract class Helpers {
     return number;
   }
 
+  public static currentDate() {
+    var today = new Date();
+    ("0" + (today.getMonth() + 1)).slice(-2)+'/'+("0" + today.getDate()).slice(-2)+'/'+today.getFullYear();
+
+    return today;
+  }
+
   }
 
 //Math.floor(Math.random() * (max - min + 1)) + min;

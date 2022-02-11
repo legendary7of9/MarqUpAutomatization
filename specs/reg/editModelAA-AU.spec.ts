@@ -131,7 +131,6 @@ test('cancelButton @regChecklistNewMedium @editModelPage', async ({ page, browse
 
 test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const editModel = new NewEditCopyModelPage(page);
-    const model = new ModelPage(page);
     const locator = page.locator('#form-control-type_id');
     console.log('editModel Save Changes Button');
     await page.goto('/models/edit-model/974');
@@ -147,16 +146,18 @@ test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) =
 test('activateButton @regChecklistNewHigh @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const editModel = new NewEditCopyModelPage(page);
-    const model = new ModelPage(page);
     const locator = page.locator('#model-details-push-to-archive');
     console.log('editModel Activate Button');
     await page.goto('/models/edit-model/1028');
+    await page.waitForTimeout(1000);
     await editModel.activateButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
     await page.goto('/models/edit-model/1028');
+    await page.waitForTimeout(1000);
     await expect(locator).toHaveAttribute('id', 'model-details-push-to-archive');
     await editModel.pushToArchiveButtonClick();
     await editModel.pushToArchivePopupArchiveButtonClick();
+    await page.waitForTimeout(1000);
     })
 
 test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
