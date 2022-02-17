@@ -37,7 +37,7 @@ class NewEditDealPage {
         this.page = page;
         this.clientDropDown = page.locator('[formcontrolname="account_id"]');
         this.clientDropDownValueNew = page.locator('mat-option >> text=Client 1HT(test)'); //nth=19
-        this.clientDropDownValueNew2 = page.locator('mat-option >> nth=112');
+        this.clientDropDownValueNew2 = page.locator('mat-option >> text=Client 1HT(test)'); //nth=112
         this.modelDropDown = page.locator('[formcontrolname="model_id"]');
         this.modelDropDownValueNew = page.locator('mat-option >> text=test100test100DoNotRemove16'); //nth=12
         this.contractNameField = page.locator('[formcontrolname="contract_name"]');
@@ -61,7 +61,7 @@ class NewEditDealPage {
         this.linkToExistingDealPopupSelectButton = page.locator('#linking-deal-select');
         this.linkToExistingDealPopupCloseButton = page.locator('#linking-deal-close');
         this.linkToExistingDealPopupRadioButtonForSelect = page.locator('.mat-radio-button >> nth=0');
-        this.linkToExistingDealPopupRadioButtonForSelect2 = page.locator('.mat-radio-button >> nth=15');
+        this.linkToExistingDealPopupRadioButtonForSelect2 = page.locator('.mat-radio-button >> nth=1');
     }
 
     async clientDropDownChoose() {

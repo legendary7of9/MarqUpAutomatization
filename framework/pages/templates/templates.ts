@@ -6,6 +6,9 @@ class TemplatesPage {
     page: Page;
     expect: any;
     addTemplateButton: Locator;
+    addTemplatePopupNewTemplateButton: Locator;
+    addTemplatePopupChooseTemplateButton: Locator;
+    addTemplatePopupCancelButton: Locator;
     exportButton: Locator;
     checkboxSelectAll: Locator;
     tamplateNameFilter: Locator;
@@ -25,6 +28,9 @@ class TemplatesPage {
     constructor(page: Page) {
         this.page = page;
         this.addTemplateButton = page.locator('#templates-list-add-template');
+        this.addTemplatePopupNewTemplateButton = page.locator('.mat-button >> text=New template'); //to be refactored
+        this.addTemplatePopupChooseTemplateButton = page.locator('.mat-button >> text=Choose a template'); //to be refactored
+        this.addTemplatePopupCancelButton = page.locator('.mat-button >> text=Cancel'); //to be refactored
         this.exportButton = page.locator('#templates-list-export');
         this.checkboxSelectAll = page.locator('#templates-list-select-all');
         this.tamplateNameFilter = page.locator('#template-name-column-sort');
@@ -44,6 +50,21 @@ class TemplatesPage {
 
     async addTemplateButtonClcik() {
         await this.addTemplateButton.click();
+        await this.page.waitForTimeout(1000);
+    }
+
+    async addTemplatePopupNewTemplateButtonClick() {
+        await this.addTemplatePopupNewTemplateButton.click();
+        await this.page.waitForTimeout(1500);
+    }
+
+    async addTemplatePopupChooseTemplateButtonClick() {
+        await this.addTemplatePopupChooseTemplateButton.click();
+        await this.page.waitForTimeout(1500);
+    }
+
+    async addTemplatePopupCancelButtonClick() {
+        await this.addTemplatePopupCancelButton.click();
     }
 
     async exportButtonClick() {
@@ -91,30 +112,37 @@ class TemplatesPage {
 
     async threeDotsMenuButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuEditButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuEditButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuSaveAsNewButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuSaveAsNewButton.click();
     }
 
     async threeDotsMenuShareAccessButtonClcik() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuShareAccessButton.click();
     }
 
     async threeDotsMenuCreateContractButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuCreateContractButton.click();
     }
 
     async threeDotsMenuDeleteButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuDeleteButton.click();
     }
 }

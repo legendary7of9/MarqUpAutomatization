@@ -24,6 +24,8 @@ class ContractsPage {
     threeDotsMenuShareAccessButton: Locator;
     threeDotsMenuCreateContractButton: Locator;
     threeDotsMenuDeleteButton: Locator;
+    threeDotsMenuDeletePopupCancelButton: Locator;
+    threeDotsMenuDeletePopupDeleteButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -46,6 +48,8 @@ class ContractsPage {
         this.threeDotsMenuShareAccessButton = page.locator('.context-menu-share-access');
         this.threeDotsMenuCreateContractButton = page.locator('.context-menu-create-contract');
         this.threeDotsMenuDeleteButton = page.locator('.context-menu-delete');
+        this.threeDotsMenuDeletePopupCancelButton = page.locator('.mat-button >> text=Cancel');
+        this.threeDotsMenuDeletePopupDeleteButton = page.locator('.mat-button >> text=Delete');
     }
 
     async tamplateNameFilterClick() {
@@ -100,31 +104,51 @@ class ContractsPage {
 
     async threeDotsMenuButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuEditButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuEditButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuSaveAsNewButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuSaveAsNewButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuShareAccessButtonClcik() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuShareAccessButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuCreateContractButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuCreateContractButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async threeDotsMenuDeleteButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
         await this.threeDotsMenuDeleteButton.click();
+        await this.page.waitForTimeout(1000);
+    }
+
+    async threeDotsMenuDeletePopupCancelButtonClick() {
+        await this.threeDotsMenuDeletePopupCancelButton.click();
+    }
+
+    async threeDotsMenuDeletePopupDeleteButtonClick() {
+        await this.threeDotsMenuDeletePopupDeleteButton.click();
+        await this.page.waitForTimeout(1000);
     }
 }
 

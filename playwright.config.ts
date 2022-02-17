@@ -1,7 +1,7 @@
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  timeout: 60000,
+  timeout: 150000,
   workers: 2,
   projects: [
     {
@@ -25,7 +25,7 @@ const config: PlaywrightTestConfig = {
     baseURL: 'https://marqup.test.noredlines.com',
     acceptDownloads: true
   },
-  retries: 3,
+  retries: 2,
   reporter: [
     ['list'],
     ['html', { open: 'on-failure' }],

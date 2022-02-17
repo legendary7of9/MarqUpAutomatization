@@ -23,9 +23,9 @@ test.beforeEach(async ({ page }) => {
 
 test('displayingAllExistingModels @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);
-    const displayingModels0 = page.locator('.mat-column-name >> nth=1');
-    const displayingModels1 = page.locator('.mat-column-name >> nth=3');
-    const displayingModels2 = page.locator('.mat-column-name >> nth=7');
+    const displayingModels0 = page.locator('.mat-column-name >> nth=3');
+    const displayingModels1 = page.locator('.mat-column-name >> nth=6');
+    const displayingModels2 = page.locator('.mat-column-name >> nth=8');
     const displayingModels3 = page.locator('.mat-column-name >> nth=9');
     const radioButtonsNoneSelected = page.locator('.btn-group button');
     const displayingNextButton = page.locator('.mat-raised-button');
@@ -34,10 +34,10 @@ test('displayingAllExistingModels @regChecklistNewHigh @existingModelPage', asyn
     await page.waitForSelector('.mat-column-name >> nth=1');
     await existingModel.searchModelsUse();
     await page.waitForSelector('.mat-column-name >> nth=1');
-    await expect(displayingModels0).toHaveText('test100test100DoNotRemove');
-    await expect(displayingModels1).toHaveText('test100test100DoNotRemove11');
-    await expect(displayingModels2).toHaveText('test100test100DoNotRemove2');
-    await expect(displayingModels3).toHaveText('test100test100DoNotRemove4');
+    await expect(displayingModels0).toContainText('test100test100DoNotRemove');
+    await expect(displayingModels1).toContainText('test100test100DoNotRemove');
+    await expect(displayingModels2).toContainText('test100test100DoNotRemove');
+    await expect(displayingModels3).toContainText('test100test100DoNotRemove');
     await expect(radioButtonsNoneSelected).toHaveClass('btn mat-raised-button disabled mat-primary');
     await expect(displayingNextButton).toHaveText('Next');
     await expect(displayingCancelButton).toHaveText('cancel');
@@ -56,7 +56,7 @@ test('searchByModels @regChecklistNewMedium @existingModelPage', async ({ page, 
     await page.waitForSelector('.mat-column-name >> nth=1');
     await existingModel.searchModelsUse();
     await expect(searchResult).toBeVisible();
-    await expect(searchResult).toHaveText('test100test100DoNotRemove');
+    await expect(searchResult).toContainText('test100test100DoNotRemove');
     await userMenu.userInfoButtonClick();
     await userMenu.signOutButtonClick();
     console.log('existingModelPage Search By Models AU');
@@ -69,7 +69,7 @@ test('searchByModels @regChecklistNewMedium @existingModelPage', async ({ page, 
     await page.waitForSelector('.mat-column-name >> nth=1');
     await existingModel.searchModelsUse();
     await expect(searchResult).toBeVisible();
-    await expect(searchResult).toHaveText('test100test100DoNotRemove');
+    await expect(searchResult).toContainText('test100test100DoNotRemove');
     await userMenu.userInfoButtonClick();
     await userMenu.signOutButtonClick();
     console.log('existingModelPage Search By Models SA');
@@ -82,28 +82,28 @@ test('searchByModels @regChecklistNewMedium @existingModelPage', async ({ page, 
     await page.waitForSelector('.mat-column-name >> nth=1');
     await existingModel.searchModelsUse();
     await expect(searchResult).toBeVisible();
-    await expect(searchResult).toHaveText('test100test100DoNotRemove');
+    await expect(searchResult).toContainText('test100test100DoNotRemove');
     })
 
 test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);
-    const checkedUnchecked0 = page.locator('mat-radio-button >> nth=3');
-    const checkedUnchecked1 = page.locator('mat-radio-button >> nth=6');
-    const checkedUnchecked2 = page.locator('mat-radio-button >> nth=8');
+    const checkedUnchecked0 = page.locator('mat-radio-button >> nth=0');
+    const checkedUnchecked1 = page.locator('mat-radio-button >> nth=1');
+    const checkedUnchecked2 = page.locator('mat-radio-button >> nth=2');
     console.log('existingModelPage Choosing Existing Model');
     await existingModel.searchModelsUse();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary');
-    await existingModel.radioButtonChooseZero();
+    await page.locator('.mat-radio-button >> nth=0').click();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary');
-    await existingModel.radioButtonChooseOne();
+    await page.locator('.mat-radio-button >> nth=1').click();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary');
-    await existingModel.radioButtonChooseTwo();
+    await page.locator('.mat-radio-button >> nth=2').click();
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked'); 

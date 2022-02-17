@@ -720,9 +720,9 @@ test('linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditModelPag
     const signIn = new SignInPage(page);
     const deal = new DealsPage(page);
     const newEditDeal = new NewEditDealPage(page);
-    const selectPopupRow1 = page.locator('tr.mat-row.ng-star-inserted >> nth=11');
-    const selectPopupRow2 = page.locator('tr.mat-row.ng-star-inserted >> nth=23');
-    const selectPopupRow3 = page.locator('tr.mat-row.ng-star-inserted >> nth=49');
+    const selectPopupRow1 = page.locator('.mat-column-deal >> text=BB test 12Test OTHER');
+    const selectPopupRow2 = page.locator('.mat-column-deal >> text=Cont122 12Test OTHER');
+    const selectPopupRow3 = page.locator('.mat-column-deal >> text=Deal apr Other');
     const selectPopup = page.locator('.mat-dialog-container');
     const selectedDealTitle = page.locator('.title');
     const selectedDealName = page.locator('.name');
@@ -731,12 +731,12 @@ test('linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditModelPag
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/deals?&sort=contract_name');
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForTimeout(1500);
     await deal.addDealButtonClick();
     await page.waitForTimeout(500);
     await newEditDeal.clientDropDownChoose2();
     await newEditDeal.linkToExistingDealButtonClick();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=49');
+    await page.waitForTimeout(1500);
     await expect(selectPopupRow1).toBeVisible();
     await expect(selectPopupRow2).toBeVisible();
     await expect(selectPopupRow3).toBeVisible();
@@ -746,7 +746,7 @@ test('linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditModelPag
     await expect(selectedDealTitle).toBeVisible();
     await expect(selectedDealTitle).toHaveText('Link to existing Deal');
     await expect(selectedDealName).toBeVisible();
-    await expect(selectedDealName).toHaveText('Deal 1');
+    await expect(selectedDealName).toHaveText('Cont122');
 })
 
 test('dealStatus @regChecklistNewLow @newEditModelPage', async ({ page, browserName }) => {
@@ -771,7 +771,8 @@ test('dealStatus @regChecklistNewLow @newEditModelPage', async ({ page, browserN
     await expect(dealStatusPercentage).toHaveText('Deal Status: 20%');
 })
 
-test('createSaveChangesButton @regChecklistNewHigh @newEditModelPage', async ({ page }) => {
+test('createSaveChangesButton @regChecklistNewHigh @newEditModelPage', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const deal = new DealsPage(page);

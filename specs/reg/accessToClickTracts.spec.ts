@@ -16,7 +16,7 @@ test('AAAUcanSeeClickTracts @regClickTractsHigh @accessToClickTrackts', async ({
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await expect(clickTracts).toBeVisible();
-    await userBar.myProfileButtonClick();
+    await userBar.userInfoButtonClick();
     await userBar.signOutButtonClick();
     await users.AU();
     await signIn.signInButton();

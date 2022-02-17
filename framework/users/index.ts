@@ -18,6 +18,11 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
     }
 
+    async AA2() {
+        await this.page.fill('[formcontrolname="email"]', 'test89.tete@i.ua')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
     async AU() {
         await this.page.fill('[formcontrolname="email"]', 'iryna.nema+8423@mobindustry.net')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')

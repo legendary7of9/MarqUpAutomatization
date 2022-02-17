@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
     await page.waitForURL('/dashboard');
 }); 
 
-test('dealName @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('dealName @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const title = page.locator('.section__title');
     console.log('dealAnalysis Deal Name');
@@ -24,7 +24,7 @@ test('dealName @regChecklistNewLow @newDealAnalysis', async ({ page, browserName
     console.log(title);
     })
 
-test('completionStatus @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('completionStatus @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const status = page.locator('.progress-wr');
     const persent = page.locator('.percent');
@@ -35,7 +35,7 @@ test('completionStatus @regChecklistNewMedium @newDealAnalysis', async ({ page, 
     })
     
     //to be refactored
-test('dealStatus @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('dealStatus @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const archivedModelDealMessage = page.locator('.status-message.ng-star-inserted');
     const editingDisabled = page.locator('#btn-final-draft-finish');
@@ -46,7 +46,7 @@ test('dealStatus @regChecklistNewMedium @newDealAnalysis', async ({ page, browse
     await expect(editingDisabled).toHaveAttribute('disabled', '');
     })
     
-test('editPancilButton @regChecklistNewHigh @newDealAnalysis', async ({ page }) => {
+test('editPancilButton @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Edit Pancil Button');
     await page.goto('/deals/analysis-deal/8250');
@@ -54,7 +54,7 @@ test('editPancilButton @regChecklistNewHigh @newDealAnalysis', async ({ page }) 
     await expect(page).toHaveURL('deals/edit-deal/8250');
     })
 
-test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const linkedDeal = page.locator('#deal-analysis-linked-deal');
@@ -68,7 +68,7 @@ test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @newDealAnalysis', asyn
     await expect(page).toHaveURL('/deals/analysis-deal/435');
     })
 
-test('exportButton @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('exportButton @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Export Button');
@@ -80,7 +80,7 @@ test('exportButton @regChecklistNewLow @newDealAnalysis', async ({ page, browser
     await download.delete()
     })
 
-test('avaliableDisableSummaryButton @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('avaliableDisableSummaryButton @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const summaryButton = page.locator('#deal-analysis-summary');
@@ -107,7 +107,7 @@ test('avaliableDisableSummaryButton @regChecklistNewMedium @newDealAnalysis', as
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('summaryButtonValidation @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('summaryButtonValidation @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Summary Button Validation');
@@ -130,7 +130,7 @@ test('summaryButtonValidation @regChecklistNewHigh @newDealAnalysis', async ({ p
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('notesIinternalField @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('notesIinternalField @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const notesInternalField = page.locator('.mat-card');
     console.log('dealAnalysis Notes Iinternal Field');
@@ -141,7 +141,7 @@ test('notesIinternalField @regChecklistNewMedium @newDealAnalysis', async ({ pag
     await expect(notesInternalField).toBeHidden();
     })
 
-test('termQuestionColumns @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('termQuestionColumns @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const termColumn = page.locator('.mat-column-term >> nth=0');
     const termColumnRow0 = page.locator('.mat-column-term >> nth=1');
@@ -161,7 +161,7 @@ test('termQuestionColumns @regChecklistNewLow @newDealAnalysis', async ({ page, 
     await expect(questionColumnRow2).toHaveText('test1test1test1');
     })
 
-test('firstDraftAnswersDropDown @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('firstDraftAnswersDropDown @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const deal = new DealsPage(page);
     const copyDeal = new NewEditDealPage(page);
@@ -206,7 +206,7 @@ test('firstDraftAnswersDropDown @regChecklistNewMedium @newDealAnalysis', async 
     await expect(firstDraftField3).toHaveText('AA NAswer 3');
     })
 
-test('firstDraftAnswersModelWasEdited @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('firstDraftAnswersModelWasEdited @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page); 
     const reopenFirstDraftButton = page.locator('#btn-first-draft-reopen');
@@ -272,7 +272,7 @@ test('firstDraftAnswersModelWasEdited @regChecklistNewMedium @newDealAnalysis', 
     await dealAnalysis.firstDraftFinishButtonClick();
     })
     
-test('clearAllLinkFirstFinalDraft @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('clearAllLinkFirstFinalDraft @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const clearALlPopup = page.locator('.mat-dialog-container');
@@ -304,7 +304,7 @@ test('clearAllLinkFirstFinalDraft @regChecklistNewLow @newDealAnalysis', async (
     await expect(firstDraftField3).toHaveText('');
     })
 
-test('finalDraftAnswersDropDown @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('finalDraftAnswersDropDown @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const deal = new DealsPage(page);
@@ -360,7 +360,7 @@ test('finalDraftAnswersDropDown @regChecklistNewHigh @newDealAnalysis', async ({
     await expect(firstDraftField3).toHaveText('AA NAswer 3');
     })
 
-test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const firstDraftScore = page.locator('.mat-column-first_draft.mat-table-sticky');
@@ -446,7 +446,7 @@ test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @newDealAnalysis', asyn
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
     
-test('finishReopen1stDraftAnsewersColumn @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('finishReopen1stDraftAnsewersColumn @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const finishButton1stDraft = page.locator('#btn-first-draft-finish');
@@ -495,7 +495,7 @@ test('finishReopen1stDraftAnsewersColumn @regChecklistNewHigh @newDealAnalysis',
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('errorMessageForSignatureEffectiveExpirationDate @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('errorMessageForSignatureEffectiveExpirationDate @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const errorMessage = page.locator('.no-valid-dates-message');
@@ -525,7 +525,7 @@ test('errorMessageForSignatureEffectiveExpirationDate @regChecklistNewMedium @ne
     await dealAnalysis.clearAllPopupCancelButtonClick();
     })
 
-test('twoUsersClickReopenFinishClosePopupFirstFinalDrafts @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('twoUsersClickReopenFinishClosePopupFirstFinalDrafts @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const browser = await chromium.launch();
     const context = await browser.newContext();
@@ -583,7 +583,7 @@ test('twoUsersClickReopenFinishClosePopupFirstFinalDrafts @regChecklistNewHigh @
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const firstDraftField1 = page.locator('.mat-column-first_draft >> nth=1');
@@ -636,7 +636,7 @@ test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @newDealA
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('finishReopenButtonFinalDraft @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('finishReopenButtonFinalDraft @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const finalDraftFinishButtonDisabled = page.locator('#btn-final-draft-finish');
@@ -675,7 +675,7 @@ test('finishReopenButtonFinalDraft @regChecklistNewHigh @newDealAnalysis', async
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('sectionRefNoteColumn @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('sectionRefNoteColumn @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const noteField = page.locator('.mat-column-note textarea >> nth=0')
     console.log('dealAnalysis Section Ref Note Column');
@@ -686,7 +686,7 @@ test('sectionRefNoteColumn @regChecklistNewLow @newDealAnalysis', async ({ page,
     await expect(noteField).toHaveAttribute('maxlength', '1000');
     })
 
-test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Section Ref Note Column Includes To Export');
@@ -702,7 +702,7 @@ test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @newDealAnalysis'
     await download.delete()
     })
     
-test('sampleColumn @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('sampleColumn @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const view0 = page.locator('.deal-analysis-sample-view >> nth=0')
     const view1 = page.locator('.deal-analysis-sample-view >> nth=1')
@@ -720,7 +720,7 @@ test('sampleColumn @regChecklistNewLow @newDealAnalysis', async ({ page, browser
     await expect(view2).toHaveClass('link-name deal-analysis-sample-view');
     })
 
-test('viewHyperlink @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('viewHyperlink @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const viewLinkPopup = page.locator('.mat-dialog-container');
@@ -772,7 +772,7 @@ test('viewHyperlink @regChecklistNewLow @newDealAnalysis', async ({ page, browse
     await expect(page).toHaveURL('/deals/analysis-deal/458')
     })
 
-test('draftFinlaDraftUrlFields @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('draftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const draftFieldUrl = page.locator('[name="draft_link"]');
@@ -795,7 +795,7 @@ test('draftFinlaDraftUrlFields @regChecklistNewMedium @newDealAnalysis', async (
     await dealAnalysis.finalLinkFieldClear();
     })
 
-test('checkmarkButtonForDraftFinalDraftUrlFields&UrlValidation @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('checkmarkButtonForDraftFinalDraftUrlFields&UrlValidation @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const firstLink = page.locator('#deal-analysis-link1');
@@ -839,7 +839,7 @@ test('checkmarkButtonForDraftFinalDraftUrlFields&UrlValidation @regChecklistNewM
     await page.reload();
     })
 
-test('closeButtonForDraftFinalDraftUrlFields @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('closeButtonForDraftFinalDraftUrlFields @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const draftFieldUrl = page.locator('[name="draft_link"]');
@@ -873,7 +873,7 @@ test('closeButtonForDraftFinalDraftUrlFields @regChecklistNewLow @newDealAnalysi
     await expect(closeButtonFinalUrl).toBeVisible();
     })
 
-test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const pancilButtonDraftUrl = page.locator('#deal-analysis-link1-edit');
@@ -908,7 +908,7 @@ test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @newDealA
     await dealAnalysis.finalLinkFieldOkIconClick();
     })
 
-    test('deletingInsertedLinkForDraftFinalUrlFields @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+    test('deletingInsertedLinkForDraftFinalUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const draftFieldUrl = page.locator('[name="draft_link"]');
@@ -936,7 +936,7 @@ test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @newDealA
     await expect(finalFieldUrl).toHaveText('');
     })
 
-test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @newDealAnalysis', async ({ page }) => {
+test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const deal = new DealsPage(page);
     const newDeal = new NewEditDealPage(page);
     const dealAnalysis = new DealAnalysisPage(page);
@@ -970,7 +970,7 @@ test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @newDe
     await expect(expirationDateValue).toHaveValue(date);
     })
 
-test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const dataPicker = page.locator('.mat-calendar');
@@ -1000,7 +1000,7 @@ test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewM
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @newDealAnalysis', async ({ page }) => {
+test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateValue = page.locator('#deal-analysis-signature-date input');
     const effectiveDateValue = page.locator('#deal-analysis-effective-date input');
@@ -1058,7 +1058,7 @@ test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHig
     })
 
     //to be refactored
-test.skip('editButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test.skip('editButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Edit Button For Signature&Effective&Expiration Date Boxes');
@@ -1066,7 +1066,7 @@ test.skip('editButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewMediu
 
     })
 
-test('xButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('xButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateValue = page.locator('#deal-analysis-signature-date input');
@@ -1133,7 +1133,7 @@ test('xButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewLow @newDealA
     await dealAnalysis.expirationOkIconClick();
     })
 
-test('displayingPreliminaryDateCheckbox @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('displayingPreliminaryDateCheckbox @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const preliminaryDate = page.locator('#deal-analysis-preliminary-date');
@@ -1152,7 +1152,7 @@ test('displayingPreliminaryDateCheckbox @regChecklistNewHigh @newDealAnalysis', 
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('switchingPreliminaryDateCheeckbox @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('switchingPreliminaryDateCheeckbox @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateBoxName = page.locator('#mat-form-field-label-1');
@@ -1177,7 +1177,7 @@ test('switchingPreliminaryDateCheeckbox @regChecklistNewLow @newDealAnalysis', a
     await expect(signatureBoxCancelIcon).toBeHidden();
     })
 
-test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateBoxName = page.locator('#mat-form-field-label-1');
@@ -1201,7 +1201,7 @@ test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @new
     await expect(signatureDateValue).toHaveValue('01/21/2022');
     })
 
-test('savingPreliminaryDate @regChecklistNewHigh @newDealAnalysis', async ({ page }) => {
+test('savingPreliminaryDate @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateValue = page.locator('#deal-analysis-signature-date input');
     const effectiveDateValue = page.locator('#deal-analysis-effective-date input');
@@ -1263,7 +1263,7 @@ test('savingPreliminaryDate @regChecklistNewHigh @newDealAnalysis', async ({ pag
     await dealAnalysis.expirationOkIconClick();
     })
 
-test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const preliminaryDateCheckedUnchecked = page.locator('#deal-analysis-preliminary-date-input');
@@ -1307,7 +1307,7 @@ test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @newDealAnal
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('totalScoreLine @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('totalScoreLine @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const totalScoreText = page.locator('.mat-column-term.mat-table-sticky');
@@ -1334,7 +1334,7 @@ test('totalScoreLine @regChecklistNewHigh @newDealAnalysis', async ({ page, brow
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('riskScoreWhenChangeAnswerWeight @regChecklistNewHigh @newDealAnalysis', async ({ page, browserName }) => {
+test('riskScoreWhenChangeAnswerWeight @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const firstDraftScore = page.locator('.mat-column-first_draft.mat-table-sticky');
@@ -1373,7 +1373,7 @@ test('riskScoreWhenChangeAnswerWeight @regChecklistNewHigh @newDealAnalysis', as
     await dealAnalysis.clearAllPopupClearButtonClick();
     })
 
-test('showPreviousScoresLink @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('showPreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const scoreFirstLink = page.locator('.deal-link-name >> text=test100test100DealDoNotRemove4 - test');
@@ -1399,7 +1399,7 @@ test('showPreviousScoresLink @regChecklistNewMedium @newDealAnalysis', async ({ 
     await expect(scoreSecondLinkFinalValue).toBeVisible();
     })
 
-test('disablingShowPreviousScores @regChecklistNewLow @newDealAnalysis', async ({ page, browserName }) => {
+test('disablingShowPreviousScores @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const showPriviousScore = page.locator('#deal-analysis-show-hide-table-scores');
@@ -1408,7 +1408,7 @@ test('disablingShowPreviousScores @regChecklistNewLow @newDealAnalysis', async (
     await expect(showPriviousScore).toHaveClass('toggle-link disabled ng-star-inserted');
     })
 
-test('showPrivousLinkRedirections @regChecklistNewHigh @newDealAnalysis', async ({ page }) => {
+test('showPrivousLinkRedirections @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
     console.log('dealAnalysis Show Privous Link Redirections');
     await page.goto('/deals/analysis-deal/8250');
@@ -1423,7 +1423,7 @@ test('showPrivousLinkRedirections @regChecklistNewHigh @newDealAnalysis', async 
     await expect(page).toHaveURL('/deals/analysis-deal/8252');
     })
 
-test('hidePreviousScoresLink @regChecklistNewMedium @newDealAnalysis', async ({ page, browserName }) => {
+test('hidePreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const showPriviousScoreButton = page.locator('#deal-analysis-show-hide-table-scores >> text=show previous scores');

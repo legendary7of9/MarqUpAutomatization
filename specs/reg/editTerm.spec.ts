@@ -428,8 +428,10 @@ test('activateButton @regChecklistNewHigh @editTermPage', async ({ page, browser
     await expect(term).toBeVisible();
     await expect(termNameColor).toHaveClass('td__link ng-star-inserted');
     await viewModel.listFirstItemLinkTermClick();
+    await page.waitForTimeout(1500);
     await editTerm.pushToArchiveButtonClick();
     await editTerm.pushToArchivePopupArchiveButtonClick();
+    await page.waitForTimeout(1500);
     })
 
 test('cancelButton @regChecklistNewLow @editTermPage', async ({ page, browserName }) => {

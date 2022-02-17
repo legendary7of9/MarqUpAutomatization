@@ -11,6 +11,9 @@ import { DealsPage } from './pages';
 import { NewEditDealPage } from './pages';
 import { DealAnalysisPage } from './pages';
 import { TemplatesPage } from './pages';
+import { NewEditCopyTemplatePage } from './pages';
+import { ContractsPage } from './pages';
+import { NewEditContractPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -26,7 +29,10 @@ const pageProvider = (page:any) => {
         DealsPage,
         NewEditDealPage,
         DealAnalysisPage,
-        TemplatesPage
+        TemplatesPage,
+        NewEditCopyTemplatePage,
+        ContractsPage,
+        NewEditContractPage
     }
 }
 
@@ -49,5 +55,8 @@ export {
     DealsPage,
     NewEditDealPage,
     DealAnalysisPage,
-    TemplatesPage
+    TemplatesPage,
+    NewEditCopyTemplatePage,
+    ContractsPage,
+    NewEditContractPage
 }

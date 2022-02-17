@@ -97,6 +97,7 @@ test('weightScaleFromValidation @regChecklistNewLow @editModelPage', async ({ pa
     const locator = page.locator('#form-control-weight_scale_from mat-error');
     console.log('editModel Weight Scale From validation');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.fromFieldClear();
     await editModel.saveChangesButtonClick();
     await expect(locator).toHaveText('Weight Scale From must be no less than 1.');
