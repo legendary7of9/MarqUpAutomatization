@@ -19,7 +19,7 @@ test('nameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     await page.goto('/models/edit-model/974');
     await expect(locator).toHaveAttribute('placeholder', 'Name');
     await expect(locator).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('nameFieldValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -39,7 +39,7 @@ test('descriptionField @regChecklistNewLow @editModelPage', async ({ page, brows
     await page.goto('/models/edit-model/974');
     await expect(locator).toHaveAttribute('placeholder', 'Description');
     await expect(locator).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('typeField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="type_id"]');
@@ -47,7 +47,7 @@ test('typeField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     await page.goto('/models/edit-model/974');
     await expect(locator).toHaveAttribute('placeholder', 'Type');
     await expect(locator).toHaveAttribute('role', 'listbox');
-    })
+});
 
 test('typeNameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const editModel = new NewEditCopyModelPage(page);
@@ -60,7 +60,7 @@ test('typeNameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     await expect(locator).toHaveText(['Other']);
     await expect(locator2).toBeVisible();
     await expect(locator2).toHaveAttribute('placeholder', 'Type Name');
-    })
+});
     
 test('typeNameFieldValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -72,7 +72,7 @@ test('typeNameFieldValidation @regChecklistNewLow @editModelPage', async ({ page
     await editModel.typeDropDownOtherChoose();
     await editModel.saveChangesButtonClick();
     await expect(locator).toHaveText(['Please fill in this field']);
-    })
+});
 
 test('infoIconWeightScale @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -82,14 +82,14 @@ test('infoIconWeightScale @regChecklistNewLow @editModelPage', async ({ page, br
     await page.goto('/models/edit-model/974');
     await editModel.iIconClick();
     await expect(locator).toHaveText('The weighting scale is used as a range to assign different weights for terms in the model - e.g. 1 to 100.  The weighting is used to calculate the scoring for each term during deal making.');
-    })
+});
 
 test('weightScaleFrom @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="weight_scale_from"]');
     console.log('editModel Weight Scale From');
     await page.goto('/models/edit-model/974');
     await expect(locator).toHaveAttribute('placeholder', 'From');
-    })
+});
         
 test('weightScaleFromValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -101,14 +101,14 @@ test('weightScaleFromValidation @regChecklistNewLow @editModelPage', async ({ pa
     await editModel.fromFieldClear();
     await editModel.saveChangesButtonClick();
     await expect(locator).toHaveText('Weight Scale From must be no less than 1.');
-    })
+});
 
 test('weightScaleTo @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="weight_scale_to"]');
     console.log('editModel Weight Scale To');
     await page.goto('/models/edit-model/974');
     await expect(locator).toHaveAttribute('placeholder', 'To');
-    })
+});
         
 test('weightScaleToValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -119,7 +119,7 @@ test('weightScaleToValidation @regChecklistNewLow @editModelPage', async ({ page
     await editModel.toFieldClear();
     await editModel.saveChangesButtonClick();
     await expect(locator).toHaveText('Please fill in this field');
-    }) 
+}); 
 
 test('cancelButton @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -128,7 +128,7 @@ test('cancelButton @regChecklistNewMedium @editModelPage', async ({ page, browse
     await page.goto('/models/edit-model/974');
     await editModel.cancelButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
-    })
+});
 
 test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const editModel = new NewEditCopyModelPage(page);
@@ -142,7 +142,7 @@ test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) =
     await expect(locator).toHaveText('sdsddsdsdsType');
     await editModel.typeDropDownChoose();
     await editModel.saveChangesButtonClick();
-    })
+});
 
 test('activateButton @regChecklistNewHigh @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -159,7 +159,7 @@ test('activateButton @regChecklistNewHigh @editModelPage', async ({ page, browse
     await editModel.pushToArchiveButtonClick();
     await editModel.pushToArchivePopupArchiveButtonClick();
     await page.waitForTimeout(1000);
-    })
+});
 
 test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const editModel = new NewEditCopyModelPage(page);
@@ -172,7 +172,7 @@ test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page })
     await expect(popup).toHaveText('Are you sure you want to archive this Model? Archived Models will not be available for Deal review. CancelArchive');
     await expect(cancel).toBeVisible();
     await expect(archive).toBeVisible();
-    })
+});
 
 test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -183,7 +183,7 @@ test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ pa
     await editModel.pushToArchiveButtonClick();
     await editModel.pushToArchivePopupCancelButtonClick();
     await expect(popup).toBeHidden();
-    })
+});
 
 test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -198,4 +198,4 @@ test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async (
     await page.goto('/models/edit-model/974');
     await expect(activate).toBeVisible();
     await editModel.activateButtonClick();
-    })
+});

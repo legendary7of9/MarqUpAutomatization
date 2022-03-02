@@ -22,7 +22,7 @@ test('AAAUcanSeeClickTracts @regClickTractsHigh @accessToClickTrackts', async ({
     await signIn.signInButton();
     await page.waitForURL('/clients/265');
     await expect(clickTracts).toBeVisible();
-    })
+});
 
 test('SAcanSeeClickTracts @regClickTractsHigh @accessToClickTrackts', async ({ page }) => {
     const users = new Users(page);
@@ -32,7 +32,7 @@ test('SAcanSeeClickTracts @regClickTractsHigh @accessToClickTrackts', async ({ p
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await expect(clickTracts).toBeVisible();
-    })
+});
 
 test('SAcanSeeClickTracts @regClickTractsLow @accessToClickTrackts', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -49,4 +49,4 @@ test('SAcanSeeClickTracts @regClickTractsLow @accessToClickTrackts', async ({ pa
     await page.goto('/clients/edit-client/265');
     await expect(subscriptionDetailsEditClientPage).toBeVisible();
     await expect(changeSubscriptionButton).toBeVisible();
-    })
+});

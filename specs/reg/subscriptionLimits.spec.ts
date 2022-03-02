@@ -54,7 +54,7 @@ test('subscriptionLimitEditModelPage @regChecklistNewMedium @editModelPage', asy
     await expect(updateSubscription).toBeVisible();
     await editModel.activatePopupCloseButtonClick();
     await expect(popup).toBeHidden();
-    })
+});
 
 test('subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -79,4 +79,4 @@ test('subscriptionLimitPopupUpdateSubscriptionButtonEditModelPage @regChecklistN
     await editModel.activateButtonClick();
     await editModel.activatePopupUpdateSubscriptionButtonClick();
     await expect(page).toHaveURL('/clients/edit-client/383?update_plan=true');
-})
+});

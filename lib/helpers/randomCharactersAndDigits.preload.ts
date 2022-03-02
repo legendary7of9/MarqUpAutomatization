@@ -1,3 +1,5 @@
+import Element from '@playwright/test'
+
 export abstract class Helpers {
 
   public static generateRandomString() {

@@ -12,6 +12,7 @@ import { NewEditDealPage } from './pages';
 import { DealAnalysisPage } from './pages';
 import { TemplatesPage } from './pages';
 import { NewEditCopyTemplatePage } from './pages';
+import { ViewTemplatePage } from './pages';
 import { ContractsPage } from './pages';
 import { NewEditContractPage } from './pages';
 
@@ -31,6 +32,7 @@ const pageProvider = (page:any) => {
         DealAnalysisPage,
         TemplatesPage,
         NewEditCopyTemplatePage,
+        ViewTemplatePage,
         ContractsPage,
         NewEditContractPage
     }
@@ -57,6 +59,7 @@ export {
     DealAnalysisPage,
     TemplatesPage,
     NewEditCopyTemplatePage,
+    ViewTemplatePage,
     ContractsPage,
     NewEditContractPage
 }

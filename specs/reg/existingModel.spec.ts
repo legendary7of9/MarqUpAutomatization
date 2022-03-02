@@ -41,7 +41,7 @@ test('displayingAllExistingModels @regChecklistNewHigh @existingModelPage', asyn
     await expect(radioButtonsNoneSelected).toHaveClass('btn mat-raised-button disabled mat-primary');
     await expect(displayingNextButton).toHaveText('Next');
     await expect(displayingCancelButton).toHaveText('cancel');
-    })
+});
 
 test('searchByModels @regChecklistNewMedium @existingModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -83,7 +83,7 @@ test('searchByModels @regChecklistNewMedium @existingModelPage', async ({ page, 
     await existingModel.searchModelsUse();
     await expect(searchResult).toBeVisible();
     await expect(searchResult).toContainText('test100test100DoNotRemove');
-    })
+});
 
 test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);
@@ -107,7 +107,7 @@ test('choosingExistingModel @regChecklistNewHigh @existingModelPage', async ({ p
     await expect(checkedUnchecked0).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked1).toHaveClass('select-model-item mat-radio-button mat-primary');
     await expect(checkedUnchecked2).toHaveClass('select-model-item mat-radio-button mat-primary mat-radio-checked'); 
-    })
+});
 
 test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);
@@ -129,7 +129,7 @@ test('nextButtonExistingPage @regChecklistNewHigh @existingModelPage', async ({ 
     await expect(typeFieldOfCopyModel).toHaveText('Test');
     await expect(weightFromFieldOfCopyModel).toHaveValue('1');
     await expect(weightToFieldOfCopyModel).toHaveValue('100');
-    })
+});
 
 test('cancelButtonExistingPage @regChecklistNewLow @existingModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -137,7 +137,7 @@ test('cancelButtonExistingPage @regChecklistNewLow @existingModelPage', async ({
     console.log('existingModelPage Cancel Button Existing Page');
     await existingModel.cancelButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
-    })
+});
 
 test('cancelButtonNewModelExistingPage @regChecklistNewLow @existingModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -150,7 +150,7 @@ test('cancelButtonNewModelExistingPage @regChecklistNewLow @existingModelPage', 
     await existingModel.nextButtonClick();
     await copyModel.cancelButtonCopyPageClick();
     await expect(page).toHaveURL('/models?&sort=name');
-    })
+});
 
 test('saveButtonNewModelExistingPage @regChecklistNewHigh @existingModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -191,8 +191,8 @@ test('saveButtonNewModelExistingPage @regChecklistNewHigh @existingModelPage', a
     await model.threeDotsMenuEditButtonClick();
     await page.waitForTimeout(1500);
     await newModel.nameFieldFill(Helpers.generateRandomString());
-    await newModel.saveChangesButtonClick();         
-    })
+    await newModel.saveChangesButtonClick();
+});
 
 test('saveButtonValidationNewModelExistingPage @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);
@@ -206,4 +206,4 @@ test('saveButtonValidationNewModelExistingPage @regChecklistNewHigh @existingMod
     await copyModel.saveButtonCopyPageClick();
     await page.waitForSelector('#form-control-name mat-error');
     await expect(nameFieldValidation).toHaveText('Name "test100test100DoNotRemove15" has already been taken.');
-    })
+});

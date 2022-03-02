@@ -12,6 +12,7 @@ export * from './deals/new-editDeal'
 export * from './deals/dealAnalysis'
 export * from './templates/templates'
 export * from './templates/new-edit-copyTemplate'
+export * from './templates/viewTemplate'
 export * from './contracts/contracts'
 export * from './contracts/new-editContract'
 

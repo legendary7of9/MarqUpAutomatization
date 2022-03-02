@@ -13,7 +13,8 @@ class NewEditContractPage {
     draftToggle: Locator;
     iIcon: Locator;
     previewContractButton: Locator;
-
+    contractFee: Locator;
+    contractFeeValue: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -25,6 +26,8 @@ class NewEditContractPage {
         this.draftToggle = page.locator('#contract-detail-status-draft-button');
         this.iIcon = page.locator('#contract-detail-info');
         this.previewContractButton = page.locator('#contract-detail-preview-contract');
+        this.contractFee = page.locator('[formcontrolname="stripe_product_id"]');
+        this.contractFeeValue = page.locator('.mat-option >> nth=0');
     }
 
     async contractTitleFieldFillRandom(text:string) {
@@ -39,10 +42,12 @@ class NewEditContractPage {
 
     async saveAndGenerateLinkButtonClick() {
         await this.saveAndGenerateLinkButton.click();
+        await this.page.waitForTimeout(1500);
     }
 
     async saveButtonClick() {
         await this.saveButton.click();
+        await this.page.waitForURL('/contracts/list?&sort=-created_at');
     }
 
     async publishToggleClick() {
@@ -59,6 +64,12 @@ class NewEditContractPage {
 
     async previewContractButtonClick() {
         await this.previewContractButton.click();
+    }
+
+    async contractFeeValueChoose() {
+        await this.contractFee.click();
+        await this.page.waitForTimeout(1500);
+        await this.contractFeeValue.click();
     }
 }
 

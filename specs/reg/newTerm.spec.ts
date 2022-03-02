@@ -24,7 +24,7 @@ test('termField @regChecklistNewMedium @newTermPage', async ({ page, browserName
     await page.goto('/models/1048/terms/add-term');
     await expect(termField).toHaveAttribute('placeholder', 'Term');
     await expect(termField).toHaveAttribute('maxlength', '200');
-    })
+});
 
 test('termFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -34,7 +34,7 @@ test('termFieldValidation @regChecklistNewLow @newTermPage', async ({ page, brow
     await page.goto('/models/1048/terms/add-term');
     await newTerm.addAnotherTermButtonClick();
     await expect(termField).toHaveText('Please fill in this field');
-    })
+});
     
 test('weightFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newTerm = new NewEditTermPage(page);
@@ -51,7 +51,7 @@ test('weightFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => 
     await newTerm.weightSliderUseDown();
     await expect(valueSlider).toHaveAttribute('aria-valuenow', '57');
     await expect(valueManual).toHaveValue('57');
-    })
+});
     
 test('weightFieldManual @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -73,7 +73,7 @@ test('weightFieldManualValidation @regChecklistNewLow @newTermPage', async ({ pa
     await page.goto('/models/1048/terms/add-term');
     await newTerm.manualInputWeightFieldClear();
     await expect(valueManual).toHaveText('Weight must be from 22 to 88');
-    })
+});
 
 test('descriptionField @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -82,7 +82,7 @@ test('descriptionField @regChecklistNewLow @newTermPage', async ({ page, browser
     await page.goto('/models/1048/terms/add-term');
     await expect(descriptionField).toHaveAttribute('placeholder', 'Description');
     await expect(descriptionField).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('questionField @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const questionField = page.locator('[formcontrolname="question"]');
@@ -90,7 +90,7 @@ test('questionField @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await page.goto('/models/1048/terms/add-term');
     await expect(questionField).toHaveAttribute('placeholder', 'Question');
     await expect(questionField).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('questionFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -100,7 +100,7 @@ test('questionFieldValidation @regChecklistNewLow @newTermPage', async ({ page, 
     await page.goto('/models/1048/terms/add-term');
     await newTerm.addAnotherTermButtonClick();
     await expect(questionField).toHaveText('Please fill in this field');
-    })
+});
 
 test('answerField @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const answerField = page.locator('[formcontrolname="answer"]');
@@ -108,7 +108,7 @@ test('answerField @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await page.goto('/models/1048/terms/add-term');
     await expect(answerField).toHaveAttribute('placeholder', 'None');
     await expect(answerField).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('answerFieldValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -118,7 +118,7 @@ test('answerFieldValidation @regChecklistNewLow @newTermPage', async ({ page, br
     await page.goto('/models/1048/terms/add-term');
     await newTerm.addAnotherTermButtonClick();
     await expect(answerField).toHaveText('Please fill in this field');
-    })
+});
 
 test('pointsFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newTerm = new NewEditTermPage(page);
@@ -135,7 +135,7 @@ test('pointsFieldSlider @regChecklistNewHigh @newTermPage', async ({ page }) => 
     await newTerm.pointSliderUseDown();
     await expect(valueSlider).toHaveAttribute('aria-valuenow', '-1.5');
     await expect(valueManual).toHaveValue('-1.5');
-    })
+});
 
 test('pointsFieldManual @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -153,7 +153,7 @@ test('pointsFieldManual @regChecklistNewMedium @newTermPage', async ({ page, bro
     await newTerm.manualInputPointsFieldFillZeroValue();
     await expect(valueManual).toHaveValue('0');
     await expect(valueSlider).toHaveAttribute('aria-valuenow', '0');
-    })
+});
 
 test('answerRadioButton @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -205,7 +205,7 @@ test('answerRadioButton @regChecklistNewMedium @newTermPage', async ({ page, bro
     await expect(radioButton2).toHaveClass('mat-radio-button mat-primary');
     await expect(radioButton3).toHaveClass('mat-radio-button mat-primary');
     await expect(radioButton4).toHaveClass('mat-radio-button mat-primary');
-    })
+});
 
 test('addAnswerButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newTerm = new NewEditTermPage(page);
@@ -301,7 +301,7 @@ test('addAnswerButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await expect(answerBlock4Locator3).toBeVisible();
     await expect(answerBlock4Locator4).toBeVisible();
     await expect(answerBlock0Locator4).toBeHidden();
-    })
+});
 
 
 test('deleteAnswerIcon @regChecklistNewHigh @newTermPage', async ({ page }) => {
@@ -332,7 +332,7 @@ test('deleteAnswerIcon @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await expect(deleteIconZero).toBeHidden();
     await expect(answerBlock0).toBeVisible();
     await expect(deleteIconZero).toBeHidden();
-    })
+});
 
 test('addAnswerButtonValidation @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -342,7 +342,7 @@ test('addAnswerButtonValidation @regChecklistNewLow @newTermPage', async ({ page
     await page.goto('/models/1048/terms/add-term');
     await newTerm.addAnotherTermButtonClick();
     await expect(answerField).toHaveText('Please fill in this field');
-    })
+});
 
 test('addSampleButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newTerm = new NewEditTermPage(page);
@@ -365,7 +365,7 @@ test('addSampleButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await expect(sampleField1).toBeVisible();
     await expect(sampleField2).toBeVisible();
     await expect(addSampleButton).toHaveAttribute('disabled', '');
-    })
+});
 
 test('sampleFieldsValidation @regChecklistNewLow @newTermPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
@@ -379,7 +379,7 @@ test('sampleFieldsValidation @regChecklistNewLow @newTermPage', async ({ page, b
     await expect(sampeFieldProperties).toHaveAttribute('maxlength', '2000');
     await newTerm.addAnotherTermButtonClick();
     await expect(sampleFieldValidation).toHaveText('Please fill in this field');
-    })
+});
 
 test('cancelButton @regChecklistNewLow @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -388,7 +388,7 @@ test('cancelButton @regChecklistNewLow @newTermPage', async ({ page, browserName
     await page.goto('/models/1048/terms/add-term');
     await newTerm.cancelButtonClick();
     await expect(page).toHaveURL('/models/1048/terms?&sort=term');
-    })
+});
 
 test('saveButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -421,7 +421,7 @@ test('saveButton @regChecklistNewHigh @newTermPage', async ({ page }) => {
     await newTerm.sampleFieldFill(Helpers.generateRandomString());
     await newTerm.saveButtonClick();
     await expect(descriptionViewTermField).toHaveText('autotest');
-    })
+});
 
 test('saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -441,7 +441,7 @@ test('saveButtonPointsFieldDidNotChoose @regChecklistNewMedium @newTermPage', as
     await newTerm.saveButtonOopsPopupCloseButtonClick();
     await expect(oopsPopup).toBeHidden();
     await expect(page).toHaveURL('/models/1048/terms/add-term');
-    })
+});
 
 test('addAnotherTermButtonPointsFieldDidNotChoose @regChecklistNewHigh @newTermPage', async ({ page }) => {
     const newTerm = new NewEditTermPage(page);
@@ -460,7 +460,7 @@ test('addAnotherTermButtonPointsFieldDidNotChoose @regChecklistNewHigh @newTermP
     await newTerm.saveButtonOopsPopupCloseButtonClick();
     await expect(oopsPopup).toBeHidden();
     await expect(page).toHaveURL('/models/1048/terms/add-term');
-    })
+});
 
 test('addAnotherTermButton @regChecklistNewHigh @newTermPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -485,4 +485,4 @@ test('addAnotherTermButton @regChecklistNewHigh @newTermPage', async ({ page, br
     await viewModel.listFirstItemLinkTermClick();
     await newTerm.pushToArchiveButtonClick();
     await newTerm.pushToArchivePopupArchiveButtonClick();
-    })
+});

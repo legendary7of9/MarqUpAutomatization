@@ -182,6 +182,7 @@ class NewEditCopyModelPage {
 
     async saveChangesButtonClick() {
         await this.saveChangesButton.click();
+        await this.page.waitForURL('/models?&sort=name');
     }
 
     async saveButtonCopyPageClick() {

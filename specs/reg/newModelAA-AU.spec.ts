@@ -25,7 +25,7 @@ test('nameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     console.log('newModel Name Field');
     await expect(locator).toHaveAttribute('placeholder', 'Name');
     await expect(locator).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('nameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -34,21 +34,21 @@ test('nameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, bro
     console.log('newModel Name Field validation');
     await newModel.nextButtonClick();
     await expect(locator).toHaveText(['Name Please fill in this field']);
-    })
+});
 
 test('descriptionField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="description"]');
     console.log('newModel Description Field');
     await expect(locator).toHaveAttribute('placeholder', 'Description');
     await expect(locator).toHaveAttribute('maxlength', '255');
-    })
+});
 
 test('typeField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const locator = page.locator('[formcontrolname="type_id"]');
     console.log('newModel Type Field');
     await expect(locator).toHaveAttribute('placeholder', 'Type');
     await expect(locator).toHaveAttribute('role', 'listbox');
-    })
+});
 
 test('typeDropDownValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -57,7 +57,7 @@ test('typeDropDownValidation @regChecklistNewLow @newModelPage', async ({ page, 
     console.log('newModel Type DropDown validation');
     await newModel.nextButtonClick();
     await expect(locator).toHaveText(['TypeType Please fill in this field']);
-    })
+});
 
 test('typeNameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -69,7 +69,7 @@ test('typeNameField @regChecklistNewHigh @newModelPage', async ({ page }) => {
     await expect(locator).toHaveText(['Other']);
     await expect(locator2).toBeVisible();
     await expect(locator2).toHaveAttribute('placeholder', 'Type Name');
-    })
+});
 
 test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -80,7 +80,7 @@ test('typeNameFieldValidation @regChecklistNewLow @newModelPage', async ({ page,
     await newModel.typeDropDownOtherChoose();
     await newModel.nextButtonClick();
     await expect(locator).toHaveText(['Type Name Please fill in this field']);
-    })
+});
 
 test('infoIconWeightScale @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -89,14 +89,14 @@ test('infoIconWeightScale @regChecklistNewLow @newModelPage', async ({ page, bro
     console.log('newModel Info Icon Weight Scale');
     await newModel.iIconClick();
     await expect(locator).toHaveText('The weighting scale is used as a range to assign different weights for terms in the model - e.g. 1 to 100.  The weighting is used to calculate the scoring for each term during deal making.');
-    })
+});
 
 test('weightScaleFrom @regChecklistNewLow @newModelPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
     const locator = page.locator('[formcontrolname="weight_scale_from"]');
     console.log('newModel Weight Scale From');
     await expect(locator).toHaveAttribute('placeholder', 'From');
-    })
+});
     
 test('weightScaleFromValidation @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -106,14 +106,14 @@ test('weightScaleFromValidation @regChecklistNewHigh @newModelPage', async ({ pa
     await expect(locator).toHaveText('From Please fill in this field');
     await newModel.fromFieldValidation();
     await expect(locator).toHaveText('From Weight Scale From must be no less than 1.');
-    })
+});
     
 test('weightScaleTo @regChecklistNewLow @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const locator = page.locator('[formcontrolname="weight_scale_to"]');
     console.log('newModel Weight Scale To');
     await expect(locator).toHaveAttribute('placeholder', 'To');
-    })
+});
     
 test('weightScaleToValidation @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -121,7 +121,7 @@ test('weightScaleToValidation @regChecklistNewHigh @newModelPage', async ({ page
     console.log('newModel Weight Scale To validation');
     await newModel.nextButtonClick();
     await expect(locator).toHaveText('To Please fill in this field');
-    })  
+});  
 
 test('nextButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -134,7 +134,7 @@ test('nextButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
     await newModel.nextButtonClick();
     await page.waitForSelector('text=New Term');
     await expect(locator).toHaveText('New Term');
-    })
+});
 
 test('nextButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -143,7 +143,7 @@ test('nextButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page
     console.log('newModel Next Button Empty Fields');
     await newModel.nextButtonClick();
     await expect(locator).toHaveText(['Please fill in this field', 'Please fill in this field', 'Please fill in this field', 'Please fill in this field']);
-    })
+});
 
 test('nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -156,7 +156,7 @@ test('nextButtonToSmallterThenFrom @regChecklistNewHigh @newModelPage', async ({
     await newModel.toFieldFillSmaller();
     await newModel.nextButtonClick();
     await expect(locator).toHaveText(['From Minimum weight cannot be bigger than maximum weight']);
-    })
+});
     
 test('saveButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -170,7 +170,7 @@ test('saveButton @regChecklistNewHigh @newModelPage', async ({ page }) => {
     await newModel.saveButtonClick();
     await page.waitForSelector('text=There are no terms yet. You can add new term here');
     await expect(locator).toHaveText('There are no terms yet. You can add new term here');
-    })
+});
 
 test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -179,7 +179,7 @@ test('saveButtonEmptyFields @regChecklistNewMedium @newModelPage', async ({ page
     console.log('newModel Save Button Empty Fields');
     await newModel.saveButtonClick();
     await expect(locator).toHaveText(['Please fill in this field', 'Please fill in this field', 'Please fill in this field', 'Please fill in this field']);
-    })
+});
 
 test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -193,7 +193,7 @@ test('saveButtonToSmallterThenFrom @regChecklistNewMedium @newModelPage', async 
     await newModel.toFieldFillSmaller();
     await newModel.saveButtonClick();
     await expect(locator).toHaveText(['From Minimum weight cannot be bigger than maximum weight']);
-    })
+});
  
 test('cancelButton @regChecklistNewMedium @newModelPage', async ({ page, browserName}) => {
     test.skip(browserName === 'chromium');
@@ -201,7 +201,7 @@ test('cancelButton @regChecklistNewMedium @newModelPage', async ({ page, browser
     console.log('newModel Cancel Button');
     await newModel.cancelButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
-    })
+});
     
 test('createdModelsArchived @regChecklistNewHigh @newModelPage', async ({ page }) => {
     const newModel = new NewEditCopyModelPage(page);
@@ -218,6 +218,6 @@ test('createdModelsArchived @regChecklistNewHigh @newModelPage', async ({ page }
     await sideBarMenu.sideBarModelClick();
     await model.createFilterClick();
     await expect(locator).toHaveText('Archived');
-    })     
+}); 
 
 

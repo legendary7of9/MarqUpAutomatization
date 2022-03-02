@@ -50,7 +50,7 @@ test('buttonsOf3dotsMenuDraftStatus @regClickTractsMedium @template3dotsMenu', a
     await expect(shareAccessButton).toBeHidden();
     await expect(createContractButton).toBeHidden();
     await expect(deleteButton).toBeVisible();
-    })
+});
 
 test('buttonsOf3dotsMenuPublishedStatus @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -153,7 +153,7 @@ test('buttonsOf3dotsMenuPublishedStatus @regClickTractsMedium @template3dotsMenu
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('editButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -177,7 +177,7 @@ test('editButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ pa
     await page.goto('/contract-templates/list?&sort=-created_at');
     await templatesPage.threeDotsMenuEditButtonClick();
     await expect(page.url()).toContain('/contract-template/edit/');
-    })
+});
 
 test.skip('saveAsNewButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -219,7 +219,7 @@ test.skip('saveAsNewButton3dotsMenu @regClickTractsMedium @template3dotsMenu', a
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
     //to be refactored
 test('templateWithSetUpVisibilityOnly @regClickTractsHigh @template3dotsMenu', async ({ page, browserName }) => {
@@ -347,7 +347,7 @@ test('templateWithSetUpVisibilityOnly @regClickTractsHigh @template3dotsMenu', a
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('SACanSaveAsNewTemplateCreatedByAA @regClickTractsLow @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -419,7 +419,7 @@ test('SACanSaveAsNewTemplateCreatedByAA @regClickTractsLow @template3dotsMenu', 
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -553,7 +553,7 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @template3
     await expect(shareAccessButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('SACanShareTemplatesCreatedByAA @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -624,7 +624,7 @@ test('SACanShareTemplatesCreatedByAA @regClickTractsMedium @template3dotsMenu', 
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('createContractButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -677,7 +677,7 @@ test('createContractButton3dotsMenu @regClickTractsMedium @template3dotsMenu', a
     await page.click('.cdk-overlay-backdrop');
     await templatesPage.threeDotsMenuCreateContractButtonClick();
     expect(page.url()).toContain('/contract/create/');
-    })
+});
 
 test('solutionAdminCanSeeAllTemplates3dotsMenu @regClickTractsHigh @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -740,7 +740,7 @@ test('solutionAdminCanSeeAllTemplates3dotsMenu @regClickTractsHigh @template3dot
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-    })
+});
 
 test('accountAdminsOfOneClientCanManageTemplates @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -768,7 +768,7 @@ test('accountAdminsOfOneClientCanManageTemplates @regClickTractsMedium @template
     await expect(displayingEditButton).toBeVisible();
     await expect(displayingSaveAsNewButton).toBeVisible();
     await expect(displayingDeleteButton).toBeVisible();
-    })
+});
 
 test('deleteButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -798,15 +798,12 @@ test('deleteButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ 
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-created_at');
-    await templatesPage.createdFilterClick();
-    await templatesPage.createdFilterClick();
-    await page.goto('/contract-templates/list?&sort=-created_at');
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.waitForTimeout(1000);
     await page.locator('.mat-button >> text=Delete').click();
     await page.waitForTimeout(2000);
     await expect(deletedTemplate).not.toContainText('autotest');
-    })
+});
 
 test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsLow @template3dotsMenu', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -842,4 +839,4 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsLow @template3dot
     await expect(deletePopupPublishTemplateText).toContainText('You must first change the Template status');
     await page.locator('.mat-button >> text=Cancel').click();
     await expect(deletePopupPublishTemplate).toBeHidden();
-    })
+});

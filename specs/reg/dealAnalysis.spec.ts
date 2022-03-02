@@ -22,7 +22,7 @@ test('dealName @regChecklistNewLow @dealAnalysis', async ({ page, browserName })
     await page.goto('/deals/analysis-deal/8250');
     await expect(title).toHaveText(' test100test100DealDoNotRemove -  Client 1HT(test) -  test 20%');
     console.log(title);
-    })
+});
 
 test('completionStatus @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -32,7 +32,7 @@ test('completionStatus @regChecklistNewMedium @dealAnalysis', async ({ page, bro
     await page.goto('/deals/analysis-deal/8250');
     await expect(status).toBeVisible();
     await expect(persent).toHaveText('20%');
-    })
+});
     
     //to be refactored
 test('dealStatus @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
@@ -44,7 +44,7 @@ test('dealStatus @regChecklistNewMedium @dealAnalysis', async ({ page, browserNa
     await expect(archivedModelDealMessage).toBeVisible();
     await expect(archivedModelDealMessage).toHaveText('The model is no longer available. Please create a deal using an existing model');
     await expect(editingDisabled).toHaveAttribute('disabled', '');
-    })
+});
     
 test('editPancilButton @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
@@ -52,7 +52,7 @@ test('editPancilButton @regChecklistNewHigh @dealAnalysis', async ({ page }) => 
     await page.goto('/deals/analysis-deal/8250');
     await dealAnalysis.editDealPancilClick();
     await expect(page).toHaveURL('deals/edit-deal/8250');
-    })
+});
 
 test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -66,7 +66,7 @@ test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @dealAnalysis', async (
     await expect(linkedDeal).toHaveText('Is linked to BB test (Score: 48%)');
     await dealAnalysis.linkedDealLinkClick();
     await expect(page).toHaveURL('/deals/analysis-deal/435');
-    })
+});
 
 test('exportButton @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -78,7 +78,7 @@ test('exportButton @regChecklistNewLow @dealAnalysis', async ({ page, browserNam
         dealAnalysis.exportButtonClick(),
     ]);
     await download.delete()
-    })
+});
 
 test('avaliableDisableSummaryButton @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -105,7 +105,7 @@ test('avaliableDisableSummaryButton @regChecklistNewMedium @dealAnalysis', async
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('summaryButtonValidation @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -128,7 +128,7 @@ test('summaryButtonValidation @regChecklistNewHigh @dealAnalysis', async ({ page
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('notesIinternalField @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -139,7 +139,7 @@ test('notesIinternalField @regChecklistNewMedium @dealAnalysis', async ({ page, 
     await expect(notesInternalField).toHaveText('test');
     await page.goto('/deals/analysis-deal/458');
     await expect(notesInternalField).toBeHidden();
-    })
+});
 
 test('termQuestionColumns @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -159,7 +159,7 @@ test('termQuestionColumns @regChecklistNewLow @dealAnalysis', async ({ page, bro
     await expect(questionColumnRow0).toHaveText('test1');
     await expect(questionColumnRow1).toHaveText('test1test1');
     await expect(questionColumnRow2).toHaveText('test1test1test1');
-    })
+});
 
 test('firstDraftAnswersDropDown @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -204,7 +204,7 @@ test('firstDraftAnswersDropDown @regChecklistNewMedium @dealAnalysis', async ({ 
     await expect(firstDraftField1).toHaveText('AA2');
     await expect(firstDraftField2).toHaveText('BB answer 1');
     await expect(firstDraftField3).toHaveText('AA NAswer 3');
-    })
+});
 
 test('firstDraftAnswersModelWasEdited @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -270,7 +270,7 @@ test('firstDraftAnswersModelWasEdited @regChecklistNewMedium @dealAnalysis', asy
     await page.waitForTimeout(1000);
     await expect(newDeletedTerm).toBeHidden();
     await dealAnalysis.firstDraftFinishButtonClick();
-    })
+});
     
 test('clearAllLinkFirstFinalDraft @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -302,7 +302,7 @@ test('clearAllLinkFirstFinalDraft @regChecklistNewLow @dealAnalysis', async ({ p
     await expect(firstDraftField1).toHaveText('');
     await expect(firstDraftField2).toHaveText('');
     await expect(firstDraftField3).toHaveText('');
-    })
+});
 
 test('finalDraftAnswersDropDown @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -358,7 +358,7 @@ test('finalDraftAnswersDropDown @regChecklistNewHigh @dealAnalysis', async ({ pa
     await expect(firstDraftField1).toHaveText('AA2');
     await expect(firstDraftField2).toHaveText('BB answer 1');
     await expect(firstDraftField3).toHaveText('AA NAswer 3');
-    })
+});
 
 test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -444,7 +444,7 @@ test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis', async (
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
     
 test('finishReopen1stDraftAnsewersColumn @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -493,7 +493,7 @@ test('finishReopen1stDraftAnsewersColumn @regChecklistNewHigh @dealAnalysis', as
     await expect(firstDraftDisabledEnabled2).toBeVisible();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('errorMessageForSignatureEffectiveExpirationDate @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -523,7 +523,7 @@ test('errorMessageForSignatureEffectiveExpirationDate @regChecklistNewMedium @de
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupCancelButtonClick();
-    })
+});
 
 test('twoUsersClickReopenFinishClosePopupFirstFinalDrafts @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -581,7 +581,7 @@ test('twoUsersClickReopenFinishClosePopupFirstFinalDrafts @regChecklistNewHigh @
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -634,7 +634,7 @@ test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnal
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('finishReopenButtonFinalDraft @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -673,7 +673,7 @@ test('finishReopenButtonFinalDraft @regChecklistNewHigh @dealAnalysis', async ({
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('sectionRefNoteColumn @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -684,7 +684,7 @@ test('sectionRefNoteColumn @regChecklistNewLow @dealAnalysis', async ({ page, br
     await expect(noteField).toHaveAttribute('matautosizeminrows', '1');
     await expect(noteField).toHaveAttribute('mattextareaautosize', '');
     await expect(noteField).toHaveAttribute('maxlength', '1000');
-    })
+});
 
 test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -700,7 +700,7 @@ test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @dealAnalysis', a
     await page.goto(downloadUrl);
     await expect(page.locator('pre')).toHaveText('Contract name,Name of the other party, My company (Subsidiary),Model,Terms,Model answers,Estimated value,First draft answer,Final draft answer,Samples,Total,Status,Created by,Edited by "test100test100DealDoNotRemove3","test","Client 1HT(test)","test100test100DoNotRemove16","test100test100Term1DoNotRemove16","test2","2222222","test3","test3","","20, 20","50","AA Client HT","AA Client HT" "test100test100DealDoNotRemove3","test","Client 1HT(test)","test100test100DoNotRemove16","test100test100Term2DoNotRemove16","test2test2","2222222","test3test3","test3test3","","20, 20","50","AA Client HT","AA Client HT" "test100test100DealDoNotRemove3","test","Client 1HT(test)","test100test100DoNotRemove16","test100test100Term3DoNotRemove16","test2test2test2","2222222","test4test4test4","test4test4test4","","20, 20","50","AA Client HT","AA Client HT"');
     await download.delete()
-    })
+});
     
 test('sampleColumn @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -718,7 +718,7 @@ test('sampleColumn @regChecklistNewLow @dealAnalysis', async ({ page, browserNam
     await expect(view0).toHaveClass('link-name deal-analysis-sample-view');
     await expect(view1).toHaveClass('link-name deal-analysis-sample-view');
     await expect(view2).toHaveClass('link-name deal-analysis-sample-view');
-    })
+});
 
 test('viewHyperlink @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -770,7 +770,7 @@ test('viewHyperlink @regChecklistNewLow @dealAnalysis', async ({ page, browserNa
     await page.waitForTimeout(1000);
     await expect(viewLinkPopup).toBeHidden();
     await expect(page).toHaveURL('/deals/analysis-deal/458')
-    })
+});
 
 test('draftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -793,7 +793,7 @@ test('draftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ p
     await dealAnalysis.finalLinkFieldOkIconClick();
     await expect(finalFieldUrlValidation).toHaveText('2000 characters are allowed in this input field')
     await dealAnalysis.finalLinkFieldClear();
-    })
+});
 
 test('checkmarkButtonForDraftFinalDraftUrlFields&UrlValidation @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -837,7 +837,7 @@ test('checkmarkButtonForDraftFinalDraftUrlFields&UrlValidation @regChecklistNewM
     await dealAnalysis.finalLinkFieldClear();
     await dealAnalysis.finalLinkFieldOkIconClick();
     await page.reload();
-    })
+});
 
 test('closeButtonForDraftFinalDraftUrlFields @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -871,7 +871,7 @@ test('closeButtonForDraftFinalDraftUrlFields @regChecklistNewLow @dealAnalysis',
     await expect(finalFieldUrl).toBeVisible();
     await expect(finalFieldUrl).toHaveText('');
     await expect(closeButtonFinalUrl).toBeVisible();
-    })
+});
 
 test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -906,7 +906,7 @@ test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @dealAnal
     await dealAnalysis.finalLinkFieldEditClick();
     await dealAnalysis.finalLinkFieldClear();
     await dealAnalysis.finalLinkFieldOkIconClick();
-    })
+});
 
     test('deletingInsertedLinkForDraftFinalUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -934,7 +934,7 @@ test('pancilCopyButtonsDraftFinlaDraftUrlFields @regChecklistNewMedium @dealAnal
     await expect(draftFieldUrl).toHaveText('');
     await expect(finalFieldUrl).toBeVisible();
     await expect(finalFieldUrl).toHaveText('');
-    })
+});
 
 test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const deal = new DealsPage(page);
@@ -968,7 +968,7 @@ test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealA
     await expect(signatureDateValue).toHaveValue(date);
     await expect(effectiveDateValue).toHaveValue(date);
     await expect(expirationDateValue).toHaveValue(date);
-    })
+});
 
 test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -998,7 +998,7 @@ test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewM
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
@@ -1055,7 +1055,7 @@ test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHig
     await dealAnalysis.datapickerValue21Choose();
     await dealAnalysis.expirationOkIconClick();
     await expect(expirationDateValue).toHaveValue('01/21/2022');
-    })
+});
 
     //to be refactored
 test.skip('editButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
@@ -1064,7 +1064,7 @@ test.skip('editButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewMediu
     console.log('dealAnalysis Edit Button For Signature&Effective&Expiration Date Boxes');
     await page.goto('/deals/analysis-deal/8264');
 
-    })
+});
 
 test('xButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -1131,7 +1131,7 @@ test('xButtonSignatureEffectiveExpirationDateBoxes @regChecklistNewLow @dealAnal
     await dealAnalysis.datapickerPeriodJanValueChoose();
     await dealAnalysis.datapickerValue21Choose();
     await dealAnalysis.expirationOkIconClick();
-    })
+});
 
 test('displayingPreliminaryDateCheckbox @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -1150,7 +1150,7 @@ test('displayingPreliminaryDateCheckbox @regChecklistNewHigh @dealAnalysis', asy
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('switchingPreliminaryDateCheeckbox @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -1175,7 +1175,7 @@ test('switchingPreliminaryDateCheeckbox @regChecklistNewLow @dealAnalysis', asyn
     await expect(signatureBoxEditIcon).toBeVisible();
     await expect(signatureBoxOkIcon).toBeHidden();
     await expect(signatureBoxCancelIcon).toBeHidden();
-    })
+});
 
 test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -1199,7 +1199,7 @@ test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @dea
     await expect(signatureBoxOkIcon).toBeHidden();
     await expect(signatureBoxCancelIcon).toBeHidden();
     await expect(signatureDateValue).toHaveValue('01/21/2022');
-    })
+});
 
 test('savingPreliminaryDate @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
@@ -1261,7 +1261,7 @@ test('savingPreliminaryDate @regChecklistNewHigh @dealAnalysis', async ({ page }
     await dealAnalysis.datapickerPeriodJanValueChoose();
     await dealAnalysis.datapickerValue21Choose();
     await dealAnalysis.expirationOkIconClick();
-    })
+});
 
 test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -1305,7 +1305,7 @@ test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @dealAnalysi
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('totalScoreLine @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -1332,7 +1332,7 @@ test('totalScoreLine @regChecklistNewHigh @dealAnalysis', async ({ page, browser
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('riskScoreWhenChangeAnswerWeight @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -1371,7 +1371,7 @@ test('riskScoreWhenChangeAnswerWeight @regChecklistNewHigh @dealAnalysis', async
     await dealAnalysis.firstDraftReopenButtonClick();
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
-    })
+});
 
 test('showPreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -1397,16 +1397,15 @@ test('showPreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ pag
     await expect(scoreSecondLinkDraftValue).toBeVisible();
     await expect(scoreSecondLinkFinalValue).toHaveText('20%');
     await expect(scoreSecondLinkFinalValue).toBeVisible();
-    })
+});
 
 test('disablingShowPreviousScores @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
-    const dealAnalysis = new DealAnalysisPage(page);
     const showPriviousScore = page.locator('#deal-analysis-show-hide-table-scores');
     console.log('dealAnalysis Disabling Show Previous Scores');
     await page.goto('/deals/analysis-deal/412');
     await expect(showPriviousScore).toHaveClass('toggle-link disabled ng-star-inserted');
-    })
+});
 
 test('showPrivousLinkRedirections @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
     const dealAnalysis = new DealAnalysisPage(page);
@@ -1421,7 +1420,7 @@ test('showPrivousLinkRedirections @regChecklistNewHigh @dealAnalysis', async ({ 
     await dealAnalysis.showHidePreviousScoreButtonClick();
     await page.click('.deal-link-name >> text=test100test100DealDoNotRemove3 - test');
     await expect(page).toHaveURL('/deals/analysis-deal/8252');
-    })
+});
 
 test('hidePreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -1447,4 +1446,4 @@ test('hidePreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ pag
     await expect(scoreSecondLink).toBeHidden();
     await expect(scoreSecondLinkDraftValue).toBeHidden();
     await expect(scoreSecondLinkFinalValue).toBeHidden();
-    })
+});

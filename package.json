@@ -24,11 +24,12 @@
     "@types/node": "^16.11.11",
     "allure-commandline": "^2.17.2",
     "allure-playwright": "^2.0.0-beta.14",
+    "clipboardy": "^3.0.0",
     "experimental-allure-playwright": "^0.0.3",
     "ts-migrate": "^0.1.26"
   },
   "dependencies": {
-    "clipboardy": "^3.0.0",
+    "clipboard": "^2.0.10",
     "copy-text-to-clipboard": "^3.0.1"
   }
 }
