@@ -3,6 +3,9 @@ import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { ModelPage } from '../../framework'
 import { NewEditCopyModelPage } from '../../framework'
+import { NewEditContractPage } from '../../framework'
+
+ 
 
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
@@ -188,7 +191,6 @@ test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ pa
 test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const editModel = new NewEditCopyModelPage(page);
-    const model = new ModelPage(page);
     const activate = page.locator('#model-details-activate');
     console.log('editModel Push To Archive Archive Button');
     await page.goto('/models/edit-model/974');
@@ -198,4 +200,26 @@ test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async (
     await page.goto('/models/edit-model/974');
     await expect(activate).toBeVisible();
     await editModel.activateButtonClick();
+});
+
+test('pushToArchiveArchiveButtonWithContract/Deal @regChecklistNewHigh @editModelPage', async ({ page }) => {
+    const editModel = new NewEditCopyModelPage(page);
+    const editContract = new NewEditContractPage(page);
+    const pushToArchiveErrorPopup = page.locator('.mat-dialog-container');
+    const pushToArchiveErrorText = page.locator('.modal-header');
+    console.log('editModel Push To Archive Archive Button If There Is a Published(draft)Coontract/Deal For This Model');
+    await page.goto('/models/edit-model/757');
+    await editModel.pushToArchiveButtonClick();
+    await expect(pushToArchiveErrorPopup).toBeVisible();
+    await expect(pushToArchiveErrorText).toHaveText(' This Model can not be archivised because of attached Contracts/Deals');
+    await page.goto('/contract/edit/3059');
+    await editContract.publishToggleClick();
+    await editContract.saveAndGenerateLinkButtonClick();
+    await page.goto('/models/edit-model/757');
+    await editModel.pushToArchiveButtonClick();
+    await expect(pushToArchiveErrorPopup).toBeVisible();
+    await expect(pushToArchiveErrorText).toHaveText(' This Model can not be archivised because of attached Contracts/Deals');
+    await page.goto('/contract/edit/3059');
+    await page.locator('.mat-button-wrapper >> text= Back to draft ').click();
+    await editContract.saveButtonClick();
 });

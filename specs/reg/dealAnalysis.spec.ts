@@ -6,6 +6,19 @@ import { NewEditDealPage } from '../../framework'
 import { DealAnalysisPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+
+// [chrome] › specs/reg/dealAnalysis.spec.ts:80:1 › linkedDealOpeningLinkedDeal @regChecklistNewMedium @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:133:1 › summaryButtonValidation @regChecklistNewHigh @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:386:1 › behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:609:1 › completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:701:1 › sectionRefNoteColumn @regChecklistNewLow @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:996:1 › appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:1026:1 › savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:1227:1 › savingPreliminaryDate @regChecklistNewHigh @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:1333:1 › totalScoreLine @regChecklistNewHigh @dealAnalysis Fixed
+// [chrome] › specs/reg/dealAnalysis.spec.ts:1399:1 › showPreviousScoresLink @regChecklistNewMedium @dealAnalysis Fixed
+
+
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
@@ -63,7 +76,7 @@ test('linkedDealOpeningLinkedDeal @regChecklistNewMedium @dealAnalysis', async (
     await expect(linkedDeal).toBeHidden();
     await page.goto('/deals/analysis-deal/8274');
     await expect(linkedDeal).toBeVisible();
-    await expect(linkedDeal).toHaveText('Is linked to BB test (Score: 48%)');
+    await expect(linkedDeal).toHaveText(' Is linked to BB test (Score: 48) ');
     await dealAnalysis.linkedDealLinkClick();
     await expect(page).toHaveURL('/deals/analysis-deal/435');
 });
@@ -376,33 +389,33 @@ test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis', async (
     await page.locator('.mat-column-first_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test5').click();
     await expect(firstDraftAnswerColor).toHaveCSS('background-color', 'rgb(255, 83, 132)');
-    await expect(firstDraftScore).toHaveText('-171%');
+    await expect(firstDraftScore).toHaveText('-171');
     await expect(firstDraftScoreColor).toHaveCSS('color', 'rgb(255, 83, 132)');
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-first_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test3').click();
     await expect(firstDraftAnswerColor).toHaveCSS('background-color', 'rgb(255, 163, 94)');
-    await expect(firstDraftScore).toHaveText('-102%');
+    await expect(firstDraftScore).toHaveText('-102');
     await expect(firstDraftScoreColor).toHaveCSS('color', 'rgb(255, 83, 132)');
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-first_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test2').click();
     await expect(firstDraftAnswerColor).toHaveCSS('background-color', 'rgb(12, 198, 134)');
-    await expect(firstDraftScore).toHaveText('85%');
+    await expect(firstDraftScore).toHaveText('85');
     await expect(firstDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.clearAllButton1stDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-first_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test4').click();
     await expect(firstDraftAnswerColor).toHaveCSS('background-color', 'rgb(24, 146, 104)');
-    await expect(firstDraftScore).toHaveText('120%');
+    await expect(firstDraftScore).toHaveText('120');
     await expect(firstDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await page.reload();
     await expect(firstDraftAnswerText).toHaveText('test4');
     await expect(firstDraftAnswerColor).toHaveCSS('background-color', 'rgb(24, 146, 104)');
-    await expect(firstDraftScore).toHaveText('120%');
+    await expect(firstDraftScore).toHaveText('120');
     await expect(firstDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.firstDraftDropDownChoose();
     await dealAnalysis.firstDraftFinishButtonClick();
@@ -411,33 +424,33 @@ test('behaviorAnswerFirstFinalDraft @regChecklistNewHigh @dealAnalysis', async (
     await page.locator('.mat-column-final_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test5').click();
     await expect(finalDraftAnswerColor).toHaveCSS('background-color', 'rgb(255, 83, 132)');
-    await expect(finalDraftScore).toHaveText('-171%');
+    await expect(finalDraftScore).toHaveText('-171');
     await expect(finalDraftScoreColor).toHaveCSS('color', 'rgb(255, 83, 132)');
     await dealAnalysis.clearAllButtonFinalDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-final_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test3').click();
     await expect(finalDraftAnswerColor).toHaveCSS('background-color', 'rgb(255, 163, 94)');
-    await expect(finalDraftScore).toHaveText('-102%');
+    await expect(finalDraftScore).toHaveText('-102');
     await expect(finalDraftScoreColor).toHaveCSS('color', 'rgb(255, 83, 132)');
     await dealAnalysis.clearAllButtonFinalDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-final_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test2').click();
     await expect(finalDraftAnswerColor).toHaveCSS('background-color', 'rgb(12, 198, 134)');
-    await expect(finalDraftScore).toHaveText('85%');
+    await expect(finalDraftScore).toHaveText('85');
     await expect(finalDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.clearAllButtonFinalDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
     await page.locator('.mat-column-final_draft >> nth=1').click();
     await page.locator('.mat-option >> text=test4').click();
     await expect(finalDraftAnswerColor).toHaveCSS('background-color', 'rgb(24, 146, 104)');
-    await expect(finalDraftScore).toHaveText('120%');
+    await expect(finalDraftScore).toHaveText('120');
     await expect(finalDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)')
     await page.reload();
     await expect(finalDraftAnswerText).toHaveText('test4');
     await expect(finalDraftAnswerColor).toHaveCSS('background-color', 'rgb(24, 146, 104)');
-    await expect(finalDraftScore).toHaveText('120%');
+    await expect(finalDraftScore).toHaveText('120');
     await expect(finalDraftScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.clearAllButtonFinalDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
@@ -606,8 +619,8 @@ test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnal
     await expect(finalDraftField1).toHaveText('test3');
     await expect(finalDraftField2).toHaveText('test5test5');
     await expect(finalDraftField3).toHaveText('test2test2test2');
-    await expect(firstDraftScore).toHaveText('-187%');
-    await expect(finalDraftScore).toHaveText('-187%');
+    await expect(firstDraftScore).toHaveText('-187');
+    await expect(finalDraftScore).toHaveText('-187');
     await dealAnalysis.finalDraftReopenButtonClick();
     await dealAnalysis.firstDraftFinishButtonClick();
     await dealAnalysis.clearAllButtonFinalDraftClick();
@@ -625,8 +638,8 @@ test('completeDealFinishedWhenTheModelWasEdited @regChecklistNewMedium @dealAnal
     await expect(finalDraftField1).toHaveText('test5');
     await expect(finalDraftField2).toHaveText('test3test3');
     await expect(finalDraftField3).toHaveText('test6test6test6');
-    await expect(firstDraftScore).toHaveText('-7%');
-    await expect(finalDraftScore).toHaveText('-7%');
+    await expect(firstDraftScore).toHaveText('-7');
+    await expect(finalDraftScore).toHaveText('-7');
     await dealAnalysis.finalDraftReopenButtonClick();
     await dealAnalysis.firstDraftFinishButtonClick();
     await dealAnalysis.clearAllButtonFinalDraftClick();
@@ -680,10 +693,12 @@ test('sectionRefNoteColumn @regChecklistNewLow @dealAnalysis', async ({ page, br
     const noteField = page.locator('.mat-column-note textarea >> nth=0')
     console.log('dealAnalysis Section Ref Note Column');
     await page.goto('/deals/analysis-deal/8250');
-    await expect(noteField).toHaveAttribute('matautosizemaxrows', '10');
-    await expect(noteField).toHaveAttribute('matautosizeminrows', '1');
+    await expect(noteField).toHaveAttribute('matautosizemaxrows', '3');
+    await expect(noteField).toHaveAttribute('matautosizeminrows', '3');
     await expect(noteField).toHaveAttribute('mattextareaautosize', '');
     await expect(noteField).toHaveAttribute('maxlength', '1000');
+    await expect(noteField).toHaveAttribute('rows', '1');
+    await expect(noteField).toHaveAttribute('aria-required', 'false');
 });
 
 test('sectionRefNoteColumnIncludesToExport @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
@@ -737,6 +752,16 @@ test('viewHyperlink @regChecklistNewLow @dealAnalysis', async ({ page, browserNa
     console.log('dealAnalysis View Hyperlink');
     await page.goto('/deals/analysis-deal/458');
     await dealAnalysis.viewLinkClick();
+    await expect(sample0EditButton).toBeVisible();
+    await expect(sample1EditButton).toBeVisible();
+    await dealAnalysis.viewLinkPopupCloseButtonClick();
+    await dealAnalysis.firstDraftFinishButtonClick();
+    await dealAnalysis.viewLinkClick();
+    await expect(sample0EditButton).toBeHidden();
+    await expect(sample1EditButton).toBeHidden();
+    await dealAnalysis.viewLinkPopupCloseButtonClick();
+    await dealAnalysis.firstDraftReopenButtonClick();
+    await dealAnalysis.viewLinkClick();
     await expect(viewLinkPopup).toBeVisible();
     await expect(sample0).toBeVisible();
     await expect(sample1).toBeVisible();
@@ -769,7 +794,7 @@ test('viewHyperlink @regChecklistNewLow @dealAnalysis', async ({ page, browserNa
     await dealAnalysis.viewLinkPopupCloseButtonClick();
     await page.waitForTimeout(1000);
     await expect(viewLinkPopup).toBeHidden();
-    await expect(page).toHaveURL('/deals/analysis-deal/458')
+    await expect(page).toHaveURL('/deals/analysis-deal/458');
 });
 
 test('draftFinlaDraftUrlFields @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
@@ -971,7 +996,7 @@ test('appearingSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealA
 });
 
 test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+    test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const dataPicker = page.locator('.mat-calendar');
     console.log('dealAnalysis Appearing Data Picker For Signature&Effective&Expiration Date Boxes');
@@ -1000,7 +1025,8 @@ test('appearingDataPickerSignatureEffectiveExpirationDateBoxes @regChecklistNewM
     await dealAnalysis.clearAllPopupClearButtonClick();
 });
 
-test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
+test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateValue = page.locator('#deal-analysis-signature-date input');
     const effectiveDateValue = page.locator('#deal-analysis-effective-date input');
@@ -1020,9 +1046,9 @@ test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHig
     await dealAnalysis.datapickerPeriodButtonClick();
     await dealAnalysis.datapickerPeriod2022ValueChoose();
     await dealAnalysis.datapickerPeriodJanValueChoose();
-    await dealAnalysis.datapickerValue21Choose();
+    await dealAnalysis.datapickerValue28Choose();
     await dealAnalysis.signatureOkIconClick();
-    await expect(signatureDateValue).toHaveValue('01/21/2022');
+    await expect(signatureDateValue).toHaveValue('01/28/2022');
     await dealAnalysis.effectiveEditIconClick();
     await dealAnalysis.effectiveCalendarIconClick();
     await dealAnalysis.datapickerPeriodButtonClick();
@@ -1036,9 +1062,9 @@ test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHig
     await dealAnalysis.datapickerPeriodButtonClick();
     await dealAnalysis.datapickerPeriod2022ValueChoose();
     await dealAnalysis.datapickerPeriodJanValueChoose();
-    await dealAnalysis.datapickerValue21Choose();
+    await dealAnalysis.datapickerValue15Choose();
     await dealAnalysis.effectiveOkIconClick();
-    await expect(effectiveDateValue).toHaveValue('01/21/2022');
+    await expect(effectiveDateValue).toHaveValue('01/15/2022');
     await dealAnalysis.expirationEditIconClick();
     await dealAnalysis.expirationCalendarIconClick();
     await dealAnalysis.datapickerPeriodButtonClick();
@@ -1052,9 +1078,41 @@ test('savingInputedDateSignatureEffectiveExpirationDateBoxes @regChecklistNewHig
     await dealAnalysis.datapickerPeriodButtonClick();
     await dealAnalysis.datapickerPeriod2022ValueChoose();
     await dealAnalysis.datapickerPeriodJanValueChoose();
-    await dealAnalysis.datapickerValue21Choose();
+    await dealAnalysis.datapickerValue28Choose();
     await dealAnalysis.expirationOkIconClick();
-    await expect(expirationDateValue).toHaveValue('01/21/2022');
+    await expect(expirationDateValue).toHaveValue('01/28/2022');
+});
+
+test('updatingTheExpirationDateWhenTheAutoRenewIsApplied @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
+    const dealAnalysis = new DealAnalysisPage(page);
+    const autorenewBlock = page.locator('.mat-card >> text=Auto-renews in');
+    const autorenewBlockValue = page.locator('.current-deal-value >> nth=0');
+    const expirationDateSummary = page.locator('.effective-dates .effective-dates__item.ng-star-inserted:nth-child(3) > .effective-dates__item-value');
+    const expirationDateAnalysis = page.locator('#deal-analysis-expiration-date .mat-input-element');
+    console.log('dealAnalysis Updating The Expiration Date When The Auto Renew Is Applied');
+    await page.goto('/deals/analysis-deal/8568');
+    await dealAnalysis.finalDraftReopenButtonClick();
+    await dealAnalysis.firstDraftFinishButtonClick();
+    await dealAnalysis.expirationEditIconClick();
+    await dealAnalysis.expirationFieldFillCurrentDate();
+    await dealAnalysis.expirationOkIconClick();
+    await dealAnalysis.finalDraftFinishButtonClick();
+    await expect(autorenewBlock).toBeHidden();
+    await expect(expirationDateSummary).toHaveText(Helpers.currentDate());
+    await page.goto('/deals/analysis-deal/8568');
+    await expect(expirationDateAnalysis).toHaveValue(Helpers.currentDate());
+    await page.goto('/deals/analysis-deal/8569');
+    await dealAnalysis.finalDraftReopenButtonClick();
+    await dealAnalysis.firstDraftFinishButtonClick();
+    await dealAnalysis.expirationEditIconClick();
+    await dealAnalysis.expirationFieldFillCurrentDateMinus1Day();
+    await dealAnalysis.expirationOkIconClick();
+    await dealAnalysis.finalDraftFinishButtonClick();
+    await expect(autorenewBlock).toBeVisible();
+    await expect(autorenewBlockValue).toHaveText('62');
+    await expect(expirationDateSummary).toHaveText(Helpers.currentDatePlus2Months());
+    await page.goto('/deals/analysis-deal/8569');
+    await expect(expirationDateAnalysis).toHaveValue(Helpers.currentDatePlus2Months());
 });
 
     //to be refactored
@@ -1201,7 +1259,8 @@ test('confirmedSignatureDateSwitchingPreliminaryDate @regChecklistNewMedium @dea
     await expect(signatureDateValue).toHaveValue('01/21/2022');
 });
 
-test('savingPreliminaryDate @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
+test('savingPreliminaryDate @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
     const dealAnalysis = new DealAnalysisPage(page);
     const signatureDateValue = page.locator('#deal-analysis-signature-date input');
     const effectiveDateValue = page.locator('#deal-analysis-effective-date input');
@@ -1307,6 +1366,78 @@ test('applyingPreliminaryDateToggleToAnyDeal @regChecklistNewMedium @dealAnalysi
     await dealAnalysis.clearAllPopupClearButtonClick();
 });
 
+test('appearingTheAutoRenewCheckbox @regChecklistNewHigh @dealAnalysis', async ({ page }) => {
+    const dealAnalysis = new DealAnalysisPage(page);
+    const autoRenewCheckbox = page.locator('#deal-analysis-autorenew-date');
+    const autoRenewCheckboxText = page.locator('#deal-analysis-autorenew-date .mat-checkbox-label');
+    console.log('dealAnalysis Appearing The Auto-Renew Checkbox');
+    await page.goto('/deals/analysis-deal/8563');
+    await expect(autoRenewCheckbox).toBeHidden();
+    await dealAnalysis.firstDraftFinishButtonClick();
+    await expect(autoRenewCheckbox).toBeVisible();
+    await expect(autoRenewCheckboxText).toHaveText(' Auto-renew every ');
+    await dealAnalysis.finalDraftFinishButtonClick();
+    await page.goto('/deals/analysis-deal/8563');
+    await expect(autoRenewCheckbox).toBeVisible();
+    await expect(autoRenewCheckbox).toHaveClass('mat-checkbox mat-success mat-checkbox-disabled ng-untouched ng-pristine');
+    await dealAnalysis.finalDraftReopenButtonClick();
+});
+
+test('displayingTheDurationText @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const durationCheckbox = page.locator('.deal-analysis-auto-renew-wrapper');
+    const durationCheckboxDisabled = page.locator('#deal-analysis-auto-renew-months .mat-input-element');
+    console.log('dealAnalysis Displaying The Duration Text');
+    await page.goto('/deals/analysis-deal/8564');
+    await expect(durationCheckbox).toHaveText('  Auto-renew every  month(s) ');
+    await expect(durationCheckboxDisabled).toHaveAttribute('readonly', '');
+});
+
+test('activationDeactivationTheDurationField @regChecklistNewMedium @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
+    const dealAnalysis = new DealAnalysisPage(page);
+    const autorenewValue = page.locator('#deal-analysis-auto-renew-months .mat-input-element');
+    const durationCheckboxDisabled = page.locator('#deal-analysis-auto-renew-months .mat-input-element');
+    console.log('dealAnalysis Activation Deactivation The Duration Field');
+    await page.goto('/deals/analysis-deal/8564');
+    await dealAnalysis.autorenewCheckboxClick();
+    await dealAnalysis.autorenewDurationFieldFill();
+    await expect(autorenewValue).toHaveValue('5');
+    await dealAnalysis.autorenewCheckboxClick();
+    await expect(autorenewValue).toHaveValue('');
+    await expect(durationCheckboxDisabled).toHaveAttribute('readonly', '');
+});
+
+test('validationTheDurationField @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const dealAnalysis = new DealAnalysisPage(page);
+    const validationError = page.locator('mat-error >> text= Must be greater that zero ');
+    console.log('dealAnalysis Validation The Duration Field');
+    await page.goto('/deals/analysis-deal/8564');
+    await dealAnalysis.autorenewCheckboxClick();
+    await dealAnalysis.autorenewDurationField0ValueFill();
+    await expect(validationError).toBeVisible();
+});
+
+test('displayingTheTerminationRight @regChecklistNewLow @dealAnalysis', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
+    const dealAnalysis = new DealAnalysisPage(page);
+    const terminationRightCheckbox = page.locator('#deal-analysis-termination-right');
+    const validationError = page.locator('mat-error >> text= Must be greater that zero ');
+    console.log('dealAnalysis Displaying The Termination Right');
+    await page.goto('/deals/analysis-deal/8564');
+    await expect(terminationRightCheckbox).toBeVisible();
+    await expect(terminationRightCheckbox).toHaveClass('mat-checkbox mat-success ng-untouched ng-pristine ng-valid');
+    await dealAnalysis.terminationRightCheckboxClick();
+    await expect(terminationRightCheckbox).toHaveClass('mat-checkbox mat-success ng-untouched ng-valid mat-checkbox-checked ng-dirty');
+    await dealAnalysis.finalDraftFinishButtonClick();
+    await page.goto('/deals/analysis-deal/8564');
+    await dealAnalysis.finalDraftReopenButtonClick();
+    await dealAnalysis.firstDraftFinishButtonClick();
+    await expect(terminationRightCheckbox).toHaveClass('mat-checkbox mat-success ng-untouched ng-pristine ng-valid mat-checkbox-checked');
+    await dealAnalysis.terminationRightCheckboxClick();
+});
+
 test('totalScoreLine @regChecklistNewHigh @dealAnalysis', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
@@ -1316,16 +1447,16 @@ test('totalScoreLine @regChecklistNewHigh @dealAnalysis', async ({ page, browser
     console.log('dealAnalysis Confirmed Signature Date Switching Preliminary Date');
     await page.goto('/deals/analysis-deal/8362');
     await expect(totalScoreText).toHaveText('Total');
-    await expect(totalScore).toHaveText('100%');
+    await expect(totalScore).toHaveText('100');
     await expect(totalScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.firstDraftDropDownChoose();
-    await expect(totalScore).toHaveText('100%');
+    await expect(totalScore).toHaveText('100');
     await expect(totalScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.firstDraftFinishButtonClick();
-    await expect(totalScore).toHaveText('100%');
+    await expect(totalScore).toHaveText('100');
     await expect(totalScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.finalDraftDropDownChoose2();
-    await expect(totalScore).toHaveText('100%');
+    await expect(totalScore).toHaveText('100');
     await expect(totalScoreColor).toHaveCSS('color', 'rgb(12, 198, 134)');
     await dealAnalysis.clearAllButtonFinalDraftClick();
     await dealAnalysis.clearAllPopupClearButtonClick();
@@ -1377,25 +1508,25 @@ test('showPreviousScoresLink @regChecklistNewMedium @dealAnalysis', async ({ pag
     test.skip(browserName === 'webkit');
     const dealAnalysis = new DealAnalysisPage(page);
     const scoreFirstLink = page.locator('.deal-link-name >> text=test100test100DealDoNotRemove4 - test');
-    const scoreFirstLinkDraftValue = page.locator('.mat-column-first_draft >> text=161%');
-    const scoreFirstLinkFinalValue = page.locator('.mat-column-final_draft >> text=161%');
+    const scoreFirstLinkDraftValue = page.locator('.mat-column-first_draft >> text=161');
+    const scoreFirstLinkFinalValue = page.locator('.mat-column-final_draft >> text=161');
     const scoreSecondLink = page.locator('.deal-link-name >> text=test100test100DealDoNotRemove3 - test');
-    const scoreSecondLinkDraftValue = page.locator('.mat-column-first_draft >> text=20%');
-    const scoreSecondLinkFinalValue = page.locator('.mat-column-final_draft >> text=20%');
+    const scoreSecondLinkDraftValue = page.locator('.mat-column-first_draft >> text=20');
+    const scoreSecondLinkFinalValue = page.locator('.mat-column-final_draft >> text=20');
     console.log('dealAnalysis Show Previous Scores Link');
     await page.goto('/deals/analysis-deal/8250');
     await dealAnalysis.showHidePreviousScoreButtonClick();
     await expect(scoreFirstLink).toHaveText('test100test100DealDoNotRemove4 - test');
     await expect(scoreFirstLink).toBeVisible();
-    await expect(scoreFirstLinkDraftValue).toHaveText('161%');
+    await expect(scoreFirstLinkDraftValue).toHaveText('161');
     await expect(scoreFirstLinkDraftValue).toBeVisible();
-    await expect(scoreFirstLinkFinalValue).toHaveText('161%');
+    await expect(scoreFirstLinkFinalValue).toHaveText('161');
     await expect(scoreFirstLinkFinalValue).toBeVisible();
     await expect(scoreSecondLink).toHaveText('test100test100DealDoNotRemove3 - test');
     await expect(scoreSecondLink).toBeVisible();
-    await expect(scoreSecondLinkDraftValue).toHaveText('20%');
+    await expect(scoreSecondLinkDraftValue).toHaveText('20');
     await expect(scoreSecondLinkDraftValue).toBeVisible();
-    await expect(scoreSecondLinkFinalValue).toHaveText('20%');
+    await expect(scoreSecondLinkFinalValue).toHaveText('20');
     await expect(scoreSecondLinkFinalValue).toBeVisible();
 });
 

@@ -1,5 +1,6 @@
 import { test , expect } from '@playwright/test'
 import { UserBar, Users } from '../../framework'
+import { Search } from '../../framework'
 import { SignInPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { TemplatesPage } from '../../framework'
@@ -8,6 +9,8 @@ import { NewEditCopyTemplatePage } from '../../framework'
 import { ViewTemplatePage } from '../../framework'
 import { NewEditContractPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
+
+// [chrome] › specs/reg/contracts.spec.ts:1325:1 › validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @contracts3dotsMenu 
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
@@ -26,6 +29,7 @@ test('validationOfTheCopyLinkButtonAA/AU @regClickTractsHigh @contractsCopyLink'
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await expect(copyLinkPopup).toBeVisible();
     await expect(copyLinkPopupHeaderText).toBeVisible();
@@ -56,16 +60,18 @@ test('validationOfTheCopyLinkButtonSA @regClickTractsHigh @contractsCopyLink', a
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickSA();
     await expect(copyLinkTooltip).toBeVisible();
 
 });
 
 test('elementsInTheCopyContractLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
+    const userBar = new UserBar(page);
     const permanentLinkSelectedByDefault = page.locator('.mat-radio-button >> nth=0');
     const permanentFieldNotEditable = page.locator('[placeholder="Permanent Contract Link"]');
     const permanentFieldBlock = page.locator('#permanentContractLink');
@@ -74,22 +80,36 @@ test('elementsInTheCopyContractLinkPopup @regClickTractsMedium @contractsCopyLin
     const cancelButton = page.locator('#copy-link-cancel');
     const xButton = page.locator('#copy-link-cancel-cross');
     const copyLinkButton = page.locator('#copy-link-copy-link');
+    const permanentLinkHiddenForAU = page.locator('.container-permanent-contract-link');
     console.log('contractsCopyLink Elements In The Copy Contract Link Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await expect(permanentLinkSelectedByDefault).toHaveClass('mat-radio-button mat-primary mat-radio-checked');
     await expect(permanentFieldNotEditable).toHaveAttribute('disabled', '');
     await expect(permanentFieldBlock).toBeVisible();
-    await expect(permanentFieldValue).toHaveValue('https://signdoc.contractsrx.com/3BVO4XT');
+    await expect(permanentFieldValue).toHaveValue('https://signdoc.contractsrx.com/3OWzVyZ');
     await expect(expiringRadioButton).toBeVisible();
     await expect(cancelButton).toBeVisible();
     await expect(xButton).toBeVisible();
     await expect(copyLinkButton).toBeVisible();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await expect(permanentFieldBlock).toBeHidden();
+    await contractsPage.copyLinkPopupCancelButtonClick();
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await users.AU();
+    await signIn.signInButton();
+    await page.waitForURL('/clients/265');
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.statusFilterClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await expect(permanentLinkSelectedByDefault).toBeHidden();
+    await expect(permanentLinkHiddenForAU).toBeHidden();
 });
 
    //to be refactored
@@ -104,6 +124,7 @@ test('validationOfTheCopyLinkButtonPermanentLinkPopup @regClickTractsHigh @contr
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupCopyLinkButtonClick();
     await expect(copyLinkPopup).toBeHidden();
@@ -120,26 +141,28 @@ test('elementsInTheCopyContractLinkPopupExpiringLink @regClickTractsHigh @contra
     const copyLinkButton = page.locator('#copy-link-copy-link');
     const expirationField = page.locator('#expiringLink');
     const getLink = page.locator('.expiring-date-btn');
-    const expirationFieldEmpty = page.locator('#expiringLink input');
+    const expirationFieldValue = page.locator('#expiringLink input');
+    const getDatePlus2Weeks = Helpers.currentDatePlus2weeks();
     console.log('contractsCopyLink Elements In The Copy Contract Link Popup Expiring Link');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await expect(permanentFieldBlock).toBeHidden();
     await expect(copyLinkButton).toHaveAttribute('disabled', '');
     await expect(expirationField).toBeVisible();
-    await expect(getLink).toBeVisible();
-    await expect(expirationFieldEmpty).toHaveValue('');
+    await expect(getLink).toBeVisible()
+    expect(await expirationFieldValue.inputValue()).toEqual(getDatePlus2Weeks);
     await expect(cancelButton).toBeVisible();
     await expect(xButton).toBeVisible();
     await expect(copyLinkButton).toBeVisible();
 });
 
 test('validationOfTheCalendarIconExpirationDateFieldCopyLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -150,11 +173,12 @@ test('validationOfTheCalendarIconExpirationDateFieldCopyLinkPopup @regClickTract
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupDataPickerButtonClick();
     await expect(dataPicker).toBeVisible();
-    const today = new Date();
+    const today = new Date(Date.now() + 12096e5);
     const date = today.toDateString().toUpperCase();
     expect(dataPickerDate).toHaveText(date);
 });
@@ -170,10 +194,11 @@ test('validationOfTheDataPickerCopyLinkPopup @regClickTractsLow @contractsCopyLi
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupDataPickerButtonClick();
-    await expect(previousButton).toHaveAttribute('disabled', '');
+    await expect(previousButton).toBeDisabled();
     await page.click('.mat-calendar-next-button');
     await page.click('.mat-calendar-previous-button');
 });
@@ -183,19 +208,22 @@ test('validationOfTheGetLinkButtonExpirationDateIsntFilled @regClickTractsHigh @
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
     const expirationDateValidation = page.locator('#expiringLink .mat-error');
+    const clearExpirationDateField = page.locator('#expiringLink input');
     console.log('contractsCopyLink Validation Of The Get Link Button Expiration Date Isnt Filled');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
+    await clearExpirationDateField.fill('');
     await contractsPage.copyLinkPopupGetLinkButtonClick();
     await expect(expirationDateValidation).toHaveText('Expiring date is required');
 });
 
 test('validationOfTheGetLinkButtonExpirationDatePastDate @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -205,6 +233,7 @@ test('validationOfTheGetLinkButtonExpirationDatePastDate @regClickTractsLow @con
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupExpirtaionDateFieldPastValueFill();
@@ -226,6 +255,7 @@ test('behaviorGetLinkItemAppliedForExpirationDateCopyContractLinkPopup @regClick
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupExpirtaionDateFieldPositiveValueFill();
@@ -238,7 +268,7 @@ test('behaviorGetLinkItemAppliedForExpirationDateCopyContractLinkPopup @regClick
 });
 
 test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -248,6 +278,7 @@ test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTract
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupExpirtaionDateFieldPositiveValueFill();
@@ -257,7 +288,7 @@ test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTract
 
    //to be refactored
 test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -267,6 +298,7 @@ test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTrac
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupExpirtaionDateFieldPositiveValueFill();
@@ -277,7 +309,7 @@ test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTrac
 
    //to be refactored
 test('validationOfTheCancel/XButtonContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -287,6 +319,7 @@ test('validationOfTheCancel/XButtonContractLinkPopup @regClickTractsLow @contrac
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
     await contractsPage.copyLinkPopupXButtonClick();
     await expect(copyLinkPopup).toBeHidden();
@@ -295,9 +328,208 @@ test('validationOfTheCancel/XButtonContractLinkPopup @regClickTractsLow @contrac
     await expect(copyLinkPopup).toBeHidden();
 });
 
+test('validationOfTheCopyContractLinkPopupContractWithModel @regClickTractsHigh @contractsCopyLink', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const contractsPage = new ContractsPage(page);
+    const createDealPopup = page.locator('.mat-dialog-container');
+    const createDealPopupText = page.locator('.modal-header');
+    const createDealPopupCheckbox = page.locator('.mat-checkbox >> nth=1');
+    const createDealPopupCheckboxLabel = page.locator('.mat-checkbox-label >> text=Do not show again');
+    const createDealPopupCreatreButton = page.locator('.btn >> text=Create');
+    const createDealPopupCancelButton = page.locator('.btn >> text=Cancel');
+    console.log('contractsCopyLink Validation Of The Copy Contract Link Popup Contract With Model');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100testContract4');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await expect(createDealPopup).toBeVisible();
+    await expect(createDealPopupText).toBeVisible();
+    await expect(createDealPopupText).toHaveText(' Do you want to create a Deal for this contract? ');
+    await expect(createDealPopupCheckbox).toBeVisible();
+    await expect(createDealPopupCheckboxLabel).toBeVisible();
+    await expect(createDealPopupCreatreButton).toBeVisible();
+    await expect(createDealPopupCancelButton).toBeVisible();
+    await contractsPage.CopyContractLinkPopupContractWithModelCancelButtonClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupCancelButtonClick();
+    await expect(createDealPopup).toBeVisible();
+    await expect(createDealPopupText).toBeVisible();
+    await expect(createDealPopupText).toHaveText(' Do you want to create a Deal for this contract? ');
+    await expect(createDealPopupCheckbox).toBeVisible();
+    await expect(createDealPopupCheckboxLabel).toBeVisible();
+    await expect(createDealPopupCreatreButton).toBeVisible();
+    await expect(createDealPopupCancelButton).toBeVisible();
+    await contractsPage.CopyContractLinkPopupContractWithModelCancelButtonClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await expect(createDealPopup).toBeVisible();
+    await expect(createDealPopupText).toBeVisible();
+    await expect(createDealPopupText).toHaveText(' Do you want to create a Deal for this contract? ');
+    await expect(createDealPopupCheckbox).toBeVisible();
+    await expect(createDealPopupCheckboxLabel).toBeVisible();
+    await expect(createDealPopupCreatreButton).toBeVisible();
+    await expect(createDealPopupCancelButton).toBeVisible();
+    await contractsPage.CopyContractLinkPopupContractWithModelCancelButtonClick();
+    await search.searchField.fill('test100testContract5');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await expect(createDealPopup).toBeHidden();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupCancelButtonClick();
+    await expect(createDealPopup).toBeHidden();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await expect(createDealPopup).toBeHidden();
+});
+
+test('validationOfTheCreateButtonOnTheCreateDealForContractPopup @regClickTractsHigh @contractsCopyLink', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const contractsPage = new ContractsPage(page);
+    const modelFieldDisabled = page.locator('#form-control-model_id .mat-select');
+    const modelFieldValue = page.locator('#form-control-model_id .mat-select-value-text');
+    const contractNameField = page.locator('#form-control-contract_name .mat-input-element');
+    const subsidaryField = page.locator('#form-control-company_name .mat-input-element');
+    const nameOfTheOtherPartyField = page.locator('#form-control-name_of_the_other_party .mat-input-element');
+    const estimatedValueField = page.locator('#form-control-estimated_value .mat-input-element');
+    const overviewField = page.locator('#form-control-description .mat-input-element');
+    const notesField = page.locator('#form-control-notes .mat-input-element');
+    const crmId = page.locator('#form-control-sf_contract_id .mat-input-element');
+    console.log('contractsCopyLink Validation Of The Create Button On The Create Deal For Contract Popup');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100testContract4');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelCreateButtonClick();
+    await expect(page).toHaveURL('/deals/add-deal?model_id=757&contract_id=3202&account_id=265');
+    await expect(modelFieldDisabled).toHaveAttribute('aria-disabled', 'true');
+    await expect(modelFieldValue).toHaveText('MODEL cloned 22222');
+    await expect(contractNameField).toHaveAttribute('disabled', '');
+    await expect(contractNameField).toHaveValue('test100testContract4');
+    await expect(subsidaryField).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(subsidaryField).toHaveValue('Client 1HT(test)');
+    await expect(nameOfTheOtherPartyField).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(nameOfTheOtherPartyField).toHaveValue('');
+    await expect(estimatedValueField).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(estimatedValueField).toHaveValue('');
+    await expect(overviewField).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(overviewField).toHaveValue('');
+    await expect(notesField).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(notesField).toHaveValue('');
+    await expect(crmId).not.toHaveAttribute('aria-disabled', 'true');
+    await expect(crmId).toHaveValue('');
+});
+
+test('validationOfTheCreateButtonOnTheCreateDealForContractPopupWithSubscriptionLimits @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const contractsPage = new ContractsPage(page);
+    const updateSubscriptionPopup = page.locator('.mat-dialog-container');
+    const updateSubscriptionText = page.locator('.modal-header');
+    const updateSubscriptionPopupUpdateSubscriptionButton = page.locator('#not-available-popup-update-subscription');
+    const updateSubscriptionPopupCloseButton = page.locator('#not-available-popup-close');
+    const contactYourAAPopup = page.locator('.mat-dialog-container');
+    const contactYourAAPopupText = page.locator('.modal-header');
+    const contactYourAAPopupCloseButton = page.locator('#not-available-popup-close');
+    console.log('contractsCopyLink Validation Of The Create Button On The Create Deal For Contract Popup With Subscription Limits');
+    await users.AASubscriptionLimits();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelCreateButtonClick();
+    await expect(updateSubscriptionPopup).toBeVisible();
+    await expect(updateSubscriptionText).toHaveText('Please update your subscription to add more deals.');
+    await expect(updateSubscriptionPopupUpdateSubscriptionButton).toBeVisible();
+    await expect(updateSubscriptionPopupUpdateSubscriptionButton).toHaveCSS('background-color', 'rgb(69, 119, 210)')
+    await expect(updateSubscriptionPopupCloseButton).toBeVisible();
+    await contractsPage.updateSubscriptionPopupCloseButtonClick();
+    await expect(updateSubscriptionPopup).toBeHidden();
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await users.AUSubscriptionLimits();
+    await signIn.signInButton();
+    await page.waitForURL('/clients/383');
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelCreateButtonClick();
+    await expect(contactYourAAPopup).toBeVisible();
+    await expect(contactYourAAPopupText).toHaveText('Please contact your Account Admin to update your subscription and add more deals.');
+    await expect(contactYourAAPopupCloseButton).toBeVisible();
+    await contractsPage.contactYourAAPopupCloseButtonClick();
+    await expect(contactYourAAPopup).toBeHidden();
+});
+
+test('validationOfTheDoNotShowAgainCheckboxOnTheCreateDealForContractPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const contractsPage = new ContractsPage(page);
+    const newContract = new NewEditContractPage(page);
+    const createDealPopup = page.locator('.mat-dialog-container');
+    console.log('contractsCopyLink Validation Of The Do Not Show Again Checkbox On The Create Deal For Contract Popup');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/1931');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelDoNotShowCheckboxClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelCancelButtonClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await expect(createDealPopup).toBeHidden();
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+});
+
+test('validationOfTheCancelButtonOnTheCreateDealForContractPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const contractsPage = new ContractsPage(page);
+    const newContract = new NewEditContractPage(page);
+    const search = new Search(page);
+    const createDealPopup = page.locator('.mat-dialog-container');
+    console.log('contractsCopyLink Validation Of The Cancel Button On The Create Deal For Contract Popup');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100testContract4');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.copyLinkButtonClickAAAU();
+    await contractsPage.copyLinkPopupXButtonClick();
+    await contractsPage.CopyContractLinkPopupContractWithModelCancelButtonClick();
+    await expect(createDealPopup).toBeHidden();
+});
+
    //to be refactored
 test.skip('userCopiesTheURLWithOSStandardToolsContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -316,7 +548,7 @@ test.skip('userCopiesTheURLWithOSStandardToolsContractLinkPopup @regClickTractsL
 });
 
 test('displaying3dotsMenu @regClickTractsLow @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -367,10 +599,12 @@ test('availabilityOfTheEditButton @regClickTractsHigh @contracts3dotsMenu', asyn
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(editButtonThreeDotsMenu).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(editButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -382,10 +616,12 @@ test('availabilityOfTheEditButton @regClickTractsHigh @contracts3dotsMenu', asyn
     await page.waitForURL('/clients/265');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(editButtonThreeDotsMenu).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(editButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -396,6 +632,7 @@ test('availabilityOfTheEditButton @regClickTractsHigh @contracts3dotsMenu', asyn
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(editButtonThreeDotsMenu).toBeHidden();
 });
@@ -411,6 +648,7 @@ test('validationOfTheEditButton @regClickTractsHigh @contracts3dotsMenu', async 
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuEditButtonClick();
     expect(page.url()).toContain('/contract/edit/');
 });
@@ -428,14 +666,17 @@ test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', asy
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -447,14 +688,17 @@ test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', asy
     await page.waitForURL('/clients/265');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -466,12 +710,230 @@ test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', asy
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(deleteButtonThreeDotsMenu).toBeHidden();
+});
+
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnother @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Expiring Url Was Added To Another');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/1864');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3nOAlvK');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await search.searchField.fill('test100testContract6');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeHidden();
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+});
+
+test('availabilityDeleteButtonOfContractWhichExpiringUrlWasAddedToAnother @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Expiring Url Was Added To Another');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/1864');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3AydCeT');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await search.searchField.fill('test100testContract6');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeVisible();
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+});
+
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherWhichWasDeleted @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Url Was Added To Another Which Was Deleted');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/1864');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3nOAlvK');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+    await search.searchField.fill('test100testContract6');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeVisible();
+});
+
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Expiring Url Was Added To Another Shared Template SA');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/2026');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3nOAlvK');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await search.searchField.fill('test100testContract6');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeHidden();
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+});
+
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClientSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const userBar = new UserBar(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Expiring Url Was Added To Another Of Another Client Shared Template SA');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/2026');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3PgcC3d');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await signIn.email.fill('alexey.banshykov@mobindustry.net');
+    await signIn.password.fill('Qwerty123!');
+    await signIn.signinButton.click();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100TestDoNotRemoveContract');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeHidden();
+    await page.click('.cdk-overlay-backdrop');
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
+});
+
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClient @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const userBar = new UserBar(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const newContract = new NewEditContractPage(page);
+    const contractsPage = new ContractsPage(page);
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('contracts3dotsMenu Availability Delete Button Of Contract Which Expiring Url Was Added To Another Of Another Client');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract/create/1864');
+    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.configuratorVariableValue0Click();
+    await newContract.configuratorVariableValueOption0.fill('https://signdoc.contractsrx.com/3PgcC3d');
+    await newContract.editVariablesConfiguratorClick();
+    await newContract.publishToggleClick();
+    await newContract.saveAndGenerateLinkButtonClick();
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await signIn.email.fill('alexey.banshykov@mobindustry.net');
+    await signIn.password.fill('Qwerty123!');
+    await signIn.signinButton.click();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100TestDoNotRemoveContract');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuButtonClick();
+    await expect(deleteButton).toBeHidden();
+    await page.click('.cdk-overlay-backdrop');
+    await userBar.userInfoButtonClick();
+    await userBar.signOutButtonClick();
+    await page.waitForSelector('#login-sign-in');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
 test('validationOfTheDeleteButton @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
@@ -552,6 +1014,7 @@ test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts
     await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
     await newContract.saveButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDeleteButtonClick();
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
     await expect(deletePopup).toBeHidden();
@@ -567,6 +1030,7 @@ test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDeleteButtonClick();
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
     await expect(deletePopup).toBeHidden();
@@ -588,14 +1052,39 @@ test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts
     await signIn.signInButton();
     await page.waitForURL('/clients/265');
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDeleteButtonClick();
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
     await expect(deletePopup).toBeHidden();
     await expect(deletedContract).not.toContainText('autotest');
 });
 
+test('validationOfTheDeleteButtonContractWithDeal @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const search = new Search(page);
+    const contractsPage = new ContractsPage(page);
+    const contractCannotBeDeletedPopup = page.locator('.mat-dialog-container');
+    const contractCannotBeDeletedPopupText = page.locator('.modal-header');
+    const contractCannotBeDeletedPopupOkButton = page.locator('.btn >> text=OK');
+    console.log('contracts3dotsMenu Validation Of The Delete Button ContractWithDeal');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await search.searchField.fill('test100testContract5');
+    await search.searchButtonClick();
+    await search.contractToggleClick();
+    await contractsPage.threeDotsMenuDeleteButtonClick();
+    await expect(contractCannotBeDeletedPopup).toBeVisible();
+    await expect(contractCannotBeDeletedPopupText).toHaveText(' This Contract can not be deleted because of attached Deal.');
+    await expect(contractCannotBeDeletedPopupOkButton).toBeVisible();
+    await page.locator('.btn >> text=OK').click();
+    await expect(contractCannotBeDeletedPopup).toBeHidden();
+});
+
 test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3dotsMenu', async ({ page,browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -607,14 +1096,17 @@ test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -625,14 +1117,17 @@ test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3
     await page.waitForURL('/clients/265');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -643,20 +1138,23 @@ test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3
     await page.waitForURL('/dashboard');
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.statusFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
     await contractsPage.signaturesFilterClick();
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
 });
 
 test('notDisplayingTheDisableSignaturesButtonCheckboxVariable @regClickTractsMedium @contracts3dotsMenu', async ({ page,browserName }) => {
-    test.skip(browserName === 'chromium');
+    test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);
@@ -674,9 +1172,11 @@ test('notDisplayingTheDisableSignaturesButtonCheckboxVariable @regClickTractsMed
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disableSingatureButton).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDeleteButtonClick();
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
@@ -700,11 +1200,14 @@ test('validationOfTheDisableSignaturesButton @regClickTractsHigh @contracts3dots
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDisableSignaturesButtonClick();
     await expect(greyText).toHaveClass('td__link contracts-name-column-link text-gray');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(enableSignaturesButton).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDeleteButtonClick();
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
@@ -730,6 +1233,7 @@ test('validationOfTheEnableSignaturesButton @regClickTractsMedium @contracts3dot
     await newContract.contractFeeValueChoose();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDisableSignaturesButtonClick();
     await page.waitForTimeout(1000);
     await contractsPage.threeDotsMenuEnableSignaturesButtonClick();
@@ -759,6 +1263,7 @@ test('availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3d
     await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
     await newContract.saveButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disablePaytracts).toBeHidden();
     await page.click('.cdk-overlay-backdrop');
@@ -772,6 +1277,7 @@ test('availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3d
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuButtonClick();
     await expect(disablePaytracts).toBeVisible();
     await page.click('.cdk-overlay-backdrop');
@@ -804,6 +1310,7 @@ test('validationOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dot
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDisablePaytractsButtonClick();
     await expect(disablePaytractsPopup).toBeVisible();
     await expect(disablePaytractsPopupText1).toBeVisible();
@@ -837,6 +1344,7 @@ test('validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @c
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
     await page.goto('/contracts/list?&sort=-created_at');
+    await contractsPage.rightArrowClick();
     await contractsPage.threeDotsMenuDisablePaytractsButtonClick();
     await contractsPage.threeDotsMenuDisablePaytractsPopupDoneButtonClick();
     await contractsPage.threeDotsMenuButtonClick();

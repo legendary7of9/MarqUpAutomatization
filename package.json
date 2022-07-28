@@ -20,16 +20,21 @@
   },
   "homepage": "https://github.com/legendary7of9/MarqUpAutomatization#readme",
   "devDependencies": {
-    "@playwright/test": "^1.19.0",
+    "@playwright/test": "^1.22.2",
     "@types/node": "^16.11.11",
     "allure-commandline": "^2.17.2",
     "allure-playwright": "^2.0.0-beta.14",
     "clipboardy": "^3.0.0",
     "experimental-allure-playwright": "^0.0.3",
+    "jsdom": "^20.0.0",
     "ts-migrate": "^0.1.26"
   },
   "dependencies": {
+    "@maildrop/api": "^1.0.27",
     "clipboard": "^2.0.10",
-    "copy-text-to-clipboard": "^3.0.1"
+    "copy-text-to-clipboard": "^3.0.1",
+    "maildrop-api": "^1.0.3",
+    "playwright": "^1.23.2"
   }
+
 }

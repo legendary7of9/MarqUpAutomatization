@@ -1,7 +1,11 @@
 import { Users } from './users';
+import { Search } from './search';
 import { SideBar, UserBar } from './pages';
 import { SignInPage } from './pages';
+import { ForgotPasswordPage } from './pages';
 import { UserMenuBox } from './pages';
+import { Pagination } from './pagination';
+import { DashboardPage } from './pages';
 import { ModelPage } from './pages';
 import { NewEditCopyModelPage } from './pages';
 import { ViewingModelPage } from './pages';
@@ -18,10 +22,14 @@ import { NewEditContractPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
+        Search,
         SideBar,
         UserBar,
         UserMenuBox,
         SignInPage,
+        ForgotPasswordPage,
+        Pagination,
+        DashboardPage,
         ModelPage,
         NewEditCopyModelPage,
         ViewingModelPage,
@@ -45,10 +53,14 @@ const users = {
 
 export {    
     Users,
+    Search,
     SideBar,
     UserBar,
     SignInPage,
+    ForgotPasswordPage,
     UserMenuBox,
+    Pagination,
+    DashboardPage,
     ModelPage,
     NewEditCopyModelPage,
     ViewingModelPage,

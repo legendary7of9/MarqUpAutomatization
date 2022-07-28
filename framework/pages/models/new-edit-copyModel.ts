@@ -182,11 +182,12 @@ class NewEditCopyModelPage {
 
     async saveChangesButtonClick() {
         await this.saveChangesButton.click();
-        await this.page.waitForURL('/models?&sort=name');
+        await this.page.waitForTimeout(1500);
     }
 
     async saveButtonCopyPageClick() {
         await this.saveButtonCopyPage.click();
+        await this.page.waitForSelector('#terms-list-add-term');
     }
 
     async activateButtonClick() {

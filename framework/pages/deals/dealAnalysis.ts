@@ -1,4 +1,5 @@
 import { Locator, Page } from '@playwright/test';
+import { Helpers } from '../../../lib/helpers/randomCharactersAndDigits.preload'
 
 
 class DealAnalysisPage {
@@ -65,6 +66,9 @@ class DealAnalysisPage {
     effectiveCancelIcon: Locator;
     effectiveEditIcon: Locator;
     preliminaryCheckbox: Locator;
+    autorenewCheckbox: Locator;
+    autorenewDurationField: Locator;
+    terminationRightCheckbox: Locator;
     expirationField: Locator;
     expirationCalendarIcon: Locator;
     expirationOkIcon: Locator;
@@ -144,7 +148,10 @@ class DealAnalysisPage {
         this.effectiveCancelIcon = page.locator('#deal-analysis-effective-date-close');
         this.effectiveEditIcon = page.locator('#deal-analysis-effective-date-edit');
         this.preliminaryCheckbox = page.locator('#deal-analysis-preliminary-date');
-        this.expirationField = page.locator('#deal-analysis-expiration-date');
+        this.autorenewCheckbox = page.locator('#deal-analysis-autorenew-date');
+        this.autorenewDurationField = page.locator('#deal-analysis-auto-renew-months .mat-input-element');
+        this.terminationRightCheckbox = page.locator('#deal-analysis-termination-right');
+        this.expirationField = page.locator('#deal-analysis-expiration-date .mat-input-element');
         this.expirationCalendarIcon = page.locator('#deal-analysis-expiration-date .mat-datepicker-toggle');
         this.expirationOkIcon = page.locator('#deal-analysis-expiration-date-check');
         this.expirationCancelIcon = page.locator('#deal-analysis-expiration-date-close');
@@ -155,7 +162,7 @@ class DealAnalysisPage {
         this.datapickerPeriodJanValue = page.locator('.mat-calendar-body-cell-content >> text=JAN');
         this.datapickerPreviousButton = page.locator('.mat-calendar-previous-button');
         this.datapickerNextButton = page.locator('.mat-calendar-next-button');
-        this.datapickerValue21 = page.locator('.mat-calendar-body-cell-content >> text=21');
+        this.datapickerValue21 = page.locator('.mat-calendar-body-cell-content >> nth=21');
         this.datapickerValue15 = page.locator('.mat-calendar-body-cell-content >> text=15');
         this.datapickerValue28 = page.locator('.mat-calendar-body-cell-content >> text=28');
         this.datapickerValue12 = page.locator('.mat-calendar-body-cell-content >> text=12');
@@ -402,11 +409,38 @@ class DealAnalysisPage {
 
     async preliminaryCheckboxClick() {
         await this.preliminaryCheckbox.click();
-        await this.page.waitForTimeout(1000);
+    }
+
+    async autorenewCheckboxClick() {
+        await this.autorenewCheckbox.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async autorenewDurationFieldFill() {
+        await this.autorenewDurationField.fill('5');
+        await this.page.waitForTimeout(500);
+    }
+
+    async autorenewDurationField0ValueFill() {
+        await this.autorenewDurationField.fill('0');
+        await this.page.waitForTimeout(500);
+    }
+
+    async terminationRightCheckboxClick() {
+        await this.terminationRightCheckbox.click();
+        await this.page.waitForTimeout(500);
     }
 
     async expirationFieldFill() {
         await this.expirationField.fill('');
+    }
+
+    async expirationFieldFillCurrentDate() {
+        await this.expirationField.fill(Helpers.currentDate());
+    }
+
+    async expirationFieldFillCurrentDateMinus1Day() {
+        await this.expirationField.fill(Helpers.currentDateMinus1Day());
     }
 
     async expirationCalendarIconClick() {

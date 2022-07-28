@@ -105,10 +105,45 @@ test('buttonsOf3dotsMenuPublishedStatus @regClickTractsMedium @template3dotsMenu
     await expect(shareAccessButton).toBeHidden();
     await expect(createContractButton).toBeVisible();
     await expect(deleteButton).toBeHidden();
-    await page.click('.cdk-overlay-backdrop');
+});
+
+test('editButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'chromium');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const templatesPage = new TemplatesPage(page);
+    console.log('template3dotsMenu Edit Button 3dots Menu');
+    await users.SA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-templates/list?&sort=-created_at');
+    await templatesPage.threeDotsMenuEditButtonClick();
+    await expect(page.url()).toContain('/contract-template/edit/');
     await userBar.userInfoButtonClick();
     await userBar.signOutButtonClick();
     await page.waitForSelector('#login-sign-in');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-templates/list?&sort=-created_at');
+    await templatesPage.threeDotsMenuEditButtonClick();
+    await expect(page.url()).toContain('/contract-template/edit/');
+});
+
+test('editButtonWhenTemplateIsSharedBySa @regClickTractsLow @template3dotsMenu', async ({ page, browserName }) => {
+    test.skip(browserName === 'webkit');
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const templatesPage = new TemplatesPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const editButton = page.locator('.context-menu-edit');
+    const saveAsNewButton = page.locator('.context-menu-save-as-new');
+    const shareAccessButton = page.locator('.context-menu-share-access');
+    const createContractButton = page.locator('.context-menu-create-contract');
+    const deleteButton = page.locator('.context-menu-delete');
+    console.log('Edit Button When Template Is Shared By Sa 3dots Menu');
     await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -153,30 +188,6 @@ test('buttonsOf3dotsMenuPublishedStatus @regClickTractsMedium @template3dotsMenu
     await templatesPage.threeDotsMenuDeleteButtonClick();
     await page.click('.mat-button >> text=Delete');
     await page.waitForTimeout(1500);
-});
-
-test('editButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
-    const users = new Users(page);
-    const signIn = new SignInPage(page);
-    const userBar = new UserBar(page);
-    const templatesPage = new TemplatesPage(page);
-    console.log('template3dotsMenu Edit Button 3dots Menu');
-    await users.SA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/contract-templates/list?&sort=-created_at');
-    await templatesPage.threeDotsMenuEditButtonClick();
-    await expect(page.url()).toContain('/contract-template/edit/');
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await page.waitForSelector('#login-sign-in');
-    await users.AA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/contract-templates/list?&sort=-created_at');
-    await templatesPage.threeDotsMenuEditButtonClick();
-    await expect(page.url()).toContain('/contract-template/edit/');
 });
 
 test.skip('saveAsNewButton3dotsMenu @regClickTractsMedium @template3dotsMenu', async ({ page, browserName }) => {
@@ -677,6 +688,26 @@ test('createContractButton3dotsMenu @regClickTractsMedium @template3dotsMenu', a
     await page.click('.cdk-overlay-backdrop');
     await templatesPage.threeDotsMenuCreateContractButtonClick();
     expect(page.url()).toContain('/contract/create/');
+});
+
+test('deactivationTheCreateContractButton @regClickTractsHigh @template3dotsMenu', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const templatesPage = new TemplatesPage(page);
+    const deactiavationCreateContractPopup = page.locator('.mat-dialog-container');
+    const deactiavationCreateContractPopupText = page.locator('.modal-header');
+    const deactiavationCreateContractPopupButtonOk = page.locator('.btn >> text=OK');
+    console.log('deactivation The Create Contract Button 3dots Menu');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-templates/list?&sort=-updated_at');
+    await templatesPage.threeDotsMenuButton1CreateContractButtonClick();
+    await expect(deactiavationCreateContractPopup).toBeVisible();
+    await expect(deactiavationCreateContractPopupText).toHaveText(' This Template is connected to a Model that is not active (archived). Please activate the Model or edit the Template to remove the inactive Model');
+    await expect(deactiavationCreateContractPopupButtonOk).toBeVisible();
+    await page.locator('.btn >> text=OK').click();
+    await expect(deactiavationCreateContractPopup).toBeHidden();
 });
 
 test('solutionAdminCanSeeAllTemplates3dotsMenu @regClickTractsHigh @template3dotsMenu', async ({ page, browserName }) => {

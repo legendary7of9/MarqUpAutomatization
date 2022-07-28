@@ -1,7 +1,7 @@
 export * from './navigation/sidebar'
 export * from './navigation/userbar'
 export * from './login-register-forgotpassword/sign-in'
-
+export * from './login-register-forgotpassword/forgotPassword'
 export * from './models/model'
 export * from './models/new-edit-copyModel'
 export * from './models/viewingModelPage'
@@ -15,6 +15,5 @@ export * from './templates/new-edit-copyTemplate'
 export * from './templates/viewTemplate'
 export * from './contracts/contracts'
 export * from './contracts/new-editContract'
-
-
 export * from './usermenu/userMenuBox.page'
+export * from './dashboard/dashboard'

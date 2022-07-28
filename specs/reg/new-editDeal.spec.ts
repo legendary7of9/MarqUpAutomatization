@@ -11,7 +11,6 @@ test.beforeEach(async ({ page }) => {
     await page.goto('');
 }); 
 
-
 test('clientsField @regChecklistNewLow @newEditDealPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const users = new Users(page);
@@ -26,6 +25,7 @@ test('clientsField @regChecklistNewLow @newEditDealPage', async ({ page, browser
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deals.addDealButtonClick();
+    await deals.newDealButtonPopupSAClick();
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(clientsField).toBeVisible();
     await page.goto('/deals/edit-deal/8200');
@@ -474,6 +474,7 @@ test('agreementNoField @regChecklistNewLow @newEditDealPage', async ({ page, bro
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.newDealButtonPopupSAClick();
     await expect(agreementNoField).toBeVisible();
     await expect(agreementNoFieldValue).toHaveText('');
     await page.goto('/deals/edit-deal/8200');
@@ -525,6 +526,7 @@ test('displayingLinkToExistingDealButton @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.newDealButtonPopupSAClick();
     await page.waitForTimeout(500);
     await expect(linkToExistingDealButton).toBeVisible();
     await expect(linkToExistingDealButton).toHaveAttribute('disabled', '');
@@ -737,7 +739,8 @@ test('linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForTimeout(1500);
     await deal.addDealButtonClick();
-    await page.waitForTimeout(500);
+    await deal.newDealButtonPopupSAClick();
+    await page.waitForTimeout(1500);
     await newEditDeal.clientDropDownChoose2();
     await newEditDeal.linkToExistingDealButtonClick();
     await page.waitForTimeout(1500);
@@ -758,7 +761,7 @@ test('dealStatus @regChecklistNewLow @newEditDealPage', async ({ page, browserNa
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const deal = new DealsPage(page);
-    const dealStatusProgressBar = page.locator('.mat-progress-bar')
+    const dealStatusProgressBar = page.locator('.mat-progress-bar >> nth=0')
     const dealStatusPercentage = page.locator('.deal-status')
     console.log('NewEditDeal Deal Status');
     await users.AA();
@@ -809,6 +812,7 @@ test('createSaveChangesButton @regChecklistNewHigh @newEditDealPage', async ({ p
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.createFilterClick();
     await page.waitForTimeout(1000);
+    await deal.rightArrowClick();
     await deal.threeDotsMenuEditButtonClick();
     await newEditDeal.contractNameFieldClear();
     await newEditDeal.nameOfTheOtherPartyFieldClear();

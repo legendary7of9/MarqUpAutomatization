@@ -10,6 +10,7 @@ class NewEditDealPage {
     clientDropDownValueNew2: Locator;
     modelDropDown: Locator;
     modelDropDownValueNew: Locator;
+    modelDropDown1Value: Locator;
     contractNameField:Locator;
     myCompanySubsidiaryField: Locator;
     nameOfTheOtherPartyField: Locator;
@@ -40,6 +41,7 @@ class NewEditDealPage {
         this.clientDropDownValueNew2 = page.locator('mat-option >> text=Client 1HT(test)'); //nth=112
         this.modelDropDown = page.locator('[formcontrolname="model_id"]');
         this.modelDropDownValueNew = page.locator('mat-option >> text=test100test100DoNotRemove16'); //nth=12
+        this.modelDropDown1Value = page.locator('mat-option >> text= test100testModelDoNotRemove ');
         this.contractNameField = page.locator('[formcontrolname="contract_name"]');
         this.myCompanySubsidiaryField = page.locator('[formcontrolname="company_name"]');
         this.nameOfTheOtherPartyField = page.locator('[formcontrolname="name_of_the_other_party"]');
@@ -81,9 +83,19 @@ class NewEditDealPage {
         await this.modelDropDownValueNew.click();
     }
 
+    async modelDropDown1ValueChoose() {
+        await this.modelDropDown.click();
+        await this.modelDropDown1Value.click();
+    }
+
     async contractNameFieldFill(text:string) {
         await this.contractNameField.click();
         await this.contractNameField.fill(text);
+    }
+
+    async contractNameFieldValue0Fill() {
+        await this.contractNameField.click();
+        await this.contractNameField.fill('test');
     }
 
     async contractNameFieldEdit() {
@@ -125,6 +137,11 @@ class NewEditDealPage {
         await this.nameOfTheOtherPartyField.fill('');
     }
 
+    async nameOfTheOtherParty0ValueField() {
+        await this.nameOfTheOtherPartyField.click();
+        await this.nameOfTheOtherPartyField.fill('test');
+    }
+
     async esimatedValueFieldFill() {
         await this.esimatedValueField.click();
         await this.esimatedValueField.fill('');
@@ -134,6 +151,11 @@ class NewEditDealPage {
     async esimatedValueFieldClear() {
         await this.esimatedValueField.click();
         await this.esimatedValueField.fill('');
+    }
+
+    async esimated0ValueField() {
+        await this.esimatedValueField.click();
+        await this.esimatedValueField.fill('222222');
     }
 
     async currencyDropDownClick() {

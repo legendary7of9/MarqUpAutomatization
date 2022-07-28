@@ -19,7 +19,8 @@ test.beforeEach(async ({ page }) => {
     await sideBarMenu.sideBarModelClick();
     await model.addModelButtonClick();
     await model.addModelChooseButtonClick();
-}); 
+});
+
 
 test('displayingAllExistingModels @regChecklistNewHigh @existingModelPage', async ({ page }) => {
     const existingModel = new ExistingModelPage(page);

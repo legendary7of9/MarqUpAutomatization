@@ -1,4 +1,4 @@
-import test, { Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 
 
 class Users {
@@ -21,6 +21,16 @@ class Users {
     async AA2() {
         await this.page.fill('[formcontrolname="email"]', 'test89.tete@i.ua')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
+    async AA3() {
+        await this.page.fill('[formcontrolname="email"]', 'accountadmin4@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
+    async AA4() {
+        await this.page.fill('[formcontrolname="email"]', 'accountadminban@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
     }
 
     async AU() {

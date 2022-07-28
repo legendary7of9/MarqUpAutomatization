@@ -19,6 +19,7 @@ class TemplatesPage {
     createdFilter: Locator;
     editedFilter: Locator;
     threeDotsMenuButton: Locator;
+    threeDotsMenuButton1: Locator;
     threeDotsMenuEditButton: Locator;
     threeDotsMenuSaveAsNewButton: Locator;
     threeDotsMenuShareAccessButton: Locator;
@@ -41,6 +42,7 @@ class TemplatesPage {
         this.createdFilter = page.locator('#created-column-sort');
         this.editedFilter = page.locator('#edited-column-sort');
         this.threeDotsMenuButton = page.locator('.mat-icon-button >> nth=0');
+        this.threeDotsMenuButton1 = page.locator('.mat-icon-button >> nth=1');
         this.threeDotsMenuEditButton = page.locator('.context-menu-edit');
         this.threeDotsMenuSaveAsNewButton = page.locator('.context-menu-save-as-new');
         this.threeDotsMenuShareAccessButton = page.locator('.context-menu-share-access');
@@ -136,6 +138,12 @@ class TemplatesPage {
 
     async threeDotsMenuCreateContractButtonClick() {
         await this.threeDotsMenuButton.click();
+        await this.page.waitForTimeout(1000);
+        await this.threeDotsMenuCreateContractButton.click();
+    }
+
+    async threeDotsMenuButton1CreateContractButtonClick() {
+        await this.threeDotsMenuButton1.click();
         await this.page.waitForTimeout(1000);
         await this.threeDotsMenuCreateContractButton.click();
     }

@@ -17,6 +17,8 @@ class ContractsPage {
     createdFilter: Locator;
     signaturesFilter: Locator;
     lastSignedFilter: Locator;
+    rightArrow: Locator;
+    leftArrow: Locator;
     copyLinkButton: Locator;
     copyLinkPopupCopyLinkButton: Locator;
     copyLinkPopupCancelButton: Locator;
@@ -26,6 +28,12 @@ class ContractsPage {
     copyLinkPopupDataPickerButton: Locator;
     copyLinkPopupExpirtaionDateField: Locator;
     copyLinkPopupGetLinkButton: Locator;
+    CopyContractLinkPopupContractWithModelDoNotShowCheckbox: Locator;
+    CopyContractLinkPopupContractWithModelCreateButton: Locator;
+    CopyContractLinkPopupContractWithModelCancelButton: Locator;
+    updateSubscriptionPopupUpdateSubscriptionButton: Locator;
+    updateSubscriptionPopupCloseButton: Locator;
+    contactYourAAPopupCloseButton: Locator;
     threeDotsMenuButton: Locator;
     threeDotsMenuEditButton: Locator;
     threeDotsMenuSaveAsNewButton: Locator;
@@ -55,6 +63,8 @@ class ContractsPage {
         this.createdFilter = page.locator('#created-column-sort');
         this.signaturesFilter = page.locator('#signatures-column-sort');
         this.lastSignedFilter = page.locator('#last-signed-column-sort');
+        this.rightArrow = page.locator('.right-arrow');
+        this.leftArrow = page.locator('.left-arrow');
         this.copyLinkButton = page.locator('.contracts-name-column-copy-link >> nth=0');
         this.copyLinkPopupCopyLinkButton = page.locator('#copy-link-copy-link');
         this.copyLinkPopupCancelButton = page.locator('#copy-link-cancel');
@@ -64,6 +74,12 @@ class ContractsPage {
         this.copyLinkPopupDataPickerButton = page.locator('.mat-datepicker-toggle');
         this.copyLinkPopupGetLinkButton = page.locator('.expiring-date-btn');
         this.copyLinkPopupExpirtaionDateField = page.locator('#expiringLink input');
+        this.CopyContractLinkPopupContractWithModelDoNotShowCheckbox = page.locator('.mat-checkbox');
+        this.CopyContractLinkPopupContractWithModelCreateButton = page.locator('.btn >> text=Create');
+        this.CopyContractLinkPopupContractWithModelCancelButton = page.locator('.btn >> text=Cancel');
+        this.updateSubscriptionPopupUpdateSubscriptionButton = page.locator('#not-available-popup-update-subscription');
+        this.updateSubscriptionPopupCloseButton = page.locator('#not-available-popup-close');
+        this.contactYourAAPopupCloseButton = page.locator('#not-available-popup-close');
         this.threeDotsMenuButton = page.locator('.mat-icon-button >> nth=0');
         this.threeDotsMenuEditButton = page.locator('.context-menu-edit');
         this.threeDotsMenuSaveAsNewButton = page.locator('.context-menu-save-as-new');
@@ -120,8 +136,13 @@ class ContractsPage {
         await this.page.waitForTimeout(1000);
     }
 
-    async lastSignedFilterClick() {
-        await this.lastSignedFilter.click();
+    async rightArrowClick() {
+        await this.rightArrow.click();
+        await this.page.waitForTimeout(1000);
+    }
+
+    async leftArrowClick() {
+        await this.leftArrow.click();
         await this.page.waitForTimeout(1000);
     }
 
@@ -168,6 +189,34 @@ class ContractsPage {
 
     async copyLinkPopupExpirtaionDateFieldPositiveValueFill() {
         await this.copyLinkPopupExpirtaionDateField.fill('08/08/2033');
+    }
+
+    async CopyContractLinkPopupContractWithModelDoNotShowCheckboxClick() {
+        await this.CopyContractLinkPopupContractWithModelDoNotShowCheckbox.click();
+        await this.page.waitForTimeout(2000);
+    }
+
+    async CopyContractLinkPopupContractWithModelCreateButtonClick() {
+        await this.CopyContractLinkPopupContractWithModelCreateButton.click();
+        await this.page.waitForTimeout(1500);
+    }
+
+    async CopyContractLinkPopupContractWithModelCancelButtonClick() {
+        await this.CopyContractLinkPopupContractWithModelCancelButton.click();
+        await this.page.waitForTimeout(1500);
+    }
+
+    async updateSubscriptionPopupUpdateSubscriptionButtonClick() {
+        await this.updateSubscriptionPopupUpdateSubscriptionButton.click();
+        await this.page.waitForTimeout(1000);
+    }
+
+    async updateSubscriptionPopupCloseButtonClick() {
+        await this.updateSubscriptionPopupCloseButton.click();
+    }
+
+    async contactYourAAPopupCloseButtonClick() {
+        await this.contactYourAAPopupCloseButton.click();
     }
 
     async threeDotsMenuButtonClick() {
@@ -237,7 +286,7 @@ class ContractsPage {
 
     async threeDotsMenuDeletePopupDeleteButtonClick() {
         await this.threeDotsMenuDeletePopupDeleteButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(2000);
     }
 
     async threeDotsMenuDisablePaytractsPopupDoneButtonClick() {
