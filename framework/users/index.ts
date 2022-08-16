@@ -33,6 +33,26 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
     }
 
+    async AAClear() {
+        await this.page.fill('[formcontrolname="email"]', 'autotestaccountclear@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
+    async AUClear() {
+        await this.page.fill('[formcontrolname="email"]', 'autotestaccountuserclear@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
+    async AANoPaytracts() {
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+8134@mobindustry.net')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
+    async AUNoPaytracts() {
+        await this.page.fill('[formcontrolname="email"]', 'iryna.nema+3658@mobindustry.net')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
     async AU() {
         await this.page.fill('[formcontrolname="email"]', 'iryna.nema+8423@mobindustry.net')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')

@@ -56,8 +56,8 @@ class ModelPage {
         this.threeDotsMenuArchivateButton = page.locator('.context-menu-archive.action-archive');
         this.threeDotsMenuSaveAsNewButton = page.locator('.context-menu-save-as-new');
         this.threeDotsMenuDeleteButton = page.locator('.context-menu-delete');
-        this.threeDotsMenuDeletePopupCancelButton = page.locator('.mat-button >> text=Cancel'); //to be refactored
-        this.threeDotsMenuDeletePopupDeleteButton = page.locator('.mat-button >> text=Delete'); //to be refactored
+        this.threeDotsMenuDeletePopupCancelButton = page.locator('#confirm-modal-cancel');
+        this.threeDotsMenuDeletePopupDeleteButton = page.locator('#confirm-modal-delete');
 
         this.listFirstItem = page.locator('tr.mat-row.ng-star-inserted >> nth=0');
         this.linkFirstItem = page.locator('a.td__link.model-name-column-link >> nth=0');

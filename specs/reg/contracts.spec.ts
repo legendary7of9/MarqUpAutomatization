@@ -10,7 +10,12 @@ import { ViewTemplatePage } from '../../framework'
 import { NewEditContractPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
-// [chrome] › specs/reg/contracts.spec.ts:1325:1 › validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @contracts3dotsMenu 
+// [webkit] › specs/reg/contracts.spec.ts:190:1 › validationOfTheDataPickerCopyLinkPopup @regClickTractsLow @contractsCopyLink 
+// [webkit] › specs/reg/contracts.spec.ts:988:1 › validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts3dotsMenu 
+// [webkit] › specs/reg/contracts.spec.ts:1232:1 › availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:988:1 › validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:1271:1 › validationOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:1309:1 › validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @contracts3dotsMenu 
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
@@ -66,8 +71,7 @@ test('validationOfTheCopyLinkButtonSA @regClickTractsHigh @contractsCopyLink', a
 
 });
 
-test('elementsInTheCopyContractLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('elementsInTheCopyContractLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -161,8 +165,7 @@ test('elementsInTheCopyContractLinkPopupExpiringLink @regClickTractsHigh @contra
     await expect(copyLinkButton).toBeVisible();
 });
 
-test('validationOfTheCalendarIconExpirationDateFieldCopyLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheCalendarIconExpirationDateFieldCopyLinkPopup @regClickTractsMedium @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -222,8 +225,7 @@ test('validationOfTheGetLinkButtonExpirationDateIsntFilled @regClickTractsHigh @
     await expect(expirationDateValidation).toHaveText('Expiring date is required');
 });
 
-test('validationOfTheGetLinkButtonExpirationDatePastDate @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheGetLinkButtonExpirationDatePastDate @regClickTractsLow @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -267,8 +269,7 @@ test('behaviorGetLinkItemAppliedForExpirationDateCopyContractLinkPopup @regClick
     await expect(copyLinkPopup).toBeHidden();
 });
 
-test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -287,8 +288,7 @@ test('notEditingTheExpiringContractLinkFieldCopyContractLinkPopup @regClickTract
 });
 
    //to be refactored
-test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -308,8 +308,7 @@ test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTrac
 });
 
    //to be refactored
-test('validationOfTheCancel/XButtonContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheCancel/XButtonContractLinkPopup @regClickTractsLow @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -433,8 +432,7 @@ test('validationOfTheCreateButtonOnTheCreateDealForContractPopup @regClickTracts
     await expect(crmId).toHaveValue('');
 });
 
-test('validationOfTheCreateButtonOnTheCreateDealForContractPopupWithSubscriptionLimits @regClickTractsMedium @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheCreateButtonOnTheCreateDealForContractPopupWithSubscriptionLimits @regClickTractsMedium @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -478,8 +476,7 @@ test('validationOfTheCreateButtonOnTheCreateDealForContractPopupWithSubscription
     await expect(contactYourAAPopup).toBeHidden();
 });
 
-test('validationOfTheDoNotShowAgainCheckboxOnTheCreateDealForContractPopup @regClickTractsLow @contractsCopyLink', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheDoNotShowAgainCheckboxOnTheCreateDealForContractPopup @regClickTractsLow @contractsCopyLink', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
@@ -511,7 +508,6 @@ test('validationOfTheCancelButtonOnTheCreateDealForContractPopup @regClickTracts
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contractsPage = new ContractsPage(page);
-    const newContract = new NewEditContractPage(page);
     const search = new Search(page);
     const createDealPopup = page.locator('.mat-dialog-container');
     console.log('contractsCopyLink Validation Of The Cancel Button On The Create Deal For Contract Popup');
@@ -653,8 +649,7 @@ test('validationOfTheEditButton @regClickTractsHigh @contracts3dotsMenu', async 
     expect(page.url()).toContain('/contract/edit/');
 });
 
-test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -720,8 +715,7 @@ test('availabilityOfTheDeleteButton @regClickTractsLow @contracts3dotsMenu', asy
     await expect(deleteButtonThreeDotsMenu).toBeHidden();
 });
 
-test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnother @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnother @regClickTractsHigh @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const search = new Search(page);
@@ -751,8 +745,7 @@ test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnother @regClickTract
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('availabilityDeleteButtonOfContractWhichExpiringUrlWasAddedToAnother @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichExpiringUrlWasAddedToAnother @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const search = new Search(page);
@@ -782,8 +775,7 @@ test('availabilityDeleteButtonOfContractWhichExpiringUrlWasAddedToAnother @regCl
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherWhichWasDeleted @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherWhichWasDeleted @regClickTractsHigh @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const search = new Search(page);
@@ -813,8 +805,7 @@ test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherWhichWasDeleted
     await expect(deleteButton).toBeVisible();
 });
 
-test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const search = new Search(page);
@@ -844,8 +835,7 @@ test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherSharedTemplateS
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClientSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClientSharedTemplateSA @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const userBar = new UserBar(page);
     const signIn = new SignInPage(page);
@@ -890,8 +880,7 @@ test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClient
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClient @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClient @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const userBar = new UserBar(page);
     const signIn = new SignInPage(page);
@@ -936,8 +925,7 @@ test('availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClient
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('validationOfTheDeleteButton @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheDeleteButton @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -996,8 +984,7 @@ test('validationOfTheDeleteButton @regClickTractsMedium @contracts3dotsMenu', as
     await userBar.signOutButtonClick();
 });
 
-test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -1059,8 +1046,7 @@ test('validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts
     await expect(deletedContract).not.toContainText('autotest');
 });
 
-test('validationOfTheDeleteButtonContractWithDeal @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheDeleteButtonContractWithDeal @regClickTractsHigh @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const search = new Search(page);
@@ -1083,8 +1069,7 @@ test('validationOfTheDeleteButtonContractWithDeal @regClickTractsHigh @contracts
     await expect(contractCannotBeDeletedPopup).toBeHidden();
 });
 
-test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3dotsMenu', async ({ page,browserName }) => {
-    test.skip(browserName === 'webkit');
+test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -1153,8 +1138,7 @@ test('availibilityOfTheDisableSignaturesButton @regClickTractsMedium @contracts3
     await expect(disableSingatureButton).toBeHidden();
 });
 
-test('notDisplayingTheDisableSignaturesButtonCheckboxVariable @regClickTractsMedium @contracts3dotsMenu', async ({ page,browserName }) => {
-    test.skip(browserName === 'webkit');
+test('notDisplayingTheDisableSignaturesButtonCheckboxVariable @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);
@@ -1212,8 +1196,7 @@ test('validationOfTheDisableSignaturesButton @regClickTractsHigh @contracts3dots
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('validationOfTheEnableSignaturesButton @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+test('validationOfTheEnableSignaturesButton @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);
@@ -1245,8 +1228,7 @@ test('validationOfTheEnableSignaturesButton @regClickTractsMedium @contracts3dot
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+test('availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);
@@ -1285,8 +1267,7 @@ test('availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts3d
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('validationOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+test('validationOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);
@@ -1324,8 +1305,7 @@ test('validationOfTheDisablePayTractsButton @regClickTractsMedium @contracts3dot
     await contractsPage.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @contracts3dotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+test('validationOfTheDoneButtonOnTheDisablePayTractsPopup @regClickTractsHigh @contracts3dotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const viewTemplate = new ViewTemplatePage(page);

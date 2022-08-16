@@ -67,6 +67,7 @@ class NewEditCopyTemplatePage {
 
     async publishToggleClick() {
         await this.publishToggle.click();
+        await this.page.waitForTimeout(500);
     }
 
     async draftToggleClick() {
@@ -100,7 +101,7 @@ class NewEditCopyTemplatePage {
 
     async shareAccessPopupAddButtonClick() {
         await this.shareAccessPopupAddButton.click();
-        await this.page.waitForTimeout(500);
+        await this.page.waitForTimeout(1000);
     }
 
     async shareAccessPopupCloseButtonClick() {

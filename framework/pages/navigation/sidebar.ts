@@ -36,6 +36,7 @@ class SideBar {
 
     async sideBarDealsClick() {
         await this.deals.click();
+        await this.page.waitForTimeout(1000);
     }
 
 

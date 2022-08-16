@@ -25,7 +25,7 @@ test('clientsField @regChecklistNewLow @newEditDealPage', async ({ page, browser
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deals.addDealButtonClick();
-    await deals.newDealButtonPopupSAClick();
+    await deals.addDealPopupNewDealButtonClick();
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(clientsField).toBeVisible();
     await page.goto('/deals/edit-deal/8200');
@@ -474,7 +474,7 @@ test('agreementNoField @regChecklistNewLow @newEditDealPage', async ({ page, bro
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
-    await deal.newDealButtonPopupSAClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(agreementNoField).toBeVisible();
     await expect(agreementNoFieldValue).toHaveText('');
     await page.goto('/deals/edit-deal/8200');
@@ -526,7 +526,7 @@ test('displayingLinkToExistingDealButton @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
-    await deal.newDealButtonPopupSAClick();
+    await deal.addDealPopupNewDealButtonClick();
     await page.waitForTimeout(500);
     await expect(linkToExistingDealButton).toBeVisible();
     await expect(linkToExistingDealButton).toHaveAttribute('disabled', '');
@@ -739,7 +739,7 @@ test('linkToExistingDealPopupALotOfDeals @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForTimeout(1500);
     await deal.addDealButtonClick();
-    await deal.newDealButtonPopupSAClick();
+    await deal.addDealPopupNewDealButtonClick();
     await page.waitForTimeout(1500);
     await newEditDeal.clientDropDownChoose2();
     await newEditDeal.linkToExistingDealButtonClick();

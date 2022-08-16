@@ -25,7 +25,7 @@ const config: PlaywrightTestConfig = {
     baseURL: 'https://marqup.test.noredlines.com',
     acceptDownloads: true
   },
-  retries: 0,
+  retries: 1,
   reporter: [
     ['list'],
     ['html', { open: 'on-failure' }],

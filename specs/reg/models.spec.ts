@@ -9,7 +9,7 @@ import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
-});   
+});
 
 test('rediractionToTheModelsPage @regChecklistNewHigh @modelsPage', async ({ page }) => {
     const users = new Users(page);
@@ -233,14 +233,13 @@ test('statusColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(statusColumnValue).toHaveCSS('color', 'rgb(92, 168, 8)');
 });
 
-  //to be refactored
 test('dealsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const model = new ModelPage(page);
     const dealsColumn = page.locator('.mat-column-deals >> nth=2');
-    const dealsColumnValue = page.locator('.deals-column-link >> nth=2'); //should be nth=1, because of template column have class deals-column-link as well
+    const dealsColumnValue = page.locator('.deals-column-link >> nth=1');
     console.log('modelsPage Deals Column');
     await users.AA();
     await signIn.signInButton();
@@ -251,7 +250,7 @@ test('dealsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(dealsColumnValue).toBeVisible();
     await expect(dealsColumnValue).toHaveText(' 81 ');
     await expect(dealsColumnValue).toHaveAttribute('href', '/models/602/deals');
-    await page.locator('.deals-column-link >> nth=2').click(); //should be nth=1, because of template column have class deals-column-link as well
+    await page.locator('.deals-column-link >> nth=1').click();
     await expect(page).toHaveURL('/models/602/deals?&sort=contract_name');
     await sideBarMenu.sideBarModelClick();
     await model.dealsFilterClick();
@@ -260,14 +259,13 @@ test('dealsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(dealsColumn).toHaveText('-');
 });
 
-  //to be refactored
 test('templatesColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const userBar = new UserBar(page);
     const model = new ModelPage(page);
-    const templateColumnLinkValue = page.locator('.deals-column-link >> nth=0'); //should be class for template
+    const templateColumnLinkValue = page.locator('.templates-column-link >> nth=0');
     const templateColumnValue = page.locator('.mat-column-templates >> nth=1');
     const pageHeader = page.locator('.section__title');
     const templateWithVisibility = page.locator('.template-name-column-link >> text=automatizationTemplate1');
@@ -411,7 +409,7 @@ test('validationActivateButtonForSubscriptionLimitUsers @regChecklistNewMedium @
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarModelClick();
-    await page.locator('.mat-icon-button >> nth=1').click();
+    await page.locator('.mat-icon-button >> nth=2').click();
     await model.threeDotsMenuActivateButtonClick();
     await expect(updateSubscriptionPopup).toBeVisible();
     await expect(updateSubscriptionPopupText).toBeVisible();
@@ -422,7 +420,7 @@ test('validationActivateButtonForSubscriptionLimitUsers @regChecklistNewMedium @
     await updateSubscriptionPopupCloseButton.click();
     await expect(updateSubscriptionPopup).toBeHidden();
     await expect(page).toHaveURL('/models?&sort=name');
-    await page.locator('.mat-icon-button >> nth=1').click();
+    await page.locator('.mat-icon-button >> nth=2').click();
     await model.threeDotsMenuActivateButtonClick();
     await updateSubscriptionPopupUpdateButton.click();
     await expect(page).toHaveURL('/clients/edit-client/383?update_plan=true');
@@ -432,7 +430,7 @@ test('validationActivateButtonForSubscriptionLimitUsers @regChecklistNewMedium @
     await signIn.signInButton();
     await page.waitForURL('/clients/383');
     await sideBarMenu.sideBarModelClick();
-    await page.locator('.mat-icon-button >> nth=1').click();
+    await page.locator('.mat-icon-button >> nth=2').click();
     await model.threeDotsMenuActivateButtonClick();
     await expect(updateSubscriptionPopup).toBeVisible();
     await expect(updateSubscriptionPopupText).toBeVisible();
@@ -457,7 +455,7 @@ test('validationArchiveButtonForModelWithPublishContract @regChecklistNewHigh @m
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarModelClick();
-    await page.locator('.mat-icon-button >> nth=0').click();
+    await page.locator('.mat-icon-button >> nth=1').click();
     await model.threeDotsMenuArchiveButtonClick();
     await expect(canNotBeArchivedPopup).toBeVisible();
     await expect(canNotBeArchivedPopupText).toBeVisible();

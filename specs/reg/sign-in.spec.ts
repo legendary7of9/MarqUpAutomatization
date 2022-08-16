@@ -2,6 +2,7 @@ import { test , expect } from '@playwright/test'
 import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
 
+// test.describe.parallel("", () => {
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
@@ -142,3 +143,4 @@ test('inactivePendingNotexistUsers @regChecklistNewHigh @login', async ({ page }
 
  
 
+// });

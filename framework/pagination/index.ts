@@ -42,10 +42,12 @@ class Pagination {
 
     async paginationPage3Click() {
         await this.paginationPage3.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async paginationNextPageClick() {
         await this.paginationNextPage.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async paginationLastPageClick() {

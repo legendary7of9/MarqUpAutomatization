@@ -22,9 +22,9 @@ test('displayingEmailFieldPlaceholder @regChecklistnewLow @forgotPassword', asyn
     const emailField = page.locator('#forgot-password-email .mat-input-element');
     console.log('forgotPassword Displaying Email Field Placeholder');
     await signIn.forgotPasswordLink();
-    await expect(emailField).toHaveClass('.form-group flx-col mat-form-field ng-tns-c2-0 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid');
+    await expect(emailField).toHaveClass('mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-invalid');
     await forgotPassword.emailFieldFill();
-    await expect(emailField).toHaveClass('.form-group flx-col mat-form-field ng-tns-c2-0 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder mat-form-field-should-float ng-dirty ng-valid ng-touched');
+    await expect(emailField).toHaveClass('mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-dirty ng-valid');
 });
 
 test('validationOfTheSendButton @regChecklistnewHigh @forgotPassword', async ({ page }) => {
@@ -184,3 +184,217 @@ test('validationHomeButtonResetPasswordPage @regChecklistnewLow @forgotPasswordR
     await expect(page).toHaveURL('/sign-in');
 });
 
+test('new/ConfirmPasswordFields @regChecklistnewMedium @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('#reset-password-new-password .mat-input-element');
+    const confirmPassField = page.locator('#reset-password-confirm-password .mat-input-element');
+    console.log('forgotPasswordResetPassword/SetUpPassword New/Confirm Password Fields');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await expect(newPassField).toHaveAttribute('formcontrolname', 'password');
+    await expect(newPassField).toHaveAttribute('placeholder', 'New Password');
+    await expect(confirmPassField).toHaveAttribute('formcontrolname', 'confirm_password');
+    await expect(confirmPassField).toHaveAttribute('placeholder', 'Confirm Password');
+});
+
+test('displayingPlaceholderForNew/ConfirmPasswordFields @regChecklistnewLow @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('[placeholder="New Password"]');
+    const confirmPassField = page.locator('[placeholder="Confirm Password"]');
+    console.log('forgotPasswordResetPassword/SetUpPassword Displaying Placeholder For New/Confirm Password Fields');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await expect(newPassField).toHaveId('mat-input-0');
+    await expect(confirmPassField).toHaveId('mat-input-1');  
+});
+
+test('validationEyeIconForNew/ConfirmPasswordFields @regChecklistnewLow @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('[placeholder="New Password"]');
+    const confirmPassField = page.locator('[placeholder="Confirm Password"]');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Eye Icon For New/Confirm Password Fields');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageNewPassFieldFill();
+    await forgotPassword.resetPasswordPageConfirmPassFieldFill();
+    await expect(newPassField).toHaveAttribute('type', 'password');
+    await expect(newPassField).not.toHaveAttribute('type', 'text');
+    await expect(confirmPassField).toHaveAttribute('type', 'password');
+    await expect(confirmPassField).not.toHaveAttribute('type', 'text');
+    await forgotPassword.resetPasswordPageNewPassFieldShowPassIconClick();
+    await forgotPassword.resetPasswordPageConfirmPassFieldShowPassIconClick();
+    await expect(newPassField).not.toHaveAttribute('type', 'password');
+    await expect(newPassField).toHaveAttribute('type', 'text');
+    await expect(confirmPassField).not.toHaveAttribute('type', 'password');
+    await expect(confirmPassField).toHaveAttribute('type', 'text');
+    await forgotPassword.resetPasswordPageNewPassFieldShowPassIconClick();
+    await forgotPassword.resetPasswordPageConfirmPassFieldShowPassIconClick();
+    await expect(newPassField).toHaveAttribute('type', 'password');
+    await expect(newPassField).not.toHaveAttribute('type', 'text');
+    await expect(confirmPassField).toHaveAttribute('type', 'password');
+    await expect(confirmPassField).not.toHaveAttribute('type', 'text');
+});
+
+test('validationResetPasswordButton @regChecklistnewHigh @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const userInfoName = page.locator('.user-info__name');
+    const userInfoAccountName = page.locator('.user-info__account-name');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Reset Password Button');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageNewPassFieldFill();
+    await forgotPassword.resetPasswordPageConfirmPassFieldFill();
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(page).toHaveURL('/dashboard');
+    await expect(userInfoName).toHaveText('AccountAdimnThird AOThird');
+    await expect(userInfoAccountName).toHaveText('BanCompany4');
+});
+
+test('validationResetPasswordButtonLessThenSix @regChecklistnewMedium @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('#reset-password-new-password .mat-error');
+    const confirmPassField = page.locator('#reset-password-confirm-password .mat-error');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Reset Password Button Less Then Six');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageNewPassField.fill('a');
+    await forgotPassword.resetPasswordPageConfirmPassField.fill('a');
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(newPassField).toBeVisible();
+    await expect(newPassField).toHaveText(' New Password must be at least 6 characters long ');
+    await expect(confirmPassField).toBeVisible();
+    await expect(confirmPassField).toHaveText(' Password must be at least 6 characters long ');
+});
+
+test('validationResetPasswordButtonOnlyNumbers/Letters @regChecklistnewMedium @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('#reset-password-new-password .mat-error');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Reset Password Button Only Numbers/Letters');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageNewPassField.fill('111111');
+    await forgotPassword.resetPasswordPageConfirmPassField.fill('111111');
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(newPassField).toBeVisible();
+    await expect(newPassField).toHaveText(' Your new password should be at least 6 characters, contain uppercase letters, lowercase letters, numbers, and special characters. ');
+    await forgotPassword.resetPasswordPageNewPassField.fill('aaaaaa');
+    await forgotPassword.resetPasswordPageConfirmPassField.fill('aaaaaa');
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(newPassField).toBeVisible();
+    await expect(newPassField).toHaveText(' Your new password should be at least 6 characters, contain uppercase letters, lowercase letters, numbers, and special characters. ');
+});
+
+test('validationResetPasswordButtonEmptyFields @regChecklistnewMedium @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const newPassField = page.locator('#reset-password-new-password .mat-error');
+    const confirmPassField = page.locator('#reset-password-confirm-password .mat-error');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Reset Password Button Empty Fields');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(newPassField).toBeVisible();
+    await expect(newPassField).toHaveText(' Please fill in this field ');
+    await expect(confirmPassField).toBeVisible();
+    await expect(confirmPassField).toHaveText(' Please fill in this field ');
+});
+
+test('validationResetPasswordButtonPasswordsDoNotMatch @regChecklistnewHigh @forgotPasswordResetPassword/SetUpPassword', async ({ page }) => {
+    const signIn = new SignInPage(page);
+    const forgotPassword = new ForgotPasswordPage(page);
+    const confirmPassField = page.locator('#reset-password-confirm-password .mat-error');
+    console.log('forgotPasswordResetPassword/SetUpPassword Validation Reset Password Button Passwords Do Not Match');
+    await signIn.forgotPasswordLink();
+    await forgotPassword.emailFieldFill();
+    await forgotPassword.sendButtonClick();
+    await page.waitForSelector('.mat-snack-bar-container');
+    await page.waitForURL('/sign-in');
+    await page.waitForTimeout(30000);
+    await page.goto('https://maildrop.cc/inbox/accountadmin4');
+    await page.waitForSelector('.messagelist-row-link >> nth=0');
+    await page.locator('.messagelist-row-link >> nth=0').click(),
+    await page.waitForTimeout(2000);
+    const resetButtonLink = await page.frameLocator('.messagedata-iframe').locator('.mail-btn').getAttribute('href');
+    await page.goto(resetButtonLink);
+    await forgotPassword.resetPasswordPageNewPassField.fill('aaaaaa');
+    await forgotPassword.resetPasswordPageConfirmPassField.fill('111111');
+    await forgotPassword.resetPasswordPageResetButtonClick();
+    await expect(confirmPassField).toBeVisible();
+    await expect(confirmPassField).toHaveText(' The passwords do not match ');
+});
