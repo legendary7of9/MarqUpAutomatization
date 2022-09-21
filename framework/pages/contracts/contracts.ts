@@ -14,11 +14,24 @@ class ContractsPage {
     templateNameFilter: Locator;
     payTractsFilter: Locator;
     userFilter: Locator;
+    scoreFilter: Locator;
     createdFilter: Locator;
     signaturesFilter: Locator;
     lastSignedFilter: Locator;
+    contractsFilterCR: Locator;
+    statusFilterCR: Locator;
+    templateFilterCR: Locator;
+    userFilterCR: Locator;
+    paytractsFilterCR: Locator;
+    submittedFilterCR: Locator;
+    reviwedFilterCR: Locator;
+    reviwerFilterCR: Locator;
+    reviwerNotesFilterCR: Locator;
     rightArrow: Locator;
     leftArrow: Locator;
+    linkedIcon: Locator;
+    linkedIconPopupXButton: Locator;
+    linkedIconPopupDoneButton: Locator;
     copyLinkButton: Locator;
     copyLinkPopupCopyLinkButton: Locator;
     copyLinkPopupCancelButton: Locator;
@@ -31,6 +44,11 @@ class ContractsPage {
     CopyContractLinkPopupContractWithModelDoNotShowCheckbox: Locator;
     CopyContractLinkPopupContractWithModelCreateButton: Locator;
     CopyContractLinkPopupContractWithModelCancelButton: Locator;
+    
+    createDealForContractPopupDoNotShowCheckbox: Locator;
+    createDealForContractPopupCreateButton: Locator;
+    createDealForContractPopupCancelButton: Locator;
+
     updateSubscriptionPopupUpdateSubscriptionButton: Locator;
     updateSubscriptionPopupCloseButton: Locator;
     contactYourAAPopupCloseButton: Locator;
@@ -51,20 +69,34 @@ class ContractsPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.filteredByTemplate = page.locator('');
-        this.contractsTab = page.locator('');
-        this.contractRequestsTab = page.locator('');
+        this.filteredByTemplate = page.locator('#contracts-list-filtered-by-template');
+        this.contractsTab = page.locator('#contracts-list-contracts-link-button');
+        this.contractRequestsTab = page.locator('#contracts-list-contract-requests-link-button');
         this.contractNameFilter = page.locator('#contract-column-sort');
         this.visibilityFilter = page.locator('#visibility-column-sort');
         this.statusFilter = page.locator('#status-column-sort');
         this.templateNameFilter = page.locator('#template-name-column-sort');
         this.payTractsFilter = page.locator('#paytracts-column-sort');
         this.userFilter = page.locator('#user-column-sort');
+        this.scoreFilter = page.locator('#score-column-sort');
         this.createdFilter = page.locator('#created-column-sort');
         this.signaturesFilter = page.locator('#signatures-column-sort');
         this.lastSignedFilter = page.locator('#last-signed-column-sort');
+        this.contractsFilterCR = page.locator('#contract-name-column-sort');
+        this.statusFilterCR = page.locator('#request-status-column-sort');
+        this.templateFilterCR = page.locator('#template-name-column-sort');
+        this.userFilterCR = page.locator('#user-column-sort');
+        this.paytractsFilterCR = page.locator('#paytracts-column-sort');
+        this.submittedFilterCR = page.locator('#submitted-column-sort');
+        this.reviwedFilterCR = page.locator('#reviewed-column-sort');
+        this.reviwerFilterCR = page.locator('#reviewer-column-sort');
+
+        this.reviwerNotesFilterCR = page.locator('#reviewer-notes-column-sort');
         this.rightArrow = page.locator('.right-arrow');
         this.leftArrow = page.locator('.left-arrow');
+        this.linkedIcon = page.locator('.contract-reference-links');
+        this.linkedIconPopupXButton = page.locator('.close-ic'); //to be refactored
+        this.linkedIconPopupDoneButton = page.locator('.mat-button >> text=DONE'); //to be refactored
         this.copyLinkButton = page.locator('.contracts-name-column-copy-link >> nth=0');
         this.copyLinkPopupCopyLinkButton = page.locator('#copy-link-copy-link');
         this.copyLinkPopupCancelButton = page.locator('#copy-link-cancel');
@@ -77,6 +109,12 @@ class ContractsPage {
         this.CopyContractLinkPopupContractWithModelDoNotShowCheckbox = page.locator('.mat-checkbox');
         this.CopyContractLinkPopupContractWithModelCreateButton = page.locator('.btn >> text=Create');
         this.CopyContractLinkPopupContractWithModelCancelButton = page.locator('.btn >> text=Cancel');
+
+        this.createDealForContractPopupDoNotShowCheckbox = page.locator('#confirm-create-deal-do-not-show-again');
+        this.createDealForContractPopupCreateButton = page.locator('#confirm-create-deal-create');
+        this.createDealForContractPopupCancelButton = page.locator('#confirm-create-deal-cancel');
+
+
         this.updateSubscriptionPopupUpdateSubscriptionButton = page.locator('#not-available-popup-update-subscription');
         this.updateSubscriptionPopupCloseButton = page.locator('#not-available-popup-close');
         this.contactYourAAPopupCloseButton = page.locator('#not-available-popup-close');
@@ -96,14 +134,29 @@ class ContractsPage {
         this.threeDotsMenuDisablePaytractsPopupXButton = page.locator('.close-button');
     }
 
-    async tamplateNameFilterClick() {
-        await this.contractNameFilter.click();
+    async filteredByTemplateClick() {
+        await this.filteredByTemplate.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async contractsTabClick() {
+        await this.contractsTab.click();
         await this.page.waitForTimeout(1000);
+    }
+
+    async contractRequestsTabClick() {
+        await this.contractRequestsTab.click();
+        await this.page.waitForTimeout(1000);
+    }
+
+    async contractNameFilterClick() {
+        await this.contractNameFilter.click();
+        await this.page.waitForTimeout(500);
     }
 
     async visibilityFilterClick() {
         await this.visibilityFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async statusFilterClick() {
@@ -113,37 +166,107 @@ class ContractsPage {
 
     async templateNameFilterClick() {
         await this.templateNameFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async payTractsFilterClick() {
         await this.payTractsFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async userFilterClick() {
         await this.userFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
+    }
+
+    async scoreFilterClick() {
+        await this.scoreFilter.click();
+        await this.page.waitForTimeout(500);
     }
 
     async createdFilterClick() {
         await this.createdFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async signaturesFilterClick() {
         await this.signaturesFilter.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
+    }
+
+    async lastSignedFilterClick() {
+        await this.lastSignedFilter.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async contractsFilterCRClick() {
+        await this.contractsFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async statusFilterCRClick() {
+        await this.statusFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async templateFilterCRClick() {
+        await this.templateFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async userFilterCRClick() {
+        await this.userFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async paytractsFilterCRClick() {
+        await this.paytractsFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async submittedFilterCRClick() {
+        await this.submittedFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async reviwedFilterCRClick() {
+        await this.reviwedFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async reviwerFilterCRClick() {
+        await this.reviwerFilterCR.click();
+        await this.page.waitForTimeout(500);
+    }
+
+    async reviwerNotesFilterCRClick() {
+        await this.reviwerNotesFilterCR.click();
+        await this.page.waitForTimeout(500);
     }
 
     async rightArrowClick() {
         await this.rightArrow.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async leftArrowClick() {
         await this.leftArrow.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
+    }
+
+    async linkedIconClick() {
+        await this.linkedIcon.click();
+        await this.page.waitForSelector('.mat-dialog-container');
+    }
+
+    async linkedIconPopupXButtonClick() {
+        await this.linkedIconPopupXButton.click();
+        await this.page.waitForSelector('#contracts-list-contracts-link-button');
+    }
+
+    async linkedIconPopupDoneButtonClick() {
+        await this.linkedIconPopupDoneButton.click();
+        await this.page.waitForSelector('#contracts-list-contracts-link-button');
     }
 
     async copyLinkButtonClickAAAU() {
@@ -191,19 +314,27 @@ class ContractsPage {
         await this.copyLinkPopupExpirtaionDateField.fill('08/08/2033');
     }
 
-    async CopyContractLinkPopupContractWithModelDoNotShowCheckboxClick() {
+    async copyContractLinkPopupContractWithModelDoNotShowCheckboxClick() {
         await this.CopyContractLinkPopupContractWithModelDoNotShowCheckbox.click();
         await this.page.waitForTimeout(2000);
     }
 
-    async CopyContractLinkPopupContractWithModelCreateButtonClick() {
+    async copyContractLinkPopupContractWithModelCreateButtonClick() {
         await this.CopyContractLinkPopupContractWithModelCreateButton.click();
         await this.page.waitForTimeout(1500);
     }
 
-    async CopyContractLinkPopupContractWithModelCancelButtonClick() {
+    async copyContractLinkPopupContractWithModelCancelButtonClick() {
         await this.CopyContractLinkPopupContractWithModelCancelButton.click();
         await this.page.waitForTimeout(1500);
+    }
+
+    async skipCreateDealForContractPopup() {
+        if (await this.createDealForContractPopupDoNotShowCheckbox.isVisible()) 
+        {
+            await this.createDealForContractPopupDoNotShowCheckbox.click();
+            await this.createDealForContractPopupCancelButton.click();
+        }
     }
 
     async updateSubscriptionPopupUpdateSubscriptionButtonClick() {
@@ -221,12 +352,12 @@ class ContractsPage {
 
     async threeDotsMenuButtonClick() {
         await this.threeDotsMenuButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('.action-list');
     }
 
     async threeDotsMenuEditButtonClick() {
         await this.threeDotsMenuButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(200);
         await this.threeDotsMenuEditButton.click();
         await this.page.waitForTimeout(1000);
     }
@@ -254,9 +385,9 @@ class ContractsPage {
 
     async threeDotsMenuDeleteButtonClick() {
         await this.threeDotsMenuButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
         await this.threeDotsMenuDeleteButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 
     async threeDotsMenuDisableSignaturesButtonClick() {
@@ -286,7 +417,7 @@ class ContractsPage {
 
     async threeDotsMenuDeletePopupDeleteButtonClick() {
         await this.threeDotsMenuDeletePopupDeleteButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(1500);
     }
 
     async threeDotsMenuDisablePaytractsPopupDoneButtonClick() {

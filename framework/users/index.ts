@@ -33,6 +33,16 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
     }
 
+    async AA4Second() {
+        await this.page.fill('[formcontrolname="email"]', 'accountadmin2ban@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
+    async AU4() {
+        await this.page.fill('[formcontrolname="email"]', 'accountuserban@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
     async AAClear() {
         await this.page.fill('[formcontrolname="email"]', 'autotestaccountclear@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
@@ -43,6 +53,7 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
     }
 
+      //also used for embeded links functional
     async AANoPaytracts() {
         await this.page.fill('[formcontrolname="email"]', 'iryna.nema+8134@mobindustry.net')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
@@ -78,6 +89,16 @@ class Users {
     async AUSubscriptionLimits() {
         await this.page.fill('[formcontrolname="email"]', 'iryna.nema+63628@mobindustry.net')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
+    async AAForSignaturesOutbound() {
+        await this.page.fill('[formcontrolname="email"]', 'aaforsignaturesoutbound@maildrop.cc') //AAForSignaturesOutbound company
+        await this.page.fill('[formcontrolname="password"]', '123qwe')
+    }
+
+    async AAForSignaturesInbound() {
+        await this.page.fill('[formcontrolname="email"]', 'aaforsignaturesinbound@maildrop.cc') //AAForSignaturesInbound company
+        await this.page.fill('[formcontrolname="password"]', '123qwe')
     }
 
 }

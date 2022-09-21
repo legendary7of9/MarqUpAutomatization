@@ -4,11 +4,16 @@ import { Locator, Page } from '@playwright/test';
 class NewEditContractPage {
     test: any;
     page: Page;
-    expect: any;
+    alertIcon: Locator;
+    alertIconPopupXButton: Locator;
+    alertIconPopupDoNotShowCheckbox: Locator;
+    alertIconPopupApplyButton: Locator;
+    alertIconPopupCancelButton: Locator;
     contractTitleField: Locator;
     contractDescriptionTitleField: Locator;
     saveAndGenerateLinkButton: Locator;
     saveButton: Locator;
+    saveAndSubmitButton: Locator;
     publishToggle: Locator;
     draftToggle: Locator;
     iIcon: Locator;
@@ -18,22 +23,59 @@ class NewEditContractPage {
     editVariablesConfigurator: Locator;
     configuratorVariableValue0: Locator;
     configuratorVariableValueOption0: Locator;
+    configuratorVariableValueTextarea: Locator;
 
     constructor(page: Page) {
         this.page = page;
+        this.alertIcon = page.locator('.warning-icon');
+        this.alertIconPopupXButton = page.locator('#copy-link-cancel-cross'); //to be refactored, it's work but incorrect name of the selector
+        this.alertIconPopupDoNotShowCheckbox = page.locator('#confirm-create-deal-do-not-show-again');
+        this.alertIconPopupApplyButton = page.locator('#copy-link-copy-link'); //to be refactored, it's work but incorrect name of the selector
+        this.alertIconPopupCancelButton = page.locator('#copy-link-cancel'); //to be refactored, it's work but incorrect name of the selector
         this.contractTitleField = page.locator('[formcontrolname="title"]');
         this.contractDescriptionTitleField = page.locator('[formcontrolname="description"]');
         this.saveAndGenerateLinkButton = page.locator('#contract-detail-save-and-generate');
         this.saveButton = page.locator('#contract-detail-save');
-        this.publishToggle = page.locator('#contract-detail-status-publish-button');
-        this.draftToggle = page.locator('#contract-detail-status-draft-button');
+        this.saveAndSubmitButton = page.locator('#contract-detail-save-and-submit');
+        this.publishToggle = page.locator('#contract-detail-status-publish');
+        this.draftToggle = page.locator('#contract-detail-status-draft');
         this.iIcon = page.locator('#contract-detail-info');
         this.previewContractButton = page.locator('#contract-detail-preview-contract');
         this.contractFee = page.locator('#paytracts-contract-fee-select');
-        this.contractFeeValue = page.locator('.mat-option >> nth=0');
+        this.contractFeeValue = page.locator('.mat-option >> nth=1');
         this.editVariablesConfigurator = page.locator('.contract-values-wrapper-opener');
         this.configuratorVariableValue0 = page.locator('#configurator-variable-elementName_1');
         this.configuratorVariableValueOption0 = page.locator('#variables-list-form-control-value-elementName_1');
+        this.configuratorVariableValueTextarea = page.locator('[aria-label="variable name"]');
+    }
+
+    async alertIconClick() {
+        await this.alertIcon.click();
+        await this.page.waitForSelector('.mat-dialog-container');
+    }
+
+    async alertIconPopupXButtonClick() {
+        await this.alertIconPopupXButton.click();
+        await this.page.waitForSelector('#contract-detail-save');
+    }
+
+    async alertIconPopupDoNotShowCheckboxClick() {
+        await this.alertIconPopupDoNotShowCheckbox.click();
+    }
+
+    async alertIconPopupApplyButtonClickCheckboxChecked() {
+        await this.alertIconPopupApplyButton.click();
+        await this.page.waitForSelector('#contract-detail-save');
+    }
+
+    async alertIconPopupApplyButtonClickCheckboxNotChecked() {
+        await this.alertIconPopupApplyButton.click();
+        await this.page.waitForSelector('#contract-detail-save');
+    }
+
+    async alertIconPopupCancelButtonClick() {
+        await this.alertIconPopupCancelButton.click();
+        await this.page.waitForSelector('#contract-detail-save');
     }
 
     async contractTitleFieldFillRandom(text:string) {
@@ -48,7 +90,7 @@ class NewEditContractPage {
 
     async saveAndGenerateLinkButtonClick() {
         await this.saveAndGenerateLinkButton.click();
-        await this.page.waitForTimeout(2500);
+        await this.page.waitForSelector('#contract-view-copy-link');
     }
 
     async saveButtonClick() {
@@ -56,12 +98,17 @@ class NewEditContractPage {
         await this.page.waitForURL('/contracts/list?&sort=-created_at');
     }
 
+    async saveAndSubmitButtonClick() {
+        await this.saveAndSubmitButton.click();
+        await this.page.waitForSelector('#contract-view-edit');
+    }
+
     async publishToggleClick() {
         await this.publishToggle.click();
     }
 
     async draftToggleClick() {
-        await this.publishToggle.click();
+        await this.draftToggle.click();
     }
 
     async iIconFocus() {
@@ -70,22 +117,29 @@ class NewEditContractPage {
 
     async previewContractButtonClick() {
         await this.previewContractButton.click();
+        await this.page.waitForSelector('#contract-view-edit');
     }
 
     async contractFeeValueChoose() {
         await this.contractFee.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(1000);
+        if (await this.contractFeeValue.isHidden()) 
+        {
+            this.page.waitForTimeout(1000);
+            this.contractFee.click();
+        }
+        await this.page.waitForSelector('.mat-select-content');
         await this.contractFeeValue.click();
     }
 
     async editVariablesConfiguratorClick() {
         await this.editVariablesConfigurator.click();
-        await this.page.waitForTimeout(1500);
+        await this.page.waitForTimeout(500);
     }
 
     async configuratorVariableValue0Click() {
         await this.configuratorVariableValue0.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(500);
     }
 }
 

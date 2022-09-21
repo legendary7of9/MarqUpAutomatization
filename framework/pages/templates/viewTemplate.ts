@@ -18,7 +18,7 @@ class ViewTemplatePage {
 
     async createContractButtonClick() {
         await this.createContractButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('#contract-detail-save-and-generate');
     }
 
     async editTemplateButtonClick() {

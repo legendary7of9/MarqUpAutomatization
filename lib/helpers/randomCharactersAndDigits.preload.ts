@@ -9,6 +9,16 @@ export abstract class Helpers {
   
     return text;
   }
+
+  public static generateRandomStringSignatures() {
+    var text = "autotest";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  
+    for (var i = 0; i < 8; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
   
   public static generateRandomNumberNewModelFrom(min: 1, max: 31) {
     var number = "";
@@ -211,6 +221,34 @@ public static currentYearMinus1() {
 
   return year;
 }
+
+public static currentDateAndTime() {
+  var today = new Date();
+  var date = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
+  var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'}) + ' MT';
+
+  var dateTime = date + ' at ' + time
+
+  return dateTime;
+}
+
+public static currentDateForSignatures() {
+  var today = new Date();
+  var date = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
+
+  return ' ' + date + ' ';
+}
+
+public static currentDateAndTimeForSignatures() {
+  var today = new Date();
+  var date = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
+  var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'}) + ' MT';
+
+  var dateTime = ' ' + date + ' ' + time + ' '
+
+  return dateTime;
+}
+
 }
 
 //Math.floor(Math.random() * (max - min + 1)) + min;

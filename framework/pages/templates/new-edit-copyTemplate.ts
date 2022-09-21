@@ -16,6 +16,12 @@ class NewEditCopyTemplatePage {
     permissionVisibilityEvryoneValue: Locator;
     permissionVisibilityOnlyAAValue: Locator;
     permissionVisibilityOnlyMeValue: Locator;
+
+    editVariablePanel: Locator;
+    variablePanelSearch: Locator;
+    newVariableBtton: Locator;
+    variablePanelVariableNameField: Locator;
+
     shareAccessButton: Locator;
     shareAccessPopupSearchField: Locator;
     shareAccessPopupAddButton: Locator;
@@ -35,6 +41,12 @@ class NewEditCopyTemplatePage {
         this.permissionVisibilityEvryoneValue = page.locator('.mat-option-text >> text=Everyone at the company');
         this.permissionVisibilityOnlyAAValue = page.locator('.mat-option-text >> text=Only Account Admins');
         this.permissionVisibilityOnlyMeValue = page.locator('.mat-option-text >> text=Only Me');
+
+        this.editVariablePanel = page.locator('.template-values-wrapper-opener');
+        this.variablePanelSearch = page.locator('#configurator-search-field');
+        this.newVariableBtton = page.locator('');
+
+
         this.shareAccessButton = page.locator('#template-detail-share-access');
         this.shareAccessPopupSearchField = page.locator('#modal-share-access-search');
         this.shareAccessPopupAddButton = page.locator('#modal-share-access-add');
@@ -56,8 +68,14 @@ class NewEditCopyTemplatePage {
         await this.textEditorField.type(text);
     }
 
-    async createContractButtonClick(text:string) {
+    async textEditorFieldClear() {
+        await this.textEditorField.click();
+        await this.textEditorField.fill('');
+    }
+
+    async createContractButtonClick() {
         await this.createContractButton.click();
+        await this.page.waitForSelector('#contract-detail-save-and-generate');
     }
 
     async saveButtonClick() {
@@ -88,6 +106,24 @@ class NewEditCopyTemplatePage {
         await this.permissionVisibilityDropDown.click();
         await this.permissionVisibilityOnlyMeValue.click();
     }
+
+
+
+    async editVariablePanelOpen() {
+        await this.editVariablePanel.click();
+        await (await this.page.waitForSelector('.template-values-wrapper')).isVisible();
+    }
+
+    async editVariablePanelClose() {
+        await this.editVariablePanel.click();
+        await (await this.page.waitForSelector('.template-values-wrapper')).isHidden();
+    }
+
+    async newVariableBttonClick() {
+        await this.newVariableBtton.click();
+    }
+
+
 
     async shareAccessButtonClick() {
         await this.shareAccessButton.click();

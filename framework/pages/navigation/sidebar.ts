@@ -20,7 +20,7 @@ class SideBar {
         this.dashboard = page.locator('#sidebar-dashboard');
         this.models = page.locator('#sidebar-models');
         this.deals = page.locator('#sidebar-deals');
-        this.clicktracts = page.locator('');
+        this.clicktracts = page.locator('.ic_template');
         this.clicktractsTempates = page.locator('#sidebar-templates-list');
         this.clicktractsContracts = page.locator('#sidebar-contracts-list');
         this.clicktractsSignatures = page.locator('#sidebar-signatures-list');
@@ -39,18 +39,21 @@ class SideBar {
         await this.page.waitForTimeout(1000);
     }
 
+    async clicktractsClick() {
+        await this.clicktracts.click();
+    }
 
-
-    async sideBarClickTractsTemplatesClick() {
+    async clickTractsTemplatesClick() {
         await this.clicktractsTempates.click();
         await this.page.waitForSelector('#templates-list-add-template');
     }
 
-    async sideBarClickTractsContractsClick() {
+    async clickTractsContractsClick() {
         await this.clicktractsContracts.click();
     }
 
-    async sideBarClickTractsSignaturesClick() {
+    async clickTractsSignaturesClick() {
+        await this.clicktracts.hover();
         await this.clicktractsSignatures.click();
     }
 

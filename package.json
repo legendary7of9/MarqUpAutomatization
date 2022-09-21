@@ -27,6 +27,7 @@
     "clipboardy": "^3.0.0",
     "experimental-allure-playwright": "^0.0.3",
     "jsdom": "^20.0.0",
+    "playwright-expect": "^0.1.2",
     "ts-migrate": "^0.1.26"
   },
   "dependencies": {
@@ -36,5 +37,4 @@
     "maildrop-api": "^1.0.3",
     "playwright": "^1.23.2"
   }
-
 }

@@ -4,10 +4,10 @@ const config: PlaywrightTestConfig = {
   timeout: 250000,
   workers: 1,
   projects: [
-    {
-      name: 'webkit',
-      use: { browserName: 'webkit', }
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { browserName: 'webkit', }
+    // },
     {
       name: 'chrome',
       use: { browserName: 'chromium', }
@@ -25,7 +25,7 @@ const config: PlaywrightTestConfig = {
     baseURL: 'https://marqup.test.noredlines.com',
     acceptDownloads: true
   },
-  retries: 1,
+  retries: 0, //2
   reporter: [
     ['list'],
     ['html', { open: 'on-failure' }],

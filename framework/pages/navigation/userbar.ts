@@ -33,6 +33,14 @@ class UserBar {
 
     async signOutButtonClick() {
         await this.signOutButton.click();
+        await this.page.waitForSelector('#login-sign-in');
+    }
+
+    async logOutAction() {
+        await this.userInfoButton.click();
+        await this.page.waitForSelector('#user-info-sign-out');
+        await this.signOutButton.click();
+        await this.page.waitForSelector('#login-sign-in');
     }
 }
 

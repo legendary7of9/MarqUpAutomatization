@@ -21,6 +21,9 @@ import { NewEditCopyTemplatePage } from './pages';
 import { ViewTemplatePage } from './pages';
 import { ContractsPage } from './pages';
 import { NewEditContractPage } from './pages';
+import { ViewContract } from './pages';
+import { OutboundInboundPage } from './pages';
+import { EndUserPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -46,7 +49,10 @@ const pageProvider = (page:any) => {
         NewEditCopyTemplatePage,
         ViewTemplatePage,
         ContractsPage,
-        NewEditContractPage
+        NewEditContractPage,
+        ViewContract,
+        OutboundInboundPage,
+        EndUserPage
     }
 }
 
@@ -79,5 +85,8 @@ export {
     NewEditCopyTemplatePage,
     ViewTemplatePage,
     ContractsPage,
-    NewEditContractPage
+    NewEditContractPage,
+    ViewContract,
+    OutboundInboundPage,
+    EndUserPage
 }
