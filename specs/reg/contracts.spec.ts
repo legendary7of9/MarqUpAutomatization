@@ -450,7 +450,7 @@ test('displayingHoverOverTheAlertButton @regClickTractsLow @contracts @contracts
 });
 
     //to be refactored after Ira reply and Artem Fix
-test.skip('notDisplayingTheAlertIcon @regClickTractsHigh @contracts @contractsTab', async ({ page }) => {
+test.skip('notDisplayingTheAlertIcon @regClickTractsLow @contracts @contractsTab', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const contracts = new ContractsPage(page);

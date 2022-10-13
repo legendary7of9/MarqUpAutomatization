@@ -1,6 +1,7 @@
 import { Users } from './users';
 import { Search } from './search';
 import { SideBar, UserBar } from './pages';
+import { EditMyProfile, Configuration } from './pages';
 import { SignInPage } from './pages';
 import { ForgotPasswordPage } from './pages';
 import { UserMenuBox } from './pages';
@@ -24,6 +25,11 @@ import { NewEditContractPage } from './pages';
 import { ViewContract } from './pages';
 import { OutboundInboundPage } from './pages';
 import { EndUserPage } from './pages';
+import { ClientPageSA } from './pages';
+import { NewClientPageSA } from './pages';
+import { EditClientSA } from './pages';
+import { UsersPageAASA } from './pages';
+import { AddEditUserPage } from './pages';
 
 const pageProvider = (page:any) => {
     return {
@@ -31,6 +37,8 @@ const pageProvider = (page:any) => {
         SideBar,
         UserBar,
         UserMenuBox,
+        EditMyProfile,
+        Configuration,
         SignInPage,
         ForgotPasswordPage,
         Pagination,
@@ -52,7 +60,12 @@ const pageProvider = (page:any) => {
         NewEditContractPage,
         ViewContract,
         OutboundInboundPage,
-        EndUserPage
+        EndUserPage,
+        ClientPageSA,
+        NewClientPageSA,
+        EditClientSA,
+        UsersPageAASA,
+        AddEditUserPage
     }
 }
 
@@ -66,6 +79,8 @@ export {
     Search,
     SideBar,
     UserBar,
+    EditMyProfile,
+    Configuration,
     SignInPage,
     ForgotPasswordPage,
     UserMenuBox,
@@ -88,5 +103,10 @@ export {
     NewEditContractPage,
     ViewContract,
     OutboundInboundPage,
-    EndUserPage
+    EndUserPage,
+    ClientPageSA,
+    NewClientPageSA,
+    EditClientSA,
+    UsersPageAASA,
+    AddEditUserPage
 }
