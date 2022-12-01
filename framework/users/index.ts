@@ -28,6 +28,11 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
     }
 
+    async AA3AU() {
+        await this.page.fill('[formcontrolname="email"]', 'accountuser4@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
+    }
+
     async AA4() {
         await this.page.fill('[formcontrolname="email"]', 'accountadminban@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'Qwerty123@')
@@ -101,6 +106,10 @@ class Users {
         await this.page.fill('[formcontrolname="password"]', '123qwe')
     }
 
+    async AAForEnduser() {
+        await this.page.fill('[formcontrolname="email"]', 'aaforenduser@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
 }
 
 export {

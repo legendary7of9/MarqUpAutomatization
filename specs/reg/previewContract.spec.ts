@@ -32,10 +32,12 @@ test.describe("test", () => {
     let context: BrowserContext;
     let page: Page;
 
+    //to be refactored
 test.beforeAll(async () => {
     const browser = await webkit.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
+    const newTemplate = new NewEditCopyTemplatePage(page);
     await page.goto('');
     await page.locator('[formcontrolname="email"]').fill('accountadmin4@maildrop.cc'); //login
     await page.locator('[formcontrolname="password"]').fill('Qwerty123@'); //login
@@ -44,6 +46,7 @@ test.beforeAll(async () => {
     await page.goto('/contract-template/clone/2354'); //saveAsNewTemplate
     await page.waitForSelector('[name="elementName_1"]'); //saveAsNewTemplate
     await page.locator('[formcontrolname="title"]').fill(Helpers.generateRandomString()); //saveAsNewTemplate
+    await newTemplate.selectCategoryName();
     await page.locator('#template-detail-status-publish-button').click(); //saveAsNewTemplate
     await page.locator('#template-detail-create-contract').click(); //saveAsNewTemplate
     await page.locator('[formcontrolname="description"]').fill(Helpers.generateRandomString()); //createContract
@@ -1804,7 +1807,7 @@ test('validationOfTheEditButton @regClickTractsMedium @previewContract @previewC
 
 
 
-
+//to be refactored
 test.afterAll(async () => {
     const browser = await chromium.launch();
     const context = await browser.newContext();

@@ -33,7 +33,9 @@ class ContractsPage {
     linkedIconPopupXButton: Locator;
     linkedIconPopupDoneButton: Locator;
     copyLinkButton: Locator;
-    copyLinkPopupCopyLinkButton: Locator;
+    copyLinkPopupCopyLinkButtonPermanent: Locator;
+    copyLinkPopupCopyLinkButtonExpiry: Locator;
+
     copyLinkPopupCancelButton: Locator;
     copyLinkPopupXButton: Locator;
     copyLinkPopupPermanentRadioButton: Locator;
@@ -98,7 +100,10 @@ class ContractsPage {
         this.linkedIconPopupXButton = page.locator('.close-ic'); //to be refactored
         this.linkedIconPopupDoneButton = page.locator('.mat-button >> text=DONE'); //to be refactored
         this.copyLinkButton = page.locator('.contracts-name-column-copy-link >> nth=0');
-        this.copyLinkPopupCopyLinkButton = page.locator('#copy-link-copy-link');
+
+        this.copyLinkPopupCopyLinkButtonPermanent = page.locator('#copy-link-copy-link >> nth=0');
+        this.copyLinkPopupCopyLinkButtonExpiry = page.locator('#copy-link-copy-link >> nth=1');
+
         this.copyLinkPopupCancelButton = page.locator('#copy-link-cancel');
         this.copyLinkPopupXButton = page.locator('#copy-link-cancel-cross');
         this.copyLinkPopupPermanentRadioButton = page.locator('.mat-radio-label-content >> text=Permanent Link');
@@ -278,12 +283,17 @@ class ContractsPage {
         await this.copyLinkButton.click();
     }
 
-    async copyLinkPopupCopyLinkButtonClick() {
-        await this.copyLinkPopupCopyLinkButton.click();
+    async copyLinkPopupCopyLinkButtonPermanentClick() {
+        await this.copyLinkPopupCopyLinkButtonPermanent.click();
+    }
+
+    async copyLinkPopupCopyLinkButtonExpiryClick() {
+        await this.copyLinkPopupCopyLinkButtonExpiry.click();
     }
 
     async copyLinkPopupCancelButtonClick() {
         await this.copyLinkPopupCancelButton.click();
+        await this.page.waitForTimeout(1500);
     }
 
     async copyLinkPopupXButtonClick() {
@@ -304,6 +314,7 @@ class ContractsPage {
 
     async copyLinkPopupGetLinkButtonClick() {
         await this.copyLinkPopupGetLinkButton.click();
+        await this.page.waitForTimeout(1000);
     }
 
     async copyLinkPopupExpirtaionDateFieldPastValueFill() {

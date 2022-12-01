@@ -42,6 +42,7 @@ class TemplatesPage {
     threeDotsMenuShareAccessButton: Locator;
     threeDotsMenuCreateContractButton: Locator;
     threeDotsMenuDeleteButton: Locator;
+    threeDotsMenuClose: Locator;
     deletePopupCancelButton: Locator;
     deletePopupDeleteButton: Locator;
 
@@ -84,6 +85,7 @@ class TemplatesPage {
         this.threeDotsMenuShareAccessButton = page.locator('.context-menu-share-access');
         this.threeDotsMenuCreateContractButton = page.locator('.context-menu-create-contract');
         this.threeDotsMenuDeleteButton = page.locator('.context-menu-delete');
+        this.threeDotsMenuClose = page.locator('.cdk-overlay-backdrop');
         this.deletePopupCancelButton = page.locator('#confirm-modal-cancel');
         this.deletePopupDeleteButton = page.locator('#confirm-modal-delete');
     }
@@ -125,12 +127,12 @@ class TemplatesPage {
 
     async addTemplateButtonClcik() {
         await this.addTemplateButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('#create-template-new-template');
     }
 
     async addTemplatePopupNewTemplateButtonClick() {
         await this.addTemplatePopupNewTemplateButton.click();
-        await this.page.waitForTimeout(1500);
+        await this.page.waitForSelector('#template-detail-save');
     }
 
     async addTemplatePopupChooseTemplateButtonClick() {
@@ -140,15 +142,18 @@ class TemplatesPage {
 
     async addTemplatePopupCancelButtonClick() {
         await this.addTemplatePopupCancelButton.click();
+        await this.page.locator('#create-template-new-template').isHidden();
     }
 
     async exportButtonClick() {
         await this.exportButton.click();
-        await this.page.waitForTimeout(500);
+        // await this.page.waitForSelector('#export-templates-export');
+        await this.page.waitForTimeout(1500);
     }
 
     async exportPopupXButtonClick() {
         await this.exportPopupXButton.click();
+        await this.page.locator('#export-templates-export').isHidden();
     }
 
     async exportPopupExportAllRadioButtonClick() {
@@ -161,6 +166,7 @@ class TemplatesPage {
 
     async exportPopupCancelButtonClick() {
         await this.exportPopupCancelButton.click();
+        await this.page.locator('#export-templates-export').isHidden();
     }
 
     async exportPopupExportButtonClick() {
@@ -233,9 +239,9 @@ class TemplatesPage {
 
     async threeDotsMenuEditButtonClick() {
         await this.threeDotsMenuButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('.action-edit');
         await this.threeDotsMenuEditButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('#template-detail-save');
     }
 
     async threeDotsMenuSaveAsNewButtonClick() {
@@ -264,8 +270,16 @@ class TemplatesPage {
 
     async threeDotsMenuDeleteButtonClick() {
         await this.threeDotsMenuButton.click();
-        await this.page.waitForTimeout(1000);
+        // await this.page.waitForSelector('.action-remove');
+        await this.page.waitForTimeout(500);
         await this.threeDotsMenuDeleteButton.click();
+        // await this.page.waitForSelector('#confirm-modal-delete');
+        await this.page.waitForTimeout(500);
+    }
+
+    async threeDotsMenuCloseAction() {
+        await this.threeDotsMenuClose.click();
+        await this.page.locator('.mat-menu-content').isHidden();
     }
 
     async deletePopupCancelButtonClick() {
@@ -275,7 +289,7 @@ class TemplatesPage {
 
     async deletePopupDeleteButtonClick() {
         await this.deletePopupDeleteButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.locator('#confirm-modal-delete').isHidden();
     }
 }
 

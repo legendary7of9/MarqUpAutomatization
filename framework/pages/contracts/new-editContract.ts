@@ -28,10 +28,10 @@ class NewEditContractPage {
     constructor(page: Page) {
         this.page = page;
         this.alertIcon = page.locator('.warning-icon');
-        this.alertIconPopupXButton = page.locator('#copy-link-cancel-cross'); //to be refactored, it's work but incorrect name of the selector
-        this.alertIconPopupDoNotShowCheckbox = page.locator('#confirm-create-deal-do-not-show-again');
-        this.alertIconPopupApplyButton = page.locator('#copy-link-copy-link'); //to be refactored, it's work but incorrect name of the selector
-        this.alertIconPopupCancelButton = page.locator('#copy-link-cancel'); //to be refactored, it's work but incorrect name of the selector
+        this.alertIconPopupXButton = page.locator('#warning-cancel-cross');
+        this.alertIconPopupDoNotShowCheckbox = page.locator('#warning-do-not-show-again');
+        this.alertIconPopupApplyButton = page.locator('#warning-apply');
+        this.alertIconPopupCancelButton = page.locator('#warning-cancel');
         this.contractTitleField = page.locator('[formcontrolname="title"]');
         this.contractDescriptionTitleField = page.locator('[formcontrolname="description"]');
         this.saveAndGenerateLinkButton = page.locator('#contract-detail-save-and-generate');
@@ -93,14 +93,26 @@ class NewEditContractPage {
         await this.page.waitForSelector('#contract-view-copy-link');
     }
 
+    async saveAndGenerateLinkButtonForErrorClick() {
+        await this.saveAndGenerateLinkButton.click();
+    }
+
     async saveButtonClick() {
         await this.saveButton.click();
-        await this.page.waitForURL('/contracts/list?&sort=-created_at');
+        await this.page.waitForURL('/contracts/list?&sort=-updated_at');
+    }
+
+    async saveButtonForErrorClick() {
+        await this.saveButton.click();
     }
 
     async saveAndSubmitButtonClick() {
         await this.saveAndSubmitButton.click();
         await this.page.waitForSelector('#contract-view-edit');
+    }
+
+    async saveAndSubmitButtonForErrorClick() {
+        await this.saveAndSubmitButton.click();
     }
 
     async publishToggleClick() {
@@ -134,7 +146,7 @@ class NewEditContractPage {
 
     async editVariablesConfiguratorClick() {
         await this.editVariablesConfigurator.click();
-        await this.page.waitForTimeout(500);
+        await this.page.waitForTimeout(1000);
     }
 
     async configuratorVariableValue0Click() {
