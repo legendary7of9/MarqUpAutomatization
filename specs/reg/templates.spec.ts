@@ -9,6 +9,32 @@ import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
 // test.describe.parallel("templatesPage", () => {
 
+
+    // 20 failed
+    // [webkit] › specs/reg/templates.spec.ts:16:1 › visibilityTheTemplateCreatedBySAForAA/AU @regClickTractsMedium @templates 
+    // [webkit] › specs/reg/templates.spec.ts:131:1 › displayingHoverWithNotesOnTemplateName @regClickTractsMedium @templates 
+    // [webkit] › specs/reg/templates.spec.ts:164:1 › sizeOfNotesHoverOnTemplateName @regClickTractsLow @templates 
+    // [webkit] › specs/reg/templates.spec.ts:196:1 › displayingEditIconInFrontOfTemplateName @regClickTractsLow @templates 
+    // [webkit] › specs/reg/templates.spec.ts:274:1 › displayingVisibilityIcon @regClickTractsMedium @templates 
+    // [webkit] › specs/reg/templates.spec.ts:353:1 › displayingTheAccordingInfoInPermissionsColumn @regClickTractsLow @templates 
+    // [webkit] › specs/reg/templates.spec.ts:449:1 › sortingOnTheListOfTemplatesPage @regClickTractsLow @templates 
+    // [webkit] › specs/reg/templates.spec.ts:871:1 › displayingInfoInTheConfirmBackgroundExportPopup @regClickTractsLow @templates @templatesExport 
+    // [webkit] › specs/reg/templates.spec.ts:1403:1 › SACanSaveAsNewTemplateCreatedByAA @regClickTractsLow @templates @templates3dotsMenu 
+    // [webkit] › specs/reg/templates.spec.ts:1608:1 › SACanShareTemplatesCreatedByAA @regClickTractsMedium @templates @templates3dotsMenu 
+    // [webkit] › specs/reg/templates.spec.ts:1839:1 › deleteButton3dotsMenu @regClickTractsMedium @templates @templates3dotsMenu 
+    // [webkit] › specs/reg/templates.spec.ts:1910:1 › displaying/NotDisplayingDeleteTemplatesButton @regClickTractsLow @templates @templatesDeleteTemplates 
+    // [chrome] › specs/reg/templates.spec.ts:131:1 › displayingHoverWithNotesOnTemplateName @regClickTractsMedium @templates 
+    // [chrome] › specs/reg/templates.spec.ts:164:1 › sizeOfNotesHoverOnTemplateName @regClickTractsLow @templates 
+    // [chrome] › specs/reg/templates.spec.ts:196:1 › displayingEditIconInFrontOfTemplateName @regClickTractsLow @templates 
+    // [chrome] › specs/reg/templates.spec.ts:371:1 › displaying/ValidationModelColumn @regClickTractsLow @templates 
+    // [chrome] › specs/reg/templates.spec.ts:997:1 › gettingEmailWithCSVFile @regClickTractsMedium @templates @templatesExport 
+    // [chrome] › specs/reg/templates.spec.ts:1276:1 › templateWithSetUpVisibilityOnly @regClickTractsHigh @templates @templates3dotsMenu 
+    // [chrome] › specs/reg/templates.spec.ts:1475:1 › deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @templates @templates3dotsMenu 
+    // [chrome] › specs/reg/templates.spec.ts:2006:1 › validationDeleteButtonDoUReallyWantToDeletePopup @regClickTractsLow @templates @templatesDeleteTemplates 
+
+
+
+
 test.beforeEach(async ({ page }) => {
     await page.goto('');
 });
@@ -29,7 +55,7 @@ test('visibilityTheTemplateCreatedBySAForAA/AU @regClickTractsMedium @templates'
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.shareAccessButtonClick();
     await newTemplate.shareAccessPopupSearchFieldFill();
@@ -114,7 +140,7 @@ test('openingViewTemplatePageTappingOnTemplateName @regClickTractsLow @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -143,6 +169,7 @@ test('displayingHoverWithNotesOnTemplateName @regClickTractsMedium @templates', 
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -150,7 +177,6 @@ test('displayingHoverWithNotesOnTemplateName @regClickTractsMedium @templates', 
     await page.waitForTimeout(500);
     await expect(templateNameHover).toBeHidden();
     await templatesPage.threeDotsMenuEditButtonClick();
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
     await templateColumn.hover();
@@ -176,7 +202,7 @@ test('sizeOfNotesHoverOnTemplateName @regClickTractsLow @templates', async ({ pa
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesField.fill('autotest');
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -184,7 +210,6 @@ test('sizeOfNotesHoverOnTemplateName @regClickTractsLow @templates', async ({ pa
     await expect(templateNameHover).toHaveCSS('width', '292px');
     await expect(templateNameHover).toHaveCSS('height', '15px');
     await templatesPage.threeDotsMenuEditButtonClick();
-    await newTemplate.notesField.fill('autotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestautotestauto');
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
     await templateColumn.hover();
@@ -211,7 +236,7 @@ test('displayingEditIconInFrontOfTemplateName @regClickTractsLow @templates', as
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -1192,7 +1217,7 @@ test('editButtonWhenTemplateIsSharedBySa @regClickTractsLow @templates @template
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.shareAccessButtonClick();
     await newTemplate.shareAccessPopupSearchFieldFill();
@@ -1290,7 +1315,7 @@ test('templateWithSetUpVisibilityOnly @regClickTractsHigh @templates @templates3
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newEditTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newEditTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newEditTemplate.selectCategoryName();
     await newEditTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newEditTemplate.publishToggleClick();
     await newEditTemplate.saveButtonClick();
@@ -1417,7 +1442,7 @@ test('SACanSaveAsNewTemplateCreatedByAA @regClickTractsLow @templates @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.publishToggleClick();
     await newTemplate.saveButtonClick();
@@ -1452,7 +1477,7 @@ test('SACanSaveAsNewTemplateCreatedByAA @regClickTractsLow @templates @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await userBar.userInfoButtonClick();
@@ -1490,7 +1515,7 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.publishToggleClick();
     await newTemplate.saveButtonClick();
@@ -1512,7 +1537,7 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -1542,7 +1567,7 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.publishToggleClick();
     await newTemplate.saveButtonClick();
@@ -1576,7 +1601,6 @@ test('deletePopupForPublishedTemplates3dotsMenu @regClickTractsMedium @templates
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await userBar.userInfoButtonClick();
@@ -1623,7 +1647,7 @@ test('SACanShareTemplatesCreatedByAA @regClickTractsMedium @templates @templates
     await page.waitForURL('/dashboard');
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await userBar.userInfoButtonClick();
@@ -1763,7 +1787,7 @@ test('solutionAdminCanSeeAllTemplates3dotsMenu @regClickTractsHigh @templates @t
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await userBar.userInfoButtonClick();
@@ -1788,7 +1812,7 @@ test('solutionAdminCanSeeAllTemplates3dotsMenu @regClickTractsHigh @templates @t
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.publishToggleClick();
     await newTemplate.saveButtonClick();
@@ -1862,7 +1886,7 @@ test('deleteButton3dotsMenu @regClickTractsMedium @templates @templates3dotsMenu
     await templatesPage.addTemplateButtonClcik();
     await templatesPage.addTemplatePopupNewTemplateButtonClick();
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
-    await newTemplate.notesFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -2023,10 +2047,12 @@ test('validationDeleteButtonDoUReallyWantToDeletePopup @regClickTractsLow @templ
     await page.waitForURL('/dashboard');
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');
@@ -2045,10 +2071,12 @@ test('validationDeleteButtonDoUReallyWantToDeletePopup @regClickTractsLow @templ
     await expect(templateNameValue).not.toContainText('autotest');
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
+    await newTemplate.selectCategoryName();
     await newTemplate.textEditorFieldRandomFill(Helpers.generateRandomString());
     await newTemplate.saveButtonClick();
     await page.goto('/contract-templates/list?&sort=-updated_at');

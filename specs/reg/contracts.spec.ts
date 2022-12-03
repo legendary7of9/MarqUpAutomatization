@@ -12,6 +12,66 @@ import { NewEditContractPage } from '../../framework'
 import { ViewContract } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+
+
+// 55 failed
+// [webkit] › specs/reg/contracts.spec.ts:47:1 › displayingContractsRequestsTab @regClickTractsMedium @contracts 
+// [webkit] › specs/reg/contracts.spec.ts:77:1 › displayingCounterOnTheRequestsTab @regClickTractsLow @contracts 
+// [webkit] › specs/reg/contracts.spec.ts:155:1 › sortingOnTheContracts&RequestsTab @regClickTractsLow @contracts 
+// [webkit] › specs/reg/contracts.spec.ts:287:1 › appearingContratctsOnContractsTabApprovedByAA @regClickTractsHigh @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:339:1 › appearingContractsOnContractsTabAASavesContractWhichRejectedByAA @regClickTractsHigh @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:384:1 › displayingTheAlertIcon @regClickTractsHigh @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:424:1 › displayingHoverOverTheAlertButton @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:598:1 › displayingLinkIcon @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:630:1 › validationTheLinkSymbol @regClickTractsMedium @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:669:1 › displaying2TypesOfTextInTheEmbededLinkPopup @regClickTractsMedium @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:764:1 › displayingVisibilityColumn @regClickTractsMedium @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:812:1 › displayingStatusIcon @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:839:1 › behaviorTheTemplatesName @regClickTractsHigh @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:908:1 › displayingHoverForTemplateName @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:948:1 › paytractsColumnForContracts/ContractRequestsTab @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:995:1 › displayingTheClientNameColumn @regClickTractsLow @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:1064:1 › signaturesColumnOnTheContractTab @regClickTractsHigh @contracts @contractsTab 
+// [webkit] › specs/reg/contracts.spec.ts:1107:1 › displayingVisibilityColumnIfVisibilityRestrictionWasChangedInContract @regClickTractsMedium @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:77:1 › displayingCounterOnTheRequestsTab @regClickTractsLow @contracts 
+// [chrome] › specs/reg/contracts.spec.ts:287:1 › appearingContratctsOnContractsTabApprovedByAA @regClickTractsHigh @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:339:1 › appearingContractsOnContractsTabAASavesContractWhichRejectedByAA @regClickTractsHigh @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:384:1 › displayingTheAlertIcon @regClickTractsHigh @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:424:1 › displayingHoverOverTheAlertButton @regClickTractsLow @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:500:1 › validationOfTheContractNameColumn @regClickTractsMedium @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:598:1 › displayingLinkIcon @regClickTractsLow @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:669:1 › displaying2TypesOfTextInTheEmbededLinkPopup @regClickTractsMedium @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:709:1 › validationOfTheLinksInTheEmbededLinkPopup @regClickTractsHigh @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:812:1 › displayingStatusIcon @regClickTractsLow @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:1022:1 › userColumnOnTheContractTab @regClickTractsMedium @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:1195:1 › behaviorOfContractWhenWasDeletedTheTemplate @regClickTractsHigh @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:1302:1 › AA/AUCanSeeTheContractsWhichWereCreatedByOtherOneOfTheSameClient @regClickTractsMedium @contracts @contractsTab 
+// [chrome] › specs/reg/contracts.spec.ts:1374:1 › validationOfTheCopyLinkButtonAA/AU @regClickTractsHigh @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1423:1 › elementsInTheCopyContractLinkPopup @regClickTractsMedium @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1471:1 › validationOfTheCopyLinkButtonPermanentLinkPopup @regClickTractsHigh @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1490:1 › elementsInTheCopyContractLinkPopupExpiringLink @regClickTractsHigh @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1566:1 › validationOfTheGetLinkButtonExpirationDateIsntFilled @regClickTractsHigh @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1585:1 › validationOfTheGetLinkButtonExpirationDatePastDate @regClickTractsLow @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1604:1 › behaviorGetLinkItemAppliedForExpirationDateCopyContractLinkPopup @regClickTractsHigh @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1650:1 › validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTractsLow @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:1693:1 › validationOfTheCopyContractLinkPopupContractWithModel @regClickTractsHigh @contracts @contractsCopyLink 
+// [chrome] › specs/reg/contracts.spec.ts:2207:1 › availabilityDeleteButtonOfContractWhichUrlWasAddedToAnotherOfAnotherClientSharedTemplateSA @regClickTractsMedium @contracts @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:2337:1 › validationOfTheDeleteButtonOnTheDeletePopup @regClickTractsHigh @contracts @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:2580:1 › availabilityOfTheDisablePayTractsButton @regClickTractsMedium @contracts @contracts3dotsMenu 
+// [chrome] › specs/reg/contracts.spec.ts:2780:1 › displayingRejectedStatusOfTheContractForAA @regClickTractsHigh @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:2841:1 › submittedColumnOnTheContractRequestTab @regClickTractsLow @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:2877:1 › reviewed/NotesColumnOnTheContractRequestTab @regClickTractsMedium @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:2953:1 › displayingThreeDotsMenuOnTheContractRequestsTab @regClickTractsMedium @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:3023:1 › disappearingTheContractFromListWhenAAApproved @regClickTractsHigh @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:3069:1 › disappearingTheContractFromListWhenAA/AUSaveInDraftRejectedByAA @regClickTractsHigh @contracts @contractsRequestsTabAA 
+// [chrome] › specs/reg/contracts.spec.ts:3210:1 › displayingContractNameOnTheMyContractRequestsTab @regClickTractsHigh @contracts @myContractsRequestsTabAU 
+// [chrome] › specs/reg/contracts.spec.ts:3293:1 › displayingSubmittedColumnForAU @regClickTractsLow @contracts @myContractsRequestsTabAU 
+// [chrome] › specs/reg/contracts.spec.ts:3345:1 › notesColumnOnTheMyContractRequestTab @regClickTractsMedium @contracts @contractsRequestsTabAU 
+// [chrome] › specs/reg/contracts.spec.ts:3386:1 › validationEdit/DeleteThreeDotsMenuOnTheMyContractRequestsTab @regClickTractsMedium @contracts @myContractsRequestsTabAU 
+// [chrome] › specs/reg/contracts.spec.ts:3433:1 › disappearingTheContractFromListWhenAAApprovedForAU @regClickTractsHigh @contracts @contractsRequestsTabAU 
+// [chrome] › specs/reg/contracts.spec.ts:3480:1 › disappearingTheContractFromListWhenAA/AUSaveInDraftRejectedByAAForAU @regClickTractsHigh @contracts @contractsRequestsTabAU
+
+
 test.beforeEach(async ({ page }, testInfo) => {
     await page.goto('');
 });
@@ -1481,7 +1541,8 @@ test('validationOfTheCopyLinkButtonPermanentLinkPopup @regClickTractsHigh @contr
     await page.goto('/contracts/list?&sort=-created_at');
     await contractsPage.rightArrowClick();
     await contractsPage.copyLinkButtonClickAAAU();
-    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await contractsPage.copyLinkPopupPermanentRadioButtonClick();
+    await contractsPage.copyLinkPopupCopyLinkButtonPermanentClick();
     await expect(copyLinkPopup).toBeHidden();
     await expect(copyLinkPopupHeaderText).toBeHidden();
 });
@@ -1621,7 +1682,8 @@ test('behaviorGetLinkItemAppliedForExpirationDateCopyContractLinkPopup @regClick
     const expiringFieldValue = await page.locator('[placeholder="Expiring Contract Link"]').inputValue();
     await expect(expiringFieldValue).toContain('https://signdoc.contractsrx.com/');
     await expect(expiredMessage).toBeVisible();
-    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await contractsPage.copyLinkPopupGetLinkButtonClick();
+    await contractsPage.copyLinkPopupCopyLinkButtonExpiryClick();
     await expect(copyLinkPopup).toBeHidden();
 });
 
@@ -1661,7 +1723,7 @@ test('validationOfTheCopyLinkButtonExpirationLinkContractLinkPopup @regClickTrac
     await contractsPage.copyLinkPopupExpiringRadioButtonClick();
     await contractsPage.copyLinkPopupExpirtaionDateFieldPositiveValueFill();
     await contractsPage.copyLinkPopupGetLinkButtonClick();
-    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await contractsPage.copyLinkPopupCopyLinkButtonExpiryClick();
     await contractsPage.skipCreateDealForContractPopup();
     await expect(copyLinkPopup).toBeHidden();
 });
@@ -1727,7 +1789,8 @@ test('validationOfTheCopyContractLinkPopupContractWithModel @regClickTractsHigh 
     await expect(createDealPopupCancelButton).toBeVisible();
     await contractsPage.copyContractLinkPopupContractWithModelCancelButtonClick();
     await contractsPage.copyLinkButtonClickAAAU();
-    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await contractsPage.copyLinkPopupPermanentRadioButtonClick();
+    await contractsPage.copyLinkPopupCopyLinkButtonPermanentClick();
     await expect(createDealPopup).toBeVisible();
     await expect(createDealPopupText).toBeVisible();
     await expect(createDealPopupText).toHaveText(' Do you want to create a Deal for this contract? ');
@@ -1746,7 +1809,8 @@ test('validationOfTheCopyContractLinkPopupContractWithModel @regClickTractsHigh 
     await contractsPage.copyLinkPopupCancelButtonClick();
     await expect(createDealPopup).toBeHidden();
     await contractsPage.copyLinkButtonClickAAAU();
-    await contractsPage.copyLinkPopupCopyLinkButtonClick();
+    await contractsPage.copyLinkPopupPermanentRadioButtonClick();
+    await contractsPage.copyLinkPopupCopyLinkButtonPermanentClick();
     await expect(createDealPopup).toBeHidden();
 });
 
