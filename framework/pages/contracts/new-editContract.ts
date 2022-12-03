@@ -134,11 +134,12 @@ class NewEditContractPage {
 
     async contractFeeValueChoose() {
         await this.contractFee.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForTimeout(1500);
         if (await this.contractFeeValue.isHidden()) 
         {
-            this.page.waitForTimeout(1000);
+            this.page.waitForTimeout(1500);
             this.contractFee.click();
+            this.page.waitForTimeout(1500);
         }
         await this.page.waitForSelector('.mat-select-content');
         await this.contractFeeValue.click();

@@ -20,141 +20,78 @@ test.beforeEach(async ({ page }, testInfo) => {
 });
 
 
-test('displaying/NotDisplayingTheAlertIcon @regClickTractsHigh @addEditContract @generalCases', async ({ page }) => {
+test('behaviorForHasAlreadyInsertedVariableAfterChangingTheContentType @regClickTractsHigh @addEditTemplate @generalCases', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const userBar = new UserBar(page);
     const newTemplate = new NewEditCopyTemplatePage(page);
-    const newContract = new NewEditContractPage(page);
-    const viewTemplate = new ViewTemplatePage(page);
-    const viewContract = new ViewContract(page);
-    const contracts = new ContractsPage(page);
     const templatesPage = new TemplatesPage(page);
+    const viewTemplate = new ViewTemplatePage(page);
+    const variable0ContentType = page.locator('[formcontrolname="input_type"] >> nth=0');
+    const optionField0 = page.locator('[placeholder="Enter option"] >> nth=0');
     const templateName = page.locator('.template-name-column-link >> nth=0');
-    const contractName = page.locator('.contracts-name-column-link >> nth=0');
-    const alertIcon = page.locator('.warning-icon');
-    console.log('addEditContract Displaying/Not Displaying The Alert Icon');
+    const threeDotsVariablesPanelOption0 = page.locator('.mat-icon-button >> nth=0');
+    const variable0 = page.locator('[name="elementName_1"] >> nth=0');
+    const variableContentTypeValue = page.locator('#configurator-variable-elementName_1 .rdl-variable-type-value');
+    const variableLabelValue = page.locator('#configurator-variable-elementName_1 mat-form-field mat-label');
+    console.log('addEditTemplate Behavior For Has Already Inserted Variable After Changing The Content Type');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/contract-template/create');
     await newTemplate.templateTitleFieldFill(Helpers.generateRandomString());
     await newTemplate.selectCategoryName();
-    await newTemplate.textEditorField.type('test100test');
+    await newTemplate.textEditorField.type('test100testAutotest \n \n \n');
+    await newTemplate.editVariablePanelOpen();
+    await newTemplate.newVariableBttonClick();
+    await newTemplate.listRadioButtonClick();
+    await variable0ContentType.click();
+    await newTemplate.listNumberVariableClick();
+    await optionField0.type('567892');
+    await newTemplate.editVariablePanelClose();
+    await newTemplate.textEditorField.click();
+    await page.waitForTimeout(500);
+    await threeDotsVariablesPanelOption0.click();
+    await page.waitForSelector('.action-list');
+    await page.waitForTimeout(1000);
+    if (await page.locator('.action-list').isHidden()) {
+        await threeDotsVariablesPanelOption0.click();
+        await page.waitForSelector('.action-list');
+        await page.waitForTimeout(1000);
+    }
+    await newTemplate.threeDotsMenuVariablePanelInsertButtonClick();
     await newTemplate.publishToggleClick();
-    await newTemplate.createContractButtonClick();
-    await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
-    await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
-    await newContract.publishToggleClick();
-    await newContract.saveAndGenerateLinkButtonClick();
+    await newTemplate.saveButtonClick();
+    await variable0.click();
+    await expect(variableContentTypeValue).toHaveText(' List • 1 option');
+    await expect(variableLabelValue).toHaveText('number');
+    await viewTemplate.editVariablesPanelClose();
+    await viewTemplate.createContractButtonClick();
+    await variable0.click();
+    await expect(variableContentTypeValue).toHaveText(' List • 1 option');
+    await expect(variableLabelValue).toHaveText('number');
     await page.goto('/contract-templates/list?&sort=-updated_at');
     const templateNameValue0 = await templateName.innerText();
-    if (templateNameValue0.includes('autotest'))
-    {
+    if (templateNameValue0.includes('autotest')) {
         await templateName.click();
     }
     await viewTemplate.editTemplateButtonClick();
-    await newTemplate.textEditorField.type('test100test100test');
+    await variable0.click();
+    await newTemplate.inputRadioButtonClick();
+    await variable0ContentType.click();
+    await newTemplate.inputTextVariableClick();
+    await newTemplate.editVariablePanelClose();
     await newTemplate.saveButtonClick();
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValue0 = await contractName.innerText();
-    if (contractNameValue0.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeHidden();
-    await viewContract.backToDraftButtonClick();
-    await newContract.saveButtonClick();
+    await variable0.click();
+    await expect(variableContentTypeValue).toHaveText(' Input • text');
+    await expect(variableLabelValue).toHaveText('text');
+    await viewTemplate.editVariablesPanelClose();
+    await viewTemplate.createContractButtonClick();
+    await variable0.click();
+    await expect(variableContentTypeValue).toHaveText(' Input • text');
+    await expect(variableLabelValue).toHaveText('text');
     await page.goto('/contract-templates/list?&sort=-updated_at');
     const templateNameValue1 = await templateName.innerText();
     if (templateNameValue1.includes('autotest'))
-    {
-        await templateName.click();
-    }
-    await viewTemplate.editTemplateButtonClick();
-    await newTemplate.textEditorField.type('test100test');
-    await newTemplate.draftToggleClick();
-    await newTemplate.saveButtonClick();
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValue1 = await contractName.innerText();
-    if (contractNameValue1.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeHidden();
-    await newContract.saveButtonClick();
-    await page.goto('/contract-templates/list?&sort=-updated_at');
-    const templateNameValue2 = await templateName.innerText();
-    if (templateNameValue2.includes('autotest'))
-    {
-        await templateName.click();
-    }
-    await viewTemplate.editTemplateButtonClick();
-    await newTemplate.textEditorField.type('test100test100test');
-    await newTemplate.publishToggleClick();
-    await newTemplate.saveButtonClick();
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValue2 = await contractName.innerText();
-    if (contractNameValue2.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeVisible();
-    await userBar.logOutAction();
-    await users.SA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValueSA = await contractName.innerText();
-    if (contractNameValueSA.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeHidden();
-    await userBar.logOutAction();
-    await users.AA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValue3 = await contractName.innerText();
-    if (contractNameValue3.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeVisible();
-    await newContract.alertIconClick();
-    await newContract.alertIconPopupDoNotShowCheckboxClick();
-    await newContract.alertIconPopupApplyButtonClickCheckboxChecked();
-    await expect(alertIcon).toBeHidden();
-    await newContract.saveButtonClick();
-    await page.goto('/contract-templates/list?&sort=-updated_at');
-    const templateNameValue3 = await templateName.innerText();
-    if (templateNameValue3.includes('autotest'))
-    {
-        await templateName.click();
-    }
-    await viewTemplate.editTemplateButtonClick();
-    await newTemplate.textEditorField.type('test100test100test100test');
-    await newTemplate.publishToggleClick();
-    await newTemplate.saveButtonClick();
-    await page.goto('/contracts/list?&sort=-created_at');
-    const contractNameValue4 = await contractName.innerText();
-    if (contractNameValue4.includes('autotest'))
-    {
-        await contractName.click();
-    }
-    await expect(alertIcon).toBeHidden();
-    await newContract.saveButtonClick();
-    const contractNameValue5 = await contractName.innerText();
-    if (contractNameValue5.includes('autotest'))
-    {
-        await contracts.rightArrowClick();
-        await contracts.threeDotsMenuDeleteButtonClick();
-        await contracts.threeDotsMenuDeletePopupDeleteButtonClick();
-    }
-    await page.goto('/contract-templates/list?&sort=-updated_at');
-    const templateNameValue4 = await templateName.innerText();
-    if (templateNameValue4.includes('autotest'))
     {
         await templateName.click();
         await viewTemplate.editTemplateButtonClick();
@@ -164,7 +101,11 @@ test('displaying/NotDisplayingTheAlertIcon @regClickTractsHigh @addEditContract 
         await templatesPage.threeDotsMenuDeleteButtonClick();
         await templatesPage.deletePopupDeleteButtonClick();
     }
+    await page.goto('');
 });
+
+
+// test.skip(browserName === 'chromium');
 
 
 // await page.goto('/contract-template/edit/2354');

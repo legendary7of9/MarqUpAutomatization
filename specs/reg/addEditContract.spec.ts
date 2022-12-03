@@ -11,6 +11,52 @@ import { NewEditContractPage } from '../../framework'
 import { ViewContract } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+
+
+// 34 failed
+// [webkit] › specs\reg\addEditContract.spec.ts:18:1 › displaying/NotDisplayingTheAlertIcon @regClickTractsHigh @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:293:1 › displayingItemsInTheWarningPopup @regClickTractsMedium @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:968:1 › checkingSwitchesBetweenStatuses/Iicon @regClickTractsMedium @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:1123:1 › displayingTheVariableName @regClickTractsMedium @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:1220:1 › hoveringTheVaariables @regClickTractsLow @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:1320:1 › validationOfTheSaveButtonWarningFunctionality @regClickTractsHigh @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:3677:1 › checkingDeletingTheNestedWithSavingTheContract @regClickTractsLow @addEditContract @variables @VariablesPanelTextarea 
+// [webkit] › specs\reg\addEditContract.spec.ts:3842:1 › behaviorForInput/ListTextareaVariableWarningPopup @regClickTractsHigh @addEditContract @variables @variablesPanelTextarea 
+// [webkit] › specs\reg\addEditContract.spec.ts:4528:1 › behaviorForInput/ListSignerVariableWarningPopup @regClickTractsHigh @addEditContract @variables @variablesPanelSignerVariables 
+// [chrome] › specs\reg\addEditContract.spec.ts:18:1 › displaying/NotDisplayingTheAlertIcon @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:164:1 › checkingHoveringTheAlertIcon @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:230:1 › validationOfTheAlertIcon @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:293:1 › displayingItemsInTheWarningPopup @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:369:1 › validationOfTheTemplateHyperlinkInTheWarningPopup @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:447:1 › validationOfTheDoNotShowAgainCheckbox @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:632:1 › validationOfTheCancelButtonAlertPopup @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:700:1 › validationForTheContractTitleInputField @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:798:1 › displaying/ValidationOfTheNotificationsField @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:930:1 › notificationsFieldSuggestionsPopup/Tooltip @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:968:1 › checkingSwitchesBetweenStatuses/Iicon @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:1123:1 › displayingTheVariableName @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:1320:1 › validationOfTheSaveButtonWarningFunctionality @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:1547:1 › validationOfTheSaveAndGenerateLinkButtonWarningFunctionality @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:1914:1 › validationOfTheSaveAndSubmitButtonWarningFunctionality @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2125:1 › validationOfThePreviewContractButtonWarningFunctional @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2222:1 › validationOfThePreviewButtonWhenTemplateAndContractEdited @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2342:1 › editDraftContractByAUCreatedByAAApprovalRequired @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2391:1 › savingByAUinTheDraftStatusAfterAAReject @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2536:1 › displayingACorrectImage @regClickTractsMedium @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2840:1 › validationOfTheTabKey @regClickTractsMedium @addEditContract @variables @variablesPanel 
+// [chrome] › specs\reg\addEditContract.spec.ts:3220:1 › checkingTheDateContentType @regClickTractsHigh @addEditContract @variables @VariablesPanelInputTypes 
+// [chrome] › specs\reg\addEditContract.spec.ts:3526:1 › checkingDisplayingTheCertainVariablesInTheTextEditor @regClickTractsHigh @addEditContract @variables @VariablesPanelTextarea 
+// [chrome] › specs\reg\addEditContract.spec.ts:3575:1 › behaviorOfTheVariablesDropdownWhenNoContentTypesAreAdded @regClickTractsLow @addEditContract @variables @VariablesPanelTextarea 
+// [chrome] › specs\reg\addEditContract.spec.ts:3677:1 › checkingDeletingTheNestedWithSavingTheContract @regClickTractsLow @addEditContract @variables @VariablesPanelTextarea 
+// 6 flaky
+// [webkit] › specs\reg\addEditContract.spec.ts:2125:1 › validationOfThePreviewContractButtonWarningFunctional @regClickTractsHigh @addEditContract @generalCases 
+// [webkit] › specs\reg\addEditContract.spec.ts:2775:1 › editing/Re-editingTheVariables @regClickTractsHigh @addEditContract @variables @variablesPanel 
+// [chrome] › specs\reg\addEditContract.spec.ts:552:1 › validationOfTheApplyButtonAlertPopup @regClickTractsHigh @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:2325:1 › displayingTheWatermarkItems @regClickTractsLow @addEditContract @generalCases 
+// [chrome] › specs\reg\addEditContract.spec.ts:3821:1 › checkingTheSymbolsCounterOfTheTextEditor @regClickTractsLow @addEditContract @variables @VariablesPanelTextarea 
+// [chrome] › specs\reg\addEditContract.spec.ts:4528:1 › behaviorForInput/ListSignerVariableWarningPopup @regClickTractsHigh @addEditContract @variables @variablesPanelSignerVariables 
+
+
 test.beforeEach(async ({ page }, testInfo) => {
     await page.goto('');
 });

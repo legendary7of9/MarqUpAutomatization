@@ -276,31 +276,37 @@ class NewEditCopyTemplatePage {
 
     async inputTextVariableClick() {
         await this.inputTextVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async inputDateVariableClick() {
-        await this.inputDateVariable.click();
+        await this.inputDateVariable.click();3
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async inputNumberVariableClick() {
         await this.inputNumberVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async inputUrlVariableClick() {
         await this.inputUrlVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async inputCheckboxVariableClick() {
         await this.inputCheckboxVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async inputTextareaVariableClick() {
         await this.inputTextareaVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
@@ -310,76 +316,91 @@ class NewEditCopyTemplatePage {
 
     async listTextVariableClick() {
         await this.listTextVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async listDateVariableClick() {
         await this.listDateVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async listNumberVariableClick() {
         await this.listNumberVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async listUrlVariableClick() {
         await this.listUrlVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async listTriggeredTextVariableClick() {
         await this.listTriggeredTextVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async listMultipleChoiceVariableClick() {
         await this.listMultipleChoiceVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerInputTextVariableClick() {
         await this.signerInputTextVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerInputDateVariableClick() {
         await this.signerInputDateVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerInputNumberVariableClick() {
         await this.signerInputNumberVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerInputUrlVariableClick() {
         await this.signerInputUrlVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerListTextVariableClick() {
         await this.signerListTextVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerListDateVariableClick() {
         await this.signerListDateVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerListNumberVariableClick() {
         await this.signerListNumberVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async signerListUrlVariableClick() {
         await this.signerListUrlVariable.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
     async textEditorFieldNestedDropDownClick() {
         await this.textEditorFieldNestedDropDown.click();
+        await this.page.waitForTimeout(500);
         await this.page.locator('.mat-select-content').isHidden();
     }
 
