@@ -10,7 +10,7 @@ class EndUserPage {
     firstNameField: Locator;
     lastNameField: Locator;
     legalEntityNameField: Locator;
-    addressField: Locator;
+    titleField: Locator;
     emailField: Locator;
     confirmEmailField: Locator;
     signatureField: Locator;
@@ -31,7 +31,7 @@ class EndUserPage {
         this.firstNameField = page.locator('#contractsignform-first_name');
         this.lastNameField = page.locator('#contractsignform-last_name');
         this.legalEntityNameField = page.locator('#contractsignform-company_name');
-        this.addressField = page.locator('#contractsignform-address');
+        this.titleField = page.locator('#contractsignform-title');
         this.emailField = page.locator('#contractsignform-email');
         this.confirmEmailField = page.locator('#contractsignform-confirm_email');
         this.signatureField = page.locator('#contractsignform-signature');
@@ -63,8 +63,8 @@ class EndUserPage {
         await this.legalEntityNameField.fill(text);
     }
 
-    async addressFieldRandomFill(text:string) {
-        await this.addressField.fill(text);
+    async titleFieldRandomFill(text:string) {
+        await this.titleField.fill(text);
     }
 
     async signatureFieldRandomFill(text:string) {

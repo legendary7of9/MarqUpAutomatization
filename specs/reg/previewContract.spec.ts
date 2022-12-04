@@ -27,6 +27,36 @@ import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 import { HelpersText } from '../../lib/helpers/textForTemplates.preload'
 
 
+
+// 26 failed
+// [webkit] › specs/reg/previewContract.spec.ts:109:1 › test › viewOfThePreviewContractPages @regClickTractsMedium @previewContract @previewContractGeneral 
+// [webkit] › specs/reg/previewContract.spec.ts:268:1 › test › displayingDealHyperlink @regClickTractsMedium @previewContract @previewContractGeneral 
+// [webkit] › specs/reg/previewContract.spec.ts:299:1 › test › displayingTheSignerVariables @regClickTractsMedium @previewContract @previewContractGeneral 
+// [webkit] › specs/reg/previewContract.spec.ts:439:1 › test › displayingTriggeredText @regClickTractsLow @previewContract @previewContractGeneral 
+// [webkit] › specs/reg/previewContract.spec.ts:586:1 › test › displayingBackToDraftButtonForPublishedContracts @regClickTractsMedium @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:625:1 › test › notDisplayingTheBackToDraftButtonForPublishedContracts @regClickTractsMedium @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:648:1 › test › validationTheBackToDraftButtonAA/AUAndProcced @regClickTractsHigh @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:763:1 › test › displayingConfirmChangeContractStatusPopup @regClickTractsLow @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:871:1 › test › displayingCopyLinkButton @regClickTractsHigh @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:967:1 › test › behaviorForSingatureBlock @regClickTractsLow @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:1024:1 › test › displayingApprovedByAndDateFormatForPermissionsContracts @regClickTractsHigh @previewContract @previewContractPublished 
+// [webkit] › specs/reg/previewContract.spec.ts:1071:1 › test › displayingWatermarkOfTheTMPLAndContract @regClickTractsLow @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:109:1 › test › viewOfThePreviewContractPages @regClickTractsMedium @previewContract @previewContractGeneral 
+// [chrome] › specs/reg/previewContract.spec.ts:268:1 › test › displayingDealHyperlink @regClickTractsMedium @previewContract @previewContractGeneral 
+// [chrome] › specs/reg/previewContract.spec.ts:299:1 › test › displayingTheSignerVariables @regClickTractsMedium @previewContract @previewContractGeneral 
+// [chrome] › specs/reg/previewContract.spec.ts:586:1 › test › displayingBackToDraftButtonForPublishedContracts @regClickTractsMedium @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:625:1 › test › notDisplayingTheBackToDraftButtonForPublishedContracts @regClickTractsMedium @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:763:1 › test › displayingConfirmChangeContractStatusPopup @regClickTractsLow @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:871:1 › test › displayingCopyLinkButton @regClickTractsHigh @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:967:1 › test › behaviorForSingatureBlock @regClickTractsLow @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:1024:1 › test › displayingApprovedByAndDateFormatForPermissionsContracts @regClickTractsHigh @previewContract @previewContractPublished 
+// [chrome] › specs/reg/previewContract.spec.ts:1372:1 › test › openingPreviewScreenAUDisplayingApprovalText/RejectedTextWatermark @regClickTractsHigh @previewContract @previewContractRequestAU 
+// [chrome] › specs/reg/previewContract.spec.ts:1437:1 › test › displaying/ValidationOfTheEditButton @regClickTractsHigh @previewContract @previewContractRequestAU 
+// [chrome] › specs/reg/previewContract.spec.ts:1508:1 › test › openingPreviewByAADisplayingApprovalPendingTextAndCorrectDateAndTimeWatermark @regClickTractsHigh @previewContract @previewContractRequestAA 
+// [chrome] › specs/reg/previewContract.spec.ts:1612:1 › test › validationOfTheApprove/RejectButton @regClickTractsMedium @previewContract @previewContractRequestAA 
+// [chrome] › specs/reg/previewContract.spec.ts:1751:1 › test › validationOfTheEditButton @regClickTractsMedium @previewContract @previewContractRequestAA
+
+
 test.describe("test", () => {
     let browser: Browser;
     let context: BrowserContext;

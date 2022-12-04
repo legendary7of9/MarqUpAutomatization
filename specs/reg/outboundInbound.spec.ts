@@ -10,7 +10,32 @@ import { OutboundInboundPage } from '../../framework'
 import { EndUserPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
-
+// 25 failed
+//     [webkit] › specs/reg/outboundInbound.spec.ts:38:1 › displayingSinatoriesInfoSigningWhoHasAccount @regClickTractsHigh @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:112:1 › displayingSinatoriesInfoSigningWhoDoesntHaveAccount @regClickTractsHigh @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:158:1 › displayingSinatoriesInfoSigningWhoHasAccountButSignedOnBehalfRegistered @regClickTractsHigh 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:258:1 › displayingTheCorrectInfoForDateAndTimeColumn @regClickTractsHigh @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:356:1 › companyNameInTheCompanyColumn @regClickTractsMedium @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:445:1 › displayingThePaymentColumn @regClickTractsMedium @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:639:1 › displayingTheEmailColumn @regClickTractsLow @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:745:1 › paginationOnTheSignaturesPage @regClickTractsMedium @outboundInbound 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:788:1 › displaying3dotsMenuFirstOpenedByInfoSignedByInfo @regClickTractsMedium @outboundInbound @3dotsMenu 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:875:1 › validationOfTheManualPayment @regClickTractsHigh @outboundInbound @3dotsMenu 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:1044:1 › disappearingTheManualPaymentButton @regClickTractsMedium @outboundInbound @3dotsMenu 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:1102:1 › displayingPaidAtInformation @regClickTractsMedium @outboundInbound @3dotsMenu 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:1150:1 › resendPaymentLinkButton @regClickTractsHigh @outboundInbound @3dotsMenu 
+//     [webkit] › specs/reg/outboundInbound.spec.ts:1294:1 › displayingPayContractFee @regClickTractsHigh @outboundInbound @3dotsMenu 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:38:1 › displayingSinatoriesInfoSigningWhoHasAccount @regClickTractsHigh @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:112:1 › displayingSinatoriesInfoSigningWhoDoesntHaveAccount @regClickTractsHigh @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:158:1 › displayingSinatoriesInfoSigningWhoHasAccountButSignedOnBehalfRegistered @regClickTractsHigh 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:258:1 › displayingTheCorrectInfoForDateAndTimeColumn @regClickTractsHigh @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:356:1 › companyNameInTheCompanyColumn @regClickTractsMedium @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:445:1 › displayingThePaymentColumn @regClickTractsMedium @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:745:1 › paginationOnTheSignaturesPage @regClickTractsMedium @outboundInbound 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:788:1 › displaying3dotsMenuFirstOpenedByInfoSignedByInfo @regClickTractsMedium @outboundInbound @3dotsMenu 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:875:1 › validationOfTheManualPayment @regClickTractsHigh @outboundInbound @3dotsMenu 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:1102:1 › displayingPaidAtInformation @regClickTractsMedium @outboundInbound @3dotsMenu 
+//     [chrome] › specs/reg/outboundInbound.spec.ts:1294:1 › displayingPayContractFee @regClickTractsHigh @outboundInbound @3dotsMenu 
 
 
 test.beforeEach(async ({ page }, testInfo) => {
@@ -67,7 +92,7 @@ test('displayingSinatoriesInfoSigningWhoHasAccount @regClickTractsHigh @outbound
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -125,7 +150,7 @@ test('displayingSinatoriesInfoSigningWhoDoesntHaveAccount @regClickTractsHigh @o
     await endUser.firstNameFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.lastNameFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.legalEntityNameFieldRandomFill(Helpers.generateRandomStringSignatures());
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.emailField.fill(Helpers.generateRandomStringSignatures() + '@maildrop.cc');
     const getEmailValue = await page.locator('#contractsignform-email').inputValue();
     await page.locator('#contractsignform-confirm_email').fill(getEmailValue);
@@ -185,7 +210,7 @@ test('displayingSinatoriesInfoSigningWhoHasAccountButSignedOnBehalfRegistered @r
     await endUser.firstNameFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.lastNameFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.legalEntityNameField.fill('AAForSignaturesInbound');
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.emailField.fill(Helpers.generateRandomStringSignatures() + '@maildrop.cc');
     const getEmailValue = await page.locator('#contractsignform-email').inputValue();
     await page.locator('#contractsignform-confirm_email').fill(getEmailValue);
@@ -282,7 +307,7 @@ test('displayingTheCorrectInfoForDateAndTimeColumn @regClickTractsHigh @outbound
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -380,7 +405,7 @@ test('companyNameInTheCompanyColumn @regClickTractsMedium @outboundInbound', asy
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -425,7 +450,7 @@ test('validationOfTheCompanyNameColumn @regClickTractsHigh @outboundInbound', as
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -471,7 +496,7 @@ test('displayingThePaymentColumn @regClickTractsMedium @outboundInbound', async 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue1);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -505,7 +530,7 @@ test('displayingThePaymentColumn @regClickTractsMedium @outboundInbound', async 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue2);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -532,7 +557,7 @@ test('displayingThePaymentColumn @regClickTractsMedium @outboundInbound', async 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -818,7 +843,7 @@ test('displaying3dotsMenuFirstOpenedByInfoSignedByInfo @regClickTractsMedium @ou
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -905,7 +930,7 @@ test('validationOfTheManualPayment @regClickTractsHigh @outboundInbound @3dotsMe
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -993,7 +1018,7 @@ test('displayingCorrectInfoInConfirmStatusPopupValidationOfCancelButton @regClic
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -1070,7 +1095,7 @@ test('disappearingTheManualPaymentButton @regClickTractsMedium @outboundInbound 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();
@@ -1127,7 +1152,7 @@ test('displayingPaidAtInformation @regClickTractsMedium @outboundInbound @3dotsM
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();   
@@ -1174,7 +1199,7 @@ test('resendPaymentLinkButton @regClickTractsHigh @outboundInbound @3dotsMenu', 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();   
@@ -1259,7 +1284,7 @@ test('contractCreatorColumnForAA/SA @regClickTractsMedium @outboundInbound', asy
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();   
@@ -1318,7 +1343,7 @@ test('displayingPayContractFee @regClickTractsHigh @outboundInbound @3dotsMenu',
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto(permanentLinkValue);
-    await endUser.addressFieldRandomFill(Helpers.generateRandomStringSignatures());
+    await endUser.titleFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.signatureFieldRandomFill(Helpers.generateRandomStringSignatures());
     await endUser.iAgreeCheckboxClick();
     await endUser.signButtonClick();

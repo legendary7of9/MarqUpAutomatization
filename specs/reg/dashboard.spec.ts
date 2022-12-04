@@ -12,7 +12,39 @@ import { NewEditContractPage } from '../../framework'
 import { DealAnalysisPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
-// [chrome] › specs/reg/dashboard.spec.ts:881:1 › displayingInfoInTheOtherPartyColumnActionReportPage @regChecklistNewLow @dashboard 
+// 32 failed
+// [webkit] › specs/reg/dashboard.spec.ts:21:1 › displayingDashboardSA/AA @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:145:1 › validationOfTheManageUsersButton @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:378:1 › displayingType/Contract/OtherPartyLonger15SymbolsActionReport @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:509:1 › displayingInfoInThePreviewReportRecentlySignedContracts @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:552:1 › displayingTheExpiringLinksPreviewReport @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:606:1 › displayingInfoInThePrivewExpiringLinksReport @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:735:1 › displayingInfoInTheEventColumnActionReportPage @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:795:1 › displayingInfoInTheDateColumnActionReportPage @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:856:1 › displayingInfo/ValidationInTheContractColumnActionReportPage @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:884:1 › displayingInfoInTheOtherPartyColumnActionReportPage @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1264:1 › validationChangeSelectionFieldDealHealthScorePage @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1363:1 › year/MonthColumnDealHealthScorePageTableView @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1391:1 › numberOfDealsColumnDealHealthScorePageTableView @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1455:1 › 0ValueNumberOfDealsColumnDealHealthScorePageTableView @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1485:1 › growthToPreviousMonthDealsColumnDealHealthScorePageTableView @regChecklistNewHigh @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1513:1 › displaying"-"GrowthColumnDealHealthScorePageTableView @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1542:1 › paginationAndRediractionBetweenPagesDealHealthScorePageTableView @regChecklistNewMedium @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1610:1 › dateColumnPreviewReportRecentlySignedContractsPage @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1623:1 › signedByColumnPreviewReportRecentlySignedContractsPage @regChecklistNewLow @dashboard 
+// [webkit] › specs/reg/dashboard.spec.ts:1672:1 › displayingContractCreatedByAUThatWasDeletedSignedRecentlySignedContractsPage @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:21:1 › displayingDashboardSA/AA @regChecklistNewHigh @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:145:1 › validationOfTheManageUsersButton @regChecklistNewHigh @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:378:1 › displayingType/Contract/OtherPartyLonger15SymbolsActionReport @regChecklistNewLow @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:509:1 › displayingInfoInThePreviewReportRecentlySignedContracts @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:552:1 › displayingTheExpiringLinksPreviewReport @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:606:1 › displayingInfoInThePrivewExpiringLinksReport @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:735:1 › displayingInfoInTheEventColumnActionReportPage @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:795:1 › displayingInfoInTheDateColumnActionReportPage @regChecklistNewHigh @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:856:1 › displayingInfo/ValidationInTheContractColumnActionReportPage @regChecklistNewMedium @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:884:1 › displayingInfoInTheOtherPartyColumnActionReportPage @regChecklistNewLow @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:1610:1 › dateColumnPreviewReportRecentlySignedContractsPage @regChecklistNewLow @dashboard 
+// [chrome] › specs/reg/dashboard.spec.ts:1623:1 › signedByColumnPreviewReportRecentlySignedContractsPage @regChecklistNewLow @dashboard 
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
