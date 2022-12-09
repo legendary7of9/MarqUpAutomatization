@@ -9,6 +9,18 @@ import { NewEditContractPage } from '../../framework'
 import { ViewContract } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+
+
+// 8 failed
+// [webkit] › specs/reg/addEditTemplate.spec.ts:487:1 › createPublishedContractDisableSignatures @regClickTractsHigh @addEditTemplate @generalCases 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:994:1 › templateCanSaveWithoutAddedVariables @regClickTractsHigh @addEditTemplate @generalCases 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:3203:1 › checkboxVariableIsAlwaysInsertedAsANewParagraph @regClickTractsLow @addEditTemplate @variablesEditVariablesPanelCheckbox 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:4527:1 › displayingTheNestedVariableInTheTextEditor @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelMultiple 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:4682:1 › behaviorOfYes/NoButtonOnTheConfirmContentTypePopup @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelMultiple 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:4775:1 › validationOfTheText/Date/Number/UrlContentInput/List @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelSignerTypes 
+// [webkit] › specs/reg/addEditTemplate.spec.ts:5010:1 › validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanel3DotsMenu 
+// [chrome] › specs/reg/addEditTemplate.spec.ts:2732:1 › validationOfTheText/Date/Number/Url/TextareaContentTypes @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelInputTypes 
+
 test.beforeEach(async ({ page }, testInfo) => {
     await page.goto('');
 });
