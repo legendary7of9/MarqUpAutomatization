@@ -24,6 +24,8 @@ class NewEditContractPage {
     configuratorVariableValue0: Locator;
     configuratorVariableValueOption0: Locator;
     configuratorVariableValueTextarea: Locator;
+    configuratorAddGroupButton: Locator;
+
 
     constructor(page: Page) {
         this.page = page;
@@ -47,6 +49,7 @@ class NewEditContractPage {
         this.configuratorVariableValue0 = page.locator('#configurator-variable-elementName_1');
         this.configuratorVariableValueOption0 = page.locator('#variables-list-form-control-value-elementName_1');
         this.configuratorVariableValueTextarea = page.locator('[aria-label="variable name"]');
+        this.configuratorAddGroupButton = page.locator('#contract-detail-add-group')
     }
 
     async alertIconClick() {
@@ -134,12 +137,11 @@ class NewEditContractPage {
 
     async contractFeeValueChoose() {
         await this.contractFee.click();
-        await this.page.waitForTimeout(1500);
+        await this.page.waitForTimeout(1000);
         if (await this.contractFeeValue.isHidden()) 
         {
-            this.page.waitForTimeout(1500);
+            this.page.waitForTimeout(1000);
             this.contractFee.click();
-            this.page.waitForTimeout(1500);
         }
         await this.page.waitForSelector('.mat-select-content');
         await this.contractFeeValue.click();
@@ -153,6 +155,11 @@ class NewEditContractPage {
     async configuratorVariableValue0Click() {
         await this.configuratorVariableValue0.click();
         await this.page.waitForTimeout(500);
+    }
+
+    async configuratorAddGroupButtonClick() {
+        await this.configuratorAddGroupButton.click();
+        await this.page.waitForSelector('mat-expansion-panel');
     }
 }
 

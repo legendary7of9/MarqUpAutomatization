@@ -1,6 +1,8 @@
-import { test , expect } from '@playwright/test'
+import { test , expect, webkit, chromium, Browser, BrowserContext, Page } from '@playwright/test'
 import { UserBar, Users } from '../../framework'
+import { Search } from '../../framework'
 import { SignInPage } from '../../framework'
+import { SideBar } from '../../framework'
 import { TemplatesPage } from '../../framework'
 import { NewEditCopyTemplatePage } from '../../framework'
 import { ViewTemplatePage } from '../../framework'
@@ -8,18 +10,6 @@ import { ContractsPage } from '../../framework'
 import { NewEditContractPage } from '../../framework'
 import { ViewContract } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
-
-
-
-// 8 failed
-// [webkit] › specs/reg/addEditTemplate.spec.ts:487:1 › createPublishedContractDisableSignatures @regClickTractsHigh @addEditTemplate @generalCases 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:994:1 › templateCanSaveWithoutAddedVariables @regClickTractsHigh @addEditTemplate @generalCases 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:3203:1 › checkboxVariableIsAlwaysInsertedAsANewParagraph @regClickTractsLow @addEditTemplate @variablesEditVariablesPanelCheckbox 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:4527:1 › displayingTheNestedVariableInTheTextEditor @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelMultiple 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:4682:1 › behaviorOfYes/NoButtonOnTheConfirmContentTypePopup @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelMultiple 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:4775:1 › validationOfTheText/Date/Number/UrlContentInput/List @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelSignerTypes 
-// [webkit] › specs/reg/addEditTemplate.spec.ts:5010:1 › validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanel3DotsMenu 
-// [chrome] › specs/reg/addEditTemplate.spec.ts:2732:1 › validationOfTheText/Date/Number/Url/TextareaContentTypes @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanelInputTypes 
 
 test.beforeEach(async ({ page }, testInfo) => {
     await page.goto('');
@@ -397,7 +387,6 @@ test('behaviorForDisableSignatureCheckbox @regClickTractsHigh @addEditTemplate @
     await viewTemplate.editTemplateButtonClick();
     await newTemplate.disableSignatureCheckboxClick();
     await newTemplate.createContractButtonClick();
-    await page.waitForTimeout(1000);
     await newContract.contractDescriptionTitleFieldFillRandom(Helpers.generateRandomString());
     await newContract.publishToggleClick();
     await newContract.saveAndGenerateLinkButtonClick();
@@ -555,9 +544,8 @@ test('createPublishedContractDisableSignatures @regClickTractsHigh @addEditTempl
     await page.goto('/contract-templates/list?&sort=-updated_at');
     await templateName.click();
     await viewTemplate.editTemplateButtonClick();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(1000);
     await newTemplate.paytractsToggleClick();
-    await page.waitForTimeout(500);
     await newTemplate.paytractsInsertButtonClick();
     await newTemplate.createContractButtonClick();
     await newContract.contractTitleFieldFillRandom(Helpers.generateRandomString());
@@ -603,43 +591,43 @@ test('checkingToolBarEditor @regClickTractsLow @addEditTemplate @generalCases', 
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const cutOption = page.locator('.cke_button__cut >> nth=0');
-    const copyOption = page.locator('.cke_button__copy >> nth=0');
-    const pasteOption = page.locator('.cke_button__paste >> nth=0');
-    const undoOption = page.locator('.cke_button__undo >> nth=0');
-    const redoOption = page.locator('.cke_button__redo >> nth=0');
-    const scaytOption = page.locator('.cke_button__scayt >> nth=0');
-    const linkOption = page.locator('.cke_button__link >> nth=0');
-    const unlinkOption = page.locator('.cke_button__unlink >> nth=0');
-    const anchorOption = page.locator('.cke_button__anchor >> nth=0');
-    const imageOption = page.locator('.cke_button__image >> nth=0');
-    const tabelOption = page.locator('.cke_button__table >> nth=0');
-    const horizontalruleOption = page.locator('.cke_button__horizontalrule >> nth=0');
-    const specialcharOption = page.locator('.cke_button__specialchar >> nth=0');
-    const maximizeOption = page.locator('.cke_button__maximize >> nth=0');
-    const sourceOption = page.locator('.cke_button__source >> nth=0');
-    const boldOption = page.locator('.cke_button__bold >> nth=0');
-    const italicOption = page.locator('.cke_button__italic >> nth=0');
-    const underlineOption = page.locator('.cke_button__underline >> nth=0');
-    const strikeOption = page.locator('.cke_button__strike >> nth=0');
-    const subscriptOption = page.locator('.cke_button__subscript >> nth=0');
-    const superscriptOption = page.locator('.cke_button__superscript >> nth=0');
-    const removeformatOption = page.locator('.cke_button__removeformat >> nth=0');
-    const numberedlistOption = page.locator('.cke_button__numberedlist >> nth=0');
-    const bulletedlistOption = page.locator('.cke_button__bulletedlist >> nth=0');
-    const outdentOption = page.locator('.cke_button__outdent >> nth=0');
-    const indentOption = page.locator('.cke_button__indent >> nth=0');
-    const blockquoteOption = page.locator('.cke_button__blockquote >> nth=0');
-    const justifyleftOption = page.locator('.cke_button__justifyleft >> nth=0');
-    const justifycenterOption = page.locator('.cke_button__justifycenter >> nth=0');
-    const justifyrightOption = page.locator('.cke_button__justifyright >> nth=0');
-    const justifyblockOption = page.locator('.cke_button__justifyblock >> nth=0');
-    const stylesOption = page.locator('[title="Formatting Styles"] >> nth=0');
-    const formatOption = page.locator('[title="Paragraph Format"] >> nth=0');
-    const fontOption = page.locator('[title="Font Name"] >> nth=0');
-    const sizeOption = page.locator('[title="Font Size"] >> nth=0');
-    const textcolorOption = page.locator('.cke_button__textcolor >> nth=0');
-    const bgcolorOption = page.locator('.cke_button__bgcolor >> nth=0');
+    const cutOption = page.locator('.cke_button__cut');
+    const copyOption = page.locator('.cke_button__copy');
+    const pasteOption = page.locator('.cke_button__paste');
+    const undoOption = page.locator('.cke_button__undo');
+    const redoOption = page.locator('.cke_button__redo');
+    const scaytOption = page.locator('.cke_button__scayt');
+    const linkOption = page.locator('.cke_button__link');
+    const unlinkOption = page.locator('.cke_button__unlink');
+    const anchorOption = page.locator('.cke_button__anchor');
+    const imageOption = page.locator('.cke_button__image');
+    const tabelOption = page.locator('.cke_button__table');
+    const horizontalruleOption = page.locator('.cke_button__horizontalrule');
+    const specialcharOption = page.locator('.cke_button__specialchar');
+    const maximizeOption = page.locator('.cke_button__maximize');
+    const sourceOption = page.locator('.cke_button__source');
+    const boldOption = page.locator('.cke_button__bold');
+    const italicOption = page.locator('.cke_button__italic');
+    const underlineOption = page.locator('.cke_button__underline');
+    const strikeOption = page.locator('.cke_button__strike');
+    const subscriptOption = page.locator('.cke_button__subscript');
+    const superscriptOption = page.locator('.cke_button__superscript');
+    const removeformatOption = page.locator('.cke_button__removeformat');
+    const numberedlistOption = page.locator('.cke_button__numberedlist');
+    const bulletedlistOption = page.locator('.cke_button__bulletedlist');
+    const outdentOption = page.locator('.cke_button__outdent');
+    const indentOption = page.locator('.cke_button__indent');
+    const blockquoteOption = page.locator('.cke_button__blockquote');
+    const justifyleftOption = page.locator('.cke_button__justifyleft');
+    const justifycenterOption = page.locator('.cke_button__justifycenter');
+    const justifyrightOption = page.locator('.cke_button__justifyright');
+    const justifyblockOption = page.locator('.cke_button__justifyblock');
+    const stylesOption = page.locator('[title="Formatting Styles"]');
+    const formatOption = page.locator('[title="Paragraph Format"]');
+    const fontOption = page.locator('[title="Font Name"]');
+    const sizeOption = page.locator('[title="Font Size"]');
+    const textcolorOption = page.locator('.cke_button__textcolor');
+    const bgcolorOption = page.locator('.cke_button__bgcolor');
     console.log('addEditTemplate Checking Tool Bar Editor');
     await users.AA();
     await signIn.signInButton();
@@ -690,7 +678,7 @@ test('checkingToolTextArea @regClickTractsHigh @addEditTemplate @generalCases', 
     const newTemplate = new NewEditCopyTemplatePage(page);
     const variable0ContentType = page.locator('[formcontrolname="input_type"] >> nth=0');
     const strign0 = page.locator('p >> nth=0');
-    const addImageButton = page.locator('.cke_button__image >> nth=0');
+    const addImageButton = page.locator('.cke_button__image');
     const urlField = page.locator('.cke_dialog_ui_input_text input >> nth=0');
     const okButton = page.locator('.cke_dialog_ui_button_ok');
     const threeDotsEditVariablesPanelOption0 = page.locator('.variable-panel-three-dots >> nth=0');
@@ -1029,12 +1017,12 @@ test('templateCanSaveWithoutAddedVariables @regClickTractsHigh @addEditTemplate 
         await templatesPage.deletePopupDeleteButtonClick();
     }
 });
-    
-    //to be refactored SA part after Categories release
+
 test('creatingTemplatesWithTheSameTitle @regClickTractsLow @addEditTemplate @generalCases', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
     const newTemplate = new NewEditCopyTemplatePage(page);
     const templatesPage = new TemplatesPage(page);
     const templateName0 = page.locator('.template-name-column-link >> nth=0');
@@ -1071,35 +1059,35 @@ test('creatingTemplatesWithTheSameTitle @regClickTractsLow @addEditTemplate @gen
         await templatesPage.deletePopupDeleteButtonClick();
         await page.waitForTimeout(1500);
     }
-    // await userBar.logOutAction();
-    // await users.SA();
-    // await signIn.signInButton();
-    // await page.waitForURL('/dashboard');
-    // await page.goto('/contract-template/create');
-    // await newTemplate.templateTitleField.fill('TemplatesWithSameTitle');
-    // await newTemplate.selectCategoryName();
-    // await newTemplate.textEditorField.type('test100testAutotest \n \n \n');
-    // await newTemplate.saveButtonClick();
-    // await page.goto('/contract-template/create');
-    // await newTemplate.templateTitleField.fill('TemplatesWithSameTitle');
-    // await newTemplate.selectCategoryName();
-    // await newTemplate.textEditorField.type('test100testAutotest \n \n \n');
-    // await newTemplate.saveButtonClick();
-    // await page.goto('/contract-templates/list?&sort=-updated_at');
-    // await expect(templateName0).toContainText('TemplatesWithSameTitle');
-    // await expect(templateName1).toContainText('TemplatesWithSameTitle');
-    // const templateNameValue2 = await templateName.innerText();
-    // if (templateNameValue2.includes('TemplatesWithSameTitle'))
-    // {
-    //     await templatesPage.threeDotsMenuDeleteButtonClick();
-    //     await templatesPage.deletePopupDeleteButtonClick();
-    // }
-    // const templateNameValue3 = await templateName.innerText();
-    // if (templateNameValue3.includes('TemplatesWithSameTitle'))
-    // {
-    //     await templatesPage.threeDotsMenuDeleteButtonClick();
-    //     await templatesPage.deletePopupDeleteButtonClick();
-    // }
+    await userBar.logOutAction();
+    await users.SA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.templateTitleField.fill('TemplatesWithSameTitle');
+    await newTemplate.selectCategoryName();
+    await newTemplate.textEditorField.type('test100testAutotest \n \n \n');
+    await newTemplate.saveButtonClick();
+    await page.goto('/contract-template/create');
+    await newTemplate.templateTitleField.fill('TemplatesWithSameTitle');
+    await newTemplate.selectCategoryName();
+    await newTemplate.textEditorField.type('test100testAutotest \n \n \n');
+    await newTemplate.saveButtonClick();
+    await page.goto('/contract-templates/list?&sort=-updated_at');
+    await expect(templateName0).toContainText('TemplatesWithSameTitle');
+    await expect(templateName1).toContainText('TemplatesWithSameTitle');
+    const templateNameValue2 = await templateName.innerText();
+    if (templateNameValue2.includes('TemplatesWithSameTitle'))
+    {
+        await templatesPage.threeDotsMenuDeleteButtonClick();
+        await templatesPage.deletePopupDeleteButtonClick();
+    }
+    const templateNameValue3 = await templateName.innerText();
+    if (templateNameValue3.includes('TemplatesWithSameTitle'))
+    {
+        await templatesPage.threeDotsMenuDeleteButtonClick();
+        await templatesPage.deletePopupDeleteButtonClick();
+    }
 });
 
 test('displayingTheMultipartySignaturesBlock @regClickTractsHigh @addEditTemplate @generalCases', async ({ page }) => {
@@ -1160,7 +1148,6 @@ test('disablingTheMultipartySignaturesToggle @regClickTractsHigh @addEditTemplat
     await expect(tooltip).toHaveText('Multiparty signatures cannot be enabled because the signatures for this template has been turned off');
     await newTemplate.disableSignatureCheckboxClick();
     await newTemplate.paytractsToggleClick();
-    await page.waitForTimeout(500);
     await expect(multipartyToggle).toHaveClass('slide-toggle mat-slide-toggle mat-primary ng-untouched ng-pristine ng-valid mat-disabled');
     await expect(multipartyToggleInput).toHaveAttribute('disabled', '');
     await multipartyToggle.hover();
@@ -1168,7 +1155,135 @@ test('disablingTheMultipartySignaturesToggle @regClickTractsHigh @addEditTemplat
     await expect(tooltip).toHaveText('Multiparty signatures cannot be enabled because the PayTracts is turned on');
 });
 
+test('displayingTemplateContractVisibility/DisablingTemplateContractVisibility @regClickTractsHigh @addEditTemplate @permissionsVisibillity', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const tooltip = page.locator('.mat-tooltip');
+    const templateContractVisibility = page.locator('#form-control-visibility_status');
+    const templateContractVisibilityValue = page.locator('#form-control-visibility_status mat-select');
+    console.log('addEditTemplate Displaying Template Contract Visibility/Disabling Template Contract Visibility');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(templateContractVisibility).toBeVisible();
+    await expect(templateContractVisibilityValue).toHaveText('Everyone at the company');
+    await expect(templateContractVisibilityValue).toHaveAttribute('aria-disabled', 'false');
+    await newTemplate.permissionContractPublicationRequiredValueClick();
+    await expect(templateContractVisibilityValue).toHaveAttribute('aria-disabled', 'true');
+    await newTemplate.permissionContractPublicationNotRequiredValueClick();
+    await expect(templateContractVisibilityValue).toHaveAttribute('aria-disabled', 'false');
+    await page.goto('');
+    await userBar.logOutAction();
+    await users.SA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(templateContractVisibility).toBeHidden();
+});
 
+test('displayingTheCorrectInfoInTheTemplateContractVisibilityDropDown @regClickTractsHigh @addEditTemplate @permissionsVisibillity', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const templateContractVisibilityValue = page.locator('#form-control-visibility_status mat-select');
+    const templateContractVisibilityDropDown = page.locator('.mat-select-panel');
+    const templateContractVisibilityDropDownValue0 = page.locator('.mat-option >> nth=0');
+    const templateContractVisibilityDropDownValue1 = page.locator('.mat-option >> nth=1');
+    const templateContractVisibilityDropDownValue2 = page.locator('.mat-option >> nth=2');
+    console.log('addEditTemplate Displaying The Correct Info In The Template Contract Visibility Drop Down');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.permissionVisibilityDropDown.click();
+    await expect(templateContractVisibilityDropDown).toBeVisible();
+    await expect(templateContractVisibilityDropDownValue0).toBeVisible();
+    await expect(templateContractVisibilityDropDownValue0).toHaveText(' Everyone at the company ');
+    await expect(templateContractVisibilityDropDownValue1).toBeVisible();
+    await expect(templateContractVisibilityDropDownValue1).toHaveText(' Only Account Admins ');
+    await expect(templateContractVisibilityDropDownValue2).toBeVisible();
+    await expect(templateContractVisibilityDropDownValue2).toHaveText(' Only Me ');
+    await newTemplate.permissionVisibilityOnlyMeValue.click();
+    await expect(templateContractVisibilityValue).toHaveText('Only Me');
+    await newTemplate.permissionVisibilityOnlyAAValueChoose();
+    await expect(templateContractVisibilityValue).toHaveText('Only Account Admins');
+    await newTemplate.permissionVisibilityEvryoneValueChoose();
+    await expect(templateContractVisibilityValue).toHaveText('Everyone at the company');
+});
+
+test('displayingTheIiconNearTheTemplateContractVisibility @regClickTractsLow @addEditTemplate @permissionsVisibillity', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const templateContractVisibilityIicon = page.locator('#form-control-visibility_status-info');
+    const templateContractVisibilityIiconTooltip = page.locator('.card--securx .popup-informer__content >> nth=0');
+    console.log('addEditTemplate Displaying The Iicon Near The Template Contract Visibility');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(templateContractVisibilityIicon).toBeVisible();
+    await templateContractVisibilityIicon.hover();
+    await expect(templateContractVisibilityIiconTooltip).toBeVisible();
+    await expect(templateContractVisibilityIiconTooltip).toHaveText('You can restrict the visibility of the template. All contracts based on it, and the signatures for such contracts will also be hidden.');
+});
+
+test('displaying/ValidtionOfTheContractPublicationDropDown @regClickTractsHigh @addEditTemplate @permissionsVisibillity', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const contractPublication = page.locator('#form-control-is_securx');
+    const contractPublicationValue = page.locator('#form-control-is_securx mat-select');
+    const contractPublicationDropDown = page.locator('.mat-select-panel');
+    const contractPublicationDropDownValue0 = page.locator('.mat-option >> nth=0');
+    const contractPublicationDropDownValue1 = page.locator('.mat-option >> nth=1');
+    console.log('addEditTemplate Displaying/Validtion Of The Contract Publication Drop Down');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(contractPublication).toBeVisible();
+    await expect(contractPublicationValue).toBeVisible();
+    await expect(contractPublicationValue).toHaveText('Approval not required');
+    await newTemplate.permissionContractPublicationDropDown.click();
+    await expect(contractPublicationDropDown).toBeVisible();
+    await expect(contractPublicationDropDownValue0).toBeVisible();
+    await expect(contractPublicationDropDownValue0).toHaveText('Approval not required');
+    await expect(contractPublicationDropDownValue1).toBeVisible();
+    await expect(contractPublicationDropDownValue1).toHaveText('Approval required');
+    await newTemplate.permissionContractPublicationRequiredValue.click();
+    await page.goto('');
+    await userBar.logOutAction();
+    await users.SA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(contractPublication).toBeHidden();
+});
+
+test('displayingTheIiconNearTheContractPublicationDropDown @regClickTractsLow @addEditTemplate @permissionsVisibillity', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const contractPublicationIicon = page.locator('#form-control-is_securx-info');
+    const contractPublicationIiconTooltip = page.locator('.card--securx .popup-informer__content >> nth=1');
+    console.log('addEditTemplate Displaying The Iicon Near The Contract Publication Drop Down');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(contractPublicationIicon).toBeVisible();
+    await contractPublicationIicon.hover();
+    await expect(contractPublicationIiconTooltip).toBeVisible();
+    await expect(contractPublicationIiconTooltip).toHaveText('Account Users can publish contracts based on this template and share the Contract URL without the Account Admin’s approval.');
+    await newTemplate.permissionContractPublicationRequiredValueClick();
+    await contractPublicationIicon.hover();
+    await expect(contractPublicationIiconTooltip).toBeVisible();
+    await expect(contractPublicationIiconTooltip).toHaveText('Account Users require the Account Admin’s approval to publish contracts based on this template and share the Contract URL. This does not apply to other Account Admins.');
+});
 
 test('behaviorForPanelWhenNoVariablesAreDisplayed @regClickTractsLow @addEditTemplate @variablesVariablesPanel', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
@@ -1321,7 +1436,6 @@ test('displayingTheIiconForNested @regClickTractsMedium @addEditTemplate @variab
     await newTemplate.editVariablePanelOpen();
     await variable1.click();
     await nestedTextEditor.click();
-    await page.waitForTimeout(500);
     await newTemplate.textEditorFieldNestedDropDownClick();
     await variableDropDownNestedVariable.locator('.cke_panel_listItem >> nth=0').click();
     await newTemplate.editVariablePanelClose();
@@ -1332,11 +1446,9 @@ test('displayingTheIiconForNested @regClickTractsMedium @addEditTemplate @variab
     await newTemplate.editVariablePanelOpen();
     await variable1.click();
     await nestedTextEditor.click();
-    await nestedTextEditor.fill('');
+    await page.keyboard.press('Meta+A');
+    await page.keyboard.press('Backspace');
     await nestedTextEditor.type('test100test');
-    // await page.keyboard.press('Meta+A');
-    // await page.keyboard.press('Backspace');
-    // await nestedTextEditor.type('test100test');
     await newTemplate.editVariablePanelClose();
     await expect(variablePanelNestedIicon).toBeHidden();
 });
@@ -1381,8 +1493,7 @@ test('displayingTheLockIcon @regClickTractsLow @addEditTemplate @variablesVariab
     await expect(lockText).toHaveText(' To use variables panel, close the sidebar first ');
 });
 
-test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesVariablesPanel3Dots', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit');
+test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesVariablesPanel3Dots', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const newTemplate = new NewEditCopyTemplatePage(page);
@@ -1433,6 +1544,7 @@ test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variable
     await newTemplate.threeDotsMenuVariablePanelInsertButtonClick();
     await expect(p0).toContainText('test100testtest100testtest100testtest100testtest100testtest100testtest100testtest100test{{ Variable#1 }}‌ ');
 });
+
 test('validationOfTheInsertButtonForInsertedMultipleChoice @regClickTractsHigh @addEditTemplate @variablesVariablesPanel3Dots', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
@@ -2071,10 +2183,7 @@ test('displayingTheIiconForMultipleChoice @regClickTractsMedium @addEditTemplate
     await editVariablesPanelMultipleIicon.hover();
     await expect(tooltip).toBeVisible();
     await expect(tooltip).toHaveText('This variable-type cannot be inserted into the document twice with same name.');
-    await newTemplate.editVariablePanelClose();
-    await newTemplate.textEditorField.click();
     await newTemplate.textEditorFieldClear();
-    await newTemplate.editVariablePanelOpen();
     await expect(editVariablesPanelMultipleIicon).toBeHidden();
 });
 
@@ -2150,10 +2259,9 @@ test('displayingTheIiconForNested @regClickTractsMedium @addEditTemplate @variab
     await expect(tooltip).toHaveText("This is a nested variable");
     await variable1.click();
     await nestedTextEditor.click();
-    await nestedTextEditor.fill('');
-    // await page.keyboard.press('Meta+A');
-    // await page.keyboard.press('Backspace');
-    // await nestedTextEditor.type('test100test');
+    await page.keyboard.press('Meta+A');
+    await page.keyboard.press('Backspace');
+    await nestedTextEditor.type('test100test');
     await variable0.click();
     await expect(variablePanelNestedIicon).toBeHidden();
 });
@@ -2536,7 +2644,7 @@ test('displayingContentTypesInTheDropDown @regClickTractsHigh @addEditTemplate @
     const signerListDate = page.locator('.mat-option >> nth=5');
     const signerListNumber = page.locator('.mat-option >> nth=6');
     const signerListUrl = page.locator('.mat-option >> nth=7');
-    const variableContentTypeDropDownHide = page.locator('.cdk-overlay-backdrop >> nth=0');
+    const variableContentTypeDropDownHide = page.locator('.cdk-overlay-backdrop');
     console.log('addEditTemplate Displaying Content Types In The DropDown');
     await users.AA();
     await signIn.signInButton();
@@ -3266,7 +3374,7 @@ test('checkboxVariableIsAlwaysInsertedAsANewParagraph @regClickTractsLow @addEdi
     await newTemplate.threeDotsMenuVariablePanelInsertButtonClick();
     await newTemplate.editVariablePanelClose();
     await expect(p0).toBeVisible();
-    await expect(p0).toContainText('test100testtest100testtest100testtest100testtest100testtes{{ Variable#1 }}t100test');
+    await expect(p0).toHaveText('test100testtest100testtest100testtest100testtest100testt{{ Variable#1 }}est100test');
     await expect(inputCheckboxVariable).toHaveCSS('display', 'block');
 });
 
@@ -5019,8 +5127,7 @@ test('checkingAdd/DeleteOption @regClickTractsHigh @addEditTemplate @variablesEd
     await expect(addOptionButton).toBeVisible();
 });
 
-test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanel3DotsMenu', async ({ page, browserName }) => {
-    test.skip(browserName === 'chromium');
+test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variablesEditVariablesPanel3DotsMenu', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const newTemplate = new NewEditCopyTemplatePage(page);
@@ -5044,7 +5151,7 @@ test('validationOfTheInsertButton @regClickTractsHigh @addEditTemplate @variable
     await threeDotsEditVariablesPanelOption0.click();
     await page.waitForSelector('.action-list');
     await newTemplate.threeDotsMenuVariablePanelInsertButtonClick();
-    await expect(p0).toContainText('test100testtest100testtest100testtest100testtest100testtes{{ Variable#1 }}‌ t100testtest100testtest100test');
+    await expect(p0).toContainText('test100testtest100testtest100testtest100testtest100testt{{ Variable#1 }}‌ est100testtest100testtest100test');
     await page.goto('');
     await page.goto('/contract-template/create');
     await newTemplate.textEditorField.click();
@@ -5353,6 +5460,280 @@ test('searchVariables @regClickTractsHigh @addEditTemplate @variablesEditVariabl
     await searchField.type('zazazaza');
     await expect(editVariablesPanelNoVariablesText).toBeVisible();
     await expect(editVariablesPanelNoVariablesText).toHaveText(' There is no variable with such name/content ');
+});
+
+test('displayingThePaytractsPanel @regClickTractsHigh @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const payTractsPanel = page.locator('app-contract-template-details-paytracts');
+    console.log('addEditTemplate Displaying The Paytracts Panel');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanel).toBeVisible();
+    await userBar.logOutAction();
+    await users.SA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanel).toBeHidden();
+});
+
+test('displaying/ValidationThePaytractsPanelToggle @regClickTractsHigh @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const userBar = new UserBar(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const payTractsPanel = page.locator('app-contract-template-details-paytracts');
+    const payTractsPanelToggle = page.locator('#form-control-is_paytracts input');
+    const payTractsPanelPaymentProductsList = page.locator('.payment-products__list');
+    const payTractsContractFeeText = page.locator("//div[contains(@class,'flx-col flx-end')]");
+    const payTractsUpdatePlanButton = page.locator('#template-detail-update-plan');
+    console.log('addEditTemplate Displaying/Validation The Paytracts Panel Toggle');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanelToggle).toBeVisible();
+    await expect(payTractsPanelToggle).not.toBeChecked();
+    await expect(payTractsPanelToggle).not.toBeDisabled();
+    await newTemplate.paytractsToggleClick();
+    await expect(payTractsPanelPaymentProductsList).toBeVisible();
+    await expect(payTractsContractFeeText).toBeVisible();
+    await page.goto('');
+    await userBar.logOutAction();
+    await users.AANoPaytracts();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanel).toBeVisible();
+    await expect(payTractsPanelToggle).toBeVisible();
+    await expect(payTractsPanelToggle).not.toBeChecked();
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await expect(payTractsUpdatePlanButton).toBeVisible();
+    await expect(payTractsPanel).toContainText('Your subscription does not currently inlcude the PayTracts feature. Please upgrade to a package that inclludes PayTracts to allow your clients to sign and pay for the ClickTracts contracts within the ContractsRx system. You can get help by using the Intercom button below.');
+    await newTemplate.paytractsToggleForErrorClick();
+    await expect(payTractsPanelPaymentProductsList).toBeHidden();
+    await expect(payTractsContractFeeText).toBeHidden();
+});
+
+test('displayingIiconForPaytractsPanel @regClickTractsMedium @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const paytractsPanelIicon = page.locator('#template-detail-paytracts-info');
+    const paytractsPanelIiconTooltip = page.locator('app-contract-template-details-paytracts .popup-informer__content');
+    console.log('addEditTemplate Displaying Iicon For Paytracts Panel');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(paytractsPanelIicon).toBeVisible();
+    await paytractsPanelIicon.click();
+    await expect(paytractsPanelIiconTooltip).toBeVisible();
+    await expect(paytractsPanelIiconTooltip).toHaveText('PayTracts allows your clients to pay for ClickTracts contracts with your company all in one place. \n You can track payments and signatures statuses within the ClickTracts system.');
+});
+
+test('checkingDisablingThePaytractsToggle @regClickTractsHigh @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const tooltip = page.locator('.mat-tooltip');
+    const payTractsPanel = page.locator('app-contract-template-details-paytracts');
+    const payTractsPanelToggle = page.locator('#form-control-is_paytracts input');
+    const payTractsPanelHover = page.locator('#paytracts-toggle');
+    const payTractsPanelPaymentProductsList = page.locator('.payment-products__list');
+    const payTractsContractFeeText = page.locator("//div[contains(@class,'flx-col flx-end')]");
+    console.log('addEditTemplate Checking Disabling The Paytracts Toggle');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.multipartyToggleClick();
+    await expect(payTractsPanel).toBeVisible();
+    await expect(payTractsPanelToggle).toBeVisible();
+    await expect(payTractsPanelToggle).not.toBeChecked();
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await payTractsPanelHover.hover();
+    await expect(tooltip).toBeVisible();
+    await expect(tooltip).toHaveText('Paytracts cannot be turned on because multiparty signatures are enabled');
+    await newTemplate.paytractsToggleForErrorClick();
+    await expect(payTractsPanelPaymentProductsList).toBeHidden();
+    await expect(payTractsContractFeeText).toBeHidden();
+});
+
+test('checkingTheRefreshIcon @regClickTractsLow @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const payTractsPanelPaymentProductsList = page.locator('.payment-products__list');
+    const refreshIcon = page.locator('#template-detail-paytracts-refresh-icon');
+    const refreshCircle = page.locator('app-contract-template-details-paytracts mat-spinner');
+    console.log('addEditTemplate Checking The Refresh Icon');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.paytractsToggleClick();
+    await expect(refreshIcon).toBeVisible();
+    await refreshIcon.click();
+    await expect(refreshCircle).toBeVisible();
+    await refreshCircle.isHidden();
+    await expect(payTractsPanelPaymentProductsList).toBeVisible();
+});
+
+test('displayingTheListOfStripe/InfoOfProductsForPaytractsPanel @regClickTractsLow @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const product0 = page.locator('.payment-products__item >> nth=0');
+    const product0Number = page.locator('.payment-products__item .number-column >> nth=0');
+    const product0Price = page.locator('.payment-products__item .left-column >> nth=0');
+    const product0Name = page.locator('.payment-products__item .right-column >> nth=0');
+    const product1 = page.locator('.payment-products__item >> nth=1');
+    const product1Number = page.locator('.payment-products__item .number-column >> nth=1');
+    const product1Price = page.locator('.payment-products__item .left-column >> nth=1');
+    const product1Name = page.locator('.payment-products__item .right-column >> nth=1');
+    console.log('addEditTemplate Displaying The List Of Stripe/Info Of Products For Paytracts Panel');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.paytractsToggleClick()
+    await expect(product0).toBeVisible();
+    await expect(product0Number).toBeVisible();
+    await expect(product0Number).toHaveText('1. ');
+    await expect(product0Price).toBeVisible();
+    await expect(product0Price).toHaveText(' 150 usd Recurring 1 month');
+    await expect(product0Name).toBeVisible();
+    await expect(product0Name).toHaveText(' (Test_2) ');
+    await expect(product1).toBeVisible();
+    await expect(product1Number).toBeVisible();
+    await expect(product1Number).toHaveText('2. ');
+    await expect(product1Price).toBeVisible();
+    await expect(product1Price).toHaveText(' 100 eur Recurring 1 month');
+    await expect(product1Name).toBeVisible();
+    await expect(product1Name).toHaveText(' (WW Product 4_ test test test 4 Test...) ');
+});
+
+test('validationOfTheInsertVariableButton @regClickTractsHigh @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const templateBodyPaytractsVariable0 = page.locator('[name="paytracts-contract-fee"] >> nth=0');
+    const templateBodyPaytractsVariable1 = page.locator('[name="paytracts-contract-fee"] >> nth=1');
+    const templateBodyPaytractsVariable2 = page.locator('[name="paytracts-contract-fee"] >> nth=2');
+    console.log('addEditTemplate Validation Of The Insert Variable Button');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.textEditorField.click();
+    await newTemplate.textEditorField.type('test100testAutotest\n \n \n ');
+    await newTemplate.paytractsToggleClick();
+    await newTemplate.paytractsInsertButtonClick();
+    await expect(templateBodyPaytractsVariable0).toBeVisible();
+    await newTemplate.paytractsInsertButtonClick();
+    await expect(templateBodyPaytractsVariable0).toBeVisible();
+    await expect(templateBodyPaytractsVariable1).toBeVisible();
+    await newTemplate.paytractsInsertButtonClick();
+    await expect(templateBodyPaytractsVariable0).toBeVisible();
+    await expect(templateBodyPaytractsVariable1).toBeVisible();
+    await expect(templateBodyPaytractsVariable2).toBeVisible();
+    await newTemplate.paytractsToggleClick();
+    await expect(templateBodyPaytractsVariable0).toBeHidden();
+    await expect(templateBodyPaytractsVariable1).toBeHidden();
+    await expect(templateBodyPaytractsVariable2).toBeHidden();
+});
+
+test('validationOfTheAddButton @regClickTractsMedium @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const addButton = page.locator('#template-detail-paytracts-add2');
+    console.log('addEditTemplate Validation Of The Add Button');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.paytractsToggleClick();
+    await addButton.click();
+    const [page2] = await Promise.all([
+        page.waitForEvent('popup'),
+    ]);
+    await page2.waitForLoadState();
+    await expect(page2).toHaveURL('https://dashboard.stripe.com/login?redirect=%2Fproducts');
+});
+
+test('checkingTheContractFeeText @regClickTractsMedium @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const payTractsContractFeeText = page.locator("//div[contains(@class,'flx-col flx-end')]");
+    console.log('addEditTemplate Checking The Contract Fee Text');
+    await users.AA();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await newTemplate.paytractsToggleClick();
+    await expect(payTractsContractFeeText).toBeVisible();
+    await newTemplate.paytractsToggleForErrorClick();
+    await expect(payTractsContractFeeText).toBeHidden();
+});
+
+test('checkingWhenClientDoesNotHavePaytrcatsAccess @regClickTractsMedium @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const payTractsPanel = page.locator('app-contract-template-details-paytracts');
+    const payTractsPanelToggle = page.locator('#form-control-is_paytracts input');
+    const payTractsUpdatePlanButton = page.locator('#template-detail-update-plan');
+    console.log('addEditTemplate Checking When Client Does Not Have Paytrcats Access');
+    await users.AANoPaytracts();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await expect(payTractsUpdatePlanButton).toBeVisible();
+    await expect(payTractsPanel).toContainText('Your subscription does not currently inlcude the PayTracts feature. Please upgrade to a package that inclludes PayTracts to allow your clients to sign and pay for the ClickTracts contracts within the ContractsRx system. You can get help by using the Intercom button below.');
+    await newTemplate.paytractsToggleForErrorClick();
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await expect(payTractsPanelToggle).not.toBeChecked();
+});
+
+
+
+test('checkingWhenClientWithPaytractsDoesNotHaveConnectedStripe @regClickTractsMedium @addEditTemplate @payTractsPanel', async ({ page }) => {
+    const users = new Users(page);
+    const signIn = new SignInPage(page);
+    const newTemplate = new NewEditCopyTemplatePage(page);
+    const payTractsPanel = page.locator('app-contract-template-details-paytracts');
+    const payTractsPanelToggle = page.locator('#form-control-is_paytracts input');
+    const connectButton = page.locator('#template-detail-paytracts-connect');
+    const connectStripePopup = page.locator('connect-paytracts');
+    console.log('addEditTemplate Checking When Client With Paytracts Does Not Have Connected Stripe');
+    await users.AA4();
+    await signIn.signInButton();
+    await page.waitForURL('/dashboard');
+    await page.goto('/contract-template/create');
+    await expect(payTractsPanel).toBeVisible();
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await expect(connectButton).toBeVisible();
+    await expect(payTractsPanel).toContainText('No Stripe account connected');
+    await newTemplate.paytractsToggleForErrorClick();
+    await expect(payTractsPanelToggle).toBeDisabled();
+    await expect(payTractsPanelToggle).not.toBeChecked();
+    await connectButton.click();
+    await expect(connectStripePopup).toBeVisible();
+    await page.goto('/contract-template/edit/904');
+    await expect(payTractsPanel).toBeVisible();
+    await expect(payTractsPanelToggle).not.toBeDisabled();
+    await expect(payTractsPanelToggle).toBeChecked();
+    await expect(payTractsPanel).toContainText('No Stripe account connected');
+    await expect(connectButton).toBeVisible();
+    await newTemplate.createContractButtonClick();
+    await expect(page).toHaveURL('/contract/create/904');
 });
 
 

@@ -102,7 +102,7 @@ class ContractsPage {
         this.copyLinkButton = page.locator('.contracts-name-column-copy-link >> nth=0');
 
         this.copyLinkPopupCopyLinkButtonPermanent = page.locator('#copy-link-permanent-copy-link');
-        this.copyLinkPopupCopyLinkButtonExpiry = page.locator('#copy-link-permanent-copy-link');
+        this.copyLinkPopupCopyLinkButtonExpiry = page.locator('#copy-link-expiring-copy-link');
 
         this.copyLinkPopupCancelButton = page.locator('#copy-link-cancel');
         this.copyLinkPopupXButton = page.locator('#copy-link-cancel-cross');

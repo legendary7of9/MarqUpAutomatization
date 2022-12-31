@@ -93,6 +93,10 @@ class ViewContract {
         await this.page.waitForSelector('#permanentContractLink');
     }
 
+    async copyLinkPopupPermanentCheckboxButtonClickMultipartyOn() {
+        await this.copyLinkPopupPermanentCheckboxButton.click();
+    }
+
     async copyLinkPopupExpiringCheckboxButtonClick() {
         await this.copyLinkPopupExpiringCheckboxButton.click();
         await this.page.waitForSelector('#expiringLink');
@@ -112,6 +116,15 @@ class ViewContract {
     async copyLinkPopupExpiringDateGetLinkClick() {
         await this.copyLinkPopupExpiringCheckboxButton.click();
         await this.page.waitForSelector('[placeholder="Expiring Contract Link"]');
+    }
+
+    async copyLinkPopupExpiryGetLinkClick() {
+        await this.copyLinkPopupExpiringDateGetLink.click();
+        await this.page.waitForSelector('[placeholder="Expiring Contract Link"]');
+    }
+
+    async copyLinkPopupExpiryGetLinkMultipartyClick() {
+        await this.copyLinkPopupExpiringDateGetLink.click();
     }
 
     async copyLinkPopupCancelButtonClick() {

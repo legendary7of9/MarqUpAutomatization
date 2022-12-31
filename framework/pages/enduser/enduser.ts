@@ -27,7 +27,7 @@ class EndUserPage {
     constructor(page: Page) {
         this.page = page;
         this.logInButton = page.locator('#login-btn');
-        this.downloadPdfButton = page.locator('.pdf-button');
+        this.downloadPdfButton = page.locator('.pdf-button .btn');
         this.firstNameField = page.locator('#contractsignform-first_name');
         this.lastNameField = page.locator('#contractsignform-last_name');
         this.legalEntityNameField = page.locator('#contractsignform-company_name');
@@ -49,6 +49,10 @@ class EndUserPage {
     async logInButtonClick() {
         await this.logInButton.click();
         await this.page.waitForSelector('#login-sign-in');
+    }
+
+    async downloadPdfButtonClick() {
+        await this.downloadPdfButton.click();
     }
 
     async firstNameFieldRandomFill(text:string) {
@@ -78,6 +82,20 @@ class EndUserPage {
     async signButtonClick() {
         await this.signButton.click();
         await this.page.waitForSelector('.alert-success');
+    }
+
+    async signButtonForErorrClick() {
+        await this.signButton.click();
+    }
+
+    async signButtonForLegalEntityClick() {
+        await this.signButton.click();
+        await this.page.waitForSelector('#relative-company-modal');
+    }
+
+    async signButtonForLegalEntityErrorClick() {
+        await this.signButton.click();
+        await this.page.waitForSelector('.alert-danger');
     }
 
     async payContractFeeButtonClick() {

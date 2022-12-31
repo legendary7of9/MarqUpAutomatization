@@ -19,6 +19,16 @@ export abstract class Helpers {
   
     return text;
   }
+
+  public static generateRandomStringLegalEntity() {
+    var text = "autotest";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  
+    for (var i = 0; i < 3; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
   
   public static generateRandomNumberNewModelFrom(min: 1, max: 31) {
     var number = "";
@@ -243,6 +253,16 @@ public static currentDateAndTimeForSignatures() {
   var today = new Date();
   var date = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
   var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'}) + ' MT';
+
+  var dateTime = ' ' + date + ' ' + time + ' '
+
+  return dateTime;
+}
+
+public static currentDateAndTimeForSignedContract() {
+  var today = new Date();
+  var date = today.toLocaleDateString('en-US', {month:'short', year:'numeric', day:'2-digit'});
+  var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'});
 
   var dateTime = ' ' + date + ' ' + time + ' '
 

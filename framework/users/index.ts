@@ -110,6 +110,16 @@ class Users {
         await this.page.fill('[formcontrolname="email"]', 'aaforenduser@maildrop.cc')
         await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
     }
+
+    async AA2ForEnduser() {
+        await this.page.fill('[formcontrolname="email"]', 'aa2forenduser@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
+
+    async AUForEnduser() {
+        await this.page.fill('[formcontrolname="email"]', 'auforenduser@maildrop.cc')
+        await this.page.fill('[formcontrolname="password"]', 'Zaq123456!')
+    }
 }
 
 export {
