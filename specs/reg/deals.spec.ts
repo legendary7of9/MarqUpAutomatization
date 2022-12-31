@@ -1,36 +1,28 @@
-import { test , expect, webkit, chromium, Browser, BrowserContext, Page } from '@playwright/test'
+import { test , expect } from '@playwright/test'
 import { UserBar, Users } from '../../framework'
 import { SignInPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { Pagination } from '../../framework'
-import { DashboardPage } from '../../framework'
-import { TemplatesPage } from '../../framework'
-import { NewEditCopyTemplatePage } from '../../framework'
-import { ViewTemplatePage } from '../../framework'
-import { NewEditCopyModelPage } from '../../framework'
 import { DealsPage } from '../../framework'
-import { NewEditTermPage } from '../../framework'
-import { ViewingModelPage } from '../../framework'
 import { NewEditDealPage } from '../../framework'
-import { DealAnalysisPage } from '../../framework'
-import { ExistingModelPage } from '../../framework'
-import { ContractsPage } from '../../framework'
-import { NewEditContractPage } from '../../framework'
-import { ModelPage } from '../../framework'
-import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+// [webkit] › specs\reg\deals.spec.ts:690:1 › sortingOnTheDealsPage @regChecklistNewLow @dealsPage 
+// [webkit] › specs\reg\deals.spec.ts:1182:1 › paginationOnTheDealsPage @regChecklistNewLow @dealsPage 
+// [chrome] › specs\reg\deals.spec.ts:631:1 › gettingEmailWithCsvFile @regChecklistNewMedium @dealsPage 
+// [chrome] › specs\reg\deals.spec.ts:690:1 › sortingOnTheDealsPage @regChecklistNewLow @dealsPage 
+// [chrome] › specs\reg\deals.spec.ts:1182:1 › paginationOnTheDealsPage @regChecklistNewLow @dealsPage 
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
 });
 
-test('redirectionToTheDealsPage @regChecklistNewLow @dealssPage', async ({ page }) => {
+test('redirectionToTheDealsPage @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const userBar = new UserBar(page);
     const pageTitle = page.locator('.section__title');
-    console.log('dealssPage Redirection To The Deals Page');
+    console.log('dealsPage Redirection To The Deals Page');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -57,7 +49,7 @@ test('redirectionToTheDealsPage @regChecklistNewLow @dealssPage', async ({ page 
     await expect(pageTitle).toHaveText(' Deals ');
 });
 
-test('validationAddDealButton @regChecklistNewHigh @modelsPage', async ({ page }) => {
+test('validationAddDealButton @regChecklistNewHigh @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -70,7 +62,7 @@ test('validationAddDealButton @regChecklistNewHigh @modelsPage', async ({ page }
     const addDealPopupChooseContractButton = page.locator('#confirm-create-deal-choose-a-contract');
     const addDealPopupNewDealButton = page.locator('#confirm-create-deal-new-deal');
     const addDealPopupCancelButton = page.locator('#confirm-create-deal-cancel');
-    console.log('modelsPage Validation Add Deal Button');
+    console.log('dealsPage Validation Add Deal Button');
     await users.AA4();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -80,13 +72,12 @@ test('validationAddDealButton @regChecklistNewHigh @modelsPage', async ({ page }
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(pageTitle).toHaveText('New Deal');
     await expect(addDealPopup).toBeHidden();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await page.waitForSelector('#login-sign-in');
+    await userBar.logOutAction();
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
+    await page.waitForTimeout(1500);
     await deals.addDealButtonClick();
     await expect(page).toHaveURL('/deals?&sort=contract_name');
     await expect(addDealPopup).toBeVisible();
@@ -97,7 +88,7 @@ test('validationAddDealButton @regChecklistNewHigh @modelsPage', async ({ page }
     await expect(addDealPopupCancelButton).toBeVisible();
 });
 
-test('checkingChooseAContractProcess @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('checkingChooseAContractProcess @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -116,11 +107,12 @@ test('checkingChooseAContractProcess @regChecklistNewMedium @modelsPage', async 
     const overviewField = page.locator('#form-control-description .mat-input-element');
     const notesField = page.locator('#form-control-notes .mat-input-element');
     const crmId = page.locator('#form-control-sf_contract_id .mat-input-element');
-    console.log('modelsPage Templates Column');
+    console.log('dealsPage Templates Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
+    await page.waitForTimeout(1000);
     await deals.addDealButtonClick();
     await deals.addDealPopupChooseContractButtonClick();
     await expect(pageTitle).toHaveText(' Choose a Contract ');
@@ -129,7 +121,7 @@ test('checkingChooseAContractProcess @regChecklistNewMedium @modelsPage', async 
     await deals.chooseContractPageNextButtonClick();
     await expect(modelFieldDisabled).toHaveAttribute('aria-disabled', 'true');
     await expect(modelFieldValue).toHaveText('MODEL cloned 22222');
-    await expect(contractNameField).toHaveAttribute('disabled', '');
+    await expect(contractNameField).toBeDisabled();
     await expect(contractNameField).toHaveValue('test100testContract4');
     await expect(subsidaryField).not.toHaveAttribute('aria-disabled', 'true');
     await expect(subsidaryField).toHaveValue('Client 1HT(test)');
@@ -150,16 +142,17 @@ test('checkingChooseAContractProcess @regChecklistNewMedium @modelsPage', async 
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
+    await page.waitForTimeout(1000);
     await deals.addDealButtonClick();
     await deals.addDealPopupChooseContractButtonClick();
-    await page.locator('.mat-radio-button >> nth=0').click();
+    await page.locator('.mat-radio-label-content >> text= test100testContract4 ').click();
     await deals.chooseContractPageNextButtonClick();
     await expect(clientFieldDisabledSA).toHaveAttribute('aria-disabled', 'true');
-    await expect(clientFieldValueSA).toHaveText('W Client 2 test test test test test test');
+    await expect(clientFieldValueSA).toHaveText('Client 1HT(test)');
     await expect(modelFieldDisabled).toHaveAttribute('aria-disabled', 'true');
-    await expect(modelFieldValue).toHaveText('2222 Regress model 09/01');
-    await expect(contractNameField).toHaveAttribute('disabled', '');
-    await expect(contractNameField).toHaveValue('01 test');
+    await expect(modelFieldValue).toHaveText('MODEL cloned 22222');
+    await expect(contractNameField).toBeDisabled();
+    await expect(contractNameField).toHaveValue('test100testContract4');
     await expect(nameOfTheOtherPartyField).not.toHaveAttribute('aria-disabled', 'true');
     await expect(nameOfTheOtherPartyField).toHaveValue('');
     await expect(estimatedValueField).not.toHaveAttribute('aria-disabled', 'true');
@@ -172,47 +165,49 @@ test('checkingChooseAContractProcess @regChecklistNewMedium @modelsPage', async 
     await expect(crmId).toHaveValue('');
 });
 
-test('newDealButtonAddDealPopup @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('newDealButtonAddDealPopup @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const pageTitle = page.locator('.section__title');
-    console.log('modelsPage New Deal Button Add Deal Popup');
+    console.log('dealsPage New Deal Button Add Deal Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
+    await page.waitForTimeout(1500);
     await deals.addDealButtonClick();
     await deals.addDealPopupNewDealButtonClick();
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(pageTitle).toHaveText('New Deal');
 });
 
-test('cancelButtonAddDealPopup @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('cancelButtonAddDealPopup @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const addDealPopup = page.locator('.mat-dialog-container');
-    console.log('modelsPage Cancel Button Add Deal Popup');
+    console.log('dealsPage Cancel Button Add Deal Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
+    await page.waitForTimeout(1500);
     await deals.addDealButtonClick();
     await deals.addDealPopupCancelButtonClick();
     await expect(addDealPopup).toBeHidden();
     await expect(page).toHaveURL('/deals?&sort=contract_name');
 });
 
-test('notDisplayingSomePublishContractsOnChooseContractPage @regChecklistNewHigh @modelsPage', async ({ page }) => {
+test('notDisplayingSomePublishContractsOnChooseContractPage @regChecklistNewHigh @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const existingContract = page.locator('.mat-radio-label-content >> text= autotestContract1 ');
-    console.log('modelsPage Not Displaying Some Publish Contracts On Choose Contract Page');
+    console.log('dealsPage Not Displaying Some Publish Contracts On Choose Contract Page');
     await signIn.email.fill('alexey.banshykov@mobindustry.net');
     await signIn.password.fill('Qwerty123!');
     await signIn.signInButton();
@@ -223,7 +218,7 @@ test('notDisplayingSomePublishContractsOnChooseContractPage @regChecklistNewHigh
     await expect(existingContract).toBeHidden();
 });
 
-test('addDealSubscriptionLimits @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('addDealSubscriptionLimits @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -238,7 +233,7 @@ test('addDealSubscriptionLimits @regChecklistNewMedium @modelsPage', async ({ pa
     const updateSubscriptionContactAAPopup = page.locator('.mat-dialog-container');
     const updateSubscriptionContactAAPopupText = page.locator('.modal-header');
     const updateSubscriptionContactAAPopupCloseButton = page.locator('#not-available-popup-close');
-    console.log('modelsPage Add Deal Subscription Limits');
+    console.log('dealsPage Add Deal Subscription Limits');
     await users.AASubscriptionLimits();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -342,14 +337,14 @@ test('addDealSubscriptionLimits @regChecklistNewMedium @modelsPage', async ({ pa
     await expect(pageTitle).toHaveText('Edit Client');
 });
 
-test('activationExportButtonDealsPage @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('activationExportButtonDealsPage @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const userBar = new UserBar(page);
     const deals = new DealsPage(page);
     const exportButton = page.locator('#deals-list-export');
-    console.log('modelsPage Activation Export Button Deals Page');
+    console.log('dealsPage Activation Export Button Deals Page');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -401,39 +396,37 @@ test('activationExportButtonDealsPage @regChecklistNewMedium @modelsPage', async
     await expect(exportButton).toHaveAttribute('aria-disabled', 'false');
 });
 
-test('check/UncheckDealsOnAllPages @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('check/UncheckDealsOnAllPages @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const pagination = new Pagination(page);
-    const checkbox0 = page.locator('.deals-list-select >> nth=0');
-    const checkbox1 = page.locator('.deals-list-select >> nth=4');
-    const checkbox2 = page.locator('.deals-list-select >> nth=9');
-    console.log('modelsPage Check/Uncheck Deals On All Pages');
+    const checkbox0 = page.locator('.deals-list-select input >> nth=0');
+    const checkbox1 = page.locator('.deals-list-select input >> nth=4');
+    const checkbox2 = page.locator('.deals-list-select input >> nth=9');
+    console.log('dealsPage Check/Uncheck Deals On All Pages');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
     await deals.checkboxSelect0Click();
-    await expect(checkbox0).toHaveClass('deals-list-select mat-checkbox mat-primary mat-checkbox-checked');
+    await expect(checkbox0).toBeChecked();
     await pagination.paginationPage2Click();
     await page.waitForTimeout(1000);
     await deals.checkboxSelect4Click();
-    await expect(checkbox1).toHaveClass('deals-list-select mat-checkbox mat-primary mat-checkbox-checked');
-    await pagination.paginationPage3Click();
-    await page.waitForTimeout(1000);
+    await expect(checkbox1).toBeChecked();
     await deals.checkboxSelect9Click();
-    await expect(checkbox2).toHaveClass('deals-list-select mat-checkbox mat-primary mat-checkbox-checked');
+    await expect(checkbox2).toBeChecked();
 });
 
-test('chceckboxAllIfCustomCheckboxesApplied @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('chceckboxAllIfCustomCheckboxesApplied @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const checkboxSelectAll = page.locator('#deals-list-select-all');
-    console.log('modelsPage Chceckbox All If Custom Checkboxes Applied');
+    console.log('dealsPage Chceckbox All If Custom Checkboxes Applied');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -442,38 +435,36 @@ test('chceckboxAllIfCustomCheckboxesApplied @regChecklistNewLow @modelsPage', as
     await expect(checkboxSelectAll).toHaveClass('mat-checkbox mat-primary mat-checkbox-indeterminate');
 });
 
-test('deselectAllDealsOnAllPages @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('deselectAllDealsOnAllPages @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const pagination = new Pagination(page);
-    const checkbox0 = page.locator('.deals-list-select >> nth=0');
-    const checkbox1 = page.locator('.deals-list-select >> nth=4');
-    const checkbox2 = page.locator('.deals-list-select >> nth=9');
-    console.log('modelsPage Deselect All Deals On All Pages');
+    const checkbox0 = page.locator('.deals-list-select input >> nth=0');
+    const checkbox1 = page.locator('.deals-list-select input >> nth=4');
+    const checkbox2 = page.locator('.deals-list-select input >> nth=9');
+    console.log('dealsPage Deselect All Deals On All Pages');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
     await deals.checkboxSelectAllClick();
     await deals.checkboxSelectAllClick();
-    await expect(checkbox0).toHaveClass('deals-list-select mat-checkbox mat-primary');
+    await expect(checkbox0).not.toBeChecked();
     await pagination.paginationPage2Click();
     await page.waitForTimeout(1000);
-    await expect(checkbox1).toHaveClass('deals-list-select mat-checkbox mat-primary');
-    await pagination.paginationPage3Click();
-    await page.waitForTimeout(1000);
-    await expect(checkbox2).toHaveClass('deals-list-select mat-checkbox mat-primary');
+    await expect(checkbox1).not.toBeChecked();
+    await expect(checkbox2).not.toBeChecked();
 });
 
-test('validationExportButtonDealsCheckboxesManuallyChecked @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('validationExportButtonDealsCheckboxesManuallyChecked @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const exportPopup = page.locator('.mat-dialog-container');
-    console.log('modelsPage Validation Export Button Deals Checkboxes Manually Checked');
+    console.log('dealsPage Validation Export Button Deals Checkboxes Manually Checked');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -488,7 +479,7 @@ test('validationExportButtonDealsCheckboxesManuallyChecked @regChecklistNewMediu
     await download.delete();
 });
 
-test('displayingConfirmExportPopup @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('displayingConfirmExportPopup @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -496,7 +487,7 @@ test('displayingConfirmExportPopup @regChecklistNewMedium @modelsPage', async ({
     const pagination = new Pagination(page);
     const exportPopup = page.locator('.mat-dialog-container');
     const exportPopupText = page.locator('.modal-header');
-    console.log('modelsPage Displaying Confirm Export Popup');
+    console.log('dealsPage Displaying Confirm Export Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -521,8 +512,6 @@ test('displayingConfirmExportPopup @regChecklistNewMedium @modelsPage', async ({
     await page.waitForTimeout(1000);
     await deals.checkboxSelect4Click();
     await deals.checkboxSelect5Click();
-    await pagination.paginationPage3Click();
-    await page.waitForTimeout(1000);
     await deals.checkboxSelect7Click();
     await deals.checkboxSelect8Click();
     await deals.exportButtonClick();
@@ -531,14 +520,14 @@ test('displayingConfirmExportPopup @regChecklistNewMedium @modelsPage', async ({
     await expect(exportPopupText).toHaveText(' Do you want to export the list of all deals of Client 1HT(test)? ');
 });
 
-test('validationExportButtonSelectAllApplied @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('validationExportButtonSelectAllApplied @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const exportPopup = page.locator('.mat-dialog-container');
     const exportPopupText = page.locator('.modal-header');
-    console.log('modelsPage Validation Export Button Select All Applied');
+    console.log('dealsPage Validation Export Button Select All Applied');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -550,7 +539,7 @@ test('validationExportButtonSelectAllApplied @regChecklistNewMedium @modelsPage'
     await expect(exportPopupText).toHaveText(' Do you want to export the list of all deals of Client 1HT(test)? ');
 });
 
-test('displayingInfoConfirmExportPopup @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('displayingInfoConfirmExportPopup @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -564,7 +553,7 @@ test('displayingInfoConfirmExportPopup @regChecklistNewLow @modelsPage', async (
     const exportPopupXExportOnlySelectedRadiButtonText = page.locator('.mat-radio-label-content >> nth=1');
     const exportPopupCancelButton = page.locator('#export-deals-cancel');
     const exportPopupExportButton = page.locator('#export-deals-export');
-    console.log('modelsPage Displaying Info Confirm Export Popup');
+    console.log('dealsPage Displaying Info Confirm Export Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -585,14 +574,14 @@ test('displayingInfoConfirmExportPopup @regChecklistNewLow @modelsPage', async (
     await expect(exportPopupExportButton).toBeVisible();
 });
 
-test('validationExportButtonOnTheConfirmExportPopup @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('validationExportButtonOnTheConfirmExportPopup @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const emailSentPopup = page.locator('.mat-dialog-container');
     const emailSentPopupText = page.locator('.modal-header');
-    console.log('modelsPage Validation Export Button On The Confirm Export Popup');
+    console.log('dealsPage Validation Export Button On The Confirm Export Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -616,7 +605,7 @@ test('validationExportButtonOnTheConfirmExportPopup @regChecklistNewMedium @mode
     await download.delete();
 });
 
-test('displayingInfoOnTheEmailSentPopup @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('displayingInfoOnTheEmailSentPopup @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -625,7 +614,7 @@ test('displayingInfoOnTheEmailSentPopup @regChecklistNewLow @modelsPage', async 
     const emailSentPopupText = page.locator('.modal-header');
     const emailSentPopupXButton = page.locator('.close-ic');
     const emailSentPopupDoneButton = page.locator('.mat-button >> text=Done');
-    console.log('modelsPage Displaying Info On The Email Sent Popup');
+    console.log('dealsPage Displaying Info On The Email Sent Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -641,7 +630,7 @@ test('displayingInfoOnTheEmailSentPopup @regChecklistNewLow @modelsPage', async 
     await expect(emailSentPopupDoneButton).toBeVisible();
 });
 
-test('gettingEmailWithCsvFile @regChecklistNewMedium @modelsPage', async ({ page, browserName }) => {
+test('gettingEmailWithCsvFile @regChecklistNewMedium @dealsPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
@@ -653,7 +642,7 @@ test('gettingEmailWithCsvFile @regChecklistNewMedium @modelsPage', async ({ page
     const iframeResetBody = page.frameLocator('.messagedata-iframe').locator('.content');
     const iframeResetFooter = page.frameLocator('.messagedata-iframe').locator('.footer');
     const csvFile = page.locator('.aSH');
-    console.log('modelsPage Getting Email With Csv File');
+    console.log('dealsPage Getting Email With Csv File');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -700,7 +689,7 @@ test('gettingEmailWithCsvFile @regChecklistNewMedium @modelsPage', async ({ page
     await expect(iframeResetFooter).toContainText('www.marqup.noredlines.com');
 });
 
-test('sortingOnTheDealsPage @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('sortingOnTheDealsPage @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -714,7 +703,7 @@ test('sortingOnTheDealsPage @regChecklistNewLow @modelsPage', async ({ page }) =
     const contractField = page.locator('.mat-column-score >> nth=1');
     const createdField = page.locator('.mat-column-created >> nth=1');
     const editedField = page.locator('.mat-column-edited >> nth=1');
-    console.log('modelsPage Sorting On The Deals Page');
+    console.log('dealsPage Sorting On The Deals Page');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -770,20 +759,20 @@ test('sortingOnTheDealsPage @regChecklistNewLow @modelsPage', async ({ page }) =
     await expect(createdField).toHaveText(' 11/30/21 AccountAdimnThird AOThird ');
     await deals.editedFilterClick();
     await expect(page).toHaveURL('/deals?&sort=-updated_at');
-    await expect(editedField).toHaveText(' 08/04/22 AccountAdimnThird AOThird ');
+    await expect(editedField).toHaveText(' 12/04/22 AccountAdimnThird AOThird ');
     await deals.editedFilterClick();
     await expect(page).toHaveURL('/deals?&sort=updated_at');
     await expect(editedField).toHaveText('');
 });
 
-test('displayingAutoRenewIcon @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('displayingAutoRenewIcon @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const autoRenewIcon = page.locator('.auto-renew >> nth=0');
     const autoRenewIconToltip = page.locator('.mat-tooltip');
-    console.log('modelsPage Displaying Auto Renew Icon');
+    console.log('dealsPage Displaying Auto Renew Icon');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -795,12 +784,12 @@ test('displayingAutoRenewIcon @regChecklistNewLow @modelsPage', async ({ page })
     await expect(autoRenewIconToltip).toHaveText('Auto renew');
 });
 
-test('dealNameColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('dealNameColumn @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const dealColumn = page.locator('.deal-column-link >> nth=0');
-    console.log('modelsPage Deal Name Column');
+    console.log('dealsPage Deal Name Column');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -811,12 +800,12 @@ test('dealNameColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(page).toHaveURL('/deals/analysis-deal/886');
 });
 
-test('modelNameColumn @regChecklistNewMeduim @modelsPage', async ({ page }) => {
+test('modelNameColumn @regChecklistNewMeduim @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const modelColumn = page.locator('.models-column-link >> nth=0');
-    console.log('modelsPage Deal Name Column');
+    console.log('dealsPage Deal Name Column');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -827,30 +816,32 @@ test('modelNameColumn @regChecklistNewMeduim @modelsPage', async ({ page }) => {
     await expect(page).toHaveURL('/models/856/terms?&sort=term');
 });
 
-test('updatingModelNameInTheModelColumn @regChecklistNewMedium @modelsPage', async ({ page, browserName }) => {
+test('updatingModelNameInTheModelColumn @regChecklistNewMedium @dealsPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const modelColumn = page.locator('.mat-column-models >> nth=2');
-    console.log('modelsPage Updating Model Name In The Model Column');
+    console.log('dealsPage Updating Model Name In The Model Column');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
     await expect(modelColumn).toHaveText('Configuration test1');
     await page.goto('/models/edit-model/852');
+    await page.waitForTimeout(1500);
     await page.locator('[formcontrolname="name"]').fill('Configuration test12');
     await page.click('#model-details-save-changes');
     await page.waitForTimeout(1500);
     await sideBarMenu.sideBarDealsClick();
     await expect(modelColumn).toHaveText('Configuration test12');
     await page.goto('/models/edit-model/852');
+    await page.waitForTimeout(1500);
     await page.locator('[formcontrolname="name"]').fill('Configuration test1');
     await page.click('#model-details-save-changes');
 });
 
-test('behaviorModelNameColumnModelActive/Archived/Deleted @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('behaviorModelNameColumnModelActive/Archived/Deleted @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -858,7 +849,7 @@ test('behaviorModelNameColumnModelActive/Archived/Deleted @regChecklistNewLow @m
     const archiveModel = page.locator('.models-column-link >> nth=1');
     const deletedModel = page.locator('text=Configuration test2 >> nth=1');
     const tooltip = page.locator('.mat-tooltip');
-    console.log('modelsPage Behavior Model Name Column Model Active/Archived/Deleted');
+    console.log('dealsPage Behavior Model Name Column Model Active/Archived/Deleted');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -885,7 +876,7 @@ test('behaviorModelNameColumnModelActive/Archived/Deleted @regChecklistNewLow @m
     await expect(page).toHaveURL('/deals?&sort=contract_name');
 });
 
-test('contractsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('contractsColumn @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -893,7 +884,7 @@ test('contractsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     const contractFieldWithValue = page.locator('.mat-column-contract .model-column-link >> nth=0');
     const contractFieldWithoutValue = page.locator('.mat-column-contract >> nth=1');
     const tooltip = page.locator('.mat-tooltip');
-    console.log('modelsPage Contracts Column');
+    console.log('dealsPage Contracts Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -915,16 +906,16 @@ test('contractsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(contractFieldWithoutValue).toHaveText('-');
 });
 
-test('effective/ExpirationDateColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('effective/ExpirationDateColumn @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
-    const effectiveWithValue = page.locator('.mat-column-effectiveDate >> nth=3');
+    const effectiveWithValue = page.locator('.mat-column-effectiveDate >> nth=5');
     const effectiveWithoutValue = page.locator('.mat-column-effectiveDate >> nth=1');
     const expirationWithValue = page.locator('.mat-column-expirationDate >> nth=1');
-    const expirationWithoutValue = page.locator('.mat-column-expirationDate >> nth=2');
-    console.log('modelsPage Effective/Expiration Date Column');
+    const expirationWithoutValue = page.locator('.mat-column-expirationDate >> nth=3');
+    console.log('dealsPage Effective/Expiration Date Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -933,11 +924,11 @@ test('effective/ExpirationDateColumn @regChecklistNewLow @modelsPage', async ({ 
     await expect(effectiveWithValue).toHaveText('07/12/22');
     await expect(effectiveWithoutValue).toHaveText('-');
     await deals.expirationDateFilterClick();
-    await expect(expirationWithValue).toHaveText('09/07/22');
+    await expect(expirationWithValue).toHaveText('02/22/23');
     await expect(expirationWithoutValue).toHaveText('-');
 });
 
-test('statusColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('statusColumn @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -946,7 +937,7 @@ test('statusColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     const statusColor = page.locator('.status-progress__color-bar >> nth=0');
     const statusPrliminaryText = page.locator('.mat-column-status >> nth=9');
     const statusPrliminaryColor = page.locator('.status-progress__color-bar >> nth=8');
-    console.log('modelsPage Status Column');
+    console.log('dealsPage Status Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -958,7 +949,7 @@ test('statusColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await expect(statusPrliminaryColor).toHaveCSS('background-color', 'rgb(255, 242, 84)');
 });
 
-test('scoreColumn @regChecklistNewHigh @modelsPage', async ({ page }) => {
+test('scoreColumn @regChecklistNewHigh @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -966,7 +957,7 @@ test('scoreColumn @regChecklistNewHigh @modelsPage', async ({ page }) => {
     const scoreWithoutValue = page.locator('.mat-column-score >> nth=1');
     const scorePoitive = page.locator('.mat-column-score >> nth=3');
     const scoreNegative = page.locator('.mat-column-score >> nth=4');
-    console.log('modelsPage Score Column');
+    console.log('dealsPage Score Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -981,7 +972,7 @@ test('scoreColumn @regChecklistNewHigh @modelsPage', async ({ page }) => {
     await expect(scoreNegative).toHaveCSS('color', 'rgb(20, 35, 54)');
 });
 
-test('created/EditedColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('created/EditedColumn @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -991,14 +982,14 @@ test('created/EditedColumn @regChecklistNewLow @modelsPage', async ({ page }) =>
     const editedField = page.locator('.mat-column-edited >> nth=1');
     const editedFieldLongValue = page.locator('.mat-column-edited >> nth=5');
     const tooltip = page.locator('.mat-tooltip');
-    console.log('modelsPage Created/Edited Column');
+    console.log('dealsPage Created/Edited Column');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarDealsClick();
     await deals.rightArrowClick();
     await deals.createFilterClick();
-    await expect(createdField).toHaveText(' 07/23/22 AA Client HT ');
+    await expect(createdField).toHaveText(' 12/22/22 AA Client HT ');
     await createdField.hover();
     await expect(tooltip).toBeVisible();
     await expect(tooltip).toHaveText('AA Client HT');
@@ -1008,26 +999,26 @@ test('created/EditedColumn @regChecklistNewLow @modelsPage', async ({ page }) =>
     await expect(tooltip).toBeVisible();
     await expect(tooltip).toHaveText('sAdmin1 sAdmin');
     await deals.editedFilterClick();
-    await expect(editedField).toHaveText(' 07/23/22 AA Client HT ');
+    await expect(editedField).toHaveText(' 12/22/22 AA Client HT ');
     await editedField.hover();
     await expect(tooltip).toBeVisible();
     await expect(tooltip).toHaveText('AA Client HT');
-    await expect(editedFieldLongValue).toHaveText(' 07/07/22 sAdmin1 sAdmin ');
+    await expect(editedFieldLongValue).toHaveText(' 12/22/22 AA Client HT ');
     await editedFieldLongValue.hover();
     await page.waitForTimeout(500);
     await expect(tooltip).toBeVisible();
-    await expect(tooltip).toHaveText('sAdmin1 sAdmin');
+    await expect(tooltip).toHaveText('AA Client HT');
     await deals.editedFilterClick();
     await expect(editedField).toHaveText('');
 });
 
-test('editButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('editButtonThreeDotsMenu @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const pageTitle = page.locator('.section__title');
-    console.log('modelsPage Edit Button Three Dots Menu');
+    console.log('dealsPage Edit Button Three Dots Menu');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -1040,14 +1031,14 @@ test('editButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ page })
     await expect(pageTitle).toHaveText('Edit Deal');
 });
 
-test('viewSummaryButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('viewSummaryButtonThreeDotsMenu @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const deals = new DealsPage(page);
     const viewSummaryButton = page.locator('.context-menu-view-summary');
     const pageTitle = page.locator('.section__title');
-    console.log('modelsPage View Summary Button Three Dots Menu');
+    console.log('dealsPage View Summary Button Three Dots Menu');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -1066,7 +1057,7 @@ test('viewSummaryButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ 
     await expect(pageTitle).toContainText('Summary');
 });
 
-test('saveAsNewButtonThreeDotsMenu @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('saveAsNewButtonThreeDotsMenu @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
@@ -1082,7 +1073,7 @@ test('saveAsNewButtonThreeDotsMenu @regChecklistNewMedium @modelsPage', async ({
     const overviewField = page.locator('#form-control-description .mat-input-element');
     const notesField = page.locator('#form-control-notes .mat-input-element');
     const crmId = page.locator('#form-control-sf_contract_id .mat-input-element');
-    console.log('modelsPage Save As New Button Three Dots Menu');
+    console.log('dealsPage Save As New Button Three Dots Menu');
     await users.AA3();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -1117,7 +1108,7 @@ test('saveAsNewButtonThreeDotsMenu @regChecklistNewMedium @modelsPage', async ({
     await expect(crmId).toHaveValue('213`');
 });
 
-test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @modelsPage', async ({ page }) => {
+test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -1131,7 +1122,7 @@ test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @mod
     const contactAAPopupText = page.locator('.modal-header');
     const contactAAPopupCloseButton = page.locator('#not-available-popup-close');
     const pageTitle = page.locator('.section__title');
-    console.log('modelsPage Save As New Button Subscription Limits Three Dots Menu');
+    console.log('dealsPage Save As New Button Subscription Limits Three Dots Menu');
     await users.AASubscriptionLimits();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -1152,9 +1143,7 @@ test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @mod
     await expect(page).toHaveURL('/clients/edit-client/383?update_plan=true');
     await expect(pageTitle).toBeVisible();
     await expect(pageTitle).toHaveText('Edit Client');
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await page.waitForSelector('#login-sign-in');
+    await userBar.logOutAction();
     await users.AUSubscriptionLimits();
     await signIn.signInButton();
     await page.waitForURL('/clients/383');
@@ -1169,13 +1158,12 @@ test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @mod
     await expect(page).toHaveURL('/deals?&sort=-completion_status');
     await expect(pageTitle).toBeVisible();
     await expect(pageTitle).toHaveText('Deals');
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await page.waitForSelector('#login-sign-in');
+    await userBar.logOutAction();
     await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/deals/clone-deal/8585');
+    await page.waitForTimeout(1500);
     await page.locator('#deal-details-save').click();
     await expect(subscriptionLimitsPopup).toBeVisible();
     await expect(subscriptionLimitsPopupText).toBeVisible();
@@ -1193,12 +1181,12 @@ test('saveAsNewButtonSubscriptionLimitsThreeDotsMenu @regChecklistNewMedium @mod
     await expect(pageTitle).toHaveText('Edit Client');
 });
 
-test('paginationOnTheDealsPage @regChecklistNewLow @modelsPage', async ({ page }) => {
+test('paginationOnTheDealsPage @regChecklistNewLow @dealsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const sideBarMenu = new SideBar(page);
     const pagination = new Pagination(page);
-    console.log('modelsPage Pagination On The Deals Page');
+    console.log('dealsPage Pagination On The Deals Page');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');

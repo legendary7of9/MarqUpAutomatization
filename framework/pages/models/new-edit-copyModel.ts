@@ -36,12 +36,12 @@ class NewEditCopyModelPage {
         this.descriptionField = page.locator('[formcontrolname="description"]');
         this.typeDropDown = page.locator('[formcontrolname="type_id"]');
         this.typeDropDownValue = page.locator('mat-option >> nth=19');
-        this.typeDropDownEditValue = page.locator('mat-option >> nth=14');
-        this.typeDropDownOtherValue = page.locator('mat-option >> nth=21');
+        this.typeDropDownEditValue = page.locator('mat-option >> text = Non Disclosure Agreement ');
+        this.typeDropDownOtherValue = page.locator('mat-option >> text= Other ');
         this.typeName = page.locator('[formcontrolname="type_name"]');
         this.clientDropDown = page.locator('[formcontrolname="account_id"]');
         this.clientDropDownValue = page.locator('mat-option >> nth=82');
-        this.clientDropDownEditValue = page.locator('mat-option >> nth=9');
+        this.clientDropDownEditValue = page.locator('mat-option >> text= BanCompany  >> nth=0');
         this.iIcon = page.locator('#weight-scale-info');
         this.fromField = page.locator('[formcontrolname="weight_scale_from"]');
         this.toField = page.locator('[formcontrolname="weight_scale_to"]');
@@ -101,6 +101,13 @@ class NewEditCopyModelPage {
 
     async typeDropDownChoose() {
         await this.typeDropDown.click();
+        await this.page.waitForTimeout(500);
+        if (await this.typeDropDownValue.isHidden()) 
+        {
+            this.page.waitForTimeout(500);
+            this.typeDropDown.click();
+        }
+        await this.page.waitForSelector('.mat-select-content');
         await this.page.focus('mat-option >> nth=19');
         await this.typeDropDownValue.click();
     }
@@ -111,6 +118,13 @@ class NewEditCopyModelPage {
 
     async typeDropDownEdit() {
         await this.typeDropDown.click();
+        await this.page.waitForTimeout(500);
+        if (await this.typeDropDownEditValue.isHidden()) 
+        {
+            this.page.waitForTimeout(500);
+            this.typeDropDown.click();
+        }
+        await this.page.waitForSelector('.mat-select-content');
         await this.typeDropDownEditValue.click();
     }
 
@@ -185,9 +199,17 @@ class NewEditCopyModelPage {
         await this.page.waitForTimeout(1500);
     }
 
+    async saveChangesButtonForErrorClick() {
+        await this.saveChangesButton.click();
+    }
+
     async saveButtonCopyPageClick() {
         await this.saveButtonCopyPage.click();
         await this.page.waitForSelector('#terms-list-add-term');
+    }
+
+    async saveButtonCopyPageForErrorClick() {
+        await this.saveButtonCopyPage.click();
     }
 
     async activateButtonClick() {

@@ -1,8 +1,6 @@
 import { test , expect } from '@playwright/test'
 import { UserBar, Users } from '../../framework'
 import { SignInPage } from '../../framework'
-import { SideBar } from '../../framework'
-import { ModelPage } from '../../framework'
 import { DealsPage } from '../../framework'
 import { NewEditDealPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
@@ -15,7 +13,7 @@ test('clientsField @regChecklistNewLow @newEditDealPage', async ({ page, browser
     test.skip(browserName === 'chromium');
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const userMenu = new UserBar(page);
+    const userBar = new UserBar(page);
     const deals = new DealsPage(page);
     const clientsField = page.locator('[formcontrolname="account_id"]');
     console.log('NewEditDeal Clients Field');
@@ -30,26 +28,26 @@ test('clientsField @regChecklistNewLow @newEditDealPage', async ({ page, browser
     await expect(clientsField).toBeVisible();
     await page.goto('/deals/edit-deal/8200');
     await expect(clientsField).toBeVisible();
-    await userMenu.userInfoButtonClick();
-    await userMenu.signOutButtonClick();
+    await userBar.logOutAction();
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deals.addDealButtonClick();
+    await deals.addDealPopupNewDealButtonClick();
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(clientsField).toBeHidden();
     await page.goto('/deals/edit-deal/8200');
     await expect(clientsField).toBeHidden();
-    await userMenu.userInfoButtonClick();
-    await userMenu.signOutButtonClick();
+    await userBar.logOutAction();
     await users.AU();
     await signIn.signInButton();
     await page.waitForURL('/clients/265');
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deals.addDealButtonClick();
+    await deals.addDealPopupNewDealButtonClick();
     await expect(page).toHaveURL('/deals/add-deal');
     await expect(clientsField).toBeHidden();
     await page.goto('/deals/edit-deal/8200');
@@ -75,7 +73,7 @@ test('modelField @regChecklistNewHigh @newEditDealPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const deals = new DealsPage(page);
-    const modelFieldNotEditableSelected = page.locator('[formcontrolname="model_id"]');
+    const modelFieldNotEditableSelected = page.locator('#form-control-model_id mat-select');
     console.log('NewEditDeal Clients Field Not Editable By SA');
     await users.AA();
     await signIn.signInButton();
@@ -83,8 +81,9 @@ test('modelField @regChecklistNewHigh @newEditDealPage', async ({ page }) => {
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deals.addDealButtonClick();
+    await deals.addDealPopupNewDealButtonClick();
     await expect(modelFieldNotEditableSelected).toHaveAttribute('role', 'listbox');
-    await expect(modelFieldNotEditableSelected).toHaveClass('mat-select ng-tns-c6-12 ng-untouched ng-pristine ng-star-inserted ng-invalid');
+    await expect(modelFieldNotEditableSelected).toHaveClass('mat-select ng-tns-c6-13 ng-untouched ng-pristine ng-star-inserted ng-invalid');
     await expect(modelFieldNotEditableSelected).toHaveAttribute('aria-disabled', 'false');
     await page.goto('/deals/edit-deal/8200');
     await expect(modelFieldNotEditableSelected).toHaveAttribute('aria-disabled', 'true');
@@ -123,6 +122,7 @@ test('contractNameField @regChecklistNewLow @newEditDealPage', async ({ page, br
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(contractField).toHaveAttribute('placeholder', 'Contract Name');
     await expect(contractField).toHaveAttribute('maxlength', '255');
     await page.goto('/deals/edit-deal/8200');
@@ -131,7 +131,7 @@ test('contractNameField @regChecklistNewLow @newEditDealPage', async ({ page, br
     await expect(contractFieldPreFilled).toHaveValue('testDealDoNotRemove');
 });
 
-    test('myCompanySubsidiaryField @regChecklistNewHigh @newEditDealPage', async ({ page }) => {
+test('myCompanySubsidiaryField @regChecklistNewHigh @newEditDealPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userMenu = new UserBar(page);
@@ -145,6 +145,7 @@ test('contractNameField @regChecklistNewLow @newEditDealPage', async ({ page, br
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(myCompanySubsidiaryField).toBeVisible();
     await expect(myCompanySubsidiaryFieldPreFilled).toHaveValue('Client 1HT(test)');
     await page.goto('/deals/edit-deal/8200');
@@ -158,6 +159,7 @@ test('contractNameField @regChecklistNewLow @newEditDealPage', async ({ page, br
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(myCompanySubsidiaryField).toBeHidden();
     await page.goto('/deals/edit-deal/8200');
     await expect(myCompanySubsidiaryField).toBeHidden();
@@ -169,6 +171,7 @@ test('contractNameField @regChecklistNewLow @newEditDealPage', async ({ page, br
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(myCompanySubsidiaryField).toBeVisible();
     await expect(myCompanySubsidiaryFieldPreFilled).toHaveValue('Client 1HT(test)');
     await page.goto('/deals/edit-deal/8200');
@@ -190,6 +193,7 @@ test('myCompanySubsidiaryFieldValidation @regChecklistNewHigh @newEditDealPage',
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await page.waitForTimeout(1000);
     await expect(myCompanySubsidiaryField).toHaveAttribute('placeholder', 'My Company (Subsidiary)');
     await expect(myCompanySubsidiaryField).toHaveAttribute('maxlength', '255');
@@ -224,12 +228,12 @@ test('myCompanySubsidiaryFieldDropDown @regChecklistNewMedium @newEditDealPage',
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeals.myCompanySubsidiaryFieldClick();
     await expect(myCompanySubsidiaryDropDown).toBeVisible();
     await expect(myCompanySubsidiaryDropDownOption1).toBeVisible();
     await expect(myCompanySubsidiaryDropDownOption2).toBeVisible();
     await expect(myCompanySubsidiaryDropDownOption3).toBeVisible();
-    await expect(myCompanySubsidiaryDropDownOption1).toHaveClass('mat-option main ng-star-inserted');
     await newEditDeals.myCompanySubsidiaryFieldFill();
     await expect(myCompanySubsidiaryDropDownOptionSearch1).toHaveText('dsf');
     await expect(myCompanySubsidiaryDropDownOptionSearch2).toHaveText('dsfds');
@@ -239,7 +243,6 @@ test('myCompanySubsidiaryFieldDropDown @regChecklistNewMedium @newEditDealPage',
     await expect(myCompanySubsidiaryDropDownOption1).toBeVisible();
     await expect(myCompanySubsidiaryDropDownOption2).toBeVisible();
     await expect(myCompanySubsidiaryDropDownOption3).toBeVisible();
-    await expect(myCompanySubsidiaryDropDownOption1).toHaveClass('mat-option main ng-star-inserted');
     await newEditDeals.myCompanySubsidiaryFieldFill();
     await expect(myCompanySubsidiaryDropDownOptionSearch1).toHaveText('dsf');
     await expect(myCompanySubsidiaryDropDownOptionSearch2).toHaveText('dsfds');
@@ -277,6 +280,7 @@ test('nameOfTheOtherPartyField @regChecklistNewLow @newEditDealPage', async ({ p
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(nameOfTheOtherPartyField).toHaveAttribute('placeholder', 'Name of the Other Party');
     await expect(nameOfTheOtherPartyField).toHaveAttribute('maxlength', '255');
     await page.goto('/deals/edit-deal/8200');
@@ -300,6 +304,7 @@ test('estimatedValueField @regChecklistNewLow @newEditDealPage', async ({ page, 
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(estimatedValueField).toHaveAttribute('placeholder', 'Estimated Value');
     await expect(estimatedValueField).toHaveAttribute('maxlength', '13');
     await newEditDeal.esimatedValueFieldFill()
@@ -328,6 +333,7 @@ test('currencyField @regChecklistNewLow @newEditDealPage', async ({ page, browse
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(currencyDefaultValue).toHaveText('USD');
     await newEditDeal.currencyDropDownClick();
     await expect(currencyValue1).toBeVisible();
@@ -355,6 +361,7 @@ test('overviewField @regChecklistNewLow @newEditDealPage', async ({ page, browse
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(overviewField).toHaveAttribute('placeholder', 'Overview');
     await expect(overviewField).toHaveAttribute('matautosizemaxrows', '12');
     await expect(overviewField).toHaveAttribute('matautosizeminrows', '2');
@@ -405,6 +412,7 @@ test('notesField @regChecklistNewLow @newEditDealPage', async ({ page, browserNa
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(notesField).toHaveAttribute('placeholder', 'Notes (internal)');
     await expect(notesField).toHaveAttribute('matautosizemaxrows', '12');
     await expect(notesField).toHaveAttribute('matautosizeminrows', '2');
@@ -498,6 +506,7 @@ test('displayingLinkToExistingDealButton @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(linkToExistingDealButton).toBeVisible();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(linkTOExistingDealButtonDisabledEnabled).toBeVisible();
@@ -512,6 +521,7 @@ test('displayingLinkToExistingDealButton @regChecklistNewMedium @newEditDealPage
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(linkToExistingDealButton).toBeVisible();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(linkTOExistingDealButtonDisabledEnabled).toBeVisible();
@@ -551,6 +561,7 @@ test('linkToExistingDealButtonValidation @regChecklistNewHigh @newEditDealPage',
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(linkTOExistingDealButtonDisabledEnabled).toBeVisible();
 });
@@ -559,19 +570,20 @@ test('linkToExistingDealPopup @regChecklistNewLow @newEditDealPage', async ({ pa
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const userMenu = new UserBar(page);
+    const userBar = new UserBar(page);
     const deal = new DealsPage(page);
     const newEditDeal = new NewEditDealPage(page);
-    const LinkToExistingDealPopupRow0 = page.locator('tr.mat-row.ng-star-inserted >> nth=0');
-    const LinkToExistingDealPopupRow1 = page.locator('tr.mat-row.ng-star-inserted >> nth=1');
-    const LinkToExistingDealPopupRow2 = page.locator('tr.mat-row.ng-star-inserted >> nth=2');
+    const LinkToExistingDealPopupRow0 = page.locator('.mat-row >> nth=1');
+    const LinkToExistingDealPopupRow1 = page.locator('.mat-row >> nth=2');
+    const LinkToExistingDealPopupRow2 = page.locator('.mat-row >> nth=3');
     console.log('NewEditDeal Link To Existing Deal Popup AA');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/deals?&sort=contract_name');
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForSelector('.mat-row >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(LinkToExistingDealPopupRow0).toBeVisible();
     await expect(LinkToExistingDealPopupRow0).toHaveText(' BB test 12Test OTHER 100% ');
@@ -580,25 +592,25 @@ test('linkToExistingDealPopup @regChecklistNewLow @newEditDealPage', async ({ pa
     await expect(LinkToExistingDealPopupRow2).toBeVisible();
     await expect(LinkToExistingDealPopupRow2).toHaveText(' Deal apr Other 100% ');
     await newEditDeal.linkToExistingDealPopupSortStatusUse();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
-    await expect(LinkToExistingDealPopupRow0).toHaveText(' Cont122 12Test OTHER 100% ');
+    await page.waitForSelector('.mat-row >> nth=0');
+    await expect(LinkToExistingDealPopupRow0).toHaveText(' test100test100DealDoNotRemove24 test 100% ');
     await newEditDeal.linkToExistingDealPopupSortDealUse();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForSelector('.mat-row >> nth=0');
     await expect(LinkToExistingDealPopupRow0).toHaveText(' BB test 12Test OTHER 100% ');
     await newEditDeal.linkToExistingDealPopupCloseButtonClick();
-    await userMenu.userInfoButtonClick();
-    await userMenu.signOutButtonClick();
+    await userBar.logOutAction();
     console.log('NewEditDeal Displaying Link To Existing Deal Popup SA');
     await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await page.goto('/deals?&sort=contract_name');
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForSelector('.mat-row >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await page.waitForTimeout(500);
     await newEditDeal.clientDropDownChoose();
     await newEditDeal.linkToExistingDealButtonClick();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForSelector('.mat-row >> nth=0');
     await expect(LinkToExistingDealPopupRow0).toBeVisible();
     await expect(LinkToExistingDealPopupRow0).toHaveText(' BB test 12Test OTHER 100% ');
     await expect(LinkToExistingDealPopupRow1).toBeVisible();
@@ -606,10 +618,10 @@ test('linkToExistingDealPopup @regChecklistNewLow @newEditDealPage', async ({ pa
     await expect(LinkToExistingDealPopupRow2).toBeVisible()
     await expect(LinkToExistingDealPopupRow2).toHaveText(' Deal apr Other 100% ');
     await newEditDeal.linkToExistingDealPopupSortStatusUse();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
-    await expect(LinkToExistingDealPopupRow0).toHaveText(' Cont122 12Test OTHER 100% ');
+    await page.waitForSelector('.mat-row >> nth=0');
+    await expect(LinkToExistingDealPopupRow0).toHaveText(' test100test100DealDoNotRemove24 test 100% ');
     await newEditDeal.linkToExistingDealPopupSortDealUse();
-    await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
+    await page.waitForSelector('.mat-row >> nth=0');
     await expect(LinkToExistingDealPopupRow0).toHaveText(' BB test 12Test OTHER 100% ');
 });
 
@@ -629,6 +641,7 @@ test('linkToExistingDealPopupSearch @regChecklistNewMedium @newEditDealPage', as
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await newEditDeal.linkToExistingDealPopupSearchUse();
     await expect(LinkToExistingDealPopupRow0).toBeVisible();
@@ -643,12 +656,12 @@ test('linkToExistingDealPopupDealStatusColumns @regChecklistNewLow @newEditDealP
     const signIn = new SignInPage(page);
     const deal = new DealsPage(page);
     const newEditDeal = new NewEditDealPage(page);
-    const LinkToExistingDealPopupDeal0 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=0');
-    const LinkToExistingDealPopupDeal1 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=1');
-    const LinkToExistingDealPopupDeal2 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=2');
-    const LinkToExistingDealPopupStatus0 = page.locator('span.status-progress__percent >> nth=0');
-    const LinkToExistingDealPopupStatus1 = page.locator('span.status-progress__percent >> nth=1');
-    const LinkToExistingDealPopupStatus2 = page.locator('span.status-progress__percent >> nth=2');
+    const LinkToExistingDealPopupDeal0 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=1');
+    const LinkToExistingDealPopupDeal1 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=2');
+    const LinkToExistingDealPopupDeal2 = page.locator('td.mat-cell.cdk-column-deal.mat-column-deal.ng-star-inserted >> nth=3');
+    const LinkToExistingDealPopupStatus0 = page.locator('span.status-progress__percent >> nth=1');
+    const LinkToExistingDealPopupStatus1 = page.locator('span.status-progress__percent >> nth=2');
+    const LinkToExistingDealPopupStatus2 = page.locator('span.status-progress__percent >> nth=3');
     console.log('NewEditDeal Link To Existing Deal Popup Deal/Status Columns');
     await users.AA();
     await signIn.signInButton();
@@ -656,6 +669,7 @@ test('linkToExistingDealPopupDealStatusColumns @regChecklistNewLow @newEditDealP
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(LinkToExistingDealPopupDeal0).toBeVisible();
     await expect(LinkToExistingDealPopupDeal0).toHaveText('BB test 12Test OTHER');
@@ -686,6 +700,7 @@ test('linkToExistingDealPopupSelectButton @regChecklistNewHigh @newEditDealPage'
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await expect(selectButton).toHaveAttribute('disabled', '');
     await newEditDeal.linkToExistingDealPopupRadioButtonForSelectClick();
@@ -712,6 +727,7 @@ test('linkToExistingDealPopupCancelButton @regChecklistNewLow @newEditDealPage',
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.linkToExistingDealButtonClick();
     await newEditDeal.linkToExistingDealPopupRadioButtonForSelectClick();
     await newEditDeal.linkToExistingDealPopupCloseButtonClick();
@@ -770,6 +786,7 @@ test('dealStatus @regChecklistNewLow @newEditDealPage', async ({ page, browserNa
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await expect(dealStatusProgressBar).toBeVisible();
     await expect(dealStatusPercentage).toHaveText('Deal Status: 0%');
     await page.goto('/deals/edit-deal/8200');
@@ -796,6 +813,7 @@ test('createSaveChangesButton @regChecklistNewHigh @newEditDealPage', async ({ p
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.createButtonClick();
     await page.waitForSelector('#form-control-model_id mat-error');
     await expect(modelField).toHaveText('Please fill in this field');
@@ -842,6 +860,7 @@ test('cancelButton @regChecklistNewLow @newEditDealPage', async ({ page, browser
     await page.goto('/deals?&sort=contract_name');
     await page.waitForSelector('tr.mat-row.ng-star-inserted >> nth=0');
     await deal.addDealButtonClick();
+    await deal.addDealPopupNewDealButtonClick();
     await newEditDeal.cancelButtonClick();
     await expect(page).toHaveURL('/deals?&sort=contract_name');
     await page.goto('/deals?&sort=contract_name');

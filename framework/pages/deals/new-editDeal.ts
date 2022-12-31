@@ -62,13 +62,19 @@ class NewEditDealPage {
         this.linkToExistingDealPopupSortDeal = page.locator('#deal-column-sort');
         this.linkToExistingDealPopupSelectButton = page.locator('#linking-deal-select');
         this.linkToExistingDealPopupCloseButton = page.locator('#linking-deal-close');
-        this.linkToExistingDealPopupRadioButtonForSelect = page.locator('.mat-radio-button >> nth=0');
-        this.linkToExistingDealPopupRadioButtonForSelect2 = page.locator('.mat-radio-button >> nth=1');
+        this.linkToExistingDealPopupRadioButtonForSelect = page.locator('.mat-radio-button >> nth=1');
+        this.linkToExistingDealPopupRadioButtonForSelect2 = page.locator('.mat-radio-button >> nth=2');
     }
 
     async clientDropDownChoose() {
         await this.clientDropDown.click();
-        await this.clientDropDownValueNew.focus();
+        await this.page.waitForTimeout(500);
+        if (await this.clientDropDownValueNew.isHidden()) 
+        {
+            this.page.waitForTimeout(500);
+            this.clientDropDown.click();
+        }
+        await this.page.waitForSelector('.mat-select-content');
         await this.clientDropDownValueNew.click();
     }
 

@@ -204,7 +204,7 @@ test('saveButtonValidationNewModelExistingPage @regChecklistNewHigh @existingMod
     await existingModel.nextButtonClick();
     await page.waitForTimeout(2000);
     await copyModel.nameFieldCopyExistFill();
-    await copyModel.saveButtonCopyPageClick();
+    await copyModel.saveButtonCopyPageForErrorClick();
     await page.waitForSelector('#form-control-name mat-error');
     await expect(nameFieldValidation).toHaveText('Name "test100test100DoNotRemove15" has already been taken.');
 });

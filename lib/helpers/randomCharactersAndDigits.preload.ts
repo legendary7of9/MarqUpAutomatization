@@ -19,16 +19,6 @@ export abstract class Helpers {
   
     return text;
   }
-
-  public static generateRandomStringLegalEntity() {
-    var text = "autotest";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  
-    for (var i = 0; i < 3; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-  
-    return text;
-  }
   
   public static generateRandomNumberNewModelFrom(min: 1, max: 31) {
     var number = "";
@@ -92,13 +82,16 @@ export abstract class Helpers {
 
   public static currentDateDashboardPlus1Month() {
     var date = new Date();
-    var year = date.getFullYear().toString().substr(-2);
+    var year = date.getFullYear();
     var month = (1 + date.getMonth()+1).toString();
     month = month.length > 1 ? month : '0' + month;
     var day = date.getDate().toString();
     day = day.length > 1 ? day : '0' + day;
 
-    return month + '/' + day + '/' + year;
+    // return month + '/' + day + '/' + year;
+    return day + '/' + month + '/' + year;
+
+    // .toString().substr(-2)
   }
 
   public static currentDateDashboardPlus2Month() {
@@ -253,16 +246,6 @@ public static currentDateAndTimeForSignatures() {
   var today = new Date();
   var date = today.toLocaleDateString('en-US', {year:'2-digit', month:'2-digit', day:'2-digit'});
   var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'}) + ' MT';
-
-  var dateTime = ' ' + date + ' ' + time + ' '
-
-  return dateTime;
-}
-
-public static currentDateAndTimeForSignedContract() {
-  var today = new Date();
-  var date = today.toLocaleDateString('en-US', {month:'short', year:'numeric', day:'2-digit'});
-  var time = today.toLocaleTimeString('en-US', {timeZone: 'US/Mountain', hour: 'numeric', minute: '2-digit'});
 
   var dateTime = ' ' + date + ' ' + time + ' '
 

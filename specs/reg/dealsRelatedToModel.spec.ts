@@ -1,27 +1,14 @@
-import { test , expect, webkit, chromium, Browser, BrowserContext, Page } from '@playwright/test'
+import { test , expect } from '@playwright/test'
 import { UserBar, Users } from '../../framework'
-import { Search } from '../../framework'
 import { SignInPage } from '../../framework'
-import { ForgotPasswordPage } from '../../framework'
 import { SideBar } from '../../framework'
 import { Pagination } from '../../framework'
-import { DashboardPage } from '../../framework'
-import { TemplatesPage } from '../../framework'
-import { NewEditCopyTemplatePage } from '../../framework'
-import { ViewTemplatePage } from '../../framework'
-import { NewEditCopyModelPage } from '../../framework'
 import { DealsPage } from '../../framework'
-import { NewEditTermPage } from '../../framework'
-import { ViewingModelPage } from '../../framework'
 import { DealsRelatedToModelPage } from '../../framework'
 import { NewEditDealPage } from '../../framework'
-import { DealAnalysisPage } from '../../framework'
-import { ExistingModelPage } from '../../framework'
-import { ContractsPage } from '../../framework'
-import { NewEditContractPage } from '../../framework'
-import { ModelPage } from '../../framework'
-import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+// [webkit] › specs\reg\dealsRelatedToModel.spec.ts:677:1 › paginationOnTheDealsRelatedToModelPage @regChecklistNewLow @modelsPage 
+// [chrome] › specs\reg\dealsRelatedToModel.spec.ts:677:1 › paginationOnTheDealsRelatedToModelPage @regChecklistNewLow @modelsPage 
 
 test.beforeEach(async ({ page }) => {
     await page.goto('');
@@ -545,7 +532,7 @@ test('saveAsNewButtonThreeDotsMenu @regChecklistNewHigh @dealsRelatedToModel', a
     const createButton = page.locator('#deal-details-save');
     const modelFieldDisabled = page.locator('#form-control-model_id .mat-select');
     const modelFieldValue = page.locator('#form-control-model_id .mat-select-value-text');
-    const contractNameField = page.locator('#form-control-contract_name .mat-input-element');
+    const contractNameField = page.locator('#form-control-contract_name textarea');
     const subsidaryField = page.locator('#form-control-company_name .mat-input-element');
     const nameOfTheOtherPartyField = page.locator('#form-control-name_of_the_other_party .mat-input-element');
     const estimatedValueField = page.locator('#form-control-estimated_value .mat-input-element');
@@ -570,7 +557,7 @@ test('saveAsNewButtonThreeDotsMenu @regChecklistNewHigh @dealsRelatedToModel', a
     await expect(createButton).toBeVisible();
     await expect(modelFieldDisabled).toHaveAttribute('aria-disabled', 'true');
     await expect(modelFieldValue).toHaveText('Model');
-    await expect(contractNameField).toHaveAttribute('disabled', '');
+    await expect(contractNameField).not.toHaveAttribute('disabled', '');
     await expect(contractNameField).toHaveValue('Cont122');
     await expect(subsidaryField).not.toHaveAttribute('aria-disabled', 'true');
     await expect(subsidaryField).toHaveValue('Client 1HT(test)');

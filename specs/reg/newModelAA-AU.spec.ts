@@ -6,8 +6,6 @@ import { ModelPage } from '../../framework'
 import { NewEditCopyModelPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
-//[webkit] › specs/reg/newModelAA-AU.spec.ts:198:1 › cancelButton @regChecklistNewMedium @newModelPage 
-
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);

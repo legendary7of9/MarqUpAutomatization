@@ -7,6 +7,12 @@ import { ModelPage } from '../../framework'
 import { NewEditCopyModelPage } from '../../framework'
 import { Helpers } from '../../lib/helpers/randomCharactersAndDigits.preload'
 
+// [webkit] › specs\reg\models.spec.ts:91:1 › paginationOnTheModelsPage @regChecklistNewLow @modelsPage 
+// [chrome] › specs\reg\models.spec.ts:91:1 › paginationOnTheModelsPage @regChecklistNewLow @modelsPage 
+// [webkit] › specs\reg\models.spec.ts:262:1 › templatesColumn @regChecklistNewLow @modelsPage
+// [chrome] › specs\reg\models.spec.ts:262:1 › templatesColumn @regChecklistNewLow @modelsPage
+
+
 test.beforeEach(async ({ page }) => {
     await page.goto('');
 });
@@ -24,17 +30,14 @@ test('rediractionToTheModelsPage @regChecklistNewHigh @modelsPage', async ({ pag
     await sideBarMenu.sideBarModelClick();
     await expect(page).toHaveURL('/models?&sort=name');
     await expect(addModelButton).toBeVisible();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await page.waitForSelector('#login-sign-in');
+    await userBar.logOutAction();
     await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarModelClick();
     await expect(page).toHaveURL('/models?&sort=name');
     await expect(addModelButton).toBeVisible();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
+    await userBar.logOutAction();
     await users.AU();
     await signIn.signInButton();
     await page.waitForURL('/clients/265');
@@ -171,15 +174,13 @@ test('clientNameColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await page.waitForURL('/dashboard');
     await sideBarMenu.sideBarModelClick();
     await expect(clientColumn).toBeHidden();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
+    await userBar.logOutAction();
     await users.AU();
     await signIn.signInButton();
     await page.waitForURL('/clients/265');
     await sideBarMenu.sideBarModelClick();
     await expect(clientColumn).toBeHidden();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
+    await userBar.logOutAction();
     await users.SA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
@@ -248,7 +249,7 @@ test('dealsColumn @regChecklistNewLow @modelsPage', async ({ page }) => {
     await model.dealsFilterClick();
     await expect(dealsColumn).toBeVisible();
     await expect(dealsColumnValue).toBeVisible();
-    await expect(dealsColumnValue).toHaveText(' 81 ');
+    await expect(dealsColumnValue).toHaveText(' 82 ');
     await expect(dealsColumnValue).toHaveAttribute('href', '/models/602/deals');
     await page.locator('.deals-column-link >> nth=1').click();
     await expect(page).toHaveURL('/models/602/deals?&sort=contract_name');
@@ -537,21 +538,11 @@ test('nameOfTheDuplicateModelCopyModel/ModelsPage @regChecklistNewLow @modelsPag
     await editModel.saveButtonCopyPageClick();
     await page.goto('/models?&sort=-created_at');
     await expect(nameModelsPage).toContainText('Copy_');
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await users.SA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/models?&sort=-created_at');
-    await model.threeDotsMenuButtonClick();
-    await model.threeDotsMenuDeleteButtonClick();
-    await model.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
 test('validationSaveButtonCopyModelPage @regChecklistNewMedium @modelsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
-    const userBar = new UserBar(page);
     const model = new ModelPage(page);
     const editModel = new NewEditCopyModelPage(page);
     const addTermButton = page.locator('#terms-list-add-term');
@@ -565,18 +556,10 @@ test('validationSaveButtonCopyModelPage @regChecklistNewMedium @modelsPage', asy
     await editModel.saveButtonCopyPageClick();
     await expect(page.url()).toContain('/terms?&sort=term');
     await expect(addTermButton).toBeVisible();
-    await userBar.userInfoButtonClick();
-    await userBar.signOutButtonClick();
-    await users.SA();
-    await signIn.signInButton();
-    await page.waitForURL('/dashboard');
-    await page.goto('/models?&sort=-created_at');
-    await model.threeDotsMenuButtonClick();
-    await model.threeDotsMenuDeleteButtonClick();
-    await model.threeDotsMenuDeletePopupDeleteButtonClick();
 });
 
-test('displayingDeleteButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ page }) => {
+   //functional was removed
+test.skip('displayingDeleteButtonThreeDotsMenu @regChecklistNewLow @modelsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userBar = new UserBar(page);
@@ -631,7 +614,8 @@ test('displayingDeleteButtonThreeDotsMenu @regChecklistNewLow @modelsPage', asyn
     await expect(nameModelsPage).not.toContainText('Copy_');
 });
 
-test('behavbiorOfDeleteButtonModelWithPublishDraftContract/Template @regChecklistNewHigh @modelsPage', async ({ page }) => {
+   //functional was removed
+test.skip('behavbiorOfDeleteButtonModelWithPublishDraftContract/Template @regChecklistNewHigh @modelsPage', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const model = new ModelPage(page);

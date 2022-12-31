@@ -1,11 +1,12 @@
 import { test , expect } from '@playwright/test'
 import { Users } from '../../framework'
 import { SignInPage } from '../../framework'
-import { ModelPage } from '../../framework'
 import { NewEditCopyModelPage } from '../../framework'
 import { NewEditContractPage } from '../../framework'
 
- 
+
+// [webkit] › specs\reg\editModelAA-AU.spec.ts:205:1 › pushToArchiveArchiveButtonWithContract/Deal @regChecklistNewHigh @editModelPage 
+// [chrome] › specs\reg\editModelAA-AU.spec.ts:205:1 › pushToArchiveArchiveButtonWithContract/Deal @regChecklistNewHigh @editModelPage 
 
 test.beforeEach(async ({ page }) => {
     const users = new Users(page);
@@ -27,13 +28,14 @@ test('nameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
 test('nameFieldValidation @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'chromium');
     const editModel = new NewEditCopyModelPage(page);
-    const locator = page.locator('#form-control-name mat-error');
+    const editModelNameFieldError = page.locator('#form-control-name mat-error');
     console.log('editModel Name Field validation');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.nameFieldClear();
-    await editModel.saveChangesButtonClick();
-    await expect(locator).toHaveText(['Please fill in this field']);
-    })
+    await editModel.saveChangesButtonForErrorClick();
+    await expect(editModelNameFieldError).toHaveText('Please fill in this field');
+});
 
 test('descriptionField @regChecklistNewLow @editModelPage', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
@@ -58,6 +60,7 @@ test('typeNameField @regChecklistNewHigh @editModelPage', async ({ page }) => {
     const locator2 = page.locator('[formcontrolname="type_name"]');
     console.log('editModel Type Name Field');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.typeDropDownClick();
     await editModel.typeDropDownOtherChoose();
     await expect(locator).toHaveText(['Other']);
@@ -71,6 +74,7 @@ test('typeNameFieldValidation @regChecklistNewLow @editModelPage', async ({ page
     const locator = page.locator('#form-control-type_name mat-error');
     console.log('editModel Type Name Field validation');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.typeDropDownClick();
     await editModel.typeDropDownOtherChoose();
     await editModel.saveChangesButtonClick();
@@ -138,11 +142,13 @@ test('saveChangesButton @regChecklistNewHigh @editModelPage', async ({ page }) =
     const locator = page.locator('#form-control-type_id');
     console.log('editModel Save Changes Button');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.typeDropDownEdit();
     await editModel.saveChangesButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
     await page.goto('/models/edit-model/974');
-    await expect(locator).toHaveText('sdsddsdsdsType');
+    await page.waitForTimeout(1500);
+    await expect(locator).toHaveText('Non Disclosure AgreementType');
     await editModel.typeDropDownChoose();
     await editModel.saveChangesButtonClick();
 });
@@ -171,6 +177,7 @@ test('pushToArchiveButton @regChecklistNewHigh @editModelPage', async ({ page })
     const archive = page.locator('#confirm-active-archive');
     console.log('editModel Push To Archive Button');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.pushToArchiveButtonClick();
     await expect(popup).toHaveText('Are you sure you want to archive this Model? Archived Models will not be available for Deal review. CancelArchive');
     await expect(cancel).toBeVisible();
@@ -183,6 +190,7 @@ test('pushToArchiveCancelButton @regChecklistNewLow @editModelPage', async ({ pa
     const popup = page.locator('.mat-dialog-container');
     console.log('editModel Push To Archive Cancel Button');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.pushToArchiveButtonClick();
     await editModel.pushToArchivePopupCancelButtonClick();
     await expect(popup).toBeHidden();
@@ -194,10 +202,12 @@ test('pushToArchiveArchiveButton @regChecklistNewMedium @editModelPage', async (
     const activate = page.locator('#model-details-activate');
     console.log('editModel Push To Archive Archive Button');
     await page.goto('/models/edit-model/974');
+    await page.waitForTimeout(1500);
     await editModel.pushToArchiveButtonClick();
     await editModel.pushToArchivePopupArchiveButtonClick();
     await expect(page).toHaveURL('/models?&sort=name');
-    await page.goto('/models/edit-model/974');
+    await page.goto('/models/edit-model/974');3
+    await page.waitForTimeout(1500);
     await expect(activate).toBeVisible();
     await editModel.activateButtonClick();
 });

@@ -101,62 +101,62 @@ class DashboardPage {
 
     async createContractButtonClick() {
         await this.createContractButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#templates-list-add-template');
     }
 
     async createDealButtonClick() {
         await this.createDealButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('app-confirm-create-deal-for-contract');
     }
 
     async createDealPopupChooseContractButtonClick() {
         await this.createDealPopupChooseContractButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#choose-contract-next');
     }
 
     async createDealPopupNewDealButtonClick() {
         await this.createDealPopupNewDealButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#deal-details-save');
     }
 
     async createDealPopupCancelButtonClick() {
         await this.createDealPopupCancelButton.click();
-        await this.page.waitForTimeout(500);
+        await this.page.locator('app-confirm-create-deal-for-contract').isHidden();
     }
 
     async manageUsersButtonClick() {
         await this.manageUsersButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#users-list-add-user');
     }
 
     async manageAccountButtonClick() {
         await this.manageAccountButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#client-view-edit');
     }
 
     async manageAccountsSAButtonClick() {
         await this.manageAccountsSAButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#clients-list-add-client');
     }
 
     async showMoreDealLinkClick() {
         await this.showMoreDealLink.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#dashboard-deal-health-score-show-diagram-button');
     }
 
     async showMoreSignedContractsLinkClick() {
         await this.showMoreSignedContractsLink.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#signed-users-list-outbound-contracts-button');
     }
 
     async showMoreActionReportLinkClick() {
         await this.showMoreActionReportLink.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#contracts-list-contract-requests-link-button');
     }
 
     async showMoreExpiringLinksLinkClick() {
         await this.showMoreExpiringLinksLink.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#dashboard-action-report-export');
     }
 
     async learnMoreContractRxHealthScoreLinkFocus() {
@@ -165,7 +165,7 @@ class DashboardPage {
 
     async dealHelthScorePageBackButtonClick() {
         await this.dealHelthScorePageBackButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#dashboard-create-deal');
     }
 
     async dealHelthScorePageExportButtonClick() {
@@ -175,7 +175,7 @@ class DashboardPage {
 
     async actionReportPageBackButtonClick() {
         await this.actionReportPageBackButton.click();
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('#dashboard-create-deal');
     }
 
     async actionReportPageExportButtonClick() {
@@ -185,7 +185,7 @@ class DashboardPage {
 
     async expiringLinksReportPageExportButtonClick() {
         await this.expiringLinksReportPageExportButton.click();
-        await this.page.waitForTimeout(1000);
+        await this.page.waitForSelector('#dashboard-create-deal');
     }
 
     async tableToggleClick() {

@@ -32,6 +32,7 @@ class SideBar {
 
     async sideBarModelClick() {
         await this.models.dblclick();
+        await this.page.waitForTimeout(500);
     }
 
     async sideBarDealsClick() {

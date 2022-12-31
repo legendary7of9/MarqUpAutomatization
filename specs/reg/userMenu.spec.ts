@@ -114,24 +114,42 @@ test('validationOfTheSignOutButton @regChecklistNewHigh @userMenu', async ({ pag
     await expect(signInButton).toBeVisible();
 });
 
-test('validationOfTheSelectImageButton @regChecklistNewLow @userMenu @editMyProfile', async ({ page, browserName }) => {
+test('validationOfTheSelectImageButton/DisplayingEditAndRemoveButtons/ValidationOfEditButton @regChecklistNewLow @userMenu @editMyProfile', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userMenu = new UserMenuBox(page);
     const myProfile = new EditMyProfile(page);
-    const avatarUpload = '/Users/user/Desktop/MarqUpAutomatization/lib/imgForUpload/avatarImg.jpeg'
+    // const avatarUpload0 = '/Users/user/Desktop/MarqUpAutomatization/lib/imgForUpload/avatarImg.jpeg' //macOS
+    const avatarUpload0 = 'lib/imgForUpload/avatarImg.jpeg' //windows
+    const avatarUpload1 = 'lib/imgForUpload/avatarImg2.jpe' //windows
     const removeButton = page.locator('#profile-remove-photo');
+    const editButton = page.locator('#profile-edit-photo');
     const avatar = page.locator('.avatar');
-    console.log('userMenu Validation Of The Select Image Button');
+    console.log('userMenu Validation Of The Select Image Button/Displaying Edit And Remove Buttons/Validation Of Edit Button');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await userMenu.myProfileButtonClick();
-    await page.setInputFiles('.btn >> text=select image', avatarUpload);
+    await avatar.blur();
+    await expect(removeButton).toBeHidden();
+    await expect(editButton).toBeHidden();
+    page.on('filechooser', async (filechooser) =>  {
+        await filechooser.setFiles(avatarUpload0);
+    })
+    await page.click('.select-image svg', { force: true });
+    await avatar.blur();
     await expect(removeButton).toBeVisible();
-    const getAvatarUrl = await avatar.getAttribute('style');
-    await expect(getAvatarUrl).toContain('data:image/jpeg;base64');
+    await expect(editButton).toBeVisible();
+    const getAvatarUrl0 = await avatar.getAttribute('style');
+    await expect(getAvatarUrl0).toContain('data:image/jpeg;base64');
+    await avatar.blur();
+    page.on('filechooser', async (filechooser) =>  {
+        await filechooser.setFiles(avatarUpload1);
+    })
+    await page.click('#profile-edit-photo', { force: true });
+    const getAvatarUrl1 = await avatar.getAttribute('style');
+    await expect(getAvatarUrl1).toContain('data:image/jpeg;base64');
     await myProfile.removeImageButtonClick();
     await myProfile.removeImagePopupRemoveButtonClick();
 });
@@ -142,7 +160,8 @@ test('validationTheRemoveButton @regChecklistNewLow @userMenu @editMyProfile', a
     const signIn = new SignInPage(page);
     const userMenu = new UserMenuBox(page);
     const myProfile = new EditMyProfile(page);
-    const avatarUpload = '/Users/user/Desktop/MarqUpAutomatization/lib/imgForUpload/avatarImg.jpeg'
+    // const avatarUpload = '/Users/user/Desktop/MarqUpAutomatization/lib/imgForUpload/avatarImg.jpeg' //macOS
+    const avatarUpload = 'lib/imgForUpload/avatarImg.jpeg' //windows
     const removeButton = page.locator('#profile-remove-photo');
     const avatar = page.locator('.avatar');
     const removePopup = page.locator('.mat-dialog-container');
@@ -154,7 +173,14 @@ test('validationTheRemoveButton @regChecklistNewLow @userMenu @editMyProfile', a
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await userMenu.myProfileButtonClick();
-    await page.setInputFiles('.btn >> text=select image', avatarUpload);
+    await avatar.blur();
+    await expect(removeButton).toBeHidden();
+    page.on('filechooser', async (filechooser) =>  {
+        await filechooser.setFiles(avatarUpload);
+    })
+    await page.click('.select-image svg', { force: true });
+    await avatar.blur();
+    await expect(removeButton).toBeVisible();
     await myProfile.removeImageButtonClick();
     await expect(removePopup).toBeVisible();
     await expect(removePopupText).toBeVisible();
@@ -165,8 +191,11 @@ test('validationTheRemoveButton @regChecklistNewLow @userMenu @editMyProfile', a
     await expect(removePopup).toBeHidden();
     const getAvatarUrl = await avatar.getAttribute('style');
     await expect(getAvatarUrl).toContain('data:image/jpeg;base64');
+    await avatar.click({ force: true });
+    await avatar.blur();
     await myProfile.removeImageButtonClick();
     await myProfile.removeImagePopupRemoveButtonClick();
+    await avatar.blur();
     await expect(removeButton).toBeHidden();
     await expect(avatar).toHaveAttribute('style', 'background-image: url("");');
 });
@@ -238,7 +267,7 @@ test('theClientField @regChecklistNewLow @userMenu @editMyProfile', async ({ pag
     await userMenu.myProfileButtonClick();
     await expect(clientFieldInput).toBeVisible();
     await expect(clientFieldInput).toHaveAttribute('placeholder', 'Client');
-    await expect(clientFieldInput).toHaveAttribute('disabled', '');
+    await expect(clientFieldInput).toBeDisabled();
     await expect(clientFieldInput).toHaveValue('Client 1HT(test)');
 });
 
@@ -257,34 +286,44 @@ test('theBioField @regChecklistNewLow @userMenu @editMyProfile', async ({ page, 
     await userMenu.myProfileButtonClick();
     await expect(bioFieldInput).toBeVisible();
     await expect(bioFieldInput).toHaveAttribute('placeholder', 'Bio');
+    await expect(bioFieldInput).toHaveAttribute('maxlength', '400');
     await expect(bioFieldCounter).toBeVisible();
     await expect(bioFieldCounter).toHaveText('0/400');
     await myProfile.bioField.fill('test')
     await expect(bioFieldCounter).toHaveText('4/400');
 });
 
-test('validationTheChangePasswordLink @regChecklistNewMedium @userMenu @editMyProfile', async ({ page, browserName }) => {
+test('checkingTheChangePasswordLink/ValidationOfCancelButtonChangePassPopup @regChecklistNewMedium @userMenu @editMyProfile', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit');
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userMenu = new UserMenuBox(page);
     const myProfile = new EditMyProfile(page);
+    const changePassowrdPopup = page.locator('mat-dialog-container');
     const currentPasswordField = page.locator('#profile-current-password');
     const newPasswordField = page.locator('#profile-new-password');
     const confirmPasswordField = page.locator('#profile-confirm-password');
-    console.log('userMenu Validation The Change Password Link');
+    const cancelButton = page.locator('#change-password-cancel');
+    const changePasswordButton = page.locator('#change-password-apply');
+    console.log('userMenu Checking The Change Password Link/Validation Of Cancel Button Change Pass Popup');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await userMenu.myProfileButtonClick();
     await myProfile.changePasswordButtonClick();
+    await expect(changePassowrdPopup).toBeVisible();
     await expect(currentPasswordField).toBeVisible();
     await expect(newPasswordField).toBeVisible();
     await expect(confirmPasswordField).toBeVisible();
-    await myProfile.changePasswordButtonClick();
+    await expect(cancelButton).toBeVisible();
+    await expect(changePasswordButton).toBeVisible();
+    await myProfile.changePassPopupCancelButtonClick();
+    await expect(changePassowrdPopup).toBeHidden();
     await expect(currentPasswordField).toBeHidden();
     await expect(newPasswordField).toBeHidden();
     await expect(confirmPasswordField).toBeHidden();
+    await expect(cancelButton).toBeHidden();
+    await expect(changePasswordButton).toBeHidden();
 });
 
 test('validationOfTheCurrent/New/ConfirmPasswordFields @regChecklistNewMedium @userMenu @editMyProfile', async ({ page, browserName }) => {
@@ -310,7 +349,7 @@ test('validationOfTheCurrent/New/ConfirmPasswordFields @regChecklistNewMedium @u
     await expect(confirmPasswordField).toHaveAttribute('type', 'password');
 });
 
-test('validationOfTheSaveChangesButton @regChecklistNewHigh @userMenu @editMyProfile', async ({ page }) => {
+test('validationOfTheSaveChangesButton/ValidationOfChangePassButton @regChecklistNewHigh @userMenu @editMyProfile', async ({ page }) => {
     const users = new Users(page);
     const signIn = new SignInPage(page);
     const userMenu = new UserMenuBox(page);
@@ -319,18 +358,21 @@ test('validationOfTheSaveChangesButton @regChecklistNewHigh @userMenu @editMyPro
     const firstNameFieldError = page.locator('#profile-first-name mat-error');
     const lastNameFieldError = page.locator('#profile-last-name mat-error');
     const emailFieldError = page.locator('#profile-email mat-error');
+    const changePasswordPopup = page.locator('app-change-password');
     const currentPasswordFieldError = page.locator('#profile-current-password mat-error');
     const newPasswordFieldError = page.locator('#profile-new-password mat-error');
     const confirmPasswordFieldError = page.locator('#profile-confirm-password mat-error');
-    console.log('userMenu Validation Of The Save Changes Button');
+    console.log('userMenu Validation Of The Save Changes Button/Validation Of Change Pass Button');
     await users.AA();
     await signIn.signInButton();
     await page.waitForURL('/dashboard');
     await userMenu.myProfileButtonClick();
+    await page.waitForTimeout(1500);
     await myProfile.saveChangesButtonClick();
     await expect(page).toHaveURL('/clients/265');
     await expect(editUserButton).toBeVisible();
     await userMenu.myProfileButtonClick();
+    await page.waitForTimeout(1500);
     await myProfile.firstNameField.fill('');
     await myProfile.lastNameField.fill('');
     await myProfile.emailField.fill('');
@@ -343,23 +385,25 @@ test('validationOfTheSaveChangesButton @regChecklistNewHigh @userMenu @editMyPro
     await expect(emailFieldError).toHaveText(' Please fill in this field ');
     await myProfile.cancelButtonClickAASA();
     await userMenu.myProfileButtonClick();
+    await page.waitForTimeout(1500);
     await myProfile.changePasswordButtonClick();
+    await expect(changePasswordPopup).toBeVisible();
     await myProfile.currentPasswordField.fill('test');
     await myProfile.newPasswordField.fill('test');
     await myProfile.confirmPasswordField.fill('test');
-    await myProfile.saveChangesButtonClickFieldErrors();
+    await myProfile.changePassPopupChangePasswordButtonForErrorClick();
     await expect(currentPasswordFieldError).toBeVisible();
     await expect(currentPasswordFieldError).toHaveText(' The password is incorrect. ');
     await myProfile.currentPasswordField.fill('Zaq123456!');
     await myProfile.newPasswordField.fill('test');
     await myProfile.confirmPasswordField.fill('test');
-    await myProfile.saveChangesButtonClickFieldErrors();
+    await myProfile.changePassPopupChangePasswordButtonForErrorClick();
     await expect(newPasswordFieldError).toBeVisible();
     await expect(newPasswordFieldError).toHaveText(' Password should contain at least 6 characters. ');
     await myProfile.currentPasswordField.fill('Zaq123456!');
     await myProfile.newPasswordField.fill('test');
     await myProfile.confirmPasswordField.fill('a');
-    await myProfile.saveChangesButtonClickFieldErrors();
+    await myProfile.changePassPopupChangePasswordButtonForErrorClick();
     await expect(confirmPasswordFieldError).toBeVisible();
     await expect(confirmPasswordFieldError).toHaveText(' The passwords do not match ');
 });

@@ -15,6 +15,8 @@ class EditMyProfile {
   currentPasswordField: Locator;
   newPasswordField: Locator;
   confirmPasswordField: Locator;
+  changePassPopupCancelButton: Locator;
+  changePassPopupChangePasswordButton: Locator;
   cancelButton: Locator;
   saveChangesButton: Locator;
 
@@ -32,6 +34,8 @@ class EditMyProfile {
     this.currentPasswordField = page.locator('#profile-current-password input');
     this.newPasswordField = page.locator('#profile-new-password input');
     this.confirmPasswordField = page.locator('#profile-confirm-password input');
+    this.changePassPopupCancelButton = page.locator('#change-password-cancel');
+    this.changePassPopupChangePasswordButton = page.locator('#change-password-apply');
     this.cancelButton = page.locator('#profile-cancel');
     this.saveChangesButton = page.locator('#profile-save');
   }
@@ -70,6 +74,21 @@ class EditMyProfile {
     await this.cancelButton.click();
     await this.page.waitForSelector('#models-list-add-model');
   }
+  
+  async changePassPopupCancelButtonClick() {
+    await this.changePassPopupCancelButton.click();
+    await this.page.locator('app-change-password').isHidden();
+  }
+
+  async changePassPopupChangePasswordButtonClick() {
+    await this.changePassPopupChangePasswordButton.click();
+    await this.page.locator('app-change-password').isHidden();
+  }
+
+  async changePassPopupChangePasswordButtonForErrorClick() {
+    await this.changePassPopupChangePasswordButton.click();
+    await this.page.waitForSelector('mat-error >> nth=0');
+  }
 
   async saveChangesButtonClick() {
     await this.saveChangesButton.click();
@@ -78,6 +97,7 @@ class EditMyProfile {
 
   async saveChangesButtonClickFieldErrors() {
     await this.saveChangesButton.click();
+    await this.page.waitForSelector('mat-error >> nth=0');
   }
 
 }
